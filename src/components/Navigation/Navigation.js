@@ -14,6 +14,9 @@ const Wrapper = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media screen and (max-width: 680px) {
+    top: 20px;
+  }
 `;
 
 const HamburgerMenu = styled.nav`
@@ -22,6 +25,10 @@ const HamburgerMenu = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  cursor: pointer;
+  @media screen and (max-width: 680px) {
+    width: 40px;
+  }
 `;
 
 const Line = styled.nav`
@@ -53,20 +60,21 @@ const SocialMedia = styled.nav`
 const Icon = styled.img`
   width: 25px;
   height: 25px;
+  cursor: pointer;
 `;
 
 const Navigation = () => {
   return (
     <Wrapper>
-      <HamburgerMenu>
+      <HamburgerMenu id='active'>
         <Line />
         <Line />
         <Line />
         <Line />
       </HamburgerMenu>
       <SocialMedia>
-        <Icon src={facebook} />
-        <Icon src={github} />
+        <Icon src={facebook} id='active' />
+        <Icon src={github} id='active' />
       </SocialMedia>
     </Wrapper>
   );

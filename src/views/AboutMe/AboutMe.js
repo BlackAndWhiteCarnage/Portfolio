@@ -27,7 +27,7 @@ const AboutMe = () => {
         </Article>
         <ButtonsWrapper>
           <Button variants={slide}>
-            <p>READ MORE</p>
+            <a>READ MORE</a>
             <img src={arrowRight} />
           </Button>
           <Button variants={slide}>

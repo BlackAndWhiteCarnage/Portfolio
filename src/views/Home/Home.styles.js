@@ -83,28 +83,48 @@ export const NavItem = styled(motion.li)`
   padding: 10px;
   cursor: pointer;
   position: relative;
-  overflow: hidden;
   @media screen and (min-width: 1200px) {
     &::before {
-      transition: 0.3s ease;
-      content: '';
       position: absolute;
-      bottom: -100%;
+      content: '${(props) => props.text}';
+      top: -100%;
       left: 50%;
       transform: translate(-50%);
+      font-size: 100px;
+      white-space: nowrap;
       opacity: 0;
+      font-weight: 400;
+      transition: 0.5s ease;
+      color: #efefef;
+      z-index: -1;
+      pointer-events: none;
+    }
+    &::after {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translate(-50%);
+      content: '';
       width: 100%;
       height: 100%;
-      background: ${({ theme }) => theme.colors.white};
+      /* background: ${({ theme }) => theme.colors.black}; */
+      border: 1px solid ${({ theme }) => theme.colors.black};
+      opacity: 0;
       z-index: -1;
+      transition: 0.5s ease;
+      pointer-events: none;
     }
     &:hover {
-      color: ${({ theme }) => theme.colors.white};
+      /* color: ${({ theme }) => theme.colors.white}; */
       transition: 0.5s ease;
-      &::before {
-        bottom: 0;
+      &::after {
+        transition: 0.5s ease;
+        height: 100%;
         opacity: 1;
-        background: ${({ theme }) => theme.colors.black};
+      }
+      &::before {
+        transition: 0.5s ease;
+        opacity: 1;
       }
     }
   }

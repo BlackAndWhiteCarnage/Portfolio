@@ -21,15 +21,15 @@ const Home = () => {
           <LogoRightHalf src={logoRightPart} variants={slideFromLeft} />
         </LogoImageWrapper>
         <Navigation>
-          <NavItem id='active' variants={slide}>
+          <NavItem id='active' variants={slide} text='O MNIE'>
             O MNIE
           </NavItem>
           <Line variants={fade} />
-          <NavItem id='active' variants={slide}>
+          <NavItem id='active' variants={slide} text='PROJEKTY'>
             PROJEKTY
           </NavItem>
           <Line variants={fade} />
-          <NavItem id='active' variants={slide}>
+          <NavItem id='active' variants={slide} text='KONTAKT'>
             KONTAKT
           </NavItem>
         </Navigation>

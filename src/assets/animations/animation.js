@@ -32,12 +32,16 @@ export const slideFromLeft = {
   },
 };
 
-export const showNavigation = {
+export const headerAnimation = {
   hidden: {
+    y: -50,
+    scale: 0.8,
     opacity: 0,
   },
   show: {
+    y: 0,
+    scale: 1,
     opacity: 1,
-    transition: { duration: 0.5, staggerChildren: 0.5, delay: 2, type: 'spring', stiffness: 50 },
+    transition: { duration: 0.3, delay: 1 },
   },
 };

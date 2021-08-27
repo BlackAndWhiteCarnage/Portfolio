@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+// STYLES
 import { CursorWrapper } from './Cursor.styles';
 
 const Cursor = () => {

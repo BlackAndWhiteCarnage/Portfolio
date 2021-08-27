@@ -18,11 +18,18 @@ export const GlobalStyle = createGlobalStyle`
         font-weight: 400;
         font-size: ${({ theme }) => theme.fontSize.l};
     }
-    article, li{
+    article, li, p{
         font-size: ${({ theme }) => theme.fontSize.m};
+        line-height: 25px;
+        letter-spacing: normal;
         @media screen and (max-width: 680px) {
-            /* font-size: ${({ theme }) => theme.fontSize.s}; */
+            line-height: 20px;
+            font-size: ${({ theme }) => theme.fontSize.s};
         }
+    }
+    button{
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 100;
     }
     ::-webkit-scrollbar {
         width: 10px;

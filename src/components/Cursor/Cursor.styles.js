@@ -69,7 +69,6 @@ export const CursorWrapper = styled.div`
     /* border-radius: 50%; */
     &::before {
       border-radius: 50%;
-      border: 1px solid ${({ theme }) => theme.colors.white};
     }
     &::after {
       border-radius: 0;

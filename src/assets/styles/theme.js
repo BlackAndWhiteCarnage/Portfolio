@@ -5,7 +5,7 @@ export const theme = {
   },
   fontSize: {
     l: '24px',
-    m: '14px',
-    s: '12px',
+    m: '18px',
+    s: '14px',
   },
 };

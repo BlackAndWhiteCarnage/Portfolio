@@ -59,17 +59,21 @@ export const Link = styled.li`
       transform: translate(-50%);
       content: '';
       width: 100%;
-      height: 0%;
-      background: ${({ theme }) => theme.colors.black};
+      height: 100%;
+      /* background: ${({ theme }) => theme.colors.black}; */
+      border: 1px solid ${({ theme }) => theme.colors.black};
+      opacity: 0;
       z-index: -1;
       transition: 0.5s ease;
+      pointer-events: none;
     }
     &:hover {
-      color: ${({ theme }) => theme.colors.white};
+      /* color: ${({ theme }) => theme.colors.white}; */
       transition: 0.5s ease;
       &::after {
         transition: 0.5s ease;
         height: 100%;
+        opacity: 1;
       }
       &::before {
         transition: 0.5s ease;

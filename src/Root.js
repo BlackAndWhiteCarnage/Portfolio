@@ -8,6 +8,7 @@ import AboutMe from 'views/AboutMe/AboutMe';
 // COMPONENTS
 import Navigation from 'components/Navigation/Navigation';
 import Cursor from 'components/Cursor/Cursor';
+import ShadowLayer from 'components/ShadowLayer/ShadowLayer';
 // HELPERS
 import { matchMedia } from 'helpers/matchMedia';
 
@@ -20,6 +21,8 @@ function Root() {
         <Navigation />
         <Home />
         <AboutMe />
+        <ShadowLayer className='top' />
+        <ShadowLayer className='bottom' />
       </ThemeProvider>
     </>
   );

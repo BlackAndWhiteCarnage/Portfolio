@@ -83,7 +83,7 @@ export const StyledDotTop = styled.div`
   background: ${({ theme }) => theme.colors.black};
   transition: 1s 0.5s;
   border-radius: 50%;
-  z-index: 100;
+  z-index: 110;
   &.toggle {
     width: 400%;
     height: 200%;
@@ -100,7 +100,7 @@ export const StyledDotBottom = styled.div`
   background: ${({ theme }) => theme.colors.white};
   transition: 1s;
   border-radius: 50%;
-  z-index: 100;
+  z-index: 120;
   &.toggle {
     width: 400%;
     height: 200%;

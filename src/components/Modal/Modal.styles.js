@@ -7,7 +7,7 @@ export const ModalWrapper = styled.nav`
   height: 100%;
   width: 100%;
   z-index: 150;
-  transition: 0.5s 0.5s;
+  transition: 0.5s;
   display: flex;
   align-items: center;
   justify-content: center;

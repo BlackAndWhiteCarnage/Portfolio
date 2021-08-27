@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
         font-weight: 400;
         font-size: ${({ theme }) => theme.fontSize.l};
     }
-    article, li, p{
+    article, li, p, a{
         font-size: ${({ theme }) => theme.fontSize.m};
         line-height: 25px;
         letter-spacing: normal;

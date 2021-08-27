@@ -1,10 +1,13 @@
 import React from 'react';
 import arrowRight from 'assets/icons/arrowRight-icon.svg';
+import filePreview from 'assets/icons/filePreview-icon.svg';
 // HELPERS
 import { useScroll } from 'helpers/useScroll';
 // ANIMATIONS
 import { fade, slide, headerAnimation } from 'assets/animations/animation';
-import { Wrapper, AboutMeWrapper, Header, Article, Button } from './AboutMe.styles';
+import { Wrapper, AboutMeWrapper, Header, Article, ButtonsWrapper, Button } from './AboutMe.styles';
+// RESUME
+import cv from 'documents/cv.pdf';
 
 const AboutMe = () => {
   const [element, controls] = useScroll();
@@ -22,10 +25,18 @@ const AboutMe = () => {
           principles in that programming language. From day to day it was more fun to learn it! My wife started to hate me after thousend of messages
           showing her the code and say “Look, finnaly I’ve found a bug!”
         </Article>
-        <Button variants={slide}>
-          <p>KEEP READING</p>
-          <img src={arrowRight} />
-        </Button>
+        <ButtonsWrapper>
+          <Button variants={slide}>
+            <p>READ MORE</p>
+            <img src={arrowRight} />
+          </Button>
+          <Button variants={slide}>
+            <a href={cv} target='_blank'>
+              MY RESUME
+            </a>
+            <img src={filePreview} />
+          </Button>
+        </ButtonsWrapper>
       </AboutMeWrapper>
     </Wrapper>
   );

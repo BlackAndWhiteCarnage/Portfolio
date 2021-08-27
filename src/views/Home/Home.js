@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import logo from 'assets/icons/logo-icon.svg';
+import logoLeftPart from 'assets/icons/logoLeftPart-icon.svg';
+import logoRightPart from 'assets/icons/logoRightPart-icon.svg';
 import scroll from 'assets/icons/scroll-icon.svg';
 import { useScroll } from 'helpers/useScroll';
-import { fade, slide } from 'assets/animations/animation';
+import { fade, slide, slideFromLeft } from 'assets/animations/animation';
 import { motion } from 'framer-motion';
 
 const Wrapper = styled(motion.section)`
@@ -23,12 +24,41 @@ const LogoAndNavWrapper = styled(motion.div)`
   justify-content: space-between;
   @media screen and (max-width: 680px) {
     width: 80%;
+    height: 45%;
+    /* background: red; */
+    height: 60%;
+    justify-content: space-around;
   }
 `;
 
-const LogoImage = styled.img`
+const LogoImageWrapper = styled.div`
+  position: relative;
   width: 100%;
-  height: auto;
+  height: 100px;
+  display: flex;
+  @media screen and (max-width: 680px) {
+    width: 300px;
+  }
+`;
+
+const LogoLeftHalf = styled.img`
+  position: absolute;
+  background: ${({ theme }) => theme.colors.white};
+  left: 0;
+  z-index: 10;
+  @media screen and (max-width: 680px) {
+    width: 65%;
+    height: 100px;
+  }
+`;
+
+const LogoRightHalf = styled(motion.img)`
+  position: absolute;
+  right: 0;
+  @media screen and (max-width: 680px) {
+    width: 33%;
+    height: 100px;
+  }
 `;
 
 const Scroll = styled.img`
@@ -37,6 +67,9 @@ const Scroll = styled.img`
   left: 50%;
   transform: translate(-50%);
   width: 25px;
+  @media screen and (max-width: 680px) {
+    top: 95%;
+  }
 `;
 
 const Navigation = styled.ul`
@@ -56,6 +89,32 @@ const Navigation = styled.ul`
 const NavItem = styled(motion.li)`
   padding: 10px;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  @media screen and (min-width: 1200px) {
+    &::before {
+      transition: 0.3s ease;
+      content: '';
+      position: absolute;
+      bottom: -100%;
+      left: 50%;
+      transform: translate(-50%);
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      background: ${({ theme }) => theme.colors.white};
+      z-index: -1;
+    }
+    &:hover {
+      color: ${({ theme }) => theme.colors.white};
+      transition: 0.5s ease;
+      &::before {
+        bottom: 0;
+        opacity: 1;
+        background: ${({ theme }) => theme.colors.black};
+      }
+    }
+  }
 `;
 
 const Line = styled(motion.div)`
@@ -74,7 +133,10 @@ const Home = () => {
   return (
     <Wrapper variants={fade} animate={controls} initial='hidden' ref={element}>
       <LogoAndNavWrapper variants={slide}>
-        <LogoImage src={logo} />
+        <LogoImageWrapper>
+          <LogoLeftHalf src={logoLeftPart} />
+          <LogoRightHalf src={logoRightPart} variants={slideFromLeft} />
+        </LogoImageWrapper>
         <Navigation>
           <NavItem id='active' variants={slide}>
             O MNIE

@@ -57,6 +57,7 @@ export const CursorWrapper = styled.div`
     }
   }
   &.active {
+    /* backdrop-filter: invert(100%); */
     /* transform: scale(1.5 */
     /* border: none; */
     /* border-radius: 50%; */
@@ -68,6 +69,7 @@ export const CursorWrapper = styled.div`
     /* border-radius: 50%; */
     &::before {
       border-radius: 50%;
+      border: 1px solid ${({ theme }) => theme.colors.white};
     }
     &::after {
       border-radius: 0;

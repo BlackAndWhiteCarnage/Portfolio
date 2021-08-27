@@ -15,7 +15,6 @@ function Root() {
         <Home />
         <Home />
         <Home />
-        <Home />
       </ThemeProvider>
     </>
   );

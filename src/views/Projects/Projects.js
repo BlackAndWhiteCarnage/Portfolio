@@ -4,7 +4,7 @@ import { projects } from 'data/projectsData';
 // HELPERS
 import { useScroll } from 'helpers/useScroll';
 // ANIMATIONS
-import { fade, headerAnimation } from 'assets/animations/animation';
+import { fade, headerAnimation, slide } from 'assets/animations/animation';
 // STYLES
 import {
   Wrapper,
@@ -80,12 +80,12 @@ const Projects = () => {
             <ProjectTitle className={index === current && 'show'}>{project.title}</ProjectTitle>
           </Project>
         ))}
-        <SliderInfoWrapper>
+        <SliderInfoWrapper variants={slide}>
           <p>
             <strong>Click</strong> on projects to interact.
           </p>
         </SliderInfoWrapper>
-        <IsSliderLockedInfo>
+        <IsSliderLockedInfo variants={slide}>
           <p>
             Slider <strong>{!isLocked ? 'unlocked' : 'locked'}</strong>
           </p>

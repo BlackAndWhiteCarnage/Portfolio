@@ -6,6 +6,10 @@ import email from 'assets/icons/email-icon.svg';
 import phone from 'assets/icons/phone-icon.svg';
 import send from 'assets/icons/send-icon.svg';
 import { Button } from 'views/AboutMe/AboutMe.styles';
+// HELPERS
+import { useScroll } from 'helpers/useScroll';
+// ANIMATIONS
+import { fade, slide, headerAnimation } from 'assets/animations/animation';
 
 export const Wrapper = styled(motion.section)`
   width: 100%;
@@ -19,7 +23,7 @@ export const Wrapper = styled(motion.section)`
 
 export const ContactWrapper = styled.div`
   position: relative;
-  height: 620px;
+  height: 720px;
   width: 450px;
   display: flex;
   flex-direction: column;
@@ -30,20 +34,20 @@ export const ContactWrapper = styled.div`
   }
 `;
 
-export const Form = styled.form`
+export const Form = styled(motion.form)`
   width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
 `;
 
-export const Label = styled.label`
+export const Label = styled(motion.label)`
   width: 100%;
   font-weight: 400;
   margin-bottom: 15px;
 `;
 
-export const Input = styled.input`
+export const Input = styled(motion.input)`
   position: relative;
   width: 100%;
   min-height: 40px;
@@ -56,7 +60,7 @@ export const Input = styled.input`
   margin-bottom: 40px;
 `;
 
-export const Textarea = styled.textarea`
+export const Textarea = styled(motion.textarea)`
   position: relative;
   width: 100%;
   min-height: 250px;
@@ -88,14 +92,14 @@ export const PersonalInfoWrapper = styled.div`
   justify-content: space-around;
 `;
 
-export const Header = styled.p`
-  width: 50%;
+export const Header = styled(motion.p)`
   white-space: nowrap;
+  text-align: right;
 `;
 
-export const InfoWrapper = styled.div`
+export const InfoWrapper = styled(motion.div)`
   width: 100%;
-  height: 120px;
+  height: 160px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -104,46 +108,52 @@ export const InfoWrapper = styled.div`
   }
 `;
 
-export const Info = styled.div`
+export const Info = styled(motion.div)`
   width: 100%;
   height: auto;
   display: flex;
+  justify-content: flex-end;
 `;
 
 export const Icon = styled.img`
   min-width: 18px;
   min-height: 18px;
-  margin-right: 25px;
+  margin-left: 25px;
 `;
 
 const Contact = () => {
+  const [element, controls] = useScroll();
+
   return (
-    <Wrapper>
+    <Wrapper variants={slide} animate={controls} initial='hidden' ref={element}>
       <ContactWrapper>
-        <Form>
-          <Label>EMAIL</Label>
-          <Input />
-          <Label>MESSAGE</Label>
-          <Textarea />
+        <Form variants={slide}>
+          <Label variants={slide}>EMAIL</Label>
+          <Input variants={fade} />
+          <Label variants={slide}>MESSAGE</Label>
+          <Textarea variants={fade} />
         </Form>
         <ButtonAndPersonalInfoWrapper>
-          <Header>PERSONAL INFO</Header>
-          <Button>
+          <Button variants={slide}>
             <p>SEND</p>
             <img src={send} />
           </Button>
-          <InfoWrapper>
-            <Info>
-              <Icon src={user} />
+          <Header variants={fade}>
+            PERSONAL INFO <br />
+            BELOW
+          </Header>
+          <InfoWrapper variants={slide}>
+            <Info variants={slide}>
               <p>KRZYSZTOF REPSCH</p>
+              <Icon src={user} />
             </Info>
-            <Info>
-              <Icon src={email} />
+            <Info variants={slide}>
               <p>KRZYS.REPSCH@GMAIL.COM</p>
+              <Icon src={email} />
             </Info>
-            <Info>
-              <Icon src={phone} />
+            <Info variants={slide}>
               <p>603 312 504</p>
+              <Icon src={phone} />
             </Info>
           </InfoWrapper>
         </ButtonAndPersonalInfoWrapper>

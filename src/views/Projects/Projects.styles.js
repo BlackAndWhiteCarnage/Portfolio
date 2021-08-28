@@ -113,7 +113,7 @@ export const ProjectTitle = styled.h2`
   }
 `;
 
-export const SliderInfoWrapper = styled.p`
+export const SliderInfoWrapper = styled(motion.p)`
   position: absolute;
   bottom: -50px;
   width: 100%;
@@ -126,7 +126,7 @@ export const SliderInfoWrapper = styled.p`
   }
 `;
 
-export const IsSliderLockedInfo = styled.p`
+export const IsSliderLockedInfo = styled(motion.p)`
   position: absolute;
   bottom: -100px;
   width: 100%;

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 
 export const Wrapper = styled(motion.section)`
@@ -41,6 +41,37 @@ export const ButtonsWrapper = styled.div`
   height: 120px;
 `;
 
+const sendEmail = keyframes`
+0%{
+  right: 0;
+  top: 0;
+  opacity: 1;
+}
+25%{
+  transform: scale(10);
+  @media screen and (max-width: 680px) {
+    transform: scale(5);
+  }
+}
+50%{
+  transform: skew(-30deg);
+}
+60%{
+  transform: rotate(40deg);
+}
+75%{
+  right: -300%;
+  top: -300%;
+  @media screen and (max-width: 680px) {
+    right: -100%;
+    top: -100%;
+  }
+}
+100%{
+  opacity: 0;
+}
+`;
+
 export const Button = styled(motion.button)`
   position: relative;
   min-width: 120px;
@@ -54,6 +85,11 @@ export const Button = styled(motion.button)`
   justify-content: space-between;
   cursor: pointer;
   white-space: nowrap;
+  &.emailSend {
+    pointer-events: none;
+    opacity: 0.3;
+    transition: 1s ease;
+  }
   @media screen and (max-width: 680px) {
     max-width: 180px;
   }
@@ -72,6 +108,12 @@ export const Button = styled(motion.button)`
     margin-left: 15px;
     transition: 0.5s ease;
     pointer-events: none;
+    &.fly {
+      position: absolute;
+      z-index: 300;
+      animation: ${sendEmail} 1.5s 0.5s ease-in-out;
+      opacity: 0;
+    }
     @media screen and (max-width: 680px) {
       max-height: 15px;
     }

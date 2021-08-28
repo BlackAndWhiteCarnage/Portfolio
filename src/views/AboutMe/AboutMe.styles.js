@@ -45,7 +45,6 @@ const sendEmail = keyframes`
 0%{
   right: 0;
   top: 0;
-  opacity: 1;
 }
 25%{
   transform: scale(10);
@@ -111,8 +110,7 @@ export const Button = styled(motion.button)`
     &.fly {
       position: absolute;
       z-index: 300;
-      animation: ${sendEmail} 1.5s 0.5s ease-in-out;
-      opacity: 0;
+      animation: ${sendEmail} 1.5s ease-in-out forwards;
     }
     @media screen and (max-width: 680px) {
       max-height: 15px;

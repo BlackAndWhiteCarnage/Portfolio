@@ -9,7 +9,7 @@ export const Wrapper = styled(motion.section)`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  overflow-x: hidden;
+  overflow: hidden;
 `;
 
 export const ContactWrapper = styled.div`

@@ -1,33 +1,29 @@
+import lamiapassionemalteseDesktop from 'assets/images/lamiapassionemaltese-desktop.jpeg';
+import euphoriaDesktop from 'assets/images/euphoria-desktop.jpeg';
+import nicetomeetyouDesktop from 'assets/images/nicetomeetyou-desktop.jpeg';
+
 export const projects = [
   {
-    name: '0',
+    title: 'La Mia Passione Maltese',
     live: 'https://lamiapassionemaltese.pl/',
     repo: 'https://github.com/BlackAndWhiteCarnage/La-Mia-Passione-Maltese',
-    image: '',
+    image: lamiapassionemalteseDesktop,
     description: '',
     toolsUsed: ['React', 'Styled Components', 'Framer Motion'],
   },
   {
-    name: '1',
+    title: 'Euphoria',
     live: 'https://lamiapassionemaltese.pl/',
     repo: 'https://github.com/BlackAndWhiteCarnage/La-Mia-Passione-Maltese',
-    image: '',
+    image: euphoriaDesktop,
     description: '',
     toolsUsed: ['React', 'Styled Components', 'Framer Motion'],
   },
   {
-    name: '2',
+    title: 'Nice To Meet You',
     live: 'https://lamiapassionemaltese.pl/',
     repo: 'https://github.com/BlackAndWhiteCarnage/La-Mia-Passione-Maltese',
-    image: '',
-    description: '',
-    toolsUsed: ['React', 'Styled Components', 'Framer Motion'],
-  },
-  {
-    name: '3',
-    live: 'https://lamiapassionemaltese.pl/',
-    repo: 'https://github.com/BlackAndWhiteCarnage/La-Mia-Passione-Maltese',
-    image: '',
+    image: nicetomeetyouDesktop,
     description: '',
     toolsUsed: ['React', 'Styled Components', 'Framer Motion'],
   },

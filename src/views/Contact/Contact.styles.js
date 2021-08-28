@@ -39,12 +39,12 @@ export const EmailSend = styled.div`
   top: -100%;
   width: 100%;
   height: 100%;
-  background: green;
   z-index: 100;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: ${({ theme }) => theme.colors.white};
+  /* background: ${({ theme }) => theme.colors.white}; */
+  background: rgba(246, 246, 246, 0.9);
   text-align: center;
   transition: 0.5s ease;
   &.show {

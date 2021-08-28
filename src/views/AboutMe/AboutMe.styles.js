@@ -86,8 +86,8 @@ export const Button = styled(motion.button)`
   white-space: nowrap;
   &.emailSend {
     pointer-events: none;
-    opacity: 0.3;
     transition: 1s ease;
+    opacity: 0.2 !important;
   }
   @media screen and (max-width: 680px) {
     max-width: 180px;

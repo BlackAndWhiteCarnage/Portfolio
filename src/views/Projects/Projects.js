@@ -64,8 +64,41 @@ const Projects = () => {
     }
   };
 
+  let startX, moveX;
+
+  const touchStartHandler = (e) => {
+    startX = e.touches[0].clientX;
+  };
+
+  const touchMoveHandler = (e) => {
+    moveX = e.touches[0].clientX;
+  };
+
+  const touchEndHandler = (e) => {
+    if (startX + 100 < moveX) {
+      setIsLocked(true);
+      setCurrent(current === projects.length - 1 ? 0 : current + 1);
+      setNext(next === projects.length - 1 ? 0 : next + 1);
+      setPrev(prev === projects.length - 1 ? 0 : prev + 1);
+    } else if (startX - 100 > moveX) {
+      setIsLocked(true);
+      setCurrent(current === 0 ? (current = projects.length - 1) : current - 1);
+      setNext(next === 0 ? (next = projects.length - 1) : next - 1);
+      setPrev(prev === 0 ? (prev = projects.length - 1) : prev - 1);
+    }
+  };
+
   return (
-    <Wrapper variants={fade} animate={controls} initial='hidden' ref={element}>
+    <Wrapper
+      variants={fade}
+      animate={controls}
+      initial='hidden'
+      ref={element}
+      onTouchStart={touchStartHandler}
+      onTouchMove={touchMoveHandler}
+      onTouchEnd={touchEndHandler}
+    >
+      {' '}
       {/* <Header variants={headerAnimation}>MY PROJECTS</Header> */}
       <ProjectsSliderWrapper>
         {projects.map((project, index) => (

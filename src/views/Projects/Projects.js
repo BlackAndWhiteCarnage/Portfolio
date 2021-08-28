@@ -4,9 +4,18 @@ import { projects } from 'data/projectsData';
 // HELPERS
 import { useScroll } from 'helpers/useScroll';
 // ANIMATIONS
-import { fade } from 'assets/animations/animation';
+import { fade, headerAnimation } from 'assets/animations/animation';
 // STYLES
-import { Wrapper, ProjectsSliderWrapper, Project, ProjectImage, ProjectTitle, SliderInfoWrapper, IsSliderLockedInfo } from './Projects.styles';
+import {
+  Wrapper,
+  ProjectsSliderWrapper,
+  Project,
+  ProjectImage,
+  ProjectTitle,
+  SliderInfoWrapper,
+  IsSliderLockedInfo,
+  Header,
+} from './Projects.styles';
 
 const Projects = () => {
   const [element, controls] = useScroll();
@@ -57,6 +66,7 @@ const Projects = () => {
 
   return (
     <Wrapper variants={fade} animate={controls} initial='hidden' ref={element}>
+      {/* <Header variants={headerAnimation}>MY PROJECTS</Header> */}
       <ProjectsSliderWrapper>
         {projects.map((project, index) => (
           <Project

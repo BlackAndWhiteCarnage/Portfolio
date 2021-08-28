@@ -6,6 +6,7 @@ import { theme } from 'assets/styles/theme';
 import Home from 'views/Home/Home';
 import AboutMe from 'views/AboutMe/AboutMe';
 import Projects from 'views/Projects/Projects';
+import Contact from 'views/Contact/Contact';
 // COMPONENTS
 import Navigation from 'components/Navigation/Navigation';
 import Cursor from 'components/Cursor/Cursor';
@@ -23,6 +24,7 @@ function Root() {
         <Home />
         <AboutMe />
         <Projects />
+        <Contact />
         <ShadowLayer className='top' />
         <ShadowLayer className='bottom' />
       </ThemeProvider>

@@ -12,8 +12,8 @@ const Modal = ({ toggleModal }) => {
         <Link id='active' text='PROJEKTY'>
           PROJEKTY
         </Link>
-        <Link id='active' text='PORTFOLIO'>
-          PORTFOLIO
+        <Link id='active' text='KONTAKT'>
+          KONTAKT
         </Link>
       </LinksWrapper>
     </ModalWrapper>

@@ -43,7 +43,7 @@ export const ButtonsWrapper = styled.div`
 
 export const Button = styled(motion.button)`
   position: relative;
-  min-width: 200px;
+  min-width: 120px;
   max-width: 220px;
   padding: 10px 20px;
   border: 1px solid ${({ theme }) => theme.colors.black};
@@ -68,7 +68,8 @@ export const Button = styled(motion.button)`
     pointer-events: none;
   }
   img {
-    max-height: 18px;
+    max-height: 25px;
+    margin-left: 15px;
     transition: 0.5s ease;
     pointer-events: none;
     @media screen and (max-width: 680px) {

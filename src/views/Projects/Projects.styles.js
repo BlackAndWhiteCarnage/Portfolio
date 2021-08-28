@@ -138,3 +138,7 @@ export const IsSliderLockedInfo = styled.p`
     text-align: center;
   }
 `;
+
+export const Header = styled(motion.h2)`
+  margin-bottom: 60px;
+`;

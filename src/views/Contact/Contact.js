@@ -6,6 +6,7 @@ import send from 'assets/icons/send-icon.svg';
 import { Button } from 'views/AboutMe/AboutMe.styles';
 // HELPERS
 import { useScroll } from 'helpers/useScroll';
+import { matchMedia } from 'helpers/matchMedia';
 // ANIMATIONS
 import { fade, slide, headerAnimation } from 'assets/animations/animation';
 // STYLES
@@ -79,7 +80,7 @@ const Contact = () => {
   }
 
   return (
-    <Wrapper variants={slide} animate={controls} initial='hidden' ref={element}>
+    <Wrapper>
       <ContactWrapper>
         <Form variants={slide}>
           <Label variants={slide}>EMAIL</Label>
@@ -100,7 +101,7 @@ const Contact = () => {
             <p>Email send, I will reply as soon as I can!</p>
           </EmailSend>
         </Form>
-        <ButtonAndPersonalInfoWrapper>
+        <ButtonAndPersonalInfoWrapper variants={slide} animate={controls} initial='hidden' ref={element}>
           <Button variants={slide} type='submit' onClick={checkValid} className={emailSend && 'emailSend'}>
             <p>SEND</p>
             <img src={send} className={emailSend && 'fly'} />

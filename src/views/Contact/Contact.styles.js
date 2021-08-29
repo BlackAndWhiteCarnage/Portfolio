@@ -78,7 +78,6 @@ export const Input = styled(motion.input)`
   &.ERROR {
     background: ${({ theme }) => theme.colors.error};
     transition: 0.5s ease;
-    transform: scale(1.025);
   }
 `;
 
@@ -100,11 +99,10 @@ export const Textarea = styled(motion.textarea)`
   &.ERROR {
     background: ${({ theme }) => theme.colors.error};
     transition: 0.5s ease;
-    transform: scale(1.025);
   }
 `;
 
-export const ButtonAndPersonalInfoWrapper = styled.div`
+export const ButtonAndPersonalInfoWrapper = styled(motion.div)`
   width: 100%;
   height: 300px;
   display: flex;

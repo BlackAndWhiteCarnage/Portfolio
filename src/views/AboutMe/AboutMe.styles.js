@@ -87,7 +87,7 @@ export const Button = styled(motion.button)`
   &.emailSend {
     pointer-events: none;
     transition: 1s ease;
-    opacity: 0.2 !important;
+    opacity: 0.5 !important;
   }
   @media screen and (max-width: 680px) {
     max-width: 180px;
@@ -110,7 +110,7 @@ export const Button = styled(motion.button)`
     &.fly {
       position: absolute;
       z-index: 300;
-      animation: ${sendEmail} 1.5s ease-in-out forwards;
+      animation: ${sendEmail} 1.5s ease-in-out forwards infinite;
     }
     @media screen and (max-width: 680px) {
       max-height: 15px;

@@ -1,5 +1,6 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
+import { theme } from 'assets/styles/theme';
 
 export const Wrapper = styled(motion.section)`
   width: 100%;
@@ -32,24 +33,44 @@ export const Form = styled(motion.form)`
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  &.emailSend {
+    opacity: 0.5;
+    transition: 0.5s ease;
+    pointer-events: none;
+  }
 `;
 
-export const EmailSend = styled.div`
+const wait = keyframes`
+0%{
+}
+50%{
+  transform: rotate(360deg);
+  opacity: 1;
+}
+100%{
+}
+`;
+
+export const WaitingWrapper = styled.div`
   position: absolute;
-  top: -100%;
   width: 100%;
   height: 100%;
-  z-index: 100;
+  background: ${({ theme }) => theme.colors.white};
+  left: 0;
+  top: -100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background: ${({ theme }) => theme.colors.white}; */
-  background: rgba(246, 246, 246, 0.9);
-  text-align: center;
-  transition: 0.5s ease;
+  pointer-events: none;
+  opacity: 0;
   &.show {
     top: 0;
-    transition: 0.5s ease;
+    opacity: 1;
+    img {
+      min-height: 18px;
+      animation: ${wait} 1.5s infinite ease-in-out;
+      opacity: 0.25;
+    }
   }
 `;
 

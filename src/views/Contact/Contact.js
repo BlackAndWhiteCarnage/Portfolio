@@ -97,7 +97,7 @@ const Contact = () => {
   }
 
   return (
-    <Wrapper>
+    <Wrapper id='CONTACT'>
       {/* <SectionHeader text='CONTACT' /> */}
       <ContactWrapper>
         <Form variants={slide} className={emailSend && 'emailSend'}>

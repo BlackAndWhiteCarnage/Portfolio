@@ -1,4 +1,5 @@
 import React from 'react';
+import LinkTo from 'components/LinkTo/LinkTo';
 // ICONS
 import logoLeftPart from 'assets/icons/logoLeftPart-icon.svg';
 import logoRightPart from 'assets/icons/logoRightPart-icon.svg';
@@ -33,15 +34,15 @@ const Home = () => {
         </LogoImageWrapper>
         <Navigation>
           <NavItem id='active' variants={slide} text='O MNIE'>
-            O MNIE
+            <LinkTo text='ABOUT ME' to='ABOUT ME' />
           </NavItem>
           <Line variants={fade} />
           <NavItem id='active' variants={slide} text='PROJEKTY'>
-            PROJEKTY
+            <LinkTo text='PROJECTS' to='PROJECTS' />
           </NavItem>
           <Line variants={fade} />
           <NavItem id='active' variants={slide} text='KONTAKT'>
-            KONTAKT
+            <LinkTo text='CONTACT' to='CONTACT' />
           </NavItem>
         </Navigation>
       </LogoAndNavWrapper>

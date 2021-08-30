@@ -176,7 +176,7 @@ export const Links = styled.a`
 
 export const SliderInfoWrapper = styled(motion.p)`
   position: absolute;
-  bottom: -50px;
+  bottom: -65px;
   width: 100%;
   height: auto;
   display: flex;
@@ -189,7 +189,7 @@ export const SliderInfoWrapper = styled(motion.p)`
 
 export const IsSliderLockedInfo = styled(motion.p)`
   position: absolute;
-  bottom: -100px;
+  bottom: -115px;
   width: 100%;
   height: auto;
   display: flex;

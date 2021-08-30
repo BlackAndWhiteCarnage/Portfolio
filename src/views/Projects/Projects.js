@@ -80,13 +80,13 @@ const Projects = () => {
     moveX = e.touches[0].clientX;
   };
 
-  const touchEndHandler = (e) => {
-    if (startX + 100 < moveX) {
+  const touchEndHandler = () => {
+    if (startX + 80 < moveX) {
       setIsLocked(true);
       setCurrent(current === projects.length - 1 ? 0 : current + 1);
       setNext(next === projects.length - 1 ? 0 : next + 1);
       setPrev(prev === projects.length - 1 ? 0 : prev + 1);
-    } else if (startX - 100 > moveX) {
+    } else if (startX - 80 > moveX) {
       setIsLocked(true);
       setCurrent(current === 0 ? (current = projects.length - 1) : current - 1);
       setNext(next === 0 ? (next = projects.length - 1) : next - 1);
@@ -103,8 +103,8 @@ const Projects = () => {
       onTouchStart={touchStartHandler}
       onTouchMove={touchMoveHandler}
       onTouchEnd={touchEndHandler}
+      id='PROJECTS'
     >
-      {/* <SectionHeader text='MY PROJECTS' /> */}
       <ProjectsSliderWrapper>
         {projects.map((project, index) => (
           <Project

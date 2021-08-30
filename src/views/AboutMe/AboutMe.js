@@ -15,7 +15,7 @@ const AboutMe = () => {
   const [element, controls] = useScroll();
 
   return (
-    <Wrapper variants={fade} animate={controls} initial='hidden' ref={element}>
+    <Wrapper variants={fade} animate={controls} initial='hidden' ref={element} id='ABOUT ME'>
       {/* <SectionHeader text='ABOUT ME' /> */}
       <AboutMeWrapper variants={slide}>
         <Article variants={slide}>

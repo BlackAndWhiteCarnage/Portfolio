@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
+// COMPONENTS
+import SectionHeader from 'components/SectionHeader/SectionHeader';
 // PROJECTS DATA
 import { projects } from 'data/projectsData';
 // HELPERS
 import { useScroll } from 'helpers/useScroll';
+import link from 'assets/icons/link-icon.svg';
+import github from 'assets/icons/github-icon.svg';
 // ANIMATIONS
 import { fade, headerAnimation, slide } from 'assets/animations/animation';
 // STYLES
@@ -15,6 +19,8 @@ import {
   SliderInfoWrapper,
   IsSliderLockedInfo,
   Header,
+  Links,
+  ProjectLinksWrapper,
 } from './Projects.styles';
 
 const Projects = () => {
@@ -98,8 +104,7 @@ const Projects = () => {
       onTouchMove={touchMoveHandler}
       onTouchEnd={touchEndHandler}
     >
-      {' '}
-      {/* <Header variants={headerAnimation}>MY PROJECTS</Header> */}
+      {/* <SectionHeader text='MY PROJECTS' /> */}
       <ProjectsSliderWrapper>
         {projects.map((project, index) => (
           <Project
@@ -111,6 +116,14 @@ const Projects = () => {
           >
             <ProjectImage src={project.image} />
             <ProjectTitle className={index === current && 'show'}>{project.title}</ProjectTitle>
+            <ProjectLinksWrapper className={index === current && 'show'}>
+              <Links>
+                <img src={link} />
+              </Links>
+              <Links>
+                <img src={github} />
+              </Links>
+            </ProjectLinksWrapper>
           </Project>
         ))}
         <SliderInfoWrapper variants={slide}>

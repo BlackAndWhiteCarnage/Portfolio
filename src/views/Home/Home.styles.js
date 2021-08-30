@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 
 export const Wrapper = styled(motion.section)`
@@ -54,15 +54,35 @@ export const LogoRightHalf = styled(motion.img)`
   }
 `;
 
-export const Scroll = styled.img`
+const scrollAnimation = keyframes`
+0%{
+  transform: translateY(-50px);
+}
+80%{
+  transform: scale(1.25);
+  opacity: 1;
+}
+`;
+
+export const ScrollWrapper = styled.div`
   position: absolute;
   top: 90%;
   left: 50%;
+  width: 30px;
+  height: 30px;
   transform: translate(-50%);
-  width: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   @media screen and (max-width: 680px) {
     top: 95%;
   }
+`;
+
+export const Scroll = styled.img`
+  animation: ${scrollAnimation} 2.5s infinite ease;
+  min-width: 20px;
+  opacity: 0;
 `;
 
 export const Navigation = styled.ul`
@@ -74,7 +94,7 @@ export const Navigation = styled.ul`
   list-style: none;
   @media screen and (max-width: 460px) {
     flex-direction: column;
-    height: 140px;
+    height: 170px;
     width: auto;
   }
 `;

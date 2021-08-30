@@ -1,6 +1,8 @@
 import React from 'react';
 import arrowRight from 'assets/icons/arrowRight-icon.svg';
 import filePreview from 'assets/icons/filePreview-icon.svg';
+// COMPONENTS
+import SectionHeader from 'components/SectionHeader/SectionHeader';
 // HELPERS
 import { useScroll } from 'helpers/useScroll';
 // ANIMATIONS
@@ -14,8 +16,8 @@ const AboutMe = () => {
 
   return (
     <Wrapper variants={fade} animate={controls} initial='hidden' ref={element}>
+      {/* <SectionHeader text='ABOUT ME' /> */}
       <AboutMeWrapper variants={slide}>
-        <Header variants={headerAnimation}>ABOUT ME</Header>
         <Article variants={slide}>
           Oh shit it works! When i’ve started to learn JavaScript, it was hard. I mean, my bad that i’ve rushed a little bit rusted eduweb course and
           I didnt take more from the lessons that my notes. After a while I have started to understand all the principles in that programming

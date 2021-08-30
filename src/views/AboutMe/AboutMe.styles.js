@@ -2,6 +2,7 @@ import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 
 export const Wrapper = styled(motion.section)`
+  position: relative;
   width: 100%;
   min-height: 100vh;
   height: 100%;
@@ -21,10 +22,6 @@ export const AboutMeWrapper = styled.div`
   @media screen and (max-width: 1000px) {
     width: 80%;
   }
-`;
-
-export const Header = styled(motion.h2)`
-  margin-bottom: 60px;
 `;
 
 export const Article = styled(motion.article)`

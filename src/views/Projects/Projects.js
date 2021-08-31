@@ -46,7 +46,7 @@ const Projects = () => {
     }
     toggleInterval = setInterval(() => {
       setClock(clock + 1);
-    }, 2500);
+    }, 3000);
     slider();
   };
 

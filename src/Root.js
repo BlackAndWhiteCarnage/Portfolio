@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 // STYLES
 import { GlobalStyle } from 'assets/styles/GlobalStyle.js';
 import { ThemeProvider } from 'styled-components';
@@ -15,14 +16,16 @@ import ShadowLayer from 'components/ShadowLayer/ShadowLayer';
 import { matchMedia } from 'helpers/matchMedia';
 
 function Root() {
+  const [toggleReadMore, setToggleReadMore] = useState(false);
+
   return (
     <>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         {matchMedia && <Cursor />}
-        <Navigation />
+        <Navigation setToggleReadMore={setToggleReadMore} />
         <Home />
-        <AboutMe />
+        <AboutMe toggleReadMore={toggleReadMore} setToggleReadMore={setToggleReadMore} />
         <Projects />
         <Contact />
         <ShadowLayer className='top' />

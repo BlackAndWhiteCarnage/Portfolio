@@ -7,17 +7,27 @@ import github from 'assets/icons/github-icon.svg';
 // STYLES
 import { Wrapper, HamburgerMenu, Line, SocialMedia, Icon, StyledDotBottom, StyledDotTop } from './Navigation.styles';
 
-const Navigation = () => {
+const Navigation = ({ setToggleReadMore }) => {
   const [toggleModal, setToggleModal] = useState(false);
 
   const toggleModalHandler = () => {
     setToggleModal(!toggleModal);
   };
 
+  const closeOtherModalsHandler = () => {
+    setToggleReadMore(false);
+  };
+
   return (
     <>
       <Wrapper>
-        <HamburgerMenu id='active' onClick={toggleModalHandler}>
+        <HamburgerMenu
+          id='active'
+          onClick={() => {
+            closeOtherModalsHandler();
+            toggleModalHandler();
+          }}
+        >
           <Line className={toggleModal && 'toggle'} />
           <Line className={toggleModal && 'toggle'} />
           <Line className={toggleModal && 'toggle'} />
@@ -28,7 +38,7 @@ const Navigation = () => {
           <Icon src={github} id='active' />
         </SocialMedia>
       </Wrapper>
-      <Modal toggleModal={toggleModal} />
+      <Modal toggleModal={toggleModal} toggleModalHandler={toggleModalHandler} />
       <StyledDotTop className={toggleModal && 'toggle'} />
       <StyledDotBottom className={toggleModal && 'toggle'} />
     </>

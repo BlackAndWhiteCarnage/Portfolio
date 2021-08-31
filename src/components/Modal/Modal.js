@@ -1,19 +1,20 @@
 import React from 'react';
+import LinkTo from 'components/LinkTo/LinkTo';
 // STYLES
 import { ModalWrapper, LinksWrapper, Link } from './Modal.styles';
 
-const Modal = ({ toggleModal }) => {
+const Modal = ({ toggleModal, toggleModalHandler }) => {
   return (
-    <ModalWrapper className={toggleModal && 'toggle'}>
+    <ModalWrapper className={toggleModal && 'toggle'} onClick={() => toggleModalHandler()}>
       <LinksWrapper>
-        <Link id='active' text='O MNIE'>
-          O MNIE
+        <Link id='active' text='ABOUT ME'>
+          <LinkTo text='ABOUT ME' to='ABOUT ME' toggleModalHandler={toggleModalHandler} />
         </Link>
-        <Link id='active' text='PROJEKTY'>
-          PROJEKTY
+        <Link id='active' text='PROJECTS'>
+          <LinkTo text='PROJECTS' to='PROJECTS' toggleModalHandler={toggleModalHandler} />
         </Link>
-        <Link id='active' text='KONTAKT'>
-          KONTAKT
+        <Link id='active' text='CONTACT'>
+          <LinkTo text='CONTACT' to='CONTACT' toggleModalHandler={toggleModalHandler} />
         </Link>
       </LinksWrapper>
     </ModalWrapper>

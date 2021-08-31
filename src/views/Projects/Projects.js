@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// COMPONENTS
-import SectionHeader from 'components/SectionHeader/SectionHeader';
 // PROJECTS DATA
 import { projects } from 'data/projectsData';
 // HELPERS
@@ -8,7 +6,7 @@ import { useScroll } from 'helpers/useScroll';
 import link from 'assets/icons/link-icon.svg';
 import github from 'assets/icons/github-icon.svg';
 // ANIMATIONS
-import { fade, headerAnimation, slide } from 'assets/animations/animation';
+import { fade, slide } from 'assets/animations/animation';
 // STYLES
 import {
   Wrapper,
@@ -18,12 +16,12 @@ import {
   ProjectTitle,
   SliderInfoWrapper,
   IsSliderLockedInfo,
-  Header,
   Links,
   ProjectLinksWrapper,
+  PreviewProjectWrapper,
 } from './Projects.styles';
 
-const Projects = () => {
+const Projects = ({ viewProject, setViewProject }) => {
   const [element, controls] = useScroll();
 
   const [clock, setClock] = useState(0);
@@ -56,8 +54,9 @@ const Projects = () => {
   }, [clock]);
 
   const projectHandler = (index) => {
-    if (index === current) {
-    } else if (next === index) {
+    setIsLocked(true);
+
+    if (next === index) {
       setIsLocked(true);
       setCurrent(current === 0 ? (current = projects.length - 1) : current - 1);
       setNext(next === 0 ? (next = projects.length - 1) : next - 1);
@@ -94,6 +93,10 @@ const Projects = () => {
     }
   };
 
+  const toggleProjectModalHandler = (project) => {
+    setViewProject(project);
+  };
+
   return (
     <Wrapper
       variants={fade}
@@ -105,16 +108,21 @@ const Projects = () => {
       onTouchEnd={touchEndHandler}
       id='PROJECTS'
     >
-      <ProjectsSliderWrapper>
+      <ProjectsSliderWrapper className={viewProject && 'previewProject'}>
         {projects.map((project, index) => (
           <Project
             className={`${current === index && 'show'} ${next === index && 'next'} ${prev === index && 'prev'}`}
             id='active'
             onClick={() => {
-              projectHandler(index);
+              if (index === current) {
+                toggleProjectModalHandler(project);
+                projectHandler(index);
+              } else {
+                projectHandler(index);
+              }
             }}
           >
-            <ProjectImage src={project.image} />
+            <ProjectImage src={project.image} className={current === index && viewProject && 'previewProject'} />
             <ProjectTitle className={index === current && 'show'}>{project.title}</ProjectTitle>
             <ProjectLinksWrapper className={index === current && 'show'}>
               <Links>
@@ -137,6 +145,9 @@ const Projects = () => {
           </p>
         </IsSliderLockedInfo>
       </ProjectsSliderWrapper>
+      <PreviewProjectWrapper className={viewProject && 'show'} onClick={() => toggleProjectModalHandler(false)}>
+        projects...
+      </PreviewProjectWrapper>
     </Wrapper>
   );
 };

@@ -5,6 +5,7 @@ export const ShadowWrapper = styled.div`
   width: 100%;
   height: 0;
   box-shadow: 0px 0px 100px 150px ${({ theme }) => theme.colors.white};
+  transition: 0.5s 1s;
   &.bottom {
     bottom: 0;
     @media screen and (max-width: 680px) {
@@ -20,5 +21,9 @@ export const ShadowWrapper = styled.div`
       box-shadow: 0px 0px 50px 25px ${({ theme }) => theme.colors.white};
     }
   }
-  z-index: 100;
+  &.hide {
+    transition: 0s;
+    opacity: 0;
+  }
+  z-index: 90;
 `;

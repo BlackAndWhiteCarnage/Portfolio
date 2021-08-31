@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 // COMPONENTS
 import Modal from 'components/Modal/Modal';
+import Slider from 'components/Slider/Slider';
 // ICONS
 import facebook from 'assets/icons/facebook-icon.svg';
 import github from 'assets/icons/github-icon.svg';
 // STYLES
-import { Wrapper, HamburgerMenu, Line, SocialMedia, Icon, StyledDotBottom, StyledDotTop } from './Navigation.styles';
+import { Wrapper, HamburgerMenu, Line, SocialMedia, Icon } from './Navigation.styles';
 
-const Navigation = ({ setToggleReadMore }) => {
+const Navigation = ({ setToggleReadMore, setViewProject }) => {
   const [toggleModal, setToggleModal] = useState(false);
 
   const toggleModalHandler = () => {
@@ -16,6 +17,7 @@ const Navigation = ({ setToggleReadMore }) => {
 
   const closeOtherModalsHandler = () => {
     setToggleReadMore(false);
+    setViewProject(false);
   };
 
   return (
@@ -39,8 +41,7 @@ const Navigation = ({ setToggleReadMore }) => {
         </SocialMedia>
       </Wrapper>
       <Modal toggleModal={toggleModal} toggleModalHandler={toggleModalHandler} />
-      <StyledDotTop className={toggleModal && 'toggle'} />
-      <StyledDotBottom className={toggleModal && 'toggle'} />
+      <Slider toggle={toggleModal} />
     </>
   );
 };

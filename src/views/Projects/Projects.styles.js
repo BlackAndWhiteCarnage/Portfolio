@@ -22,9 +22,15 @@ export const ProjectsSliderWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   max-width: 1200px;
+  transition: 1s 0.5s ease;
   @media screen and (max-width: 680px) {
     width: 70%;
     height: 250px;
+  }
+  &.previewProject {
+    transition: 0.5s ease;
+    opacity: 0;
+    transform: scale(0);
   }
 `;
 
@@ -42,6 +48,7 @@ export const Project = styled.div`
   transform: scale(0);
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
     0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+
   &::before {
     content: 'CLICK TO LEARN MORE';
     position: absolute;
@@ -55,6 +62,7 @@ export const Project = styled.div`
     transition: 0.5s 0.25s ease;
     color: ${({ theme }) => theme.colors.white};
     font-weight: 400;
+    pointer-events: none;
   }
   &.show,
   &.next,
@@ -105,7 +113,14 @@ export const Project = styled.div`
 
 export const ProjectImage = styled.img`
   width: 100%;
+  height: 100%;
   pointer-events: none;
+  transition: 0.5s ease;
+  object-fit: cover;
+  /* &.previewProject {
+    z-index: 10;
+    transform: scale(5);
+  } */
 `;
 
 export const ProjectTitle = styled.h2`
@@ -200,6 +215,19 @@ export const IsSliderLockedInfo = styled(motion.p)`
   }
 `;
 
-export const Header = styled(motion.h2)`
-  margin-bottom: 60px;
+export const PreviewProjectWrapper = styled.div`
+  z-index: 250;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  pointer-events: none;
+  bottom: -100%;
+  left: 0;
+  background: ${({ theme }) => theme.colors.white};
+  transition: 1s ease;
+  &.show {
+    pointer-events: all;
+    transition: 1s ease;
+    bottom: 0;
+  }
 `;

@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import arrowRight from 'assets/icons/arrowRight-icon.svg';
 import filePreview from 'assets/icons/filePreview-icon.svg';
 // COMPONENTS
-import SectionHeader from 'components/SectionHeader/SectionHeader';
+import Slider from 'components/Slider/Slider';
 // HELPERS
 import { useScroll } from 'helpers/useScroll';
 // ANIMATIONS
-import { fade, slide, headerAnimation } from 'assets/animations/animation';
-import { Wrapper, AboutMeWrapper, Header, Article, ButtonsWrapper, Button, ReadMoreWrapper, ReadMore, Slider, White, Black } from './AboutMe.styles';
+import { fade, slide } from 'assets/animations/animation';
+import { Wrapper, AboutMeWrapper, Article, ButtonsWrapper, Button, ReadMoreWrapper, ReadMore } from './AboutMe.styles';
 // RESUME
 import cv from 'documents/cv.pdf';
 
@@ -18,14 +18,9 @@ const AboutMe = ({ toggleReadMore, setToggleReadMore }) => {
     setToggleReadMore(!toggleReadMore);
   };
 
-  useEffect(() => {
-    document.body.style.overflowY = `${toggleReadMore ? 'hidden' : 'scroll'}`;
-  }, [toggleReadMore]);
-
   return (
     <>
       <Wrapper variants={fade} animate={controls} initial='hidden' ref={element} id='ABOUT ME'>
-        {/* <SectionHeader text='ABOUT ME' /> */}
         <AboutMeWrapper variants={slide}>
           <Article variants={slide}>
             Oh shit it works! When i’ve started to learn JavaScript, it was hard. I mean, my bad that i’ve rushed a little bit rusted eduweb course
@@ -51,12 +46,9 @@ const AboutMe = ({ toggleReadMore, setToggleReadMore }) => {
         </AboutMeWrapper>
       </Wrapper>
       <ReadMoreWrapper className={toggleReadMore && 'show'} onClick={toggleReadMoreHandler}>
-        <ReadMore>adsads</ReadMore>
+        <ReadMore>READ MORE ABOUT ME...</ReadMore>
       </ReadMoreWrapper>
-      <Slider className={toggleReadMore && 'show'}>
-        <White className={toggleReadMore && 'show'} />
-        <Black className={toggleReadMore && 'show'} />
-      </Slider>
+      <Slider toggle={toggleReadMore} />
     </>
   );
 };

@@ -134,12 +134,12 @@ export const ReadMoreWrapper = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   transition: 1s ease;
-  z-index: 250;
+  z-index: 150;
   @media screen and (max-width: 680px) {
     overflow-y: scroll;
   }
   &.show {
-    transition: 0.5s 1s ease;
+    transition: 0.5s 0.5s ease;
     opacity: 1;
     pointer-events: all;
   }
@@ -149,56 +149,4 @@ export const ReadMore = styled.div`
   min-width: 600px;
   min-height: 800px;
   margin: 100px;
-  /* background: blueviolet; */
-`;
-
-export const Slider = styled.div`
-  top: 0;
-  left: 0;
-  z-index: 200;
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  /* background: ${({ theme }) => theme.colors.black}; */
-  display: flex;
-  flex-direction: column;
-  pointer-events: none;
-  &.show {
-    /* top: 200%; */
-    transition: 3s ease;
-  }
-`;
-
-export const White = styled.div`
-  position: fixed;
-  width: 200%;
-  height: 100%;
-  border-radius: 50%;
-  background: ${({ theme }) => theme.colors.white};
-  transition: 0.5s ease;
-  z-index: 1;
-  bottom: -100%;
-  right: -500px;
-  &.show {
-    transition: 1s 0.5s ease;
-    height: 300%;
-    width: 300%;
-  }
-`;
-
-export const Black = styled.div`
-  position: fixed;
-  width: 300%;
-  height: 200%;
-  border-radius: 50%;
-  background: ${({ theme }) => theme.colors.black};
-  transition: 1s 0.5s ease;
-  z-index: -1;
-  top: -200%;
-  left: 50%;
-  transform: translate(-50%);
-  &.show {
-    transition: 1s ease;
-    top: -50%;
-  }
 `;

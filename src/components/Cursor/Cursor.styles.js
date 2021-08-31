@@ -12,10 +12,7 @@ export const CursorWrapper = styled.div`
   pointer-events: none;
   transition: all 0.5s ease;
   transition-property: transform;
-  /* transform-origin: 130% 130%; */
   transform-origin: 100% -20%;
-  /* border: 2px solid white; */
-  /* backdrop-filter: invert(100%); */
   border-radius: 50%;
   &::before {
     content: '';
@@ -57,16 +54,7 @@ export const CursorWrapper = styled.div`
     }
   }
   &.active {
-    /* backdrop-filter: invert(100%); */
-    /* transform: scale(1.5 */
-    /* border: none; */
-    /* border-radius: 50%; */
-    /* backdrop-filter: invert(100%); */
     transform: scale(1.2) rotate(45deg);
-    /* background: rgba(255, 255, 255, 0.1);
-    background: rgba(0, 0, 0, 0.5); */
-    /* transform-origin: 100% 0; */
-    /* border-radius: 50%; */
     &::before {
       border-radius: 50%;
     }

@@ -12,13 +12,6 @@ const Cursor = () => {
     return;
   };
 
-  const cursorPulseHandler = (e) => {
-    ref.current.classList.add('pulse');
-    setTimeout(() => {
-      ref.current.classList.remove('pulse');
-    }, 300);
-  };
-
   const activeCursorHandler = (e) => {
     const item = e.target;
     if (
@@ -40,7 +33,6 @@ const Cursor = () => {
   useEffect(() => {
     window.addEventListener('mousemove', mouseMoveHandler);
     window.addEventListener('mouseover', activeCursorHandler);
-    window.addEventListener('click', cursorPulseHandler);
 
     return;
   }, []);

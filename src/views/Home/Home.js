@@ -1,4 +1,5 @@
 import React from 'react';
+// COMPONENTS
 import LinkTo from 'components/LinkTo/LinkTo';
 // ICONS
 import logoLeftPart from 'assets/icons/logoLeftPart-icon.svg';

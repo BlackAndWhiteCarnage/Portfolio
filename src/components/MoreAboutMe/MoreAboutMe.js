@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+// STYLES
 import { ReadMoreWrapper, ReadMore, Header, Answer } from './MoreAboutMe.styles';
 
 const MoreAboutMe = ({ toggleReadMore, toggleReadMoreHandler }) => {

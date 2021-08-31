@@ -5,8 +5,6 @@ import phone from 'assets/icons/phone-icon.svg';
 import send from 'assets/icons/send-icon.svg';
 import waitingIcon from 'assets/icons/waiting-icon.svg';
 import { Button } from 'views/AboutMe/AboutMe.styles';
-// COMPONENTS
-import SectionHeader from 'components/SectionHeader/SectionHeader';
 // HELPERS
 import { useScroll } from 'helpers/useScroll';
 // ANIMATIONS
@@ -98,7 +96,6 @@ const Contact = () => {
 
   return (
     <Wrapper id='CONTACT'>
-      {/* <SectionHeader text='CONTACT' /> */}
       <ContactWrapper>
         <Form variants={slide} className={emailSend && 'emailSend'}>
           <Label variants={slide}>EMAIL</Label>

@@ -1,4 +1,5 @@
 import React from 'react';
+// COMPONENTS
 import LinkTo from 'components/LinkTo/LinkTo';
 // STYLES
 import { ModalWrapper, LinksWrapper, Link } from './Modal.styles';

@@ -3,25 +3,14 @@ import React, { useState, useEffect } from 'react';
 import { projects } from 'data/projectsData';
 // COMPONENTS
 import Slider from 'components/Slider/Slider';
+import Project from 'components/Project/Project';
+import SliderInfo from 'components/SliderInfo/SliderInfo';
 // HELPERS
 import { useScroll } from 'helpers/useScroll';
-import link from 'assets/icons/link-icon.svg';
-import github from 'assets/icons/github-icon.svg';
 // ANIMATIONS
 import { fade, slide } from 'assets/animations/animation';
 // STYLES
-import {
-  Wrapper,
-  ProjectsSliderWrapper,
-  Project,
-  ProjectImage,
-  ProjectTitle,
-  SliderInfoWrapper,
-  IsSliderLockedInfo,
-  Links,
-  ProjectLinksWrapper,
-  PreviewProjectWrapper,
-} from './Projects.styles';
+import { Wrapper, ProjectsSliderWrapper, PreviewProjectWrapper } from './Projects.styles';
 
 const Projects = ({ viewProject, setViewProject }) => {
   const [element, controls] = useScroll();
@@ -40,21 +29,6 @@ const Projects = ({ viewProject, setViewProject }) => {
     setPrev(prev === projects.length - 1 ? 0 : prev + 1);
   };
 
-  const fireSlider = () => {
-    if (isLocked) {
-      return;
-    }
-    toggleInterval = setInterval(() => {
-      setClock(clock + 1);
-    }, 3000);
-    slider();
-  };
-
-  useEffect(() => {
-    fireSlider();
-    return () => clearTimeout(toggleInterval);
-  }, [clock]);
-
   const projectHandler = (index) => {
     setIsLocked(true);
 
@@ -70,6 +44,21 @@ const Projects = ({ viewProject, setViewProject }) => {
       setPrev(prev === projects.length - 1 ? 0 : prev + 1);
     }
   };
+
+  const fireSlider = () => {
+    if (isLocked) {
+      return;
+    }
+    toggleInterval = setInterval(() => {
+      setClock(clock + 1);
+    }, 3000);
+    slider();
+  };
+
+  useEffect(() => {
+    fireSlider();
+    return () => clearTimeout(toggleInterval);
+  }, [clock]);
 
   let startX, moveX;
 
@@ -113,39 +102,17 @@ const Projects = ({ viewProject, setViewProject }) => {
       <ProjectsSliderWrapper className={viewProject && 'previewProject'}>
         {projects.map((project, index) => (
           <Project
-            className={`${current === index && 'show'} ${next === index && 'next'} ${prev === index && 'prev'}`}
-            id='active'
-            onClick={() => {
-              if (index === current) {
-                toggleProjectModalHandler(project);
-                projectHandler(index);
-              } else {
-                projectHandler(index);
-              }
-            }}
-          >
-            <ProjectImage src={project.image} className={current === index && viewProject && 'previewProject'} />
-            <ProjectTitle className={index === current && 'show'}>{project.title}</ProjectTitle>
-            <ProjectLinksWrapper className={index === current && 'show'}>
-              <Links>
-                <img src={link} />
-              </Links>
-              <Links>
-                <img src={github} />
-              </Links>
-            </ProjectLinksWrapper>
-          </Project>
+            current={current}
+            index={index}
+            next={next}
+            prev={prev}
+            project={project}
+            toggleProjectModalHandler={toggleProjectModalHandler}
+            projectHandler={projectHandler}
+            viewProject={viewProject}
+          />
         ))}
-        <SliderInfoWrapper variants={slide}>
-          <p>
-            <strong>Click</strong> on projects to interact.
-          </p>
-        </SliderInfoWrapper>
-        <IsSliderLockedInfo variants={slide}>
-          <p>
-            Slider <strong>{!isLocked ? 'unlocked' : 'locked'}</strong>
-          </p>
-        </IsSliderLockedInfo>
+        <SliderInfo slide={slide} isLocked={isLocked} />
       </ProjectsSliderWrapper>
       <PreviewProjectWrapper className={viewProject && 'show'} onClick={() => toggleProjectModalHandler(false)}>
         projects...

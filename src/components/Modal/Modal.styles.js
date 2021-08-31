@@ -64,7 +64,6 @@ export const Link = styled.li`
       content: '';
       width: 100%;
       height: 100%;
-      /* background: ${({ theme }) => theme.colors.black}; */
       border: 1px solid ${({ theme }) => theme.colors.black};
       opacity: 0;
       z-index: -1;
@@ -72,7 +71,6 @@ export const Link = styled.li`
       pointer-events: none;
     }
     &:hover {
-      /* color: ${({ theme }) => theme.colors.white}; */
       transition: 0.5s ease;
       &::after {
         transition: 0.5s ease;

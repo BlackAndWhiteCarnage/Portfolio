@@ -1,4 +1,5 @@
 import React from 'react';
+// STYLES
 import { ShadowWrapper } from './ShadowLayer.styles';
 
 const ShadowLayer = ({ className, viewProject }) => {

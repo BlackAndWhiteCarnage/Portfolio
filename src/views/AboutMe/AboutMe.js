@@ -1,4 +1,5 @@
 import React from 'react';
+// ICONS
 import arrowRight from 'assets/icons/arrowRight-icon.svg';
 import filePreview from 'assets/icons/filePreview-icon.svg';
 // COMPONENTS
@@ -7,7 +8,7 @@ import Slider from 'components/Slider/Slider';
 import { useScroll } from 'helpers/useScroll';
 // ANIMATIONS
 import { fade, slide } from 'assets/animations/animation';
-import { Wrapper, AboutMeWrapper, Article, ButtonsWrapper, Button, ReadMoreWrapper, ReadMore, Header, Answer } from './AboutMe.styles';
+import { Wrapper, AboutMeWrapper, Article, ButtonsWrapper, Button } from './AboutMe.styles';
 // RESUME
 import cv from 'documents/cv.pdf';
 import MoreAboutMe from 'components/MoreAboutMe/MoreAboutMe';

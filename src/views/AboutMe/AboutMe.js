@@ -7,9 +7,10 @@ import Slider from 'components/Slider/Slider';
 import { useScroll } from 'helpers/useScroll';
 // ANIMATIONS
 import { fade, slide } from 'assets/animations/animation';
-import { Wrapper, AboutMeWrapper, Article, ButtonsWrapper, Button, ReadMoreWrapper, ReadMore } from './AboutMe.styles';
+import { Wrapper, AboutMeWrapper, Article, ButtonsWrapper, Button, ReadMoreWrapper, ReadMore, Header, Answer } from './AboutMe.styles';
 // RESUME
 import cv from 'documents/cv.pdf';
+import MoreAboutMe from 'components/MoreAboutMe/MoreAboutMe';
 
 const AboutMe = ({ toggleReadMore, setToggleReadMore }) => {
   const [element, controls] = useScroll();
@@ -21,7 +22,7 @@ const AboutMe = ({ toggleReadMore, setToggleReadMore }) => {
   return (
     <>
       <Wrapper variants={fade} animate={controls} initial='hidden' ref={element} id='ABOUT ME'>
-        <AboutMeWrapper variants={slide}>
+        <AboutMeWrapper variants={slide} className={toggleReadMore && 'hide'}>
           <Article variants={slide}>
             Oh shit it works! When i’ve started to learn JavaScript, it was hard. I mean, my bad that i’ve rushed a little bit rusted eduweb course
             and I didnt take more from the lessons that my notes. After a while I have started to understand all the principles in that programming
@@ -45,9 +46,7 @@ const AboutMe = ({ toggleReadMore, setToggleReadMore }) => {
           </ButtonsWrapper>
         </AboutMeWrapper>
       </Wrapper>
-      <ReadMoreWrapper className={toggleReadMore && 'show'} onClick={toggleReadMoreHandler}>
-        <ReadMore>READ MORE ABOUT ME...</ReadMore>
-      </ReadMoreWrapper>
+      <MoreAboutMe toggleReadMore={toggleReadMore} toggleReadMoreHandler={toggleReadMoreHandler} />
       <Slider toggle={toggleReadMore} />
     </>
   );

@@ -117,10 +117,6 @@ export const ProjectImage = styled.img`
   pointer-events: none;
   transition: 0.5s ease;
   object-fit: cover;
-  /* &.previewProject {
-    z-index: 10;
-    transform: scale(5);
-  } */
 `;
 
 export const ProjectTitle = styled.h2`

@@ -22,6 +22,11 @@ export const AboutMeWrapper = styled.div`
   @media screen and (max-width: 1000px) {
     width: 80%;
   }
+  &.hide {
+    transition: 0.5s ease;
+    opacity: 0;
+    transform: scale(0);
+  }
 `;
 
 export const Article = styled(motion.article)`
@@ -119,36 +124,4 @@ export const Button = styled(motion.button)`
       transition: 0.5s ease;
     }
   }
-`;
-
-export const ReadMoreWrapper = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  z-index: 150;
-  transition: 0.5s ease;
-  opacity: 0;
-  transform: scale(2);
-  @media screen and (max-width: 680px) {
-    overflow-y: scroll;
-  }
-  &.show {
-    transform: scale(1);
-    transition: 1s 0.5s ease;
-    opacity: 1;
-    pointer-events: all;
-  }
-`;
-
-export const ReadMore = styled.div`
-  min-width: 600px;
-  min-height: 800px;
-  margin: 100px;
 `;

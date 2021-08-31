@@ -221,13 +221,15 @@ export const PreviewProjectWrapper = styled.div`
   height: 100%;
   position: fixed;
   pointer-events: none;
-  bottom: -100%;
+  top: 0;
   left: 0;
-  background: ${({ theme }) => theme.colors.white};
-  transition: 1s ease;
+  transition: 0.5s ease;
+  opacity: 0;
+  transform: scale(2);
   &.show {
+    transform: scale(1);
+    opacity: 1;
     pointer-events: all;
-    transition: 1s ease;
-    bottom: 0;
+    transition: 1s 0.5s ease;
   }
 `;

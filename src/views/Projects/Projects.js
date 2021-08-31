@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 // PROJECTS DATA
 import { projects } from 'data/projectsData';
+// COMPONENTS
+import Slider from 'components/Slider/Slider';
 // HELPERS
 import { useScroll } from 'helpers/useScroll';
 import link from 'assets/icons/link-icon.svg';
@@ -148,6 +150,7 @@ const Projects = ({ viewProject, setViewProject }) => {
       <PreviewProjectWrapper className={viewProject && 'show'} onClick={() => toggleProjectModalHandler(false)}>
         projects...
       </PreviewProjectWrapper>
+      <Slider toggle={viewProject} />
     </Wrapper>
   );
 };

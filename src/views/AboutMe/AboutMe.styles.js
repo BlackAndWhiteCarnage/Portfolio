@@ -128,18 +128,20 @@ export const ReadMoreWrapper = styled.div`
   width: 100%;
   height: 100%;
   pointer-events: none;
-  opacity: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  transition: 1s ease;
   z-index: 150;
+  transition: 0.5s ease;
+  opacity: 0;
+  transform: scale(2);
   @media screen and (max-width: 680px) {
     overflow-y: scroll;
   }
   &.show {
-    transition: 0.5s 0.5s ease;
+    transform: scale(1);
+    transition: 1s 0.5s ease;
     opacity: 1;
     pointer-events: all;
   }

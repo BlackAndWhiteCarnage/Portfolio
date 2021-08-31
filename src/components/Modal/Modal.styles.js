@@ -14,10 +14,14 @@ export const ModalWrapper = styled.nav`
   flex-direction: column;
   opacity: 0;
   pointer-events: none;
+  transition: 0.5s ease;
+  opacity: 0;
+  transform: scale(2);
   &.toggle {
+    transform: scale(1);
     opacity: 1;
     pointer-events: all;
-    transition: 0.5s 0.5s;
+    transition: 1s 0.5s ease;
   }
 `;
 

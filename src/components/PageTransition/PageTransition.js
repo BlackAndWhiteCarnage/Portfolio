@@ -1,8 +1,8 @@
 import React from 'react';
 // STYLES
-import { StyledDotTop, StyledDotBottom } from './Slider.styles';
+import { StyledDotTop, StyledDotBottom } from './PageTransition.styles';
 
-const Slider = ({ toggle }) => {
+const PageTransition = ({ toggle }) => {
   return (
     <>
       <StyledDotTop className={toggle && 'toggle'} />
@@ -11,4 +11,4 @@ const Slider = ({ toggle }) => {
   );
 };
 
-export default Slider;
+export default PageTransition;

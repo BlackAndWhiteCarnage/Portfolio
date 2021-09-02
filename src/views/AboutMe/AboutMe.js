@@ -3,7 +3,7 @@ import React from 'react';
 import arrowRight from 'assets/icons/arrowRight-icon.svg';
 import filePreview from 'assets/icons/filePreview-icon.svg';
 // COMPONENTS
-import Slider from 'components/Slider/Slider';
+import PageTransition from 'components/PageTransition/PageTransition';
 // HELPERS
 import { useScroll } from 'helpers/useScroll';
 // ANIMATIONS
@@ -48,7 +48,7 @@ const AboutMe = ({ toggleReadMore, setToggleReadMore }) => {
         </AboutMeWrapper>
       </Wrapper>
       <MoreAboutMe toggleReadMore={toggleReadMore} toggleReadMoreHandler={toggleReadMoreHandler} />
-      <Slider toggle={toggleReadMore} />
+      <PageTransition toggle={toggleReadMore} />
     </>
   );
 };

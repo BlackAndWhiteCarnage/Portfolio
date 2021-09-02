@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 // COMPONENTS
 import Modal from 'components/Modal/Modal';
-import Slider from 'components/Slider/Slider';
+import PageTransition from 'components/PageTransition/PageTransition';
 // ICONS
 import facebook from 'assets/icons/facebook-icon.svg';
 import github from 'assets/icons/github-icon.svg';
@@ -41,7 +41,7 @@ const Navigation = ({ setToggleReadMore, setViewProject, viewProject }) => {
         </SocialMedia>
       </Wrapper>
       <Modal toggleModal={toggleModal} toggleModalHandler={toggleModalHandler} />
-      <Slider toggle={toggleModal} />
+      <PageTransition toggle={toggleModal} />
     </>
   );
 };

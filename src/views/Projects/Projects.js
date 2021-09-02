@@ -10,7 +10,19 @@ import { useScroll } from 'helpers/useScroll';
 // ANIMATIONS
 import { fade, slide } from 'assets/animations/animation';
 // STYLES
-import { Wrapper, ProjectsSliderWrapper, PreviewProjectWrapper } from './Projects.styles';
+import {
+  Wrapper,
+  ProjectsSliderWrapper,
+  PreviewProjectWrapper,
+  PreviewProject,
+  PreviewProjectTitle,
+  PreviewProjectRwd,
+  LoadingWrapper,
+  Dot,
+  Header,
+  UsedTools,
+  Tool,
+} from './Projects.styles';
 
 const Projects = ({ viewProject, setViewProject }) => {
   const [element, controls] = useScroll();
@@ -20,6 +32,8 @@ const Projects = ({ viewProject, setViewProject }) => {
   let [current, setCurrent] = useState(0);
   let [next, setNext] = useState(projects.length - 1);
   let [prev, setPrev] = useState(current + 1);
+
+  const [isLoaded, setIsLoaded] = useState(false);
 
   let toggleInterval = false;
 
@@ -34,11 +48,13 @@ const Projects = ({ viewProject, setViewProject }) => {
 
     if (next === index) {
       setIsLocked(true);
+      setIsLoaded(false);
       setCurrent(current === 0 ? (current = projects.length - 1) : current - 1);
       setNext(next === 0 ? (next = projects.length - 1) : next - 1);
       setPrev(prev === 0 ? (prev = projects.length - 1) : prev - 1);
     } else if (prev === index) {
       setIsLocked(true);
+      setIsLoaded(false);
       setCurrent(current === projects.length - 1 ? 0 : current + 1);
       setNext(next === projects.length - 1 ? 0 : next + 1);
       setPrev(prev === projects.length - 1 ? 0 : prev + 1);
@@ -73,11 +89,13 @@ const Projects = ({ viewProject, setViewProject }) => {
   const touchEndHandler = () => {
     if (startX + 80 < moveX) {
       setIsLocked(true);
+      setIsLoaded(false);
       setCurrent(current === projects.length - 1 ? 0 : current + 1);
       setNext(next === projects.length - 1 ? 0 : next + 1);
       setPrev(prev === projects.length - 1 ? 0 : prev + 1);
     } else if (startX - 80 > moveX) {
       setIsLocked(true);
+      setIsLoaded(false);
       setCurrent(current === 0 ? (current = projects.length - 1) : current - 1);
       setNext(next === 0 ? (next = projects.length - 1) : next - 1);
       setPrev(prev === 0 ? (prev = projects.length - 1) : prev - 1);
@@ -85,8 +103,26 @@ const Projects = ({ viewProject, setViewProject }) => {
   };
 
   const toggleProjectModalHandler = (project) => {
-    setViewProject(project);
+    if (project !== false) {
+      setViewProject({ isToggled: true, data: project });
+    } else {
+      setViewProject({ ...viewProject, isToggled: false });
+    }
   };
+
+  const checkIfLoadedHandler = (e) => {
+    if (e.naturalHeight !== 0) {
+      setIsLoaded(true);
+    } else {
+      setIsLoaded(false);
+    }
+  };
+
+  // console.log(
+  //   viewProject.data.usedTools.map((item) => {
+  //     console.log(item);
+  //   })
+  // );
 
   return (
     <Wrapper
@@ -99,7 +135,7 @@ const Projects = ({ viewProject, setViewProject }) => {
       onTouchEnd={touchEndHandler}
       id='PROJECTS'
     >
-      <ProjectsSliderWrapper className={viewProject && 'previewProject'}>
+      <ProjectsSliderWrapper className={viewProject.isToggled && 'previewProject'}>
         {projects.map((project, index) => (
           <Project
             current={current}
@@ -114,10 +150,21 @@ const Projects = ({ viewProject, setViewProject }) => {
         ))}
         <SliderInfo slide={slide} isLocked={isLocked} />
       </ProjectsSliderWrapper>
-      <PreviewProjectWrapper className={viewProject && 'show'} onClick={() => toggleProjectModalHandler(false)}>
-        projects...
+      <PreviewProjectWrapper className={viewProject.isToggled && 'show'} onClick={() => toggleProjectModalHandler(false)}>
+        <PreviewProject>
+          <PreviewProjectTitle>{viewProject.data.title}</PreviewProjectTitle>
+          <PreviewProjectRwd src={viewProject.data.img} onLoad={checkIfLoadedHandler} className={isLoaded && 'show'} />
+          <Header>Used tools:</Header>
+          <UsedTools>{viewProject.data !== false && viewProject.data.usedTools.map((usedTool) => <Tool>{usedTool}</Tool>)}</UsedTools>
+          <LoadingWrapper className={!isLoaded && 'show'}>
+            <Dot className={!isLoaded && 'show'} />
+            <Dot className={!isLoaded && 'show'} />
+            <Dot className={!isLoaded && 'show'} />
+            <Dot className={!isLoaded && 'show'} />
+          </LoadingWrapper>
+        </PreviewProject>
       </PreviewProjectWrapper>
-      <Slider toggle={viewProject} />
+      <Slider toggle={viewProject.isToggled} />
     </Wrapper>
   );
 };

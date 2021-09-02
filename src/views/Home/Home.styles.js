@@ -103,6 +103,8 @@ export const NavItem = styled(motion.li)`
   padding: 10px;
   cursor: pointer;
   position: relative;
+  width: 120px;
+  height: 50px;
   @media screen and (min-width: 1200px) {
     &::before {
       position: absolute;

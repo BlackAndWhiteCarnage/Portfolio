@@ -1,6 +1,9 @@
 import lamiapassionemalteseDesktop from 'assets/images/lamiapassionemaltese-desktop.jpeg';
 import euphoriaDesktop from 'assets/images/euphoria-desktop.jpeg';
 import nicetomeetyouDesktop from 'assets/images/nicetomeetyou-desktop.jpeg';
+import euphoria from 'assets/projectsRwdImages/Euphoria.png';
+import laMiaPassioneMaltese from 'assets/projectsRwdImages/LaMiaPassioneMaltese.png';
+import niceToMeetYou from 'assets/projectsRwdImages/NiceToMeetYou.png';
 
 export const projects = [
   {
@@ -9,7 +12,8 @@ export const projects = [
     repo: 'https://github.com/BlackAndWhiteCarnage/La-Mia-Passione-Maltese',
     image: lamiapassionemalteseDesktop,
     description: '',
-    toolsUsed: ['React', 'Styled Components', 'Framer Motion'],
+    img: laMiaPassioneMaltese,
+    usedTools: ['React', 'Styled Components', 'Framer Motion', 'React Scroll'],
   },
   {
     title: 'Euphoria',
@@ -17,7 +21,8 @@ export const projects = [
     repo: 'https://github.com/BlackAndWhiteCarnage/La-Mia-Passione-Maltese',
     image: euphoriaDesktop,
     description: '',
-    toolsUsed: ['React', 'Styled Components', 'Framer Motion'],
+    img: euphoria,
+    usedTools: ['React', 'Styled Components', 'Framer Motion', 'Strapi.js', 'React Router Dom'],
   },
   {
     title: 'Nice To Meet You',
@@ -25,6 +30,7 @@ export const projects = [
     repo: 'https://github.com/BlackAndWhiteCarnage/La-Mia-Passione-Maltese',
     image: nicetomeetyouDesktop,
     description: '',
-    toolsUsed: ['React', 'Styled Components', 'Framer Motion'],
+    img: niceToMeetYou,
+    usedTools: ['Vanilla Js', 'SCSS'],
   },
 ];

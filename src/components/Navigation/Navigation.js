@@ -8,7 +8,7 @@ import github from 'assets/icons/github-icon.svg';
 // STYLES
 import { Wrapper, HamburgerMenu, Line, SocialMedia, Icon } from './Navigation.styles';
 
-const Navigation = ({ setToggleReadMore, setViewProject }) => {
+const Navigation = ({ setToggleReadMore, setViewProject, viewProject }) => {
   const [toggleModal, setToggleModal] = useState(false);
 
   const toggleModalHandler = () => {
@@ -17,7 +17,7 @@ const Navigation = ({ setToggleReadMore, setViewProject }) => {
 
   const closeOtherModalsHandler = () => {
     setToggleReadMore(false);
-    setViewProject(false);
+    setViewProject({ ...viewProject, isToggled: false });
   };
 
   return (

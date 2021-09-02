@@ -22,7 +22,7 @@ export const ReadMoreWrapper = styled.div`
   }
   &.show {
     transform: scale(1);
-    transition: 1s 0.5s ease;
+    transition: 1s 1s ease;
     opacity: 1;
     pointer-events: all;
   }
@@ -31,6 +31,7 @@ export const ReadMoreWrapper = styled.div`
 export const ReadMore = styled.div`
   width: 60%;
   min-height: 600px;
+  max-width: 1200px;
   height: auto;
   @media screen and (max-width: 1000px) {
     width: 80%;

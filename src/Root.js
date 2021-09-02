@@ -17,10 +17,11 @@ import { matchMedia } from 'helpers/matchMedia';
 
 function Root() {
   const [toggleReadMore, setToggleReadMore] = useState(false);
-  const [viewProject, setViewProject] = useState(false);
+  const [viewProject, setViewProject] = useState({ isToggled: false, data: false });
+  // const [viewProject, setViewProject] = useState(false);
 
   useEffect(() => {
-    document.body.style.overflowY = `${toggleReadMore || viewProject ? 'hidden' : 'scroll'}`;
+    document.body.style.overflowY = `${toggleReadMore || viewProject.isToggled ? 'hidden' : 'scroll'}`;
   }, [toggleReadMore, viewProject]);
 
   return (
@@ -28,13 +29,13 @@ function Root() {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         {matchMedia && <Cursor />}
-        <Navigation setToggleReadMore={setToggleReadMore} setViewProject={setViewProject} />
+        <Navigation setToggleReadMore={setToggleReadMore} viewProject={viewProject} setViewProject={setViewProject} />
         <Home />
         <AboutMe toggleReadMore={toggleReadMore} setToggleReadMore={setToggleReadMore} />
         <Projects viewProject={viewProject} setViewProject={setViewProject} />
         <Contact />
-        <ShadowLayer className={`top ${viewProject && 'hide'} ${toggleReadMore && 'hide'}`} />
-        <ShadowLayer className={`bottom ${viewProject && 'hide'} ${toggleReadMore && 'hide'}`} />
+        <ShadowLayer className={`top ${viewProject.isToggled && 'hide'} ${toggleReadMore && 'hide'}`} />
+        <ShadowLayer className={`bottom ${viewProject.isToggled && 'hide'} ${toggleReadMore && 'hide'}`} />
       </ThemeProvider>
     </>
   );

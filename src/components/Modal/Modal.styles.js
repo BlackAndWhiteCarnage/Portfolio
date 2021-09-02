@@ -40,6 +40,8 @@ export const Link = styled.li`
   position: relative;
   z-index: 10;
   padding: 10px;
+  width: 150px;
+  height: 50px;
   @media screen and (min-width: 1200px) {
     &::before {
       position: absolute;

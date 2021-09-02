@@ -78,7 +78,6 @@ export const PreviewProjectRwd = styled.img`
   pointer-events: none;
   background: none;
   opacity: 0;
-  margin-bottom: 40px;
   transition: 0.5s ease;
   &.show {
     transition: 0.5s ease;
@@ -144,9 +143,9 @@ export const Dot = styled.div`
 
 export const PreviewProjectTitle = styled.h4`
   width: 100%;
-  margin-bottom: 60px;
+  margin-bottom: 65px;
   text-transform: uppercase;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.black};
+  /* border-bottom: 1px solid ${({ theme }) => theme.colors.black}; */
   padding-bottom: 30px;
   @media screen and (max-width: 1000px) {
     margin-bottom: 40px;
@@ -154,13 +153,43 @@ export const PreviewProjectTitle = styled.h4`
   }
 `;
 
+export const Description = styled.article`
+  width: 100%;
+  margin: 5px;
+`;
+
 export const Header = styled.span`
   width: 100%;
   text-transform: uppercase;
   list-style: none;
   display: flex;
+  font-weight: 600;
   flex-wrap: wrap;
-  margin: 15px 5px;
+  margin: 65px 0 30px 5px;
+  border-left: 15px solid ${({ theme }) => theme.colors.black};
+  padding-left: 15px;
+  letter-spacing: normal;
+`;
+
+export const FeaturesWrapper = styled.ol`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  list-style-position: inside;
+  margin-left: 5px;
+`;
+
+export const Feature = styled.li`
+  width: 100%;
+  background: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.white};
+  margin-bottom: 40px;
+  padding: 20px;
+  /* border-radius: 10px; */
+  @media screen and (max-width: 680px) {
+    margin-bottom: 5px;
+    padding: 15px;
+  }
 `;
 
 export const UsedTools = styled.ul`
@@ -179,6 +208,7 @@ export const Tool = styled.li`
   margin: 5px;
   font-size: 14px;
   white-space: nowrap;
+  font-weight: 600;
   @media screen and (max-width: 680px) {
     font-size: 12px;
     margin: 2px;

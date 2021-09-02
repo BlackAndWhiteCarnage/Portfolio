@@ -15,13 +15,14 @@ export const GlobalStyle = createGlobalStyle`
         letter-spacing: 5px;
     }
     h1,h2,h3,h4{
-        font-weight: 400;
+        font-weight: 600;
         font-size: ${({ theme }) => theme.fontSize.l};
     }
     article, li, p, a, input, textarea{
         font-size: ${({ theme }) => theme.fontSize.m};
         line-height: 25px;
         letter-spacing: normal;
+        font-weight: 400;
         @media screen and (max-width: 680px) {
             line-height: 20px;
             font-size: ${({ theme }) => theme.fontSize.s};

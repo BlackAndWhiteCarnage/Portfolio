@@ -22,6 +22,9 @@ import {
   Header,
   UsedTools,
   Tool,
+  Description,
+  Feature,
+  FeaturesWrapper,
 } from './Projects.styles';
 
 const Projects = ({ viewProject, setViewProject }) => {
@@ -156,6 +159,34 @@ const Projects = ({ viewProject, setViewProject }) => {
           <PreviewProjectRwd src={viewProject.data.img} onLoad={checkIfLoadedHandler} className={isLoaded && 'show'} />
           <Header>Used tools:</Header>
           <UsedTools>{viewProject.data !== false && viewProject.data.usedTools.map((usedTool) => <Tool>{usedTool}</Tool>)}</UsedTools>
+          <Header>About Project:</Header>
+          <Description>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam laborum sequi atque mollitia, iusto blanditiis quibusdam ab explicabo
+            rem ducimus quia sapiente, eaque perferendis consequatur eligendi voluptate dolor minima magnam? Earum quos fuga explicabo quaerat quod
+            accusantium maiores aliquam impedit sit velit numquam id mollitia adipisci officia, eveniet hic quo est reprehenderit vel ullam.
+            Perspiciatis nostrum error numquam esse hic.
+          </Description>
+          <Header>Problems I faced with and how do I solved them</Header>
+          <Description>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam laborum sequi atque mollitia, iusto blanditiis quibusdam ab explicabo
+            rem ducimus quia sapiente, eaque perferendis consequatur eligendi voluptate dolor minima magnam.
+          </Description>
+          <Header>Features Im proud of</Header>
+          <FeaturesWrapper>
+            <Feature>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam laborum sequi atque mollitia, iusto blanditiis quibusdam ab explicabo
+              rem ducimus quia sapiente.
+            </Feature>
+            <Feature>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam laborum sequi atque mollitia, explicabo</Feature>
+            <Feature>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam laborum sequi atque mollitia, iusto blanditiis quibusdam ab explicabo
+              rem ducimus quia sapiente.
+            </Feature>
+            <Feature>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam laborum sequi atque mollitia, iusto blanditiis quibusdam ab explicabo
+              rem ducimus quia sapiente.
+            </Feature>
+          </FeaturesWrapper>
           <LoadingWrapper className={!isLoaded && 'show'}>
             <Dot className={!isLoaded && 'show'} />
             <Dot className={!isLoaded && 'show'} />

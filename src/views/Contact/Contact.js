@@ -4,7 +4,8 @@ import email from 'assets/icons/email-icon.svg';
 import phone from 'assets/icons/phone-icon.svg';
 import send from 'assets/icons/send-icon.svg';
 import waitingIcon from 'assets/icons/waiting-icon.svg';
-import { Button } from 'views/AboutMe/AboutMe.styles';
+// COMPONENTS
+import Button from 'components/Button/Button';
 // HELPERS
 import { useScroll } from 'helpers/useScroll';
 // ANIMATIONS
@@ -116,14 +117,15 @@ const Contact = () => {
           />
         </Form>
         <ButtonAndPersonalInfoWrapper variants={slide} animate={controls} initial='hidden' ref={element}>
-          <Button variants={slide} type='submit' onClick={checkValid} className={emailSend && 'emailSend'}>
+          {/* <Button variants={slide} type='submit' onClick={checkValid} className={emailSend && 'emailSend'}>
             <p>SEND</p>
             <img src={send} className={emailSend && 'fly'} />
             <WaitingWrapper className={waiting && 'show'}>
               <p>WAIT</p>
               <img src={waitingIcon} />
             </WaitingWrapper>
-          </Button>
+          </Button> */}
+          <Button text='SEND' icon={send} className={emailSend && 'fly'} />
           <Header variants={fade}>
             PERSONAL INFO <br />
             BELOW

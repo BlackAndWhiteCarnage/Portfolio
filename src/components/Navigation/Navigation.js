@@ -5,15 +5,18 @@ import PageTransition from 'components/PageTransition/PageTransition';
 // ICONS
 import facebook from 'assets/icons/facebook-icon.svg';
 import github from 'assets/icons/github-icon.svg';
+import back from 'assets/icons/back-icon.svg';
 // STYLES
-import { Wrapper, HamburgerMenu, Line, SocialMedia, Icon } from './Navigation.styles';
+import { Wrapper, HamburgerMenu, Line, SocialMedia, Icon, BackIcon } from './Navigation.styles';
 
-const Navigation = ({ setToggleReadMore, setViewProject, viewProject }) => {
+const Navigation = ({ toggleReadMore, setToggleReadMore, setViewProject, viewProject }) => {
   const [toggleModal, setToggleModal] = useState(false);
 
   const toggleModalHandler = () => {
     setToggleModal(!toggleModal);
   };
+
+  console.log(toggleReadMore);
 
   const closeOtherModalsHandler = () => {
     setToggleReadMore(false);
@@ -23,18 +26,21 @@ const Navigation = ({ setToggleReadMore, setViewProject, viewProject }) => {
   return (
     <>
       <Wrapper>
-        <HamburgerMenu
-          id='active'
-          onClick={() => {
-            closeOtherModalsHandler();
-            toggleModalHandler();
-          }}
-        >
-          <Line className={toggleModal && 'toggle'} />
-          <Line className={toggleModal && 'toggle'} />
-          <Line className={toggleModal && 'toggle'} />
-          <Line className={toggleModal && 'toggle'} />
-        </HamburgerMenu>
+        {viewProject.isToggled || toggleReadMore ? (
+          <BackIcon src={back} onClick={closeOtherModalsHandler} id='active' />
+        ) : (
+          <HamburgerMenu
+            id='active'
+            onClick={() => {
+              toggleModalHandler();
+            }}
+          >
+            <Line className={toggleModal && 'toggle'} />
+            <Line className={toggleModal && 'toggle'} />
+            <Line className={toggleModal && 'toggle'} />
+            <Line className={toggleModal && 'toggle'} />
+          </HamburgerMenu>
+        )}
         <SocialMedia>
           <Icon src={facebook} id='active' />
           <Icon src={github} id='active' />

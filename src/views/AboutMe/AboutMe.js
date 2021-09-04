@@ -4,11 +4,12 @@ import arrowRight from 'assets/icons/arrowRight-icon.svg';
 import filePreview from 'assets/icons/filePreview-icon.svg';
 // COMPONENTS
 import PageTransition from 'components/PageTransition/PageTransition';
+import Button from 'components/Button/Button';
 // HELPERS
 import { useScroll } from 'helpers/useScroll';
 // ANIMATIONS
 import { fade, slide } from 'assets/animations/animation';
-import { Wrapper, AboutMeWrapper, Article, ButtonsWrapper, Button } from './AboutMe.styles';
+import { Wrapper, AboutMeWrapper, Article, ButtonsWrapper } from './AboutMe.styles';
 // RESUME
 import cv from 'documents/cv.pdf';
 import MoreAboutMe from 'components/MoreAboutMe/MoreAboutMe';
@@ -34,16 +35,18 @@ const AboutMe = ({ toggleReadMore, setToggleReadMore }) => {
             messages showing her the code and say “Look, finnaly I’ve found a bug!”
           </Article>
           <ButtonsWrapper>
-            <Button variants={slide} onClick={toggleReadMoreHandler}>
+            <Button onClick={toggleReadMoreHandler} text='READ MORE' icon={arrowRight} />
+            <Button href={cv} text='MY RESUME' icon={filePreview} />
+            {/* <Button variants={slide} onClick={toggleReadMoreHandler}>
               <a>READ MORE</a>
               <img src={arrowRight} />
-            </Button>
-            <Button variants={slide}>
+            </Button> */}
+            {/* <Button variants={slide}>
               <a href={cv} target='_blank'>
                 MY RESUME
               </a>
               <img src={filePreview} />
-            </Button>
+            </Button> */}
           </ButtonsWrapper>
         </AboutMeWrapper>
       </Wrapper>

@@ -29,6 +29,15 @@ export const HamburgerMenu = styled.nav`
   }
 `;
 
+export const BackIcon = styled.img`
+  width: 50px;
+  height: 100%;
+  cursor: pointer;
+  @media screen and (max-width: 680px) {
+    width: 40px;
+  }
+`;
+
 export const Line = styled.nav`
   height: 1px;
   pointer-events: none;

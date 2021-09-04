@@ -131,7 +131,7 @@ const Projects = ({ viewProject, setViewProject }) => {
         ))}
         <SliderInfo slide={slide} isLocked={isLocked} />
       </ProjectsSliderWrapper>
-      <PreviewProject isLoaded={isLoaded} setIsLoaded={setIsLoaded} viewProject={viewProject} toggleProjectModalHandler={toggleProjectModalHandler} />
+      <PreviewProject isLoaded={isLoaded} setIsLoaded={setIsLoaded} viewProject={viewProject} />
       <PageTransition toggle={viewProject.isToggled} />
     </Wrapper>
   );

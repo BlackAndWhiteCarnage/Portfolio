@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 // STYLES
 import {
   PreviewProjectWrapper,
@@ -15,7 +15,9 @@ import {
   UsedTools,
 } from './PreviewProject.styles';
 
-const PreviewProject = ({ isLoaded, viewProject, toggleProjectModalHandler, setIsLoaded }) => {
+const PreviewProject = ({ isLoaded, viewProject, setIsLoaded }) => {
+  const ref = useRef(null);
+
   const checkIfLoadedHandler = (e) => {
     if (e.naturalHeight !== 0) {
       setIsLoaded(true);
@@ -25,7 +27,7 @@ const PreviewProject = ({ isLoaded, viewProject, toggleProjectModalHandler, setI
   };
 
   return (
-    <PreviewProjectWrapper className={viewProject.isToggled && 'show'} onClick={() => toggleProjectModalHandler(false)}>
+    <PreviewProjectWrapper className={viewProject.isToggled && 'show'} ref={ref}>
       <Wrapper>
         <PreviewProjectTitle>{viewProject.data.title}</PreviewProjectTitle>
         <PreviewProjectRwd src={viewProject.data.img} onLoad={checkIfLoadedHandler} className={isLoaded && 'show'} />

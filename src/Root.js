@@ -29,7 +29,7 @@ function Root() {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         {matchMedia && <Cursor />}
-        <Navigation setToggleReadMore={setToggleReadMore} viewProject={viewProject} setViewProject={setViewProject} />
+        <Navigation toggleReadMore={toggleReadMore} setToggleReadMore={setToggleReadMore} viewProject={viewProject} setViewProject={setViewProject} />
         <Home />
         <AboutMe toggleReadMore={toggleReadMore} setToggleReadMore={setToggleReadMore} />
         <Projects viewProject={viewProject} setViewProject={setViewProject} />

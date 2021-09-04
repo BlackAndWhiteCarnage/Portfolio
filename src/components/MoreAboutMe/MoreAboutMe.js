@@ -1,19 +1,16 @@
 import React, { useRef } from 'react';
 // STYLES
 import { ReadMoreWrapper, ReadMore, Header, Answer } from './MoreAboutMe.styles';
+// COMPONENTS
+import Button from 'components/Button/Button';
+// ICONS
+import back from 'assets/icons/back-icon.svg';
 
 const MoreAboutMe = ({ toggleReadMore, toggleReadMoreHandler }) => {
   const ref = useRef(null);
 
   return (
-    <ReadMoreWrapper
-      className={toggleReadMore && 'show'}
-      onClick={() => {
-        toggleReadMoreHandler();
-        ref.current.scrollTo({ top: 0, behavior: 'smooth' });
-      }}
-      ref={ref}
-    >
+    <ReadMoreWrapper className={toggleReadMore && 'show'} ref={ref}>
       <ReadMore>
         <Header>Who am I exacly?</Header>
         <Answer>
@@ -67,6 +64,15 @@ const MoreAboutMe = ({ toggleReadMore, toggleReadMoreHandler }) => {
           fugit? Eum, quisquam? Id?
         </Answer>
         <Header>My skills:</Header>
+        <Button
+          text='BACK'
+          icon={back}
+          className='margin'
+          onClick={() => {
+            toggleReadMoreHandler();
+            ref.current.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        />
       </ReadMore>
     </ReadMoreWrapper>
   );

@@ -1,6 +1,5 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 
 export const Wrapper = styled(motion.section)`
   position: relative;
@@ -12,17 +11,6 @@ export const Wrapper = styled(motion.section)`
   flex-direction: column;
   overflow: hidden;
   margin-bottom: 100px;
-`;
-
-export const StyledLink = styled(Link)`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 100;
-  pointer-events: none;
-  &.show {
-    pointer-events: all;
-  }
 `;
 
 export const ProjectsSliderWrapper = styled.div`

@@ -1,5 +1,4 @@
 import styled, { keyframes } from 'styled-components';
-import { motion } from 'framer-motion';
 
 export const PreviewProjectWrapper = styled.div`
   position: fixed;
@@ -18,20 +17,15 @@ export const PreviewProjectWrapper = styled.div`
   transform: scale(2);
   overflow-y: scroll;
   padding: 250px 0;
-
-  transform: scale(1);
-  transition: 1s 1s ease;
-  opacity: 1;
-  pointer-events: all;
   @media screen and (max-width: 1000px) {
     padding: 150px 0;
   }
-  /* &.show {
+  &.show {
     transform: scale(1);
     transition: 1s 1s ease;
     opacity: 1;
     pointer-events: all;
-  } */
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -183,53 +177,5 @@ export const Tool = styled.li`
     font-size: 12px;
     margin: 2px;
     padding: 5px;
-  }
-`;
-
-export const Button = styled(motion.button)`
-  position: relative;
-  min-width: 120px;
-  max-width: 220px;
-  padding: 10px 20px;
-  border: 1px solid ${({ theme }) => theme.colors.black};
-  color: ${({ theme }) => theme.colors.black};
-  background: ${({ theme }) => theme.colors.white};
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  white-space: nowrap;
-  &.emailSend {
-    pointer-events: none;
-    transition: 1s ease;
-    opacity: 0.5 !important;
-  }
-  @media screen and (max-width: 680px) {
-    max-width: 180px;
-  }
-  a {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    text-decoration: none;
-    color: ${({ theme }) => theme.colors.black};
-  }
-  p {
-    pointer-events: none;
-  }
-  img {
-    max-height: 25px;
-    margin-left: 15px;
-    transition: 0.5s ease;
-    pointer-events: none;
-    @media screen and (max-width: 680px) {
-      max-height: 15px;
-    }
-  }
-  &:hover {
-    img {
-      transform: translateX(5px) scale(1.2);
-      transition: 0.5s ease;
-    }
   }
 `;

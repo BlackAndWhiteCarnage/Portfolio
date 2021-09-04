@@ -23,7 +23,6 @@ export const projects = [
     ],
     img: laMiaPassioneMaltese,
     usedTools: ['React', 'Styled Components', 'Framer Motion', 'React Scroll'],
-    routeId: 'LaMiaPassioneMaltese',
   },
   {
     title: 'Euphoria',
@@ -42,7 +41,6 @@ export const projects = [
     ],
     img: euphoria,
     usedTools: ['React', 'Styled Components', 'Framer Motion', 'Strapi.js', 'React Router Dom'],
-    routeId: 'Euphoria',
   },
   {
     title: 'Nice To Meet You',
@@ -61,6 +59,5 @@ export const projects = [
     ],
     img: niceToMeetYou,
     usedTools: ['Vanilla Js', 'SCSS'],
-    routeId: 'NiceToMeetYou',
   },
 ];

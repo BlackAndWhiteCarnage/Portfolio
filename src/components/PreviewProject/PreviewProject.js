@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 // STYLES
 import {
   PreviewProjectWrapper,
@@ -20,6 +20,10 @@ import Button from 'components/Button/Button';
 
 const PreviewProject = ({ viewProject }) => {
   const ref = useRef(null);
+
+  useEffect(() => {
+    ref.current.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [viewProject.isToggled]);
 
   return (
     <PreviewProjectWrapper className={viewProject.isToggled && 'show'} ref={ref}>

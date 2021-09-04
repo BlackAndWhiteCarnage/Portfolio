@@ -18,30 +18,54 @@ export const Wrapper = styled.nav`
 `;
 
 export const HamburgerMenu = styled.nav`
+  position: relative;
   width: 50px;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   cursor: pointer;
   @media screen and (max-width: 680px) {
     width: 40px;
+  }
+`;
+
+export const LinesWrapper = styled.nav`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s 1s ease;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  justify-content: space-between;
+  opacity: 1;
+  &.hide {
+    transition: 0.5s 1s ease;
+    left: -100%;
+    opacity: 0;
   }
 `;
 
 export const BackIcon = styled.img`
+  position: absolute;
   width: 50px;
   height: 100%;
   cursor: pointer;
+  right: -100%;
+  opacity: 0;
+  transition: 0.5s 1s ease;
+  &.show {
+    transition: 0.5s 1s ease;
+    opacity: 1;
+    right: 0;
+  }
   @media screen and (max-width: 680px) {
     width: 40px;
   }
 `;
 
-export const Line = styled.nav`
+export const Line = styled.div`
   height: 1px;
   pointer-events: none;
-  backdrop-filter: invert(100%);
+  background: ${({ theme }) => theme.colors.black};
   transition: 0.5s ease;
   &:nth-child(1) {
     width: 100%;

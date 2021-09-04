@@ -2,18 +2,16 @@ import React, { useState, useEffect } from 'react';
 // PROJECTS DATA
 import { projects } from 'data/projectsData';
 // COMPONENTS
-import PageTransition from 'components/PageTransition/PageTransition';
 import Project from 'components/Project/Project';
 import SliderInfo from 'components/SliderInfo/SliderInfo';
-import PreviewProject from 'components/PreviewProject/PreviewProject';
 // HELPERS
 import { useScroll } from 'helpers/useScroll';
 // ANIMATIONS
 import { fade, slide } from 'assets/animations/animation';
 // STYLES
-import { Wrapper, ProjectsSliderWrapper } from './Projects.styles';
+import { Wrapper, ProjectsSliderWrapper, StyledLink } from './Projects.styles';
 
-const Projects = ({ viewProject, setViewProject }) => {
+const Projects = ({ viewProject }) => {
   const [element, controls] = useScroll();
 
   const [clock, setClock] = useState(0);
@@ -91,20 +89,6 @@ const Projects = ({ viewProject, setViewProject }) => {
     }
   };
 
-  const toggleProjectModalHandler = (project) => {
-    if (project !== false) {
-      setViewProject({ isToggled: true, data: project });
-    } else {
-      setViewProject({ ...viewProject, isToggled: false });
-    }
-  };
-
-  // console.log(
-  //   viewProject.data.usedTools.map((item) => {
-  //     console.log(item);
-  //   })
-  // );
-
   return (
     <Wrapper
       variants={fade}
@@ -116,23 +100,28 @@ const Projects = ({ viewProject, setViewProject }) => {
       onTouchEnd={touchEndHandler}
       id='PROJECTS'
     >
-      <ProjectsSliderWrapper className={viewProject.isToggled && 'previewProject'}>
+      <ProjectsSliderWrapper>
         {projects.map((project, index) => (
-          <Project
-            current={current}
-            index={index}
-            next={next}
-            prev={prev}
-            project={project}
-            toggleProjectModalHandler={toggleProjectModalHandler}
-            projectHandler={projectHandler}
-            viewProject={viewProject}
-          />
+          <>
+            <StyledLink to={`/projects/${project.routeId}`} className={current === index && 'show'} />
+            <Project
+              current={current}
+              index={index}
+              next={next}
+              prev={prev}
+              project={project}
+              viewProject={viewProject}
+              projectHandler={projectHandler}
+            />
+          </>
         ))}
         <SliderInfo slide={slide} isLocked={isLocked} />
       </ProjectsSliderWrapper>
+<<<<<<< HEAD
       <PreviewProject isLoaded={isLoaded} setIsLoaded={setIsLoaded} viewProject={viewProject} />
       <PageTransition toggle={viewProject.isToggled} />
+=======
+>>>>>>> 8c7146a75111aee1aa11f21e51f306c34ba23e90
     </Wrapper>
   );
 };

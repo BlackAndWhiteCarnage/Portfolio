@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { Route, Switch, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 // STYLES
 import { GlobalStyle } from 'assets/styles/GlobalStyle.js';
 import { ThemeProvider } from 'styled-components';
@@ -14,17 +16,17 @@ import Cursor from 'components/Cursor/Cursor';
 import ShadowLayer from 'components/ShadowLayer/ShadowLayer';
 // HELPERS
 import { matchMedia } from 'helpers/matchMedia';
+// VIEWS
+import PreviewProject from 'components/PreviewProject/PreviewProject';
 
 function Root() {
   const [toggleReadMore, setToggleReadMore] = useState(false);
   const [viewProject, setViewProject] = useState({ isToggled: false, data: false });
-  // const [viewProject, setViewProject] = useState(false);
-
-  useEffect(() => {
-    document.body.style.overflowY = `${toggleReadMore || viewProject.isToggled ? 'hidden' : 'scroll'}`;
-  }, [toggleReadMore, viewProject]);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const location = useLocation();
 
   return (
+<<<<<<< HEAD
     <>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
@@ -34,10 +36,28 @@ function Root() {
         <AboutMe toggleReadMore={toggleReadMore} setToggleReadMore={setToggleReadMore} />
         <Projects viewProject={viewProject} setViewProject={setViewProject} />
         <Contact />
+=======
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Navigation setToggleReadMore={setToggleReadMore} viewProject={viewProject} setViewProject={setViewProject} />
+      {matchMedia && <Cursor />}
+      <AnimatePresence exitBeforeEnter>
+        <Switch location={location} key={location.pathname}>
+          <Route path='/' exact>
+            <Home />
+            <AboutMe toggleReadMore={toggleReadMore} setToggleReadMore={setToggleReadMore} />
+            <Projects viewProject={viewProject} setIsLoaded={setIsLoaded} />
+            <Contact />
+          </Route>
+          <Route path='/projects/:id'>
+            <PreviewProject isLoaded={isLoaded} setIsLoaded={setIsLoaded} viewProject={viewProject} />
+          </Route>
+        </Switch>
+>>>>>>> 8c7146a75111aee1aa11f21e51f306c34ba23e90
         <ShadowLayer className={`top ${viewProject.isToggled && 'hide'} ${toggleReadMore && 'hide'}`} />
         <ShadowLayer className={`bottom ${viewProject.isToggled && 'hide'} ${toggleReadMore && 'hide'}`} />
-      </ThemeProvider>
-    </>
+      </AnimatePresence>
+    </ThemeProvider>
   );
 }
 

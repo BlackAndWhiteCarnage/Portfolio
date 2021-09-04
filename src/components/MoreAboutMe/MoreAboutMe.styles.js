@@ -34,7 +34,7 @@ export const ReadMore = styled.div`
   max-width: 1200px;
   height: auto;
   @media screen and (max-width: 1000px) {
-    width: 80%;
+    width: 90%;
   }
 `;
 

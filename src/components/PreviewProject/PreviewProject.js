@@ -10,27 +10,22 @@ import {
   Description,
   Feature,
   FeaturesWrapper,
-  Dot,
-  LoadingWrapper,
   UsedTools,
+  ButtonsWrapper,
 } from './PreviewProject.styles';
+// ICONS
+import link from 'assets/icons/link-icon.svg';
+import github from 'assets/icons/github-icon.svg';
+import Button from 'components/Button/Button';
 
-const PreviewProject = ({ isLoaded, viewProject, setIsLoaded }) => {
+const PreviewProject = ({ viewProject }) => {
   const ref = useRef(null);
-
-  const checkIfLoadedHandler = (e) => {
-    if (e.naturalHeight !== 0) {
-      setIsLoaded(true);
-    } else {
-      setIsLoaded(false);
-    }
-  };
 
   return (
     <PreviewProjectWrapper className={viewProject.isToggled && 'show'} ref={ref}>
       <Wrapper>
         <PreviewProjectTitle>{viewProject.data.title}</PreviewProjectTitle>
-        <PreviewProjectRwd src={viewProject.data.img} onLoad={checkIfLoadedHandler} className={isLoaded && 'show'} />
+        <PreviewProjectRwd src={viewProject.data.img} />
         <Header>Used tools:</Header>
         <UsedTools>{viewProject.data !== false && viewProject.data.usedTools.map((usedTool) => <Tool>{usedTool}</Tool>)}</UsedTools>
         <Header>About Project:</Header>
@@ -39,12 +34,10 @@ const PreviewProject = ({ isLoaded, viewProject, setIsLoaded }) => {
         <Description>{viewProject.data.projectProblems}</Description>
         <Header>Features Im proud of</Header>
         <FeaturesWrapper>{viewProject.data !== false && viewProject.data.features.map((feature) => <Feature>{feature}</Feature>)}</FeaturesWrapper>
-        <LoadingWrapper className={!isLoaded && 'show'}>
-          <Dot className={!isLoaded && 'show'} />
-          <Dot className={!isLoaded && 'show'} />
-          <Dot className={!isLoaded && 'show'} />
-          <Dot className={!isLoaded && 'show'} />
-        </LoadingWrapper>
+        <ButtonsWrapper>
+          <Button href={viewProject.data.live} text='Live' margin='5px' icon={link} />
+          <Button href={viewProject.data.repo} text='Reposytory' margin='5px' icon={github} />
+        </ButtonsWrapper>
       </Wrapper>
     </PreviewProjectWrapper>
   );

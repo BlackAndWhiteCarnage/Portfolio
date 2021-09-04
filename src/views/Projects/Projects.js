@@ -22,8 +22,6 @@ const Projects = ({ viewProject, setViewProject }) => {
   let [next, setNext] = useState(projects.length - 1);
   let [prev, setPrev] = useState(current + 1);
 
-  const [isLoaded, setIsLoaded] = useState(false);
-
   let toggleInterval = false;
 
   const slider = () => {
@@ -37,13 +35,11 @@ const Projects = ({ viewProject, setViewProject }) => {
 
     if (next === index) {
       setIsLocked(true);
-      setIsLoaded(false);
       setCurrent(current === 0 ? (current = projects.length - 1) : current - 1);
       setNext(next === 0 ? (next = projects.length - 1) : next - 1);
       setPrev(prev === 0 ? (prev = projects.length - 1) : prev - 1);
     } else if (prev === index) {
       setIsLocked(true);
-      setIsLoaded(false);
       setCurrent(current === projects.length - 1 ? 0 : current + 1);
       setNext(next === projects.length - 1 ? 0 : next + 1);
       setPrev(prev === projects.length - 1 ? 0 : prev + 1);
@@ -78,13 +74,11 @@ const Projects = ({ viewProject, setViewProject }) => {
   const touchEndHandler = () => {
     if (startX + 80 < moveX) {
       setIsLocked(true);
-      setIsLoaded(false);
       setCurrent(current === projects.length - 1 ? 0 : current + 1);
       setNext(next === projects.length - 1 ? 0 : next + 1);
       setPrev(prev === projects.length - 1 ? 0 : prev + 1);
     } else if (startX - 80 > moveX) {
       setIsLocked(true);
-      setIsLoaded(false);
       setCurrent(current === 0 ? (current = projects.length - 1) : current - 1);
       setNext(next === 0 ? (next = projects.length - 1) : next - 1);
       setPrev(prev === 0 ? (prev = projects.length - 1) : prev - 1);
@@ -98,12 +92,6 @@ const Projects = ({ viewProject, setViewProject }) => {
       setViewProject({ ...viewProject, isToggled: false });
     }
   };
-
-  // console.log(
-  //   viewProject.data.usedTools.map((item) => {
-  //     console.log(item);
-  //   })
-  // );
 
   return (
     <Wrapper
@@ -131,7 +119,7 @@ const Projects = ({ viewProject, setViewProject }) => {
         ))}
         <SliderInfo slide={slide} isLocked={isLocked} />
       </ProjectsSliderWrapper>
-      <PreviewProject isLoaded={isLoaded} setIsLoaded={setIsLoaded} viewProject={viewProject} />
+      <PreviewProject viewProject={viewProject} />
       <PageTransition toggle={viewProject.isToggled} />
     </Wrapper>
   );

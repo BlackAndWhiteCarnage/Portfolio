@@ -16,6 +16,7 @@ export const PreviewProjectWrapper = styled.div`
   opacity: 0;
   transform: scale(2);
   overflow-y: scroll;
+  overflow-x: hidden;
   padding: 250px 0;
   @media screen and (max-width: 1000px) {
     padding: 150px 0;
@@ -35,7 +36,7 @@ export const Wrapper = styled.div`
   max-width: 1200px;
   height: auto;
   @media screen and (max-width: 1000px) {
-    width: 80%;
+    width: 90%;
   }
 `;
 
@@ -44,68 +45,7 @@ export const PreviewProjectRwd = styled.img`
   height: auto;
   pointer-events: none;
   background: none;
-  opacity: 0;
   transition: 0.5s ease;
-  &.show {
-    transition: 0.5s ease;
-    opacity: 1;
-  }
-`;
-
-export const LoadingWrapper = styled.div`
-  position: absolute;
-  top: 80px;
-  left: 50%;
-  width: 100%;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  transform: translate(-50%);
-  opacity: 0;
-  transition: 0.5s ease;
-  @media screen and (max-width: 680px) {
-    top: 0;
-  }
-  &.show {
-    opacity: 1;
-    transition: 0.5s 0.5s ease;
-  }
-`;
-
-const scale = keyframes`
-25%{
-  opacity: 1;
-  transform: scale(2);
-}
-100%{
-  transform: scale(0);
-  opacity: 0;
-}
-`;
-
-export const Dot = styled.div`
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: ${({ theme }) => theme.colors.black};
-  opacity: 0;
-  @media screen and (max-width: 680px) {
-    width: 20px;
-    height: 20px;
-  }
-  &:nth-child(1) {
-    animation: ${scale} 3s ease infinite;
-  }
-  &:nth-child(2) {
-    animation: ${scale} 3s 0.5s ease infinite;
-  }
-  &:nth-child(3) {
-    animation: ${scale} 3s 1.5s ease infinite;
-  }
-  &:nth-child(4) {
-    animation: ${scale} 3s 2.5s ease infinite;
-  }
 `;
 
 export const PreviewProjectTitle = styled.h4`
@@ -177,5 +117,17 @@ export const Tool = styled.li`
     font-size: 12px;
     margin: 2px;
     padding: 5px;
+  }
+`;
+
+export const ButtonsWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  @media screen and (max-width: 680px) {
+    flex-direction: column;
+    width: auto;
+    height: 100px;
+    margin-top: 40px;
   }
 `;

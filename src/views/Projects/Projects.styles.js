@@ -16,7 +16,7 @@ export const Wrapper = styled(motion.section)`
 export const ProjectsSliderWrapper = styled.div`
   position: relative;
   height: 450px;
-  width: 450px;
+  width: 800px;
   display: flex;
   flex-direction: column;
   justify-content: center;

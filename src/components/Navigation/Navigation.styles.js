@@ -37,7 +37,9 @@ export const LinesWrapper = styled.nav`
   left: 0;
   justify-content: space-between;
   opacity: 1;
+  pointer-events: all;
   &.hide {
+    pointer-events: none;
     transition: 0.5s 1s ease;
     left: -100%;
     opacity: 0;
@@ -52,7 +54,9 @@ export const BackIcon = styled.img`
   right: -100%;
   opacity: 0;
   transition: 0.5s 1s ease;
+  pointer-events: none;
   &.show {
+    pointer-events: all;
     transition: 0.5s 1s ease;
     opacity: 1;
     right: 0;

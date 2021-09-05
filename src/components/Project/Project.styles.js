@@ -10,31 +10,15 @@ export const ProjectWrapper = styled.div`
   justify-content: center;
   color: ${({ theme }) => theme.colors.white};
   left: 0;
-  transition: 0.5s ease;
+  transition: 0.5s ease-out;
   transform: scale(0);
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
     0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
-
-  &::before {
-    content: 'CLICK TO LEARN MORE';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: 0.5s 0.25s ease;
-    color: ${({ theme }) => theme.colors.white};
-    font-weight: 400;
-    pointer-events: none;
-  }
   &.show,
   &.next,
   &.prev {
     cursor: pointer;
-    transition: 0.5s ease;
+    transition: 0.4s ease-in-out;
   }
   &.show {
     transform: scale(1);
@@ -43,11 +27,8 @@ export const ProjectWrapper = styled.div`
     z-index: 20;
     @media screen and (min-width: 1200px) {
       &:hover {
-        transform: scale(1.05);
-        &::before {
-          opacity: 1;
-          transition: 0.5s 0.25s ease;
-        }
+        transform: scale(1.025);
+        transition: 0.3s ease-out;
       }
     }
   }
@@ -56,21 +37,32 @@ export const ProjectWrapper = styled.div`
     opacity: 0.2;
     transform: scale(0.5);
     z-index: 10;
-    @media screen and (min-width: 1200px) {
+    /* @media screen and (min-width: 1200px) {
       &:hover {
-        opacity: 0.4;
-        transform: scale(0.55);
+        opacity: 0.8;
       }
-    }
+    } */
   }
   &.next {
     left: 100%;
+    transform: perspective(400px) rotateY(-15deg) scale(0.65);
+    &:hover {
+      opacity: 0.8;
+      transform: perspective(800px) rotateY(-15deg) scale(0.65);
+      transition: 0.3s ease-out;
+    }
     @media screen and (max-width: 1280px) {
       left: 50%;
     }
   }
   &.prev {
     left: -100%;
+    transform: perspective(400px) rotateY(15deg) scale(0.65);
+    &:hover {
+      opacity: 0.8;
+      transform: perspective(800px) rotateY(15deg) scale(0.65);
+      transition: 0.3s ease-out;
+    }
     @media screen and (max-width: 1280px) {
       left: -50%;
     }
@@ -80,7 +72,6 @@ export const ProjectWrapper = styled.div`
 export const ProjectImage = styled.img`
   width: 100%;
   height: 100%;
-  pointer-events: none;
   transition: 0.5s ease;
   object-fit: cover;
 `;
@@ -124,8 +115,9 @@ export const ProjectLinksWrapper = styled.div`
   flex-direction: column;
   z-index: -1;
   &.show {
-    right: -35px;
-    transition: 0.5s 1s ease;
+    pointer-events: all;
+    right: -45px;
+    transition: 0.5s 0.5s ease;
     opacity: 1;
     @media screen and (max-width: 680px) {
       bottom: -50px;
@@ -146,6 +138,23 @@ export const ProjectLinksWrapper = styled.div`
 
 export const Links = styled.a`
   margin-top: 30px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  transition: 0.3s ease;
+  &:hover {
+    transform: rotate(360deg) scale(1.7);
+    transition: 0.3s ease;
+  }
+  img {
+    @media screen and (min-width: 1200px) {
+      transition: 0.3s ease;
+    }
+  }
   @media screen and (max-width: 680px) {
     margin: 0;
   }

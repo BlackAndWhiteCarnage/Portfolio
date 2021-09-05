@@ -18,7 +18,6 @@ import { matchMedia } from 'helpers/matchMedia';
 function Root() {
   const [toggleReadMore, setToggleReadMore] = useState(false);
   const [viewProject, setViewProject] = useState({ isToggled: false, data: false });
-  // const [viewProject, setViewProject] = useState(false);
 
   useEffect(() => {
     document.body.style.overflowY = `${toggleReadMore || viewProject.isToggled ? 'hidden' : 'scroll'}`;

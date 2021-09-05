@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export const SliderInfoWrapper = styled(motion.p)`
   position: absolute;
-  bottom: -65px;
+  bottom: -80px;
   width: 100%;
   height: auto;
   display: flex;
@@ -16,7 +16,7 @@ export const SliderInfoWrapper = styled(motion.p)`
 
 export const IsSliderLockedInfo = styled(motion.p)`
   position: absolute;
-  bottom: -115px;
+  bottom: -135px;
   width: 100%;
   height: auto;
   display: flex;

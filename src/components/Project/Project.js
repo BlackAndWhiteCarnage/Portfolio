@@ -7,25 +7,25 @@ import { ProjectWrapper, ProjectImage, ProjectTitle, ProjectLinksWrapper, Links 
 
 const Project = ({ current, index, next, prev, project, toggleProjectModalHandler, projectHandler, viewProject }) => {
   return (
-    <ProjectWrapper
-      className={`${current === index && 'show'} ${next === index && 'next'} ${prev === index && 'prev'}`}
-      id='active'
-      onClick={() => {
-        if (index === current) {
-          toggleProjectModalHandler(project);
-          projectHandler(index);
-        } else {
-          projectHandler(index);
-        }
-      }}
-    >
-      <ProjectImage src={project.image} className={current === index && viewProject && 'previewProject'} />
+    <ProjectWrapper className={`${current === index && 'show'} ${next === index && 'next'} ${prev === index && 'prev'}`} id='active'>
+      <ProjectImage
+        src={project.image}
+        className={current === index && viewProject && 'previewProject'}
+        onClick={() => {
+          if (index === current) {
+            toggleProjectModalHandler(project);
+            projectHandler(index);
+          } else {
+            projectHandler(index);
+          }
+        }}
+      />
       <ProjectTitle className={index === current && 'show'}>{project.title}</ProjectTitle>
       <ProjectLinksWrapper className={index === current && 'show'}>
-        <Links>
+        <Links id='active' target='_blank' href={project.live}>
           <img src={link} />
         </Links>
-        <Links>
+        <Links id='active' target='_blank' href={project.repo}>
           <img src={github} />
         </Links>
       </ProjectLinksWrapper>

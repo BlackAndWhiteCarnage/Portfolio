@@ -34,6 +34,7 @@ const Navigation = ({ toggleReadMore, setToggleReadMore, setViewProject, viewPro
             className={`${viewProject.isToggled && 'show'} ${toggleReadMore && 'show'}`}
           />
           <LinesWrapper
+            id='active'
             className={`${viewProject.isToggled && 'hide'} ${toggleReadMore && 'hide'}`}
             onClick={() => {
               toggleModalHandler();

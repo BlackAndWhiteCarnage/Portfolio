@@ -16,14 +16,20 @@ export const GlobalStyle = createGlobalStyle`
     }
     h1,h2,h3,h4{
         font-weight: 600;
-        font-size: ${({ theme }) => theme.fontSize.l};
+        font-size: ${({ theme }) => theme.fontSize.xl};
+        @media screen and (max-width: 1600px) {
+            font-size: ${({ theme }) => theme.fontSize.l};
+        }
+        @media screen and (max-width: 680px) {
+            font-size: ${({ theme }) => theme.fontSize.m};
+        }
     }
     article, li, p, a, input, textarea{
         font-size: ${({ theme }) => theme.fontSize.m};
         line-height: 25px;
         letter-spacing: normal;
         font-weight: 400;
-        @media screen and (max-width: 680px) {
+        @media screen and (max-width: 1000px) {
             line-height: 20px;
             font-size: ${({ theme }) => theme.fontSize.s};
         }

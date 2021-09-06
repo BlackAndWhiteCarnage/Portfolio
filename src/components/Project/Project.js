@@ -23,10 +23,10 @@ const Project = ({ current, index, next, prev, project, toggleProjectModalHandle
       <ProjectTitle className={index === current && 'show'}>{project.title}</ProjectTitle>
       <ProjectLinksWrapper className={index === current && 'show'}>
         <Links id='active' target='_blank' href={project.live}>
-          <img src={link} />
+          <img src={link} id='active' />
         </Links>
         <Links id='active' target='_blank' href={project.repo}>
-          <img src={github} />
+          <img src={github} id='active' />
         </Links>
       </ProjectLinksWrapper>
     </ProjectWrapper>

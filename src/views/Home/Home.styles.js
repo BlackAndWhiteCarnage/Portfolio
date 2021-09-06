@@ -9,6 +9,7 @@ export const Wrapper = styled(motion.section)`
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  margin-bottom: 150px;
 `;
 
 export const LogoAndNavWrapper = styled(motion.div)`

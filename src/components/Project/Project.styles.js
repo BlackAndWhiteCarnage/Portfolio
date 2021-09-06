@@ -12,8 +12,10 @@ export const ProjectWrapper = styled.div`
   left: 0;
   transition: 0.5s ease-out;
   transform: scale(0);
-  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+  box-shadow: ${({ theme }) => theme.boxShadow.l};
+  @media screen and (max-width: 680px) {
+    box-shadow: ${({ theme }) => theme.boxShadow.s};
+  }
   &.show,
   &.next,
   &.prev {
@@ -51,6 +53,9 @@ export const ProjectWrapper = styled.div`
       transform: perspective(800px) rotateY(-15deg) scale(0.65);
       transition: 0.3s ease-out;
     }
+    @media screen and (max-width: 1920px) {
+      left: 80%;
+    }
     @media screen and (max-width: 1280px) {
       left: 50%;
     }
@@ -62,6 +67,9 @@ export const ProjectWrapper = styled.div`
       opacity: 0.8;
       transform: perspective(800px) rotateY(15deg) scale(0.65);
       transition: 0.3s ease-out;
+    }
+    @media screen and (max-width: 1920px) {
+      left: -80%;
     }
     @media screen and (max-width: 1280px) {
       left: -50%;
@@ -86,7 +94,7 @@ export const ProjectTitle = styled.h2`
   text-transform: uppercase;
   opacity: 0;
   transition: 0.5s ease;
-  font-size: ${({ theme }) => theme.fontSize.m};
+  font-size: ${({ theme }) => theme.fontSize.xl};
   &.show {
     top: -60px;
     transition: 0.5s 0.5s ease;
@@ -116,16 +124,16 @@ export const ProjectLinksWrapper = styled.div`
   z-index: -1;
   &.show {
     pointer-events: all;
-    right: -45px;
+    right: -65px;
     transition: 0.5s 0.5s ease;
     opacity: 1;
     @media screen and (max-width: 680px) {
-      bottom: -50px;
+      bottom: -75px;
     }
   }
   @media screen and (max-width: 680px) {
     height: auto;
-    width: 40%;
+    width: 50%;
     bottom: 0;
     left: 50%;
     transform: translate(-50%);
@@ -139,23 +147,28 @@ export const ProjectLinksWrapper = styled.div`
 export const Links = styled.a`
   margin-top: 30px;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0 10px;
-  transition: 0.3s ease;
+  transition: 1s ease;
+  background: ${({ theme }) => theme.colors.white};
+  -webkit-box-shadow: 0px 0px 15px 0px ${({ theme }) => theme.colors.black};
+  box-shadow: 0px 0px 15px 0px ${({ theme }) => theme.colors.black};
   &:hover {
-    transform: rotate(360deg) scale(1.7);
-    transition: 0.3s ease;
+    transform: rotateY(180deg) scale(1.2) rotate(360deg);
+    transition: 1s ease;
   }
   img {
+    width: 100%;
     @media screen and (min-width: 1200px) {
       transition: 0.3s ease;
     }
   }
   @media screen and (max-width: 680px) {
-    margin: 0;
+    width: 40px;
+    height: 40px;
   }
 `;

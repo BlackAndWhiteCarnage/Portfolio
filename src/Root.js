@@ -33,8 +33,8 @@ function Root() {
         <AboutMe toggleReadMore={toggleReadMore} setToggleReadMore={setToggleReadMore} />
         <Projects viewProject={viewProject} setViewProject={setViewProject} />
         <Contact />
-        <ShadowLayer className={`top ${viewProject.isToggled && 'hide'} ${toggleReadMore && 'hide'}`} />
-        <ShadowLayer className={`bottom ${viewProject.isToggled && 'hide'} ${toggleReadMore && 'hide'}`} />
+        {/* <ShadowLayer className={`top ${viewProject.isToggled && 'hide'} ${toggleReadMore && 'hide'}`} />
+        <ShadowLayer className={`bottom ${viewProject.isToggled && 'hide'} ${toggleReadMore && 'hide'}`} /> */}
       </ThemeProvider>
     </>
   );

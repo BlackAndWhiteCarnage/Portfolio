@@ -24,6 +24,7 @@ import {
   Info,
   Icon,
   WaitingWrapper,
+  FormWrapper,
 } from 'views/Contact/Contact.styles';
 
 const Contact = () => {
@@ -98,38 +99,29 @@ const Contact = () => {
   return (
     <Wrapper id='CONTACT'>
       <ContactWrapper>
-        <Form variants={slide} className={emailSend && 'emailSend'}>
-          <Label variants={slide}>EMAIL</Label>
-          <Input
-            variants={fade}
-            onChange={emailHandler}
-            name='email'
-            className={`${feedback === 2 && !validEmail && 'ERROR'} ${validEmail && 'VALID'}`}
-            value={emailValue}
-          />
-          <Label variants={slide}>MESSAGE</Label>
-          <Textarea
-            variants={fade}
-            onChange={messageHandler}
-            name='message'
-            className={`${feedback === 2 && !validMessage && 'ERROR'} ${validMessage && 'VALID'}`}
-            value={messageValue}
-          />
-        </Form>
+        <FormWrapper>
+          <Form variants={slide} className={emailSend && 'emailSend'}>
+            <Label variants={slide}>EMAIL</Label>
+            <Input
+              variants={fade}
+              onChange={emailHandler}
+              name='email'
+              className={`${feedback === 2 && !validEmail && 'ERROR'} ${validEmail && 'VALID'}`}
+              value={emailValue}
+            />
+            <Label variants={slide}>MESSAGE</Label>
+            <Textarea
+              variants={fade}
+              onChange={messageHandler}
+              name='message'
+              className={`${feedback === 2 && !validMessage && 'ERROR'} ${validMessage && 'VALID'}`}
+              value={messageValue}
+            />
+            <Button text='SEND' icon={send} className={`${emailSend && 'fly'} AboutMe`} />
+          </Form>
+        </FormWrapper>
         <ButtonAndPersonalInfoWrapper variants={slide} animate={controls} initial='hidden' ref={element}>
-          {/* <Button variants={slide} type='submit' onClick={checkValid} className={emailSend && 'emailSend'}>
-            <p>SEND</p>
-            <img src={send} className={emailSend && 'fly'} />
-            <WaitingWrapper className={waiting && 'show'}>
-              <p>WAIT</p>
-              <img src={waitingIcon} />
-            </WaitingWrapper>
-          </Button> */}
-          <Button text='SEND' icon={send} className={emailSend && 'fly'} />
-          <Header variants={fade}>
-            PERSONAL INFO <br />
-            BELOW
-          </Header>
+          <Header variants={fade}>PERSONAL INFO</Header>
           <InfoWrapper variants={slide}>
             <Info variants={slide}>
               <p>KRZYSZTOF REPSCH</p>

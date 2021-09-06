@@ -52,6 +52,7 @@ const Projects = ({ viewProject, setViewProject }) => {
     }
     toggleInterval = setInterval(() => {
       setClock(clock + 1);
+      console.log(clock);
     }, 3000);
     slider();
   };

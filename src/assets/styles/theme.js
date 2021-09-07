@@ -12,7 +12,9 @@ export const theme = {
     s: '14px',
   },
   boxShadow: {
-    l: '0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12)',
-    s: '0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 5px rgba(0, 0, 0, 0.06), 0 12.3px 17.9px rgba(0, 0, 0, 0.072), 0 21.8px 33.4px rgba(0, 0, 0, 0.086), 0 10px 50px rgba(0, 0, 0, 0.12)',
+    left: `-5px 5px 0 0 #444444`,
+    leftWhite: `-5px 5px 0 0 #F6F6F6`,
+    right: `5px 5px 0 0 #444444`,
+    rightWhite: `5px 5px 0 0 #F6F6F6`,
   },
 };

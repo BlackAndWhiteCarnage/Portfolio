@@ -10,23 +10,21 @@ export const Wrapper = styled(motion.section)`
   align-items: center;
   justify-content: space-around;
   /* flex-direction: column; */
-  margin-bottom: 150px;
+  overflow: hidden;
+  padding: 150px 0;
 `;
 
 export const AboutMeWrapper = styled.div`
   position: relative;
   height: 600px;
-  /* width: 80%; */
   width: 1300px;
   display: flex;
   justify-content: space-between;
-  transition: 1s 0.5s ease;
-  /* background: white; */
   @media screen and (max-width: 1500px) {
     width: 85%;
   }
   @media screen and (max-width: 680px) {
-    width: 75%;
+    width: 80%;
     height: auto;
     flex-direction: column;
     align-items: center;
@@ -47,6 +45,7 @@ export const AboutMeWrapperPartOne = styled.div`
   transform: perspective(800px) rotateY(10deg) scale(1.1);
   max-width: 1200px;
   transition: 0.5s ease;
+  z-index: 1;
   @media screen and (max-width: 1500px) {
     width: 50%;
   }
@@ -73,29 +72,34 @@ export const MySkillsWrapper = styled.div`
   justify-content: space-between;
   transform: perspective(800px) rotateY(-10deg) scale(1.1);
   transition: 0.5s ease;
-  @media screen and (min-width: 1200px) {
-    &:hover {
-      transform: rotateY(-5deg) scale(1.1) rotate(5deg);
-      transition: 0.5s ease;
-    }
-  }
+  z-index: 1;
   @media screen and (max-width: 680px) {
     width: 100%;
-    height: 500px;
+    height: 350px;
     margin-top: 150px;
   }
+`;
+
+const rotate = keyframes`
+25%{
+  transform: rotateY(5deg) scale(0.95) rotateX(-15deg);
+}
+}
+75%{
+  transform: rotateY(5deg) scale(1) rotate(2deg);
+}
 `;
 
 export const MySkills = styled.div`
   height: 550px;
   width: 100%;
-  border: 1px solid ${({ theme }) => theme.colors.black};
-  box-shadow: ${({ theme }) => theme.boxShadow.l};
-  @media screen and (max-width: 680px) {
-    box-shadow: ${({ theme }) => theme.boxShadow.s};
-  }
+  border: 3px solid ${({ theme }) => theme.colors.black};
+  box-shadow: ${({ theme }) => theme.boxShadow.right};
+  transition: 0.5s ease;
+  animation: ${rotate} 3s infinite ease;
+  background-color: #ffc10b !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%23FFAD00' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
   background: ${({ theme }) => theme.colors.white};
-  /* backdrop-filter: blur(5px); */
 `;
 
 export const Article = styled(motion.article)`

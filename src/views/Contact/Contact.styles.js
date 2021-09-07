@@ -42,12 +42,11 @@ export const FormWrapper = styled(motion.form)`
   justify-content: center;
   align-items: center;
   /* overflow: hidden; */
+  background-color: #106fca;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%230C64BE' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
   transform: perspective(800px) rotateY(10deg) scale(1.1);
-  box-shadow: ${({ theme }) => theme.boxShadow.l};
-  border: 1px solid ${({ theme }) => theme.colors.black};
-  @media screen and (max-width: 680px) {
-    box-shadow: ${({ theme }) => theme.boxShadow.s};
-  }
+  box-shadow: ${({ theme }) => theme.boxShadow.left};
+  border: 3px solid ${({ theme }) => theme.colors.black};
   &.emailSend {
     opacity: 0.5;
     transition: 0.5s ease;
@@ -114,20 +113,17 @@ export const Input = styled(motion.input)`
   background: none;
   padding: 10px;
   border: none;
-  border: 1px solid ${({ theme }) => theme.colors.black};
-  /* border-bottom: 1px solid ${({ theme }) => theme.colors.black}; */
-  font-family: 'Montserrat', sans-serif;
+  border: 3px solid ${({ theme }) => theme.colors.black};
+  font-family: 'Bangers', cursive;
+  color: ${({ theme }) => theme.colors.black};
   font-weight: 100;
   margin-bottom: 40px;
   transition: 0.5s ease;
-  background: ${({ theme }) => theme.colors.white};
-  box-shadow: ${({ theme }) => theme.boxShadow.l};
-  @media screen and (max-width: 680px) {
-    box-shadow: ${({ theme }) => theme.boxShadow.s};
-  }
+  box-shadow: ${({ theme }) => theme.boxShadow.left};
   @media screen and (min-width: 1200px) {
     &:hover,
     &:focus {
+      background: white;
       transform: perspective(800px) rotateX(-5deg) rotateY(-10deg) scale(1.1);
       transition: 0.5s ease;
     }
@@ -148,19 +144,17 @@ export const Textarea = styled(motion.textarea)`
   min-height: 250px;
   background: none;
   padding: 10px;
-  border: 1px solid ${({ theme }) => theme.colors.black};
-  font-family: 'Montserrat', sans-serif;
+  border: 3px solid ${({ theme }) => theme.colors.black};
   font-weight: 100;
   resize: none;
   transition: 0.5s ease;
-  background: ${({ theme }) => theme.colors.white};
-  box-shadow: ${({ theme }) => theme.boxShadow.l};
-  @media screen and (max-width: 680px) {
-    box-shadow: ${({ theme }) => theme.boxShadow.s};
-  }
+  box-shadow: ${({ theme }) => theme.boxShadow.left};
+  font-family: 'Bangers', cursive;
+  color: ${({ theme }) => theme.colors.black};
   @media screen and (min-width: 1200px) {
     &:hover,
     &:focus {
+      background: white;
       transform: perspective(800px) rotateX(-5deg) rotateY(-10deg) scale(1.1);
       transition: 0.5s ease;
     }
@@ -207,6 +201,15 @@ export const Header = styled(motion.h4)`
   margin-bottom: 50px;
 `;
 
+const rotate = keyframes`
+25%{
+  transform: rotate(-5deg);
+}
+75%{
+  transform: rotate(5deg);
+}
+`;
+
 export const InfoWrapper = styled(motion.div)`
   width: 100%;
   height: 160px;
@@ -214,17 +217,11 @@ export const InfoWrapper = styled(motion.div)`
   flex-direction: column;
   justify-content: space-evenly;
   transition: 0.5s ease;
-  box-shadow: ${({ theme }) => theme.boxShadow.l};
-  border: 1px solid ${({ theme }) => theme.colors.black};
-  @media screen and (max-width: 680px) {
-    box-shadow: ${({ theme }) => theme.boxShadow.s};
-  }
-  @media screen and (min-width: 1200px) {
-    &:hover {
-      transform: rotate(-5deg) !important;
-      transition: 0.5s ease;
-    }
-  }
+  box-shadow: ${({ theme }) => theme.boxShadow.right};
+  border: 3px solid ${({ theme }) => theme.colors.black};
+  background-color: #d62e2e;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%239B2122' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  animation: ${rotate} 4s infinite ease;
   @media screen and (max-width: 680px) {
     height: 150px;
   }
@@ -239,6 +236,10 @@ export const Info = styled(motion.div)`
 
 export const Icon = styled.img`
   min-width: 18px;
+  max-width: 18px;
   min-height: 18px;
   margin: 0 25px;
+  @media screen and (max-width: 680px) {
+    margin: 0 10px;
+  }
 `;

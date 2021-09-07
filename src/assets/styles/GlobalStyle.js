@@ -7,8 +7,7 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
     body{
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 100;
+        font-family: 'Bangers', cursive;
         overflow-x: hidden;
         color: ${({ theme }) => theme.colors.black};
         background: ${({ theme }) => theme.colors.white};
@@ -17,6 +16,7 @@ export const GlobalStyle = createGlobalStyle`
     h1,h2,h3,h4{
         font-weight: 600;
         font-size: ${({ theme }) => theme.fontSize.xl};
+        font-family: 'Bangers', cursive;
         @media screen and (max-width: 1600px) {
             font-size: ${({ theme }) => theme.fontSize.l};
         }
@@ -33,10 +33,6 @@ export const GlobalStyle = createGlobalStyle`
             line-height: 20px;
             font-size: ${({ theme }) => theme.fontSize.s};
         }
-    }
-    button{
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 100;
     }
     ::-webkit-scrollbar {
         width: 10px;

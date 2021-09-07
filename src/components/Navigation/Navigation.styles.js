@@ -11,7 +11,7 @@ export const Wrapper = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 9999;
+  z-index: 9999 !important;
   @media screen and (max-width: 680px) {
     top: 20px;
   }
@@ -103,6 +103,7 @@ export const SocialMedia = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 9999 !important;
 `;
 
 export const Icon = styled.img`

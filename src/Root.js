@@ -14,6 +14,15 @@ import Cursor from 'components/Cursor/Cursor';
 import ShadowLayer from 'components/ShadowLayer/ShadowLayer';
 // HELPERS
 import { matchMedia } from 'helpers/matchMedia';
+import styled from 'styled-components';
+
+const HeroImage = styled.img`
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #f6f6f6;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%23D6D6D6' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+`;
 
 function Root() {
   const [toggleReadMore, setToggleReadMore] = useState(false);
@@ -29,9 +38,10 @@ function Root() {
         <GlobalStyle />
         {matchMedia && <Cursor />}
         <Navigation toggleReadMore={toggleReadMore} setToggleReadMore={setToggleReadMore} viewProject={viewProject} setViewProject={setViewProject} />
-        <Home />
+        <HeroImage />
+        {/* <Home /> */}
         <AboutMe toggleReadMore={toggleReadMore} setToggleReadMore={setToggleReadMore} />
-        <Projects viewProject={viewProject} setViewProject={setViewProject} />
+        {/* <Projects viewProject={viewProject} setViewProject={setViewProject} /> */}
         <Contact />
         {/* <ShadowLayer className={`top ${viewProject.isToggled && 'hide'} ${toggleReadMore && 'hide'}`} />
         <ShadowLayer className={`bottom ${viewProject.isToggled && 'hide'} ${toggleReadMore && 'hide'}`} /> */}

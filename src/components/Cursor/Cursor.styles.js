@@ -1,5 +1,27 @@
 import styled from 'styled-components';
 
+export const Ouch = styled.img`
+  position: absolute;
+  top: -80px;
+  left: -80px;
+  opacity: 0;
+  min-width: 150px;
+  &.ouch {
+    opacity: 1;
+  }
+`;
+
+export const Bang = styled.img`
+  position: absolute;
+  top: -80px;
+  left: -80px;
+  opacity: 0;
+  min-width: 150px;
+  &.ouch {
+    opacity: 1;
+  }
+`;
+
 export const CursorWrapper = styled.div`
   position: relative;
   width: 20px;
@@ -14,7 +36,10 @@ export const CursorWrapper = styled.div`
   transition-property: transform;
   transform-origin: 100% -20%;
   border-radius: 50%;
-  &::before {
+  img {
+    width: 60px;
+  }
+  /* &::before {
     content: '';
     position: absolute;
     width: 40px;
@@ -52,14 +77,14 @@ export const CursorWrapper = styled.div`
       width: 35px;
       height: 35px;
     }
-  }
+  } */
   &.active {
-    transform: scale(1.2) rotate(45deg);
-    &::before {
+    transform: scale(1.2) rotate(25deg);
+    /* &::before {
       border-radius: 50%;
     }
     &::after {
       border-radius: 0;
-    }
+    } */
   }
 `;

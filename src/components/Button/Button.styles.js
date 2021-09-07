@@ -42,22 +42,22 @@ export const ButtonWrapper = styled(motion.button)`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  cursor: pointer;
+  cursor: none;
   white-space: nowrap;
   box-shadow: ${({ theme }) => theme.boxShadow.left};
-
   font-family: 'Bangers', cursive;
-  &.AboutMe {
-    transition: 0.5s ease;
-    @media screen and (min-width: 1200px) {
-      &:hover {
-        background: white;
-        transform: perspective(800px) rotateY(-20deg) scale(1.1) rotate(5deg) !important;
-        img {
-          transform: scale(2) translateX(15px);
-        }
+  transition: 0.5s ease;
+  @media screen and (min-width: 1000px) {
+    &:hover {
+      background: white;
+      transform: perspective(800px) rotateY(-20deg) scale(1.1) rotate(5deg) !important;
+      background-color: #a3ed0a !important;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%2343B104' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
+      img {
+        transform: translateX(20px) scale(2) !important;
         transition: 0.5s ease;
       }
+      transition: 0.5s ease;
     }
   }
   &.emailSend {
@@ -70,16 +70,16 @@ export const ButtonWrapper = styled(motion.button)`
   }
   a {
     width: 100%;
-    height: 100%;
     display: flex;
     text-decoration: none;
     color: ${({ theme }) => theme.colors.black};
+    font-size: ${({ theme }) => theme.fontSize.l};
   }
   p {
     pointer-events: none;
   }
   img {
-    max-height: 25px;
+    max-height: 35px;
     margin-left: 15px;
     transition: 0.5s ease;
     pointer-events: none;
@@ -89,15 +89,9 @@ export const ButtonWrapper = styled(motion.button)`
       animation: ${sendEmail} 1.5s ease-in-out forwards infinite;
     }
     @media screen and (max-width: 680px) {
-      max-height: 15px;
+      max-height: 30px;
     }
   }
   &:hover {
-    background-color: #a3ed0a !important;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%2343B104' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
-    img {
-      transform: translateX(5px) scale(1.2);
-      transition: 0.5s ease;
-    }
   }
 `;

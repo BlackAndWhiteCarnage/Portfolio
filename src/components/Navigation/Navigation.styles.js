@@ -21,23 +21,31 @@ export const HamburgerMenu = styled.nav`
   position: relative;
   width: 50px;
   height: 100%;
-  cursor: pointer;
   @media screen and (max-width: 680px) {
     width: 40px;
   }
 `;
 
-export const LinesWrapper = styled.nav`
+export const HamburgerWrapper = styled.div`
   position: absolute;
-  width: 100%;
-  height: 100%;
-  transition: 0.5s 1s ease;
+  width: 70px;
+  height: 70px;
+  /* transition: 0.5s 1s ease; */
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   left: 0;
-  justify-content: space-between;
   opacity: 1;
   pointer-events: all;
+  border: 3px solid ${({ theme }) => theme.colors.black};
+  box-shadow: ${({ theme }) => theme.boxShadow.left};
+  border-radius: 50%;
+  background-color: #a3ed0a !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%2343B104' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
+  @media screen and (max-width: 1200px) {
+    width: 55px;
+    height: 55px;
+  }
   &.hide {
     pointer-events: none;
     transition: 0.5s 1s ease;
@@ -46,11 +54,15 @@ export const LinesWrapper = styled.nav`
   }
 `;
 
+export const AccualHamburger = styled.img`
+  width: 80%;
+  height: 80%;
+`;
+
 export const BackIcon = styled.img`
   position: absolute;
   width: 50px;
   height: 100%;
-  cursor: pointer;
   right: -100%;
   opacity: 0;
   transition: 0.5s 1s ease;
@@ -66,48 +78,43 @@ export const BackIcon = styled.img`
   }
 `;
 
-export const Line = styled.div`
-  height: 1px;
-  pointer-events: none;
-  background: ${({ theme }) => theme.colors.black};
-  transition: 0.5s ease;
-  &:nth-child(1) {
-    width: 100%;
-    &.toggle {
-      width: 50%;
-    }
+export const IconWrapper = styled.nav`
+  min-width: 50px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999 !important;
+  border: 3px solid ${({ theme }) => theme.colors.black};
+  box-shadow: ${({ theme }) => theme.boxShadow.right};
+  border-radius: 50%;
+  @media screen and (max-width: 1200px) {
+    min-width: 40px;
+    min-height: 40px;
   }
-  &:nth-child(2) {
-    width: 20%;
-    &.toggle {
-      width: 80%;
-    }
+  &.facebook {
+    background-color: #71d8fd;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%234FA5CB' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
   }
-  &:nth-child(3) {
-    width: 70%;
-    &.toggle {
-      width: 20%;
-    }
-  }
-  &:nth-child(4) {
-    width: 40%;
-    &.toggle {
-      width: 100%;
-    }
+  &.github {
+    background-color: #c8c8c8;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%239D9D9D' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
   }
 `;
 
 export const SocialMedia = styled.nav`
-  width: 80px;
+  width: 140px;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 9999 !important;
+  @media screen and (max-width: 1200px) {
+    width: 100px;
+  }
 `;
 
 export const Icon = styled.img`
   width: 25px;
   height: 25px;
-  cursor: pointer;
 `;

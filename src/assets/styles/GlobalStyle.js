@@ -12,6 +12,7 @@ export const GlobalStyle = createGlobalStyle`
         color: ${({ theme }) => theme.colors.black};
         background: ${({ theme }) => theme.colors.white};
         letter-spacing: 5px;
+        cursor: none;
     }
     h1,h2,h3,h4{
         font-weight: 600;
@@ -20,29 +21,30 @@ export const GlobalStyle = createGlobalStyle`
         @media screen and (max-width: 1600px) {
             font-size: ${({ theme }) => theme.fontSize.l};
         }
-        @media screen and (max-width: 680px) {
+        /* @media screen and (max-width: 680px) {
             font-size: ${({ theme }) => theme.fontSize.m};
-        }
+        } */
     }
-    article, li, p, a, input, textarea{
+    article, li, p, a, input, textarea, label{
         font-size: ${({ theme }) => theme.fontSize.m};
         line-height: 25px;
         letter-spacing: normal;
         font-weight: 400;
+        cursor: none;
         @media screen and (max-width: 1000px) {
             line-height: 20px;
-            font-size: ${({ theme }) => theme.fontSize.s};
+            /* font-size: ${({ theme }) => theme.fontSize.s}; */
         }
     }
     ::-webkit-scrollbar {
         width: 10px;
-        background: ${({ theme }) => theme.colors.black};
+        background: #FFB806;
     }
     ::-webkit-scrollbar-track {
-        background: ${({ theme }) => theme.colors.white};
+        background: #FFB806;
         width: 10px;
     }
     ::-webkit-scrollbar-thumb {
-        background: ${({ theme }) => theme.colors.black};
+        background: #106FCA;
     }
 `;

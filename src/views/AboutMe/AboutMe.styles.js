@@ -65,7 +65,6 @@ export const Header = styled.h4`
 `;
 
 export const MySkillsWrapper = styled.div`
-  /* width: 600px; */
   width: 40%;
   display: flex;
   flex-direction: column;
@@ -99,7 +98,6 @@ export const MySkills = styled.div`
   animation: ${rotate} 3s infinite ease;
   background-color: #ffc10b !important;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%23FFAD00' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
-  background: ${({ theme }) => theme.colors.white};
 `;
 
 export const Article = styled(motion.article)`
@@ -113,5 +111,7 @@ export const ButtonsWrapper = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  /* height: 120px; */
+  @media screen and (max-width: 1000px) {
+    height: 140px;
+  }
 `;

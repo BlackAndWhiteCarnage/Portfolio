@@ -129,7 +129,8 @@ export const Input = styled(motion.input)`
     }
   }
   &.VALID {
-    background: ${({ theme }) => theme.colors.valid};
+    background-color: #a3ed0a !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%2343B104' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
     transition: 0.5s ease;
   }
   &.ERROR {
@@ -160,7 +161,8 @@ export const Textarea = styled(motion.textarea)`
     }
   }
   &.VALID {
-    background: ${({ theme }) => theme.colors.valid};
+    background-color: #a3ed0a !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%2343B104' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
     transition: 0.5s ease;
   }
   &.ERROR {
@@ -235,9 +237,9 @@ export const Info = styled(motion.div)`
 `;
 
 export const Icon = styled.img`
-  min-width: 18px;
-  max-width: 18px;
-  min-height: 18px;
+  min-width: 25px;
+  max-width: 25px;
+  min-height: 25px;
   margin: 0 25px;
   @media screen and (max-width: 680px) {
     margin: 0 10px;

@@ -10,7 +10,8 @@ export const Wrapper = styled(motion.section)`
   align-items: center;
   justify-content: space-around;
   /* flex-direction: column; */
-  padding: 150px 0 0 0;
+  overflow: hidden;
+  /* padding: 150px 0 0 0; */
 `;
 
 export const LogoAndNavWrapper = styled(motion.div)`
@@ -24,8 +25,9 @@ export const LogoAndNavWrapper = styled(motion.div)`
   }
   @media screen and (max-width: 680px) {
     width: 80%;
-    height: auto;
+    height: 1300px;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
   &.hide {

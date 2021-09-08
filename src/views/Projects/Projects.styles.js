@@ -16,14 +16,17 @@ export const Wrapper = styled(motion.section)`
 export const ProjectsSliderWrapper = styled.div`
   position: relative;
   height: 450px;
-  width: 800px;
+  width: 450px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   max-width: 1200px;
   transition: 1s 0.5s ease;
+  @media screen and (max-width: 1000px) {
+    width: 300px;
+  }
   @media screen and (max-width: 680px) {
-    width: 70%;
+    width: 60%;
     height: 250px;
   }
   &.previewProject {

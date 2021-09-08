@@ -41,7 +41,7 @@ function Root() {
         <HeroImage />
         <Home />
         <AboutMe toggleReadMore={toggleReadMore} setToggleReadMore={setToggleReadMore} />
-        {/* <Projects viewProject={viewProject} setViewProject={setViewProject} /> */}
+        <Projects viewProject={viewProject} setViewProject={setViewProject} />
         <Contact />
         {/* <ShadowLayer className={`top ${viewProject.isToggled && 'hide'} ${toggleReadMore && 'hide'}`} />
         <ShadowLayer className={`bottom ${viewProject.isToggled && 'hide'} ${toggleReadMore && 'hide'}`} /> */}

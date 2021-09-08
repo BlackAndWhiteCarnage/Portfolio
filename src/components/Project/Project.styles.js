@@ -4,7 +4,7 @@ export const ProjectWrapper = styled.div`
   position: absolute;
   opacity: 0;
   width: 100%;
-  height: auto;
+  height: 700px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,14 +12,17 @@ export const ProjectWrapper = styled.div`
   left: 0;
   transition: 0.5s ease-out;
   transform: scale(0);
-  box-shadow: ${({ theme }) => theme.boxShadow.l};
+  border: 3px solid ${({ theme }) => theme.colors.black};
+  box-shadow: ${({ theme }) => theme.boxShadow.left};
+  @media screen and (max-width: 1000px) {
+    height: 500px;
+  }
   @media screen and (max-width: 680px) {
-    box-shadow: ${({ theme }) => theme.boxShadow.s};
+    height: 400px;
   }
   &.show,
   &.next,
   &.prev {
-    cursor: pointer;
     transition: 0.4s ease-in-out;
   }
   &.show {
@@ -27,61 +30,82 @@ export const ProjectWrapper = styled.div`
     opacity: 1;
     left: 0;
     z-index: 20;
+    background-color: #a3ed0a !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%2343B104' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
     @media screen and (min-width: 1200px) {
       &:hover {
         transform: scale(1.025);
-        transition: 0.3s ease-out;
+        transition: 0.5s ease-out;
       }
     }
   }
   &.next,
   &.prev {
-    opacity: 0.2;
+    opacity: 0.8;
     transform: scale(0.5);
     z-index: 10;
-    /* @media screen and (min-width: 1200px) {
-      &:hover {
-        opacity: 0.8;
-      }
-    } */
   }
   &.next {
     left: 100%;
-    transform: perspective(400px) rotateY(-15deg) scale(0.65);
+    transform: perspective(400px) rotateY(-15deg) scale(0.65) rotate(25deg);
+    background-color: #106fca;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%230C64BE' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+    img {
+      transform: rotate(-65deg);
+      &:hover {
+        transform: rotate(-55deg) scale(1.1);
+      }
+    }
     &:hover {
-      opacity: 0.8;
-      transform: perspective(800px) rotateY(-15deg) scale(0.65);
-      transition: 0.3s ease-out;
+      opacity: 1;
+      transition: 0.5s ease-out;
     }
     @media screen and (max-width: 1920px) {
       left: 80%;
     }
     @media screen and (max-width: 1280px) {
-      left: 50%;
+      left: 70%;
     }
   }
   &.prev {
     left: -100%;
-    transform: perspective(400px) rotateY(15deg) scale(0.65);
+    transform: perspective(400px) rotateY(15deg) scale(0.65) rotate(-25deg);
+    background-color: #d62e2e;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%239B2122' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+    img {
+      transform: rotate(65deg);
+      &:hover {
+        transform: rotate(55deg) scale(1.1);
+      }
+    }
     &:hover {
-      opacity: 0.8;
-      transform: perspective(800px) rotateY(15deg) scale(0.65);
-      transition: 0.3s ease-out;
+      opacity: 1;
+      transition: 0.5s ease-out;
     }
     @media screen and (max-width: 1920px) {
       left: -80%;
     }
     @media screen and (max-width: 1280px) {
-      left: -50%;
+      left: -70%;
     }
   }
 `;
 
 export const ProjectImage = styled.img`
-  width: 100%;
-  height: 100%;
+  width: 120%;
+  height: auto;
   transition: 0.5s ease;
   object-fit: cover;
+  border: 3px solid ${({ theme }) => theme.colors.black};
+  box-shadow: ${({ theme }) => theme.boxShadow.left};
+  @media screen and (min-width: 1000px) {
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  @media screen and (max-width: 680px) {
+    width: 85%;
+  }
 `;
 
 export const ProjectTitle = styled.h2`
@@ -100,11 +124,15 @@ export const ProjectTitle = styled.h2`
     transition: 0.5s 0.5s ease;
     opacity: 1;
     @media screen and (max-width: 680px) {
-      top: -45px;
+      top: -135px;
     }
   }
   @media screen and (max-width: 680px) {
-    font-size: ${({ theme }) => theme.fontSize.s};
+    top: -45px;
+    height: 130px;
+    display: flex;
+    align-items: flex-end;
+    text-align: left;
   }
 `;
 
@@ -145,30 +173,29 @@ export const ProjectLinksWrapper = styled.div`
 `;
 
 export const Links = styled.a`
-  margin-top: 30px;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  min-width: 50px;
+  min-height: 50px;
   display: flex;
+  margin-top: 30px;
   align-items: center;
   justify-content: center;
-  padding: 0 10px;
-  transition: 1s ease;
-  background: ${({ theme }) => theme.colors.white};
-  -webkit-box-shadow: 0px 0px 15px 0px ${({ theme }) => theme.colors.black};
-  box-shadow: 0px 0px 15px 0px ${({ theme }) => theme.colors.black};
-  &:hover {
-    transform: rotateY(180deg) scale(1.2) rotate(360deg);
-    transition: 1s ease;
+  z-index: 9999 !important;
+  border: 3px solid ${({ theme }) => theme.colors.black};
+  box-shadow: ${({ theme }) => theme.boxShadow.right};
+  border-radius: 50%;
+  transition: 0.5s ease;
+  background-color: #ffc10b !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%23FFAD00' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
+  @media screen and (max-width: 1200px) {
+    min-width: 40px;
+    min-height: 40px;
   }
-  img {
-    width: 100%;
-    @media screen and (min-width: 1200px) {
-      transition: 0.3s ease;
+  @media screen and (min-width: 1000px) {
+    &:hover {
+      transition: 0.5s ease;
+      transform: scale(1.2);
+      background-color: #a3ed0a !important;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%2343B104' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
     }
-  }
-  @media screen and (max-width: 680px) {
-    width: 40px;
-    height: 40px;
   }
 `;

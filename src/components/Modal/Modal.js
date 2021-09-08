@@ -8,13 +8,13 @@ const Modal = ({ toggleModal, toggleModalHandler }) => {
   return (
     <ModalWrapper className={toggleModal && 'toggle'} onClick={() => toggleModalHandler()}>
       <LinksWrapper>
-        <Link id='active' text='ABOUT ME'>
+        <Link text='ABOUT ME'>
           <LinkTo text='ABOUT ME' to='ABOUT ME' toggleModalHandler={toggleModalHandler} />
         </Link>
-        <Link id='active' text='PROJECTS'>
+        <Link text='PROJECTS'>
           <LinkTo text='PROJECTS' to='PROJECTS' toggleModalHandler={toggleModalHandler} />
         </Link>
-        <Link id='active' text='CONTACT'>
+        <Link text='CONTACT'>
           <LinkTo text='CONTACT' to='CONTACT' toggleModalHandler={toggleModalHandler} />
         </Link>
       </LinksWrapper>

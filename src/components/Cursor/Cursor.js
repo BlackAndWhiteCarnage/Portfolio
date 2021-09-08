@@ -4,10 +4,12 @@ import { CursorWrapper, Ouch, Bang } from './Cursor.styles';
 // ICONS
 import cursorIcon from 'assets/icons/cursor-icon.svg';
 import ouchIcon from 'assets/icons/ouch-icon.svg';
+import bangIcon from 'assets/icons/bang-icon.svg';
 
 const Cursor = () => {
   const ref = useRef(null);
   const [ouch, setOuch] = useState(false);
+  const [bang, setBang] = useState(false);
 
   const mouseMoveHandler = (e) => {
     ref.current.style.top = e.clientY + 'px';
@@ -28,13 +30,15 @@ const Cursor = () => {
       item.tagName === 'path' ||
       item.tagName === 'A'
     ) {
+      setBang(true);
     } else {
       setOuch(true);
     }
 
     setTimeout(() => {
+      setBang(false);
       setOuch(false);
-    }, 300);
+    }, 400);
   };
 
   const activeCursorHandler = (e) => {
@@ -67,7 +71,7 @@ const Cursor = () => {
     <CursorWrapper ref={ref}>
       <img src={cursorIcon} />
       <Ouch src={ouchIcon} className={ouch && 'ouch'} />
-      <Bang src={ouchIcon} className={ouch && 'bang'} />
+      <Bang src={bangIcon} className={bang && 'bang'} />
     </CursorWrapper>
   );
 };

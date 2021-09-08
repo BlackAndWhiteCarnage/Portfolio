@@ -4,6 +4,7 @@ export const ModalWrapper = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
+  transform: scale(2);
   height: 100%;
   width: 100%;
   z-index: 150;
@@ -16,12 +17,11 @@ export const ModalWrapper = styled.nav`
   pointer-events: none;
   transition: 0.5s ease;
   opacity: 0;
-  transform: scale(2);
   &.toggle {
     transform: scale(1);
     opacity: 1;
     pointer-events: all;
-    transition: 1s 0.5s ease;
+    transition: 1s 1s ease;
   }
 `;
 
@@ -46,19 +46,19 @@ export const Link = styled.li`
     &::before {
       position: absolute;
       content: '${(props) => props.text}';
-      top: -100%;
-      left: 50%;
+      top: -150%;
+      left: -100%;
       transform: translate(-50%);
-      font-size: 100px;
+      font-size: 180px;
       white-space: nowrap;
       opacity: 0;
       font-weight: 400;
       transition: 0.5s ease;
-      color: #efefef;
+      color: ${({ theme }) => theme.colors.white};
       z-index: -1;
       pointer-events: none;
     }
-    &::after {
+    /* &::after {
       position: absolute;
       left: 50%;
       bottom: 0;
@@ -71,17 +71,23 @@ export const Link = styled.li`
       z-index: -1;
       transition: 0.5s ease;
       pointer-events: none;
-    }
+    } */
+    transition: 0.5s ease;
     &:hover {
       transition: 0.5s ease;
-      &::after {
+      outline: none;
+      transform: scale(1.2) !important;
+      background-color: #a3ed0a !important;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%2343B104' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
+      /* &::after {
         transition: 0.5s ease;
         height: 100%;
         opacity: 1;
-      }
+      } */
       &::before {
-        transition: 0.5s ease;
+        transition: 0.2s ease;
         opacity: 1;
+        left: 50%;
       }
     }
   }

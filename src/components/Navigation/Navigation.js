@@ -15,40 +15,48 @@ const Navigation = ({ toggleReadMore, setToggleReadMore, setViewProject, viewPro
 
   const toggleModalHandler = () => {
     setToggleModal(!toggleModal);
+    if (toggleModal) {
+      closeOtherModalsHandler();
+    }
   };
 
   const closeOtherModalsHandler = () => {
     setToggleReadMore(false);
     setViewProject({ ...viewProject, isToggled: false });
+    setToggleModal(false);
   };
 
   return (
     <>
       <Wrapper>
         <HamburgerMenu id='active'>
-          <BackIcon
-            src={back}
-            onClick={closeOtherModalsHandler}
-            id='active'
-            className={`${viewProject.isToggled && 'show'} ${toggleReadMore && 'show'}`}
-          />
           <HamburgerWrapper
             id='active'
             src={hamburger}
-            className={`${viewProject.isToggled && 'hide'} ${toggleReadMore && 'hide'}`}
-            onClick={() => {
-              toggleModalHandler();
-            }}
+            className={`${viewProject.isToggled && 'toggle'} ${toggleModal && 'toggle'} ${toggleReadMore && 'toggle'}`}
           >
-            <AccualHamburger src={hamburger} />
+            <AccualHamburger
+              src={hamburger}
+              id='active'
+              className={`${viewProject.isToggled && 'hide'} ${toggleModal && 'hide'} ${toggleReadMore && 'hide'}`}
+              onClick={() => {
+                toggleModalHandler();
+              }}
+            />
+            <BackIcon
+              src={back}
+              id='active'
+              className={`${viewProject.isToggled && 'show'} ${toggleModal && 'show'} ${toggleReadMore && 'show'}`}
+              onClick={closeOtherModalsHandler}
+            />
           </HamburgerWrapper>
         </HamburgerMenu>
         <SocialMedia>
-          <IconWrapper className='facebook'>
-            <Icon src={facebook} id='active' />
+          <IconWrapper id='active'>
+            <Icon src={facebook} />
           </IconWrapper>
-          <IconWrapper className='github'>
-            <Icon src={github} id='active' />
+          <IconWrapper id='active'>
+            <Icon src={github} />
           </IconWrapper>
         </SocialMedia>
       </Wrapper>

@@ -41,7 +41,6 @@ export const FormWrapper = styled(motion.form)`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* overflow: hidden; */
   background-color: #106fca;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%230C64BE' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
   transform: perspective(800px) rotateY(10deg) scale(1.1);
@@ -114,18 +113,26 @@ export const Input = styled(motion.input)`
   padding: 10px;
   border: none;
   border: 3px solid ${({ theme }) => theme.colors.black};
+  box-shadow: ${({ theme }) => theme.boxShadow.left};
   font-family: 'Bangers', cursive;
   color: ${({ theme }) => theme.colors.black};
   font-weight: 100;
   margin-bottom: 40px;
   transition: 0.5s ease;
-  box-shadow: ${({ theme }) => theme.boxShadow.left};
+  &:focus {
+    outline: none;
+    transform: perspective(800px) rotateX(-5deg) rotateY(-10deg) scale(1.1);
+    transition: 0.5s ease;
+    background-color: #f6f6f6 !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%23CCCCCC' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
+  }
   @media screen and (min-width: 1200px) {
-    &:hover,
-    &:focus {
-      background: white;
+    &:hover {
+      outline: none;
       transform: perspective(800px) rotateX(-5deg) rotateY(-10deg) scale(1.1);
       transition: 0.5s ease;
+      background-color: #f6f6f6 !important;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%23CCCCCC' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
     }
   }
   &.VALID {
@@ -134,7 +141,8 @@ export const Input = styled(motion.input)`
     transition: 0.5s ease;
   }
   &.ERROR {
-    background: ${({ theme }) => theme.colors.error};
+    background-color: #d62e2e;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%239B2122' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
     transition: 0.5s ease;
   }
 `;
@@ -152,12 +160,20 @@ export const Textarea = styled(motion.textarea)`
   box-shadow: ${({ theme }) => theme.boxShadow.left};
   font-family: 'Bangers', cursive;
   color: ${({ theme }) => theme.colors.black};
+  &:focus {
+    outline: none;
+    transform: perspective(800px) rotateX(-5deg) rotateY(-10deg) scale(1.1);
+    transition: 0.5s ease;
+    background-color: #f6f6f6 !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%23CCCCCC' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
+  }
   @media screen and (min-width: 1200px) {
-    &:hover,
-    &:focus {
-      background: white;
+    &:hover {
+      outline: none;
       transform: perspective(800px) rotateX(-5deg) rotateY(-10deg) scale(1.1);
       transition: 0.5s ease;
+      background-color: #f6f6f6 !important;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%23CCCCCC' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
     }
   }
   &.VALID {
@@ -166,7 +182,8 @@ export const Textarea = styled(motion.textarea)`
     transition: 0.5s ease;
   }
   &.ERROR {
-    background: ${({ theme }) => theme.colors.error};
+    background-color: #d62e2e;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%239B2122' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
     transition: 0.5s ease;
   }
 `;

@@ -59,6 +59,8 @@ const Contact = () => {
   };
 
   const checkValid = (e) => {
+    e.preventDefault();
+
     if (validEmail && validMessage) {
       setFeedback(1);
       sendEmail(e);
@@ -117,7 +119,7 @@ const Contact = () => {
               className={`${feedback === 2 && !validMessage && 'ERROR'} ${validMessage && 'VALID'}`}
               value={messageValue}
             />
-            <Button text='SEND' icon={send} className={`${emailSend && 'fly'} AboutMe`} />
+            <Button text='SEND' icon={send} className={`${emailSend && 'fly'} AboutMe`} onClick={checkValid} />
           </Form>
         </FormWrapper>
         <ButtonAndPersonalInfoWrapper variants={slide} animate={controls} initial='hidden' ref={element}>

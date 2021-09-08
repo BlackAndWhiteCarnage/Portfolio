@@ -30,22 +30,46 @@ export const HamburgerWrapper = styled.div`
   position: absolute;
   width: 70px;
   height: 70px;
-  /* transition: 0.5s 1s ease; */
+  transition: 0.5s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  left: 0;
   opacity: 1;
   pointer-events: all;
   border: 3px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.left};
   border-radius: 50%;
-  background-color: #a3ed0a !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%2343B104' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
+  overflow: hidden;
+  background-color: #ffc10b !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%23FFAD00' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
+  &.toggle {
+    transition: 0.3s ease;
+    background-color: #d62e2e !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%23BA2828' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
+  }
+  @media screen and (min-width: 1000px) {
+    &:hover {
+      transition: 0.5s ease;
+      transform: scale(1.2);
+      background-color: #a3ed0a !important;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%2343B104' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
+    }
+  }
   @media screen and (max-width: 1200px) {
     width: 55px;
     height: 55px;
   }
+`;
+
+export const AccualHamburger = styled.img`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  transition: 0.5s 1s ease;
+  pointer-events: all;
   &.hide {
     pointer-events: none;
     transition: 0.5s 1s ease;
@@ -54,24 +78,21 @@ export const HamburgerWrapper = styled.div`
   }
 `;
 
-export const AccualHamburger = styled.img`
-  width: 80%;
-  height: 80%;
-`;
-
 export const BackIcon = styled.img`
   position: absolute;
   width: 50px;
   height: 100%;
-  right: -100%;
+  left: 100%;
+  top: 50%;
   opacity: 0;
   transition: 0.5s 1s ease;
   pointer-events: none;
+  transform: translate(-50%, -50%);
   &.show {
     pointer-events: all;
     transition: 0.5s 1s ease;
     opacity: 1;
-    right: 0;
+    left: 50%;
   }
   @media screen and (max-width: 680px) {
     width: 40px;
@@ -88,17 +109,20 @@ export const IconWrapper = styled.nav`
   border: 3px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.right};
   border-radius: 50%;
+  transition: 0.5s ease;
+  background-color: #ffc10b !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%23FFAD00' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
   @media screen and (max-width: 1200px) {
     min-width: 40px;
     min-height: 40px;
   }
-  &.facebook {
-    background-color: #71d8fd;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%234FA5CB' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
-  }
-  &.github {
-    background-color: #c8c8c8;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%239D9D9D' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
+  @media screen and (min-width: 1000px) {
+    &:hover {
+      transition: 0.5s ease;
+      transform: scale(1.2);
+      background-color: #a3ed0a !important;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%2343B104' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
+    }
   }
 `;
 
@@ -117,4 +141,5 @@ export const SocialMedia = styled.nav`
 export const Icon = styled.img`
   width: 25px;
   height: 25px;
+  pointer-events: none;
 `;

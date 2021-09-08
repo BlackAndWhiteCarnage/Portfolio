@@ -112,6 +112,6 @@ export const ButtonsWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   @media screen and (max-width: 1000px) {
-    height: 140px;
+    min-height: 150px;
   }
 `;

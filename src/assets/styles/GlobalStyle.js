@@ -25,7 +25,7 @@ export const GlobalStyle = createGlobalStyle`
             font-size: ${({ theme }) => theme.fontSize.m};
         } */
     }
-    article, li, p, a, input, textarea, label{
+    article, p, a, input, textarea, label{
         font-size: ${({ theme }) => theme.fontSize.m};
         line-height: 25px;
         letter-spacing: normal;

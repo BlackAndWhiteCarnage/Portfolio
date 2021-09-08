@@ -6,26 +6,30 @@ export const Ouch = styled.img`
   left: -80px;
   opacity: 0;
   min-width: 150px;
+  transition: 0.2s ease;
   &.ouch {
+    transition: 0.2s ease;
     opacity: 1;
   }
 `;
 
 export const Bang = styled.img`
   position: absolute;
-  top: -80px;
-  left: -80px;
+  top: -50px;
+  left: -50px;
   opacity: 0;
-  min-width: 150px;
-  &.ouch {
+  min-width: 200px;
+  transition: 0.2s ease;
+  &.bang {
+    transition: 0.2s ease;
     opacity: 1;
   }
 `;
 
 export const CursorWrapper = styled.div`
   position: relative;
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   position: fixed;
   top: 0;
   left: 0;

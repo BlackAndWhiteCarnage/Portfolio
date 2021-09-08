@@ -39,7 +39,7 @@ function Root() {
         {matchMedia && <Cursor />}
         <Navigation toggleReadMore={toggleReadMore} setToggleReadMore={setToggleReadMore} viewProject={viewProject} setViewProject={setViewProject} />
         <HeroImage />
-        {/* <Home /> */}
+        <Home />
         <AboutMe toggleReadMore={toggleReadMore} setToggleReadMore={setToggleReadMore} />
         {/* <Projects viewProject={viewProject} setViewProject={setViewProject} /> */}
         <Contact />

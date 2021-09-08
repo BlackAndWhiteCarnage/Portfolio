@@ -4,48 +4,73 @@ import { motion } from 'framer-motion';
 export const Wrapper = styled(motion.section)`
   position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  margin-bottom: 150px;
+  justify-content: space-around;
+  /* flex-direction: column; */
+  padding: 150px 0 0 0;
 `;
 
 export const LogoAndNavWrapper = styled(motion.div)`
-  height: 300px;
-  width: 450px;
+  position: relative;
+  height: 600px;
+  width: 1300px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: space-between;
+  @media screen and (max-width: 1500px) {
+    width: 85%;
+  }
   @media screen and (max-width: 680px) {
     width: 80%;
-    height: 45%;
-    height: 60%;
-    justify-content: space-around;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+  }
+  &.hide {
+    transition: 0.5s ease;
+    opacity: 0;
+    transform: scale(0);
   }
 `;
 
+const rotate2 = keyframes`
+55%{
+  transform: perspective(800px) rotateY(25deg) rotateX(5deg) scale(1.1) translateY(5px);
+}
+}
+
+`;
+
 export const LogoImageWrapper = styled.div`
-  position: relative;
-  width: 100%;
-  height: 100px;
+  width: 500px;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: perspective(800px) rotateY(10deg) scale(1.1);
+  max-width: 1200px;
+  transition: 0.5s ease;
+  z-index: 1;
+  overflow: hidden;
+  border: 3px solid ${({ theme }) => theme.colors.black};
+  box-shadow: ${({ theme }) => theme.boxShadow.left};
+  animation: ${rotate2} 6s infinite ease;
+  &:hover {
+    border-radius: 30px;
+  }
+  @media screen and (max-width: 1500px) {
+    width: 50%;
+  }
   @media screen and (max-width: 680px) {
-    width: 300px;
+    width: 100%;
   }
 `;
 
 export const LogoLeftHalf = styled.img`
-  position: absolute;
-  background: ${({ theme }) => theme.colors.white};
-  left: 0;
-  z-index: 10;
-  @media screen and (max-width: 680px) {
-    width: 65%;
-    height: 100px;
-  }
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 
 export const LogoRightHalf = styled(motion.img)`
@@ -55,16 +80,6 @@ export const LogoRightHalf = styled(motion.img)`
     width: 33%;
     height: 100px;
   }
-`;
-
-const scrollAnimation = keyframes`
-0%{
-  transform: translateY(-50px);
-}
-80%{
-  transform: scale(1.25);
-  opacity: 1;
-}
 `;
 
 export const ScrollWrapper = styled.div`
@@ -83,64 +98,59 @@ export const ScrollWrapper = styled.div`
 `;
 
 export const Scroll = styled.img`
-  animation: ${scrollAnimation} 2.5s infinite ease;
   min-width: 20px;
   opacity: 0;
 `;
 
+const rotate = keyframes`
+25%{
+  transform: rotateY(5deg) scale(1.1) rotateX(-5deg);
+}
+}
+75%{
+  transform: rotateY(5deg) scale(1) rotate(5deg);
+}
+`;
+
 export const Navigation = styled.ul`
-  width: 100%;
-  height: 30px;
+  width: 40%;
   display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  justify-content: space-between;
   list-style: none;
-  @media screen and (max-width: 460px) {
-    flex-direction: column;
-    height: 170px;
-    width: auto;
+  transform: perspective(800px) rotateY(-10deg) scale(1.1);
+  transition: 0.5s ease;
+  z-index: 1;
+  box-shadow: ${({ theme }) => theme.boxShadow.right};
+  border: 3px solid ${({ theme }) => theme.colors.black};
+  background-color: #106fca;
+  animation: ${rotate} 4s infinite ease;
+  /* border-radius: 0 0 0 30px; */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%230C64BE' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  @media screen and (max-width: 680px) {
+    width: 100%;
+    height: 350px;
+    margin-top: 150px;
   }
 `;
 
 export const NavItem = styled(motion.li)`
-  padding: 10px;
-  cursor: pointer;
+  padding: 15px;
   position: relative;
-  width: 120px;
-  height: 50px;
+  width: 200px;
+  height: 60px;
+  font-size: ${({ theme }) => theme.fontSize.xl};
+  border: 3px solid ${({ theme }) => theme.colors.black};
+  box-shadow: ${({ theme }) => theme.boxShadow.right};
+  background-color: #ffc10b;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%23FFAD00' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  transition: 0.5s ease;
   @media screen and (min-width: 1200px) {
-    &::before {
-      position: absolute;
-      content: '${(props) => props.text}';
-      top: -100%;
-      left: 50%;
-      transform: translate(-50%);
-      font-size: 100px;
-      white-space: nowrap;
-      opacity: 0;
-      font-weight: 400;
-      transition: 0.5s ease;
-      color: #efefef;
-      z-index: -1;
-      pointer-events: none;
-    }
-    &::after {
-      position: absolute;
-      left: 50%;
-      bottom: 0;
-      transform: translate(-50%);
-      content: '';
-      width: 100%;
-      height: 100%;
-      /* background: ${({ theme }) => theme.colors.black}; */
-      border: 1px solid ${({ theme }) => theme.colors.black};
-      opacity: 0;
-      z-index: -1;
-      transition: 0.5s ease;
-      pointer-events: none;
-    }
     &:hover {
-      /* color: ${({ theme }) => theme.colors.white}; */
+      transform: perspective(800px) rotateY(-20deg) scale(1.2) rotate(5deg) !important;
+      background-color: #a3ed0a !important;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%2343B104' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
       transition: 0.5s ease;
       &::after {
         transition: 0.5s ease;

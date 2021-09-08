@@ -38,10 +38,21 @@ export const LinksWrapper = styled.ul`
 export const Link = styled.li`
   cursor: pointer;
   position: relative;
-  z-index: 10;
+  z-index: 100;
   padding: 10px;
-  width: 150px;
-  height: 50px;
+  width: 200px;
+  height: 60px;
+  font-size: ${({ theme }) => theme.fontSize.xl};
+  border: 3px solid ${({ theme }) => theme.colors.black};
+  box-shadow: ${({ theme }) => theme.boxShadow.left};
+  transition: 0.5s ease;
+  background-color: #ffc10b;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%23FFAD00' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  &:hover {
+    transition: 0.5s ease;
+    background-color: #a3ed0a;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%2343B104' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  }
   @media screen and (min-width: 1200px) {
     &::before {
       position: absolute;
@@ -52,26 +63,11 @@ export const Link = styled.li`
       font-size: 180px;
       white-space: nowrap;
       opacity: 0;
-      font-weight: 400;
       transition: 0.5s ease;
       color: ${({ theme }) => theme.colors.white};
       z-index: -1;
       pointer-events: none;
     }
-    /* &::after {
-      position: absolute;
-      left: 50%;
-      bottom: 0;
-      transform: translate(-50%);
-      content: '';
-      width: 100%;
-      height: 100%;
-      border: 1px solid ${({ theme }) => theme.colors.black};
-      opacity: 0;
-      z-index: -1;
-      transition: 0.5s ease;
-      pointer-events: none;
-    } */
     transition: 0.5s ease;
     &:hover {
       transition: 0.5s ease;

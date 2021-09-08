@@ -12,7 +12,8 @@ const StyledLink = styled(Link)`
   justify-content: center;
   width: 100%;
   height: 100%;
-  font-size: ${({ theme }) => theme.fontSize.xl};
+  font-size: inherit;
+  /* font-size: ${({ theme }) => theme.fontSize.xl};
   border: 3px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.left};
   transition: 0.5s ease;
@@ -22,7 +23,7 @@ const StyledLink = styled(Link)`
     transition: 0.5s ease;
     background-color: #a3ed0a;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%2343B104' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
-  }
+  } */
 `;
 
 const LinkTo = ({ text, to, toggleModalHandler }) => {

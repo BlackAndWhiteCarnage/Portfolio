@@ -10,6 +10,10 @@ import Button from 'components/Button/Button';
 import { useScroll } from 'helpers/useScroll';
 // ANIMATIONS
 import { fade, slide } from 'assets/animations/animation';
+// ICONS
+import wrongEmail from 'assets/icons/wrongEmail-icon.svg';
+import wrongMessage from 'assets/icons/wrongMessage-icon.svg';
+import emptyForm from 'assets/icons/emptyForm-icon.svg';
 // STYLES
 import {
   Wrapper,
@@ -24,6 +28,7 @@ import {
   Info,
   Icon,
   WaitingWrapper,
+  FeedbackImage,
   FormWrapper,
 } from 'views/Contact/Contact.styles';
 
@@ -61,15 +66,22 @@ const Contact = () => {
   const checkValid = (e) => {
     e.preventDefault();
 
+    if (!validEmail && validMessage) {
+      setFeedback(3);
+    } else if (!validMessage && validEmail) {
+      setFeedback(4);
+    } else if (!validEmail && !validMessage) {
+      setFeedback(2);
+    }
+
     if (validEmail && validMessage) {
       setFeedback(1);
       sendEmail(e);
-    } else {
-      setFeedback(2);
-      setTimeout(() => {
-        setFeedback(0);
-      }, 2000);
     }
+
+    setTimeout(() => {
+      setFeedback(0);
+    }, 1500);
   };
 
   function sendEmail(e) {
@@ -85,7 +97,7 @@ const Contact = () => {
         setValidEmail(false);
         setValidMessage(false);
         setWaiting(false);
-      }, 2500);
+      }, 1500);
       // emailjs.sendForm('service_pkn9ez9', 'template_btr6t4a', e.target, 'user_wfAnEXgFR6wa0u7anAPJf').then(
       //   (result) => {
       //     console.log(result.text);
@@ -108,7 +120,7 @@ const Contact = () => {
               variants={fade}
               onChange={emailHandler}
               name='email'
-              className={`${feedback === 2 && !validEmail && 'ERROR'} ${validEmail && 'VALID'}`}
+              className={`${feedback === 2 && !validEmail && 'ERROR'} ${feedback === 3 && !validEmail && 'ERROR'} ${validEmail && 'VALID'}`}
               value={emailValue}
             />
             <Label variants={slide}>MESSAGE</Label>
@@ -116,10 +128,13 @@ const Contact = () => {
               variants={fade}
               onChange={messageHandler}
               name='message'
-              className={`${feedback === 2 && !validMessage && 'ERROR'} ${validMessage && 'VALID'}`}
+              className={`${feedback === 2 && !validMessage && 'ERROR'} ${feedback === 4 && !validMessage && 'ERROR'} ${validMessage && 'VALID'}`}
               value={messageValue}
             />
             <Button text='SEND' icon={send} className={`${emailSend && 'fly'} AboutMe`} onClick={checkValid} />
+            <FeedbackImage className={feedback === 2 && 'ERROR'} src={emptyForm} />
+            <FeedbackImage className={feedback === 4 && 'ERROR'} src={wrongMessage} />
+            <FeedbackImage className={feedback === 3 && 'ERROR'} src={wrongEmail} />
           </Form>
         </FormWrapper>
         <ButtonAndPersonalInfoWrapper variants={slide} animate={controls} initial='hidden' ref={element}>

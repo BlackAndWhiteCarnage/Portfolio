@@ -5,6 +5,8 @@ import { CursorWrapper, Ouch, Bang } from './Cursor.styles';
 import cursorIcon from 'assets/icons/cursor-icon.svg';
 import ouchIcon from 'assets/icons/ouch-icon.svg';
 import bangIcon from 'assets/icons/bang-icon.svg';
+// HELPERS
+import { matchMedia } from 'helpers/matchMedia';
 
 const Cursor = () => {
   const ref = useRef(null);
@@ -69,7 +71,7 @@ const Cursor = () => {
 
   return (
     <CursorWrapper ref={ref}>
-      <img src={cursorIcon} />
+      {matchMedia && <img src={cursorIcon} />}
       <Ouch src={ouchIcon} className={ouch && 'ouch'} />
       <Bang src={bangIcon} className={bang && 'bang'} />
     </CursorWrapper>

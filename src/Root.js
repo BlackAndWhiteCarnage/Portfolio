@@ -36,7 +36,7 @@ function Root() {
     <>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        {matchMedia && <Cursor />}
+        <Cursor />
         <Navigation toggleReadMore={toggleReadMore} setToggleReadMore={setToggleReadMore} viewProject={viewProject} setViewProject={setViewProject} />
         <HeroImage />
         <Home />

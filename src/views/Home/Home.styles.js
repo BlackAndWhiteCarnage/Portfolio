@@ -4,14 +4,13 @@ import { motion } from 'framer-motion';
 export const Wrapper = styled(motion.section)`
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: 110vh;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
   /* flex-direction: column; */
   overflow: hidden;
-  /* padding: 150px 0 0 0; */
 `;
 
 export const LogoAndNavWrapper = styled(motion.div)`
@@ -19,6 +18,7 @@ export const LogoAndNavWrapper = styled(motion.div)`
   height: 600px;
   width: 1300px;
   display: flex;
+  z-index: 2;
   justify-content: space-between;
   @media screen and (max-width: 1500px) {
     width: 85%;
@@ -42,10 +42,10 @@ const rotate2 = keyframes`
   transform: perspective(800px) rotateY(25deg) rotateX(5deg) scale(1.1) translateY(5px);
 }
 }
-
 `;
 
 export const LogoImageWrapper = styled.div`
+  position: relative;
   width: 500px;
   display: flex;
   flex-direction: column;
@@ -54,13 +54,9 @@ export const LogoImageWrapper = styled.div`
   max-width: 1200px;
   transition: 0.5s ease;
   z-index: 1;
-  overflow: hidden;
   border: 3px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.left};
   animation: ${rotate2} 6s infinite ease;
-  &:hover {
-    border-radius: 30px;
-  }
   @media screen and (max-width: 1500px) {
     width: 50%;
   }
@@ -84,24 +80,38 @@ export const LogoRightHalf = styled(motion.img)`
   }
 `;
 
+const scrollAnim = keyframes`
+50%{
+  transform: rotate(15deg) translate(-50%);
+}
+75%{
+  transform: rotate(-15deg) translate(-50%);
+}
+`;
+
 export const ScrollWrapper = styled.div`
   position: absolute;
-  top: 90%;
   left: 50%;
-  width: 30px;
-  height: 30px;
+  bottom: -170px;
   transform: translate(-50%);
+  z-index: 1;
+  width: 120px;
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: none;
+  animation: ${scrollAnim} 3s infinite;
   @media screen and (max-width: 680px) {
-    top: 95%;
+    width: 50px;
+    bottom: -110px;
+    left: 90%;
   }
 `;
 
 export const Scroll = styled.img`
-  min-width: 20px;
-  opacity: 0;
+  width: 100%;
+  z-index: -1;
 `;
 
 const rotate = keyframes`
@@ -128,7 +138,6 @@ export const Navigation = styled.ul`
   border: 3px solid ${({ theme }) => theme.colors.black};
   background-color: #106fca;
   animation: ${rotate} 4s infinite ease;
-  /* border-radius: 0 0 0 30px; */
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%230C64BE' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
   @media screen and (max-width: 680px) {
     width: 100%;

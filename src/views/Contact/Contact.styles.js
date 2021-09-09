@@ -144,6 +144,7 @@ export const Input = styled(motion.input)`
     background-color: #d62e2e;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%239B2122' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
     transition: 0.5s ease;
+    pointer-events: none;
   }
 `;
 
@@ -185,6 +186,7 @@ export const Textarea = styled(motion.textarea)`
     background-color: #d62e2e;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%239B2122' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
     transition: 0.5s ease;
+    pointer-events: none;
   }
 `;
 
@@ -260,5 +262,20 @@ export const Icon = styled.img`
   margin: 0 25px;
   @media screen and (max-width: 680px) {
     margin: 0 10px;
+  }
+`;
+
+export const FeedbackImage = styled.img`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  transform: scale(0) rotateX(360deg);
+  pointer-events: none;
+  &.ERROR {
+    opacity: 1;
+    transform: scale(1);
+    transition: 0.5s ease;
   }
 `;

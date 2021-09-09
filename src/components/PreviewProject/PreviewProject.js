@@ -29,7 +29,7 @@ const PreviewProject = ({ viewProject }) => {
     <PreviewProjectWrapper className={viewProject.isToggled && 'show'} ref={ref}>
       <Wrapper>
         <PreviewProjectTitle>{viewProject.data.title}</PreviewProjectTitle>
-        <PreviewProjectRwd src={viewProject.data.img} />
+        <PreviewProjectRwd src={viewProject.data.imgDesktop} />
         <Header>Used tools:</Header>
         <UsedTools>{viewProject.data !== false && viewProject.data.usedTools.map((usedTool) => <Tool>{usedTool}</Tool>)}</UsedTools>
         <Header>About Project:</Header>

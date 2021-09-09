@@ -72,6 +72,7 @@ export const MySkillsWrapper = styled.div`
   transform: perspective(800px) rotateY(-10deg) scale(1.1);
   transition: 0.5s ease;
   z-index: 1;
+
   @media screen and (max-width: 680px) {
     width: 100%;
     height: 350px;
@@ -90,7 +91,6 @@ const rotate = keyframes`
 `;
 
 export const MySkills = styled.div`
-  height: 550px;
   width: 100%;
   border: 3px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.right};
@@ -98,6 +98,11 @@ export const MySkills = styled.div`
   animation: ${rotate} 3s infinite ease;
   background-color: #ffc10b !important;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%23FFAD00' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
+  transition: 0.5s ease;
+  img {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 export const Article = styled(motion.article)`

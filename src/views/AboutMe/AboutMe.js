@@ -2,6 +2,7 @@ import React from 'react';
 // ICONS
 import arrowRight from 'assets/icons/arrowRight-icon.svg';
 import filePreview from 'assets/icons/filePreview-icon.svg';
+import skills from 'assets/icons/skills-icon2.png';
 // COMPONENTS
 import PageTransition from 'components/PageTransition/PageTransition';
 import Button from 'components/Button/Button';
@@ -43,7 +44,9 @@ const AboutMe = ({ toggleReadMore, setToggleReadMore }) => {
           </AboutMeWrapperPartOne>
           <MySkillsWrapper>
             <Header>My Skills</Header>
-            <MySkills variants={slide} className={toggleReadMore && 'hide'}></MySkills>
+            <MySkills variants={slide} className={toggleReadMore && 'hide'}>
+              <img src={skills} />
+            </MySkills>
           </MySkillsWrapper>
         </AboutMeWrapper>
       </Wrapper>

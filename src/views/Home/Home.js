@@ -4,7 +4,7 @@ import LinkTo from 'components/LinkTo/LinkTo';
 // ICONS
 import logoLeftPart from 'assets/icons/logoLeftPart-icon.svg';
 import logoRightPart from 'assets/icons/logoRightPart-icon.svg';
-import scroll from 'assets/icons/scroll-icon.svg';
+import arrow from 'assets/icons/arrowDown-icon.svg';
 import me from 'assets/images/myPhoto.png';
 // HELPERS
 import { useScroll } from 'helpers/useScroll';
@@ -32,6 +32,9 @@ const Home = () => {
       <LogoAndNavWrapper variants={slide}>
         <LogoImageWrapper>
           <LogoLeftHalf src={me} />
+          <ScrollWrapper>
+            <Scroll src={arrow} />
+          </ScrollWrapper>
         </LogoImageWrapper>
         <Navigation>
           <NavItem id='active' variants={slide} text='O MNIE'>
@@ -45,9 +48,6 @@ const Home = () => {
           </NavItem>
         </Navigation>
       </LogoAndNavWrapper>
-      {/* <ScrollWrapper>
-        <Scroll src={scroll} />
-      </ScrollWrapper> */}
     </Wrapper>
   );
 };

@@ -21,6 +21,7 @@ export const projects = [
       'Im pretty sure that I mess two really important things. First one is that I didnt add on ANY section hard coded height, I beleve all of them are set to auto. Second one is form validation, its fine for a begginer but after this time Ive learned how can I make this better. Btw Its not mobile responsive after 1920px...',
     ],
     img: laMiaPassioneMaltese,
+    imgDesktop: lamiapassionemalteseDesktop,
     usedTools: ['React', 'Styled Components', 'Framer Motion', 'React Scroll'],
   },
   {

@@ -8,9 +8,8 @@ export const ProjectWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: ${({ theme }) => theme.colors.white};
   left: 0;
-  transition: 0.5s ease-out;
+  /* transition: 0.5s ease; */
   transform: scale(0);
   border: 3px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.left};
@@ -23,25 +22,25 @@ export const ProjectWrapper = styled.div`
   &.show,
   &.next,
   &.prev {
-    transition: 0.4s ease-in-out;
+    transition: 0.8s ease;
   }
   &.show {
     transform: scale(1);
     opacity: 1;
     left: 0;
     z-index: 20;
-    background-color: #a3ed0a !important;
+    background-color: #a3ed0a;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%2343B104' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
     @media screen and (min-width: 1200px) {
       &:hover {
         transform: scale(1.025);
-        transition: 0.5s ease-out;
+        transition: 0.5s ease;
       }
     }
   }
   &.next,
   &.prev {
-    opacity: 0.8;
+    opacity: 0.6;
     transform: scale(0.5);
     z-index: 10;
   }
@@ -50,15 +49,14 @@ export const ProjectWrapper = styled.div`
     transform: perspective(400px) rotateY(-15deg) scale(0.65) rotate(25deg);
     background-color: #106fca;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%230C64BE' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
-    img {
-      transform: rotate(-65deg);
+    @media screen and (min-width: 1200px) {
       &:hover {
-        transform: rotate(-55deg) scale(1.1);
+        opacity: 0.8;
+        transition: 0.5s ease;
+        img {
+          transform: rotate(-30deg);
+        }
       }
-    }
-    &:hover {
-      opacity: 1;
-      transition: 0.5s ease-out;
     }
     @media screen and (max-width: 1920px) {
       left: 80%;
@@ -72,15 +70,14 @@ export const ProjectWrapper = styled.div`
     transform: perspective(400px) rotateY(15deg) scale(0.65) rotate(-25deg);
     background-color: #d62e2e;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%239B2122' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
-    img {
-      transform: rotate(65deg);
+    @media screen and (min-width: 1200px) {
       &:hover {
-        transform: rotate(55deg) scale(1.1);
+        opacity: 0.8;
+        transition: 0.5s ease;
+        img {
+          transform: rotate(30deg);
+        }
       }
-    }
-    &:hover {
-      opacity: 1;
-      transition: 0.5s ease-out;
     }
     @media screen and (max-width: 1920px) {
       left: -80%;
@@ -98,6 +95,7 @@ export const ProjectImage = styled.img`
   object-fit: cover;
   border: 3px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.left};
+  pointer-events: none;
   @media screen and (min-width: 1000px) {
     &:hover {
       transform: scale(1.1);

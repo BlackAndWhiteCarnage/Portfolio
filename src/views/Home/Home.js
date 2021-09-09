@@ -11,18 +11,7 @@ import { useScroll } from 'helpers/useScroll';
 // ANIMATIONS
 import { fade, slide, slideFromLeft } from 'assets/animations/animation';
 
-import {
-  Wrapper,
-  LogoAndNavWrapper,
-  LogoImageWrapper,
-  LogoLeftHalf,
-  LogoRightHalf,
-  Navigation,
-  NavItem,
-  ScrollWrapper,
-  Scroll,
-  Line,
-} from './Home.styles';
+import { Wrapper, LogoAndNavWrapper, LogoImageWrapper, LogoLeftHalf, LogoRightHalf, Navigation, NavItem, ScrollWrapper, Scroll } from './Home.styles';
 
 const Home = () => {
   const [element, controls] = useScroll();

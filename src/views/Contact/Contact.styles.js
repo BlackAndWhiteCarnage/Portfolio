@@ -271,7 +271,7 @@ export const FeedbackImage = styled.img`
   height: 100%;
   opacity: 0;
   transition: 0.5s ease;
-  transform: scale(0) rotateX(360deg);
+  transform: scale(0) rotateY(360deg) rotateX(360deg);
   pointer-events: none;
   &.ERROR {
     opacity: 1;

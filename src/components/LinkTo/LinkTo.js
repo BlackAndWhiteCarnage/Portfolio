@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-scroll';
 
 const StyledLink = styled(Link)`
-  position: absolute;
+  /* position: absolute; */
   white-space: nowrap;
   top: 0;
   left: 0;
@@ -13,6 +13,7 @@ const StyledLink = styled(Link)`
   width: 100%;
   height: 100%;
   font-size: inherit;
+  cursor: none;
   /* font-size: ${({ theme }) => theme.fontSize.xl};
   border: 3px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.left};

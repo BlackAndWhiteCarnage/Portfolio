@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 export const Wrapper = styled(motion.section)`
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 120vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,18 +16,16 @@ export const Wrapper = styled(motion.section)`
 export const ProjectsSliderWrapper = styled.div`
   position: relative;
   height: 450px;
-  width: 450px;
+  width: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 1200px;
   transition: 1s 0.5s ease;
   @media screen and (max-width: 1000px) {
-    width: 300px;
+    width: 450px;
   }
   @media screen and (max-width: 680px) {
-    width: 60%;
-    height: 250px;
+    width: 70%;
   }
   &.previewProject {
     transition: 0.5s ease;

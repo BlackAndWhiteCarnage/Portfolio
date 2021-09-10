@@ -2,23 +2,15 @@ import styled from 'styled-components';
 
 export const ProjectWrapper = styled.div`
   position: absolute;
-  opacity: 0;
   width: 100%;
-  height: 700px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   left: 0;
-  /* transition: 0.5s ease; */
-  transform: scale(0);
   border: 3px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.left};
-  @media screen and (max-width: 1000px) {
-    height: 500px;
-  }
-  @media screen and (max-width: 680px) {
-    height: 400px;
-  }
+  transform: scale(0);
   &.show,
   &.next,
   &.prev {
@@ -29,8 +21,6 @@ export const ProjectWrapper = styled.div`
     opacity: 1;
     left: 0;
     z-index: 20;
-    background-color: #d62e2e;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%239B2122' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
     @media screen and (min-width: 1200px) {
       &:hover {
         transform: scale(1.025);
@@ -83,8 +73,8 @@ export const ProjectWrapper = styled.div`
 `;
 
 export const ProjectImage = styled.img`
-  width: 120%;
-  height: auto;
+  width: 100%;
+  height: 100%;
   transition: 0.5s ease;
   object-fit: cover;
   border: 3px solid ${({ theme }) => theme.colors.black};
@@ -94,9 +84,6 @@ export const ProjectImage = styled.img`
     &:hover {
       transform: scale(1.1);
     }
-  }
-  @media screen and (max-width: 680px) {
-    width: 85%;
   }
 `;
 

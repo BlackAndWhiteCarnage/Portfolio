@@ -20,7 +20,7 @@ const Project = ({ current, index, next, prev, project, toggleProjectModalHandle
       }}
     >
       <ProjectImage id='active' src={project.image} className={current === index && viewProject && 'previewProject'} />
-      <ProjectTitle className={index === current && 'show'}>{project.title}</ProjectTitle>
+      {/* <ProjectTitle className={index === current && 'show'}>{project.title}</ProjectTitle> */}
       <ProjectLinksWrapper className={index === current && 'show'}>
         <Links id='active' target='_blank' href={project.live}>
           <img src={link} id='active' />

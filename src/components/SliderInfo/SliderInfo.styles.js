@@ -1,28 +1,38 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-export const SliderInfoWrapper = styled(motion.p)`
+export const Wrapper = styled.div`
   position: absolute;
-  bottom: -80px;
+  bottom: -350px;
   width: 100%;
-  height: auto;
+  height: 100px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  p {
+    font-size: ${({ theme }) => theme.fontSize.xl};
+  }
+  @media screen and (max-width: 1000px) {
+    bottom: -250px;
+  }
   @media screen and (max-width: 680px) {
-    text-align: center;
+    height: 100px;
+    bottom: -180px;
+    p {
+      font-size: ${({ theme }) => theme.fontSize.l};
+    }
   }
 `;
 
-export const IsSliderLockedInfo = styled(motion.p)`
-  position: absolute;
-  bottom: -135px;
+export const SliderInfoWrapper = styled(motion.p)`
   width: 100%;
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  @media screen and (max-width: 680px) {
-    text-align: center;
-  }
+  text-align: center;
+  line-height: normal;
+`;
+
+export const IsSliderLockedInfo = styled(motion.p)`
+  width: 100%;
+  text-align: center;
+  line-height: normal;
 `;

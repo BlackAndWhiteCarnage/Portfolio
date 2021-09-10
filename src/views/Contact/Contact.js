@@ -131,7 +131,12 @@ const Contact = () => {
               className={`${feedback === 2 && !validMessage && 'ERROR'} ${feedback === 4 && !validMessage && 'ERROR'} ${validMessage && 'VALID'}`}
               value={messageValue}
             />
-            <Button text='SEND' icon={send} className={`${emailSend && 'fly'} AboutMe`} onClick={checkValid} />
+            <Button
+              text='SEND'
+              icon={send}
+              className={`${emailSend && 'fly'} ${feedback === 2 && 'deactive'} ${feedback === 3 && 'deactive'} ${feedback === 4 && 'deactive'}`}
+              onClick={checkValid}
+            />
             <FeedbackImage className={feedback === 2 && 'ERROR'} src={emptyForm} />
             <FeedbackImage className={feedback === 4 && 'ERROR'} src={wrongMessage} />
             <FeedbackImage className={feedback === 3 && 'ERROR'} src={wrongEmail} />

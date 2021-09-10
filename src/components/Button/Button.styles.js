@@ -47,6 +47,9 @@ export const ButtonWrapper = styled(motion.button)`
   box-shadow: ${({ theme }) => theme.boxShadow.left};
   font-family: 'Bangers', cursive;
   transition: 0.5s ease;
+  &.deactive {
+    pointer-events: none;
+  }
   @media screen and (min-width: 1000px) {
     &:hover,
     &:focus {

@@ -101,8 +101,8 @@ export const WaitingWrapper = styled.div`
 
 export const Label = styled(motion.label)`
   width: 100%;
-  font-weight: 400;
   margin-bottom: 15px;
+  font-size: ${({ theme }) => theme.fontSize.xl};
 `;
 
 export const Input = styled(motion.input)`
@@ -114,6 +114,7 @@ export const Input = styled(motion.input)`
   border: none;
   border: 3px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.left};
+  font-size: ${({ theme }) => theme.fontSize.l};
   font-family: 'Bangers', cursive;
   color: ${({ theme }) => theme.colors.black};
   font-weight: 100;
@@ -159,6 +160,7 @@ export const Textarea = styled(motion.textarea)`
   resize: none;
   transition: 0.5s ease;
   box-shadow: ${({ theme }) => theme.boxShadow.left};
+  font-size: ${({ theme }) => theme.fontSize.l};
   font-family: 'Bangers', cursive;
   color: ${({ theme }) => theme.colors.black};
   &:focus {
@@ -253,6 +255,9 @@ export const Info = styled(motion.div)`
   height: auto;
   display: flex;
   justify-content: flex-end;
+  p {
+    font-size: ${({ theme }) => theme.fontSize.l};
+  }
 `;
 
 export const Icon = styled.img`
@@ -270,12 +275,12 @@ export const FeedbackImage = styled.img`
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: 0.5s ease;
-  transform: scale(0) rotateY(360deg) rotateX(360deg);
+  transition: 0.2s ease;
+  transform: scale(1.3);
   pointer-events: none;
   &.ERROR {
     opacity: 1;
     transform: scale(1);
-    transition: 0.5s ease;
+    transition: 0.2s ease;
   }
 `;

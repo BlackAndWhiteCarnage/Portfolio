@@ -11,29 +11,25 @@ export const GlobalStyle = createGlobalStyle`
         overflow-x: hidden;
         color: ${({ theme }) => theme.colors.black};
         background: ${({ theme }) => theme.colors.white};
-        letter-spacing: 5px;
-        cursor: none;
+        @media screen and (min-width: 1200px){
+            cursor: none;
+        }
     }
     h1,h2,h3,h4{
-        font-weight: 600;
         font-size: ${({ theme }) => theme.fontSize.xl};
-        font-family: 'Bangers', cursive;
-        @media screen and (max-width: 1600px) {
+        letter-spacing: 5px;
+        @media screen and (max-width: 1366px) {
             font-size: ${({ theme }) => theme.fontSize.l};
         }
-        /* @media screen and (max-width: 680px) {
-            font-size: ${({ theme }) => theme.fontSize.m};
-        } */
     }
     article, p, a, input, textarea, label{
-        font-size: ${({ theme }) => theme.fontSize.m};
-        line-height: 25px;
-        letter-spacing: normal;
-        font-weight: 400;
-        cursor: none;
-        @media screen and (max-width: 1000px) {
+        font-size: ${({ theme }) => theme.fontSize.l};
+        @media screen and (min-width: 1200px){
+            cursor: none;
+        }
+        @media screen and (max-width: 1366px) {
             line-height: 20px;
-            /* font-size: ${({ theme }) => theme.fontSize.s}; */
+            font-size: ${({ theme }) => theme.fontSize.m};
         }
     }
     ::-webkit-scrollbar {

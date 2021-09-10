@@ -42,21 +42,29 @@ export const ButtonWrapper = styled(motion.button)`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  cursor: none;
   white-space: nowrap;
   box-shadow: ${({ theme }) => theme.boxShadow.left};
   font-family: 'Bangers', cursive;
   transition: 0.5s ease;
+  @media screen and (min-width: 1200px) {
+    cursor: none;
+  }
   &.deactive {
     pointer-events: none;
+  }
+  @media screen and (max-width: 1366px) {
+    max-width: 180px;
+    padding: 5px 10px;
   }
   @media screen and (min-width: 1000px) {
     &:hover,
     &:focus {
       outline: none;
       transform: perspective(800px) rotateY(-20deg) scale(1.1) rotate(5deg) !important;
-      background-color: #a3ed0a !important;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%2343B104' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
+      /* background-color: #a3ed0a !important; */
+      /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%2343B104' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important; */
+      background: ${({ theme }) => theme.comicLayer.greenColor};
+      background-image: ${({ theme }) => theme.comicLayer.greenBackground};
       img {
         transform: translateX(20px) scale(2) !important;
         transition: 0.5s ease;
@@ -69,18 +77,12 @@ export const ButtonWrapper = styled(motion.button)`
     transition: 1s ease;
     opacity: 0.5 !important;
   }
-  @media screen and (max-width: 680px) {
-    max-width: 180px;
-  }
   a {
     width: 100%;
     display: flex;
     text-decoration: none;
     color: ${({ theme }) => theme.colors.black};
     font-size: ${({ theme }) => theme.fontSize.l};
-  }
-  p {
-    pointer-events: none;
   }
   img {
     max-height: 35px;
@@ -95,7 +97,5 @@ export const ButtonWrapper = styled(motion.button)`
     @media screen and (max-width: 680px) {
       max-height: 30px;
     }
-  }
-  &:hover {
   }
 `;

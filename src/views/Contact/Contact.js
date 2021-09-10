@@ -17,7 +17,6 @@ import emptyForm from 'assets/icons/emptyForm-icon.svg';
 // STYLES
 import {
   Wrapper,
-  ContactWrapper,
   Form,
   Label,
   Input,
@@ -27,10 +26,11 @@ import {
   InfoWrapper,
   Info,
   Icon,
-  WaitingWrapper,
   FeedbackImage,
   FormWrapper,
 } from 'views/Contact/Contact.styles';
+import SectionsWrapper from 'components/SectionsWrapper/SectionsWrapper';
+import SectionsContentWrapper from 'components/SectionsContentWrapper/SectionsContentWrapper';
 
 const Contact = () => {
   const [element, controls] = useScroll();
@@ -112,54 +112,56 @@ const Contact = () => {
 
   return (
     <Wrapper id='CONTACT'>
-      <ContactWrapper>
-        <FormWrapper>
-          <Form variants={slide} className={emailSend && 'emailSend'}>
-            <Label variants={slide}>EMAIL</Label>
-            <Input
-              variants={fade}
-              onChange={emailHandler}
-              name='email'
-              className={`${feedback === 2 && !validEmail && 'ERROR'} ${feedback === 3 && !validEmail && 'ERROR'} ${validEmail && 'VALID'}`}
-              value={emailValue}
-            />
-            <Label variants={slide}>MESSAGE</Label>
-            <Textarea
-              variants={fade}
-              onChange={messageHandler}
-              name='message'
-              className={`${feedback === 2 && !validMessage && 'ERROR'} ${feedback === 4 && !validMessage && 'ERROR'} ${validMessage && 'VALID'}`}
-              value={messageValue}
-            />
-            <Button
-              text='SEND'
-              icon={send}
-              className={`${emailSend && 'fly'} ${feedback === 2 && 'deactive'} ${feedback === 3 && 'deactive'} ${feedback === 4 && 'deactive'}`}
-              onClick={checkValid}
-            />
-            <FeedbackImage className={feedback === 2 && 'ERROR'} src={emptyForm} />
-            <FeedbackImage className={feedback === 4 && 'ERROR'} src={wrongMessage} />
-            <FeedbackImage className={feedback === 3 && 'ERROR'} src={wrongEmail} />
-          </Form>
-        </FormWrapper>
-        <ButtonAndPersonalInfoWrapper variants={slide} animate={controls} initial='hidden' ref={element}>
-          <Header variants={fade}>PERSONAL INFO</Header>
-          <InfoWrapper variants={slide}>
-            <Info variants={slide}>
-              <p>KRZYSZTOF REPSCH</p>
-              <Icon src={user} />
-            </Info>
-            <Info variants={slide}>
-              <p>KRZYS.REPSCH@GMAIL.COM</p>
-              <Icon src={email} />
-            </Info>
-            <Info variants={slide}>
-              <p>603 312 504</p>
-              <Icon src={phone} />
-            </Info>
-          </InfoWrapper>
-        </ButtonAndPersonalInfoWrapper>
-      </ContactWrapper>
+      <SectionsWrapper>
+        <SectionsContentWrapper>
+          <FormWrapper>
+            <Form variants={slide} className={emailSend && 'emailSend'}>
+              <Label variants={slide}>EMAIL</Label>
+              <Input
+                variants={fade}
+                onChange={emailHandler}
+                name='email'
+                className={`${feedback === 2 && !validEmail && 'ERROR'} ${feedback === 3 && !validEmail && 'ERROR'} ${validEmail && 'VALID'}`}
+                value={emailValue}
+              />
+              <Label variants={slide}>MESSAGE</Label>
+              <Textarea
+                variants={fade}
+                onChange={messageHandler}
+                name='message'
+                className={`${feedback === 2 && !validMessage && 'ERROR'} ${feedback === 4 && !validMessage && 'ERROR'} ${validMessage && 'VALID'}`}
+                value={messageValue}
+              />
+              <Button
+                text='SEND'
+                icon={send}
+                className={`${emailSend && 'fly'} ${feedback === 2 && 'deactive'} ${feedback === 3 && 'deactive'} ${feedback === 4 && 'deactive'}`}
+                onClick={checkValid}
+              />
+              <FeedbackImage className={feedback === 2 && 'ERROR'} src={emptyForm} />
+              <FeedbackImage className={feedback === 4 && 'ERROR'} src={wrongMessage} />
+              <FeedbackImage className={feedback === 3 && 'ERROR'} src={wrongEmail} />
+            </Form>
+          </FormWrapper>
+          <ButtonAndPersonalInfoWrapper variants={slide} animate={controls} initial='hidden' ref={element}>
+            <Header variants={fade}>PERSONAL INFO</Header>
+            <InfoWrapper variants={slide}>
+              <Info variants={slide}>
+                <p>KRZYSZTOF REPSCH</p>
+                <Icon src={user} />
+              </Info>
+              <Info variants={slide}>
+                <p>KRZYS.REPSCH@GMAIL.COM</p>
+                <Icon src={email} />
+              </Info>
+              <Info variants={slide}>
+                <p>603 312 504</p>
+                <Icon src={phone} />
+              </Info>
+            </InfoWrapper>
+          </ButtonAndPersonalInfoWrapper>
+        </SectionsContentWrapper>
+      </SectionsWrapper>
     </Wrapper>
   );
 };

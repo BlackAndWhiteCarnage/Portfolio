@@ -36,19 +36,18 @@ export const LinksWrapper = styled.ul`
 `;
 
 export const Link = styled.li`
-  cursor: pointer;
   position: relative;
   padding: 10px;
   width: 200px;
   height: 60px;
-  cursor: none;
   font-size: ${({ theme }) => theme.fontSize.xl};
   border: 3px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.left};
   transition: 0.5s ease;
-  background-color: #ffc10b;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%23FFAD00' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  background-color: ${({ theme }) => theme.comicLayer.yellowColor};
+  background-image: ${({ theme }) => theme.comicLayer.yellowBackground};
   @media screen and (min-width: 1200px) {
+    cursor: none;
     &::before {
       position: absolute;
       content: '${(props) => props.text}';
@@ -67,9 +66,8 @@ export const Link = styled.li`
     &:hover {
       transition: 0.5s ease;
       outline: none;
-      /* transform: scale(1.2) !important; */
-      background-color: #a3ed0a !important;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%2343B104' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
+      background-color: ${({ theme }) => theme.comicLayer.greenColor};
+      background-image: ${({ theme }) => theme.comicLayer.greenBackground};
       &::before {
         transition: 0.2s ease;
         opacity: 1;

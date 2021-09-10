@@ -1,6 +1,5 @@
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
-import { theme } from 'assets/styles/theme';
 
 export const Wrapper = styled(motion.section)`
   position: relative;
@@ -14,55 +13,43 @@ export const Wrapper = styled(motion.section)`
   overflow: hidden;
 `;
 
-export const ContactWrapper = styled.div`
-  position: relative;
-  height: 720px;
-  width: 1000px;
-  display: flex;
-  /* flex-direction: column; */
-  /* background: black; */
-  justify-content: space-between;
-  @media screen and (max-width: 1280px) {
-    width: 85%;
-  }
-  @media screen and (max-width: 880px) {
-    flex-direction: column;
-    height: 1100px;
-    align-items: center;
-    justify-content: space-around;
-    margin-bottom: 150px;
-  }
-`;
-
 export const FormWrapper = styled(motion.form)`
-  position: relative;
-  width: 55%;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #106fca;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%230C64BE' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  min-width: 550px;
+  min-height: 550px;
   transform: perspective(800px) rotateY(10deg) scale(1.1);
+  transition: 0.5s ease;
+  z-index: 1;
+  margin: 0 35px;
+  background-color: ${({ theme }) => theme.comicLayer.blueColor};
+  background-image: ${({ theme }) => theme.comicLayer.blueBackground};
   box-shadow: ${({ theme }) => theme.boxShadow.left};
   border: 3px solid ${({ theme }) => theme.colors.black};
-  &.emailSend {
-    opacity: 0.5;
-    transition: 0.5s ease;
-    pointer-events: none;
+  @media screen and (max-width: 1366px) {
+    min-width: 350px;
+    min-height: 450px;
   }
-  @media screen and (max-width: 880px) {
-    height: 600px;
+  @media screen and (max-width: 760px) {
+    min-height: 500px;
+  }
+  @media screen and (max-width: 520px) {
+    max-width: unset;
+    min-width: unset;
+    min-height: 550px;
     width: 85%;
+    margin: 0;
   }
 `;
 
-export const Form = styled(motion.form)`
+export const Form = styled.form`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 90%;
   height: 90%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
 `;
 
 const wait = keyframes`
@@ -76,74 +63,53 @@ const wait = keyframes`
 }
 `;
 
-export const WaitingWrapper = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: ${({ theme }) => theme.colors.white};
-  left: 0;
-  top: -100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-  opacity: 0;
-  &.show {
-    top: 0;
-    opacity: 1;
-    img {
-      min-height: 18px;
-      animation: ${wait} 1.5s infinite ease-in-out;
-      opacity: 0.25;
-    }
-  }
-`;
-
 export const Label = styled(motion.label)`
   width: 100%;
-  margin-bottom: 15px;
-  font-size: ${({ theme }) => theme.fontSize.xl};
+  margin: 10px 0;
+  font-size: ${({ theme }) => theme.fontSize.l};
 `;
 
 export const Input = styled(motion.input)`
   position: relative;
   width: 100%;
-  min-height: 40px;
+  min-height: 35px;
   background: none;
   padding: 10px;
   border: none;
   border: 3px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.left};
-  font-size: ${({ theme }) => theme.fontSize.l};
+  font-size: ${({ theme }) => theme.fontSize.m};
   font-family: 'Bangers', cursive;
   color: ${({ theme }) => theme.colors.black};
   font-weight: 100;
-  margin-bottom: 40px;
   transition: 0.5s ease;
+  @media screen and (max-width: 1366px) {
+    font-size: ${({ theme }) => theme.fontSize.m};
+  }
   &:focus {
     outline: none;
     transform: perspective(800px) rotateX(-5deg) rotateY(-10deg) scale(1.1);
     transition: 0.5s ease;
-    background-color: #f6f6f6 !important;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%23CCCCCC' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
+    background-color: ${({ theme }) => theme.comicLayer.whiteColor};
+    background-image: ${({ theme }) => theme.comicLayer.whiteBackground};
   }
   @media screen and (min-width: 1200px) {
     &:hover {
       outline: none;
       transform: perspective(800px) rotateX(-5deg) rotateY(-10deg) scale(1.1);
       transition: 0.5s ease;
-      background-color: #f6f6f6 !important;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%23CCCCCC' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
+      background-color: ${({ theme }) => theme.comicLayer.whiteColor};
+      background-image: ${({ theme }) => theme.comicLayer.whiteBackground};
     }
   }
   &.VALID {
-    background-color: #a3ed0a !important;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%2343B104' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
+    background-color: ${({ theme }) => theme.comicLayer.greenColor};
+    background-image: ${({ theme }) => theme.comicLayer.greenBackground};
     transition: 0.5s ease;
   }
   &.ERROR {
-    background-color: #d62e2e;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%239B2122' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+    background-color: ${({ theme }) => theme.comicLayer.redColor};
+    background-image: ${({ theme }) => theme.comicLayer.redBackground};
     transition: 0.5s ease;
     pointer-events: none;
   }
@@ -152,7 +118,7 @@ export const Input = styled(motion.input)`
 export const Textarea = styled(motion.textarea)`
   position: relative;
   width: 100%;
-  min-height: 250px;
+  min-height: 200px;
   background: none;
   padding: 10px;
   border: 3px solid ${({ theme }) => theme.colors.black};
@@ -160,61 +126,66 @@ export const Textarea = styled(motion.textarea)`
   resize: none;
   transition: 0.5s ease;
   box-shadow: ${({ theme }) => theme.boxShadow.left};
-  font-size: ${({ theme }) => theme.fontSize.l};
+  font-size: ${({ theme }) => theme.fontSize.m};
   font-family: 'Bangers', cursive;
   color: ${({ theme }) => theme.colors.black};
+  @media screen and (max-width: 1366px) {
+    font-size: ${({ theme }) => theme.fontSize.m};
+    min-height: 180px;
+  }
+  @media screen and (max-width: 1366px) {
+    min-height: 150px;
+  }
   &:focus {
     outline: none;
     transform: perspective(800px) rotateX(-5deg) rotateY(-10deg) scale(1.1);
     transition: 0.5s ease;
-    background-color: #f6f6f6 !important;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%23CCCCCC' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
+    background-color: ${({ theme }) => theme.comicLayer.whiteColor};
+    background-image: ${({ theme }) => theme.comicLayer.whiteBackground};
   }
   @media screen and (min-width: 1200px) {
     &:hover {
       outline: none;
       transform: perspective(800px) rotateX(-5deg) rotateY(-10deg) scale(1.1);
       transition: 0.5s ease;
-      background-color: #f6f6f6 !important;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%23CCCCCC' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
+      background-color: ${({ theme }) => theme.comicLayer.whiteColor};
+      background-image: ${({ theme }) => theme.comicLayer.whiteBackground};
     }
   }
   &.VALID {
-    background-color: #a3ed0a !important;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%2343B104' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
+    background-color: ${({ theme }) => theme.comicLayer.greenColor};
+    background-image: ${({ theme }) => theme.comicLayer.greenBackground};
     transition: 0.5s ease;
   }
   &.ERROR {
-    background-color: #d62e2e;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%239B2122' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+    background-color: ${({ theme }) => theme.comicLayer.redColor};
+    background-image: ${({ theme }) => theme.comicLayer.redBackground};
     transition: 0.5s ease;
     pointer-events: none;
   }
 `;
 
-export const ButtonAndPersonalInfoWrapper = styled(motion.div)`
-  width: 40%;
-  height: 200px;
+export const ButtonAndPersonalInfoWrapper = styled.div`
+  height: 100%;
+  width: 500px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  transform: perspective(800px) rotateY(-10deg) scale(1.1) !important;
-  @media screen and (max-width: 880px) {
-    width: 65%;
-  }
-  @media screen and (max-width: 680px) {
-    margin-bottom: 50px;
-    width: 85%;
-  }
-`;
-
-export const PersonalInfoWrapper = styled.div`
-  width: 100%;
-  height: 120px;
-  display: flex;
+  justify-content: center;
   flex-direction: column;
-  justify-content: space-around;
+  transform: perspective(800px) rotateY(-10deg) scale(1.1);
+  margin-right: 35px;
+  @media screen and (max-width: 760px) {
+    height: auto;
+    width: 350px;
+    justify-content: center;
+    margin: 0;
+  }
+  @media screen and (max-width: 520px) {
+    max-width: unset;
+    min-width: unset;
+    width: 85%;
+    margin: 0;
+  }
 `;
 
 export const Header = styled(motion.h4)`
@@ -235,19 +206,16 @@ const rotate = keyframes`
 
 export const InfoWrapper = styled(motion.div)`
   width: 100%;
-  height: 160px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   transition: 0.5s ease;
   box-shadow: ${({ theme }) => theme.boxShadow.right};
   border: 3px solid ${({ theme }) => theme.colors.black};
-  background-color: #d62e2e;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%239B2122' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  background-color: ${({ theme }) => theme.comicLayer.redColor};
+  background-image: ${({ theme }) => theme.comicLayer.redBackground};
   animation: ${rotate} 4s infinite ease;
-  @media screen and (max-width: 680px) {
-    height: 150px;
-  }
 `;
 
 export const Info = styled(motion.div)`
@@ -261,10 +229,9 @@ export const Info = styled(motion.div)`
 `;
 
 export const Icon = styled.img`
-  min-width: 25px;
-  max-width: 25px;
-  min-height: 25px;
-  margin: 0 25px;
+  min-width: 20px;
+  max-width: 20px;
+  margin: 0 15px;
   @media screen and (max-width: 680px) {
     margin: 0 10px;
   }

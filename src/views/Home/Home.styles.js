@@ -9,32 +9,7 @@ export const Wrapper = styled(motion.section)`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  /* flex-direction: column; */
   overflow: hidden;
-`;
-
-export const LogoAndNavWrapper = styled(motion.div)`
-  position: relative;
-  height: 600px;
-  width: 1300px;
-  display: flex;
-  z-index: 2;
-  justify-content: space-between;
-  @media screen and (max-width: 1500px) {
-    width: 85%;
-  }
-  @media screen and (max-width: 680px) {
-    width: 80%;
-    height: 1300px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  &.hide {
-    transition: 0.5s ease;
-    opacity: 0;
-    transform: scale(0);
-  }
 `;
 
 const rotate2 = keyframes`
@@ -44,40 +19,31 @@ const rotate2 = keyframes`
 }
 `;
 
-export const LogoImageWrapper = styled.div`
+export const PosterImageWrapper = styled.div`
+  min-width: fit-content;
+  height: 100%;
   position: relative;
-  width: 500px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   transform: perspective(800px) rotateY(10deg) scale(1.1);
-  max-width: 1200px;
-  transition: 0.5s ease;
-  z-index: 1;
   border: 3px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.left};
   animation: ${rotate2} 6s infinite ease;
-  @media screen and (max-width: 1500px) {
-    width: 50%;
+  margin: 0 35px;
+  @media screen and (max-width: 760px) {
+    margin: 0;
+    height: 400px;
   }
-  @media screen and (max-width: 680px) {
-    width: 100%;
+  @media screen and (max-width: 520px) {
+    min-width: unset;
+    width: 85%;
+    height: auto;
+    margin-bottom: 120px;
   }
 `;
 
-export const LogoLeftHalf = styled.img`
+export const PosterImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-`;
-
-export const LogoRightHalf = styled(motion.img)`
-  position: absolute;
-  right: 0;
-  @media screen and (max-width: 680px) {
-    width: 33%;
-    height: 100px;
-  }
 `;
 
 const scrollAnim = keyframes`
@@ -102,10 +68,9 @@ export const ScrollWrapper = styled.div`
   justify-content: center;
   pointer-events: none;
   animation: ${scrollAnim} 3s infinite;
-  @media screen and (max-width: 680px) {
-    width: 50px;
-    bottom: -110px;
-    left: 90%;
+  @media screen and (max-width: 1366px) {
+    bottom: -130px;
+    width: 80px;
   }
 `;
 
@@ -125,24 +90,31 @@ const rotate = keyframes`
 `;
 
 export const Navigation = styled.ul`
-  width: 40%;
+  min-width: 400px;
+  height: 100%;
+  list-style: none;
+  animation: ${rotate} 4s infinite ease;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
-  list-style: none;
+  justify-content: space-evenly;
   transform: perspective(800px) rotateY(-10deg) scale(1.1);
-  transition: 0.5s ease;
-  z-index: 1;
   box-shadow: ${({ theme }) => theme.boxShadow.right};
   border: 3px solid ${({ theme }) => theme.colors.black};
-  background-color: #106fca;
-  animation: ${rotate} 4s infinite ease;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%230C64BE' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
-  @media screen and (max-width: 680px) {
-    width: 100%;
-    height: 350px;
-    margin-top: 150px;
+  margin: 0 35px;
+  background-color: ${({ theme }) => theme.comicLayer.blueColor};
+  background-image: ${({ theme }) => theme.comicLayer.blueBackground};
+  @media screen and (max-width: 1366px) {
+    min-width: 300px;
+  }
+  @media screen and (max-width: 760px) {
+    margin: 0;
+    height: 400px;
+  }
+  @media screen and (max-width: 520px) {
+    min-width: unset;
+    width: 85%;
+    margin-top: 50px;
   }
 `;
 
@@ -154,14 +126,14 @@ export const NavItem = styled(motion.li)`
   font-size: ${({ theme }) => theme.fontSize.xl};
   border: 3px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.right};
-  background-color: #ffc10b;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%23FFAD00' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  background-color: ${({ theme }) => theme.comicLayer.yellowColor};
+  background-image: ${({ theme }) => theme.comicLayer.yellowBackground};
   transition: 0.5s ease;
   @media screen and (min-width: 1200px) {
     &:hover {
-      transform: perspective(800px) rotateY(-20deg) scale(1.2) rotate(5deg) !important;
-      background-color: #a3ed0a !important;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%2343B104' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
+      transform: perspective(800px) rotateY(-20deg) scale(1.2) rotate(5deg);
+      background-color: ${({ theme }) => theme.comicLayer.greenColor};
+      background-image: ${({ theme }) => theme.comicLayer.greenBackground};
       transition: 0.5s ease;
       &::after {
         transition: 0.5s ease;

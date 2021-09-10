@@ -8,7 +8,7 @@ import github from 'assets/icons/github-icon.svg';
 import back from 'assets/icons/back-icon.svg';
 import hamburger from 'assets/icons/hamburger-icon.svg';
 // STYLES
-import { Wrapper, HamburgerMenu, Line, SocialMedia, Icon, HamburgerWrapper, BackIcon, AccualHamburger, IconWrapper } from './Navigation.styles';
+import { Wrapper, HamburgerMenu, SocialMedia, Icon, HamburgerWrapper, BackIcon, AccualHamburger, IconWrapper } from './Navigation.styles';
 
 const Navigation = ({ toggleReadMore, setToggleReadMore, setViewProject, viewProject }) => {
   const [toggleModal, setToggleModal] = useState(false);

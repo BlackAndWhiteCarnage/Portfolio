@@ -13,12 +13,18 @@ export const Wrapper = styled.div`
   p {
     font-size: ${({ theme }) => theme.fontSize.xl};
   }
+  @media screen and (max-width: 1920px) {
+    bottom: -250px;
+  }
+  @media screen and (max-width: 1366px) {
+    bottom: -150px;
+  }
   @media screen and (max-width: 1000px) {
     bottom: -250px;
   }
   @media screen and (max-width: 680px) {
     height: 100px;
-    bottom: -180px;
+    bottom: -200px;
     p {
       font-size: ${({ theme }) => theme.fontSize.l};
     }

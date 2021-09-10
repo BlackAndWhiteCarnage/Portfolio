@@ -10,22 +10,27 @@ export const Wrapper = styled(motion.section)`
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
-  margin-bottom: 100px;
+  @media screen and (max-width: 520px) {
+    height: 1200px;
+  }
+  @media screen and (min-width: 200px) and (max-width: 920px) and (orientation: landscape) {
+    height: 600px;
+  }
 `;
 
 export const ProjectsSliderWrapper = styled.div`
   position: relative;
   height: 450px;
-  width: 600px;
+  width: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   transition: 1s 0.5s ease;
-  @media screen and (max-width: 1000px) {
-    width: 450px;
+  @media screen and (max-width: 1366px) {
+    width: 350px;
   }
-  @media screen and (max-width: 680px) {
-    width: 70%;
+  @media screen and (max-width: 520px) {
+    width: 100%;
   }
   &.previewProject {
     transition: 0.5s ease;

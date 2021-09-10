@@ -8,6 +8,7 @@ export const ProjectWrapper = styled.div`
   align-items: center;
   justify-content: center;
   left: 0;
+  top: 0;
   border: 3px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.left};
   transform: scale(0);
@@ -15,17 +16,23 @@ export const ProjectWrapper = styled.div`
   &.next,
   &.prev {
     transition: 0.3s ease;
+    @media screen and (max-width: 520px) {
+      transition: 0.6s ease;
+    }
   }
   &.show {
     transform: scale(1);
     opacity: 1;
     left: 0;
     z-index: 20;
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 760px) {
       &:hover {
         transform: scale(1.025);
         transition: 0.5s ease;
       }
+    }
+    @media screen and (max-width: 520px) {
+      transform: scale(0.8);
     }
   }
   &.next,
@@ -35,7 +42,7 @@ export const ProjectWrapper = styled.div`
   &.next {
     left: 100%;
     transform: perspective(400px) rotateY(-25deg) scale(0.7) rotate(25deg);
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 760px) {
       &:hover {
         opacity: 0.8;
         transition: 0.5s ease;
@@ -47,14 +54,18 @@ export const ProjectWrapper = styled.div`
     @media screen and (max-width: 1920px) {
       left: 80%;
     }
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1366px) {
       left: 70%;
+    }
+    @media screen and (max-width: 520px) {
+      left: unset;
+      top: 70%;
     }
   }
   &.prev {
     left: -100%;
     transform: perspective(400px) rotateY(25deg) scale(0.7) rotate(-25deg);
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 760px) {
       &:hover {
         opacity: 0.8;
         transition: 0.5s ease;
@@ -66,8 +77,12 @@ export const ProjectWrapper = styled.div`
     @media screen and (max-width: 1920px) {
       left: -80%;
     }
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1366px) {
       left: -70%;
+    }
+    @media screen and (max-width: 520px) {
+      left: unset;
+      top: -70%;
     }
   }
 `;
@@ -79,39 +94,10 @@ export const ProjectImage = styled.img`
   object-fit: cover;
   border: 3px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.left};
-  pointer-events: none;
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: 760px) {
     &:hover {
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
-  }
-`;
-
-export const ProjectTitle = styled.h2`
-  position: absolute;
-  top: 0;
-  text-align: right;
-  color: ${({ theme }) => theme.colors.black};
-  width: 100%;
-  pointer-events: none;
-  text-transform: uppercase;
-  opacity: 0;
-  transition: 0.5s ease;
-  font-size: ${({ theme }) => theme.fontSize.xl};
-  &.show {
-    top: -60px;
-    transition: 0.5s 0.5s ease;
-    opacity: 1;
-    @media screen and (max-width: 680px) {
-      top: -135px;
-    }
-  }
-  @media screen and (max-width: 680px) {
-    top: -45px;
-    height: 130px;
-    display: flex;
-    align-items: flex-end;
-    text-align: left;
   }
 `;
 
@@ -130,15 +116,15 @@ export const ProjectLinksWrapper = styled.div`
   flex-direction: column;
   z-index: -1;
   &.show {
-    pointer-events: all;
     right: -65px;
     transition: 0.5s 0.5s ease;
     opacity: 1;
-    @media screen and (max-width: 680px) {
-      bottom: -75px;
+    @media screen and (max-width: 760px) {
+      bottom: -70px;
+      width: 100%;
     }
   }
-  @media screen and (max-width: 680px) {
+  @media screen and (max-width: 760px) {
     height: auto;
     width: 50%;
     bottom: 0;
@@ -158,23 +144,20 @@ export const Links = styled.a`
   margin-top: 30px;
   align-items: center;
   justify-content: center;
+  pointer-events: all;
   z-index: 9999 !important;
   border: 3px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.right};
   border-radius: 50%;
   transition: 0.5s ease;
-  background-color: #ffc10b !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%23FFAD00' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
-  @media screen and (max-width: 1200px) {
-    min-width: 40px;
-    min-height: 40px;
-  }
-  @media screen and (min-width: 1000px) {
+  background-color: ${({ theme }) => theme.comicLayer.yellowColor};
+  background-image: ${({ theme }) => theme.comicLayer.yellowBackground};
+  @media screen and (min-width: 760px) {
     &:hover {
       transition: 0.5s ease;
       transform: scale(1.2);
-      background-color: #a3ed0a !important;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%2343B104' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
+      background-color: ${({ theme }) => theme.comicLayer.greenColor};
+      background-image: ${({ theme }) => theme.comicLayer.greenBackground};
     }
   }
 `;

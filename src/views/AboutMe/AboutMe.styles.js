@@ -1,62 +1,36 @@
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 
-export const Wrapper = styled(motion.section)`
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  /* flex-direction: column; */
-  overflow: hidden;
-  padding: 150px 0;
-`;
-
-export const AboutMeWrapper = styled.div`
-  position: relative;
-  height: 600px;
-  width: 1300px;
-  display: flex;
-  justify-content: space-between;
-  @media screen and (max-width: 1500px) {
-    width: 85%;
-  }
-  @media screen and (max-width: 680px) {
-    width: 80%;
-    height: auto;
-    flex-direction: column;
-    align-items: center;
-  }
-  &.hide {
-    transition: 0.5s ease;
-    opacity: 0;
-    transform: scale(0);
-  }
-`;
-
 export const AboutMeWrapperPartOne = styled.div`
-  width: 500px;
-  /* height: 100%; */
+  min-width: 350px;
+  max-width: 450px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transform: perspective(800px) rotateY(10deg) scale(1.1);
-  max-width: 1200px;
   transition: 0.5s ease;
   z-index: 1;
-  @media screen and (max-width: 1500px) {
-    width: 50%;
+  margin: 0 35px;
+  @media screen and (max-width: 1366px) {
+    height: 350px;
+    max-width: 300px;
   }
-  @media screen and (max-width: 680px) {
-    width: 100%;
+  @media screen and (max-width: 760px) {
+    width: 350px;
+    height: auto;
+  }
+  @media screen and (max-width: 520px) {
+    max-width: unset;
+    min-width: unset;
+    width: 85%;
+    margin: 0;
   }
 `;
 
 export const Header = styled.h4`
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   text-align: right;
   text-transform: uppercase;
   &.left {
@@ -65,18 +39,26 @@ export const Header = styled.h4`
 `;
 
 export const MySkillsWrapper = styled.div`
-  width: 40%;
+  min-width: 350px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transform: perspective(800px) rotateY(-10deg) scale(1.1);
   transition: 0.5s ease;
   z-index: 1;
-
-  @media screen and (max-width: 680px) {
-    width: 100%;
-    height: 350px;
-    margin-top: 150px;
+  margin-right: 35px;
+  @media screen and (max-width: 1366px) {
+    min-width: 300px;
+  }
+  @media screen and (max-width: 760px) {
+    width: 350px;
+    margin-top: 100px;
+  }
+  @media screen and (max-width: 520px) {
+    height: 400px;
+    min-width: unset;
+    width: 85%;
   }
 `;
 
@@ -92,12 +74,13 @@ const rotate = keyframes`
 
 export const MySkills = styled.div`
   width: 100%;
+  height: 90%;
   border: 3px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.right};
   transition: 0.5s ease;
   animation: ${rotate} 3s infinite ease;
-  background-color: #ffc10b !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%23FFAD00' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
+  background-color: ${({ theme }) => theme.comicLayer.yellowColor};
+  background-image: ${({ theme }) => theme.comicLayer.yellowBackground};
   transition: 0.5s ease;
   img {
     width: 100%;
@@ -106,7 +89,7 @@ export const MySkills = styled.div`
 `;
 
 export const Article = styled(motion.article)`
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 `;
 
 export const ButtonsWrapper = styled.div`
@@ -116,7 +99,7 @@ export const ButtonsWrapper = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  @media screen and (max-width: 1000px) {
-    min-height: 150px;
+  @media screen and (max-width: 520px) {
+    min-height: 130px;
   }
 `;

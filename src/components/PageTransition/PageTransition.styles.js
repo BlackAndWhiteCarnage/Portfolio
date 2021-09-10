@@ -8,8 +8,8 @@ export const StyledDotTop = styled.div`
   height: 0%;
   border: 3px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.left};
-  background-color: #ffc10b !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%23FFAD00' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important;
+  background-color: ${({ theme }) => theme.comicLayer.yellowColor};
+  background-image: ${({ theme }) => theme.comicLayer.yellowBackground};
   transition: 1s 0.5s;
   border-radius: 50%;
   z-index: 110;
@@ -28,8 +28,8 @@ export const StyledDotBottom = styled.div`
   height: 0%;
   border: 3px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.right};
-  background-color: #106fca;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%230C64BE' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  background-color: ${({ theme }) => theme.comicLayer.blueColor};
+  background-image: ${({ theme }) => theme.comicLayer.blueBackground};
   transition: 1s;
   border-radius: 50%;
   z-index: 120;

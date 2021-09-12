@@ -7,6 +7,9 @@ export const Ouch = styled.img`
   opacity: 0;
   min-width: 150px;
   transition: 0.2s ease;
+  @media screen and (max-width: 520px) {
+    min-width: 120px;
+  }
   &.ouch {
     transform: scale(1.3);
     transition: 0.2s ease;
@@ -21,6 +24,9 @@ export const Bang = styled.img`
   opacity: 0;
   min-width: 200px;
   transition: 0.2s ease;
+  @media screen and (max-width: 520px) {
+    min-width: 120px;
+  }
   &.bang {
     transform: scale(1.3) rotate(-25deg);
     transition: 0.2s ease;

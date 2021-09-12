@@ -9,7 +9,7 @@ import Button from 'components/Button/Button';
 import { useScroll } from 'helpers/useScroll';
 // ANIMATIONS
 import { fade, slide } from 'assets/animations/animation';
-import { AboutMeWrapperPartOne, MySkillsWrapper, Header, Article, ButtonsWrapper, MySkills } from './AboutMe.styles';
+import { AboutMeWrapperPartOne, MySkillsWrapper, Header, Article, ButtonsWrapper, MySkills, Skill } from './AboutMe.styles';
 // RESUME
 import cv from 'documents/cv.pdf';
 import MoreAboutMe from 'components/MoreAboutMe/MoreAboutMe';
@@ -26,8 +26,7 @@ const AboutMe = ({ toggleReadMore, setToggleReadMore }) => {
   return (
     <>
       {/* <Wrapper variants={fade} animate={controls} initial='hidden' ref={element} id='ABOUT ME'> */}
-      <SectionsWrapper>
-        {/* <AboutMeWrapper className={toggleReadMore && 'hide'}> */}
+      <SectionsWrapper id='ABOUT ME'>
         <SectionsContentWrapper>
           <AboutMeWrapperPartOne variants={slide}>
             <Header className='left'>About Me</Header>
@@ -43,13 +42,20 @@ const AboutMe = ({ toggleReadMore, setToggleReadMore }) => {
             </ButtonsWrapper>
           </AboutMeWrapperPartOne>
           <MySkillsWrapper>
-            <Header>My Skills</Header>
+            <Header>My Current Skills</Header>
             <MySkills variants={slide} className={toggleReadMore && 'hide'}>
-              {/* <img src={skills} /> */}
+              <Skill>HTML</Skill>
+              <Skill>CSS</Skill>
+              <Skill>Java Script</Skill>
+              <Skill>SCSS</Skill>
+              <Skill>REACT</Skill>
+              <Skill>STYLED COMPONENTS</Skill>
+              <Skill>FRAMER MOTION</Skill>
+              <Skill>GITHUB</Skill>
+              <Skill>FIGMA</Skill>
             </MySkills>
           </MySkillsWrapper>
         </SectionsContentWrapper>
-        {/* </AboutMeWrapper> */}
       </SectionsWrapper>
       {/* </Wrapper> */}
       <MoreAboutMe toggleReadMore={toggleReadMore} toggleReadMoreHandler={toggleReadMoreHandler} />

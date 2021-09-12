@@ -36,7 +36,7 @@ export const HamburgerWrapper = styled.div`
   justify-content: center;
   opacity: 1;
   pointer-events: all;
-  border: 3px solid ${({ theme }) => theme.colors.black};
+  border: 4px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.left};
   border-radius: 50%;
   overflow: hidden;
@@ -56,8 +56,8 @@ export const HamburgerWrapper = styled.div`
     }
   }
   @media screen and (max-width: 1200px) {
-    width: 55px;
-    height: 55px;
+    width: 54px;
+    height: 54px;
   }
 `;
 
@@ -106,7 +106,7 @@ export const IconWrapper = styled.nav`
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  border: 3px solid ${({ theme }) => theme.colors.black};
+  border: 4px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.right};
   border-radius: 50%;
   transition: 0.5s ease;
@@ -139,7 +139,7 @@ export const SocialMedia = styled.nav`
 `;
 
 export const Icon = styled.img`
-  width: 25px;
-  height: 25px;
+  width: 24px;
+  height: 24px;
   pointer-events: none;
 `;

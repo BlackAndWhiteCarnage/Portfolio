@@ -14,16 +14,17 @@ export const Wrapper = styled(motion.section)`
 `;
 
 export const FormWrapper = styled(motion.form)`
+  position: relative;
   min-width: 550px;
   min-height: 550px;
   transform: perspective(800px) rotateY(10deg) scale(1.1);
   transition: 0.5s ease;
   z-index: 1;
   margin: 0 35px;
-  background-color: ${({ theme }) => theme.comicLayer.blueColor};
-  background-image: ${({ theme }) => theme.comicLayer.blueBackground};
+  background-color: ${({ theme }) => theme.comicLayer.orangeColor};
+  background-image: ${({ theme }) => theme.comicLayer.orangeBackground};
   box-shadow: ${({ theme }) => theme.boxShadow.left};
-  border: 3px solid ${({ theme }) => theme.colors.black};
+  border: 4px solid ${({ theme }) => theme.colors.black};
   @media screen and (max-width: 1366px) {
     min-width: 350px;
     min-height: 450px;
@@ -76,7 +77,7 @@ export const Input = styled(motion.input)`
   background: none;
   padding: 10px;
   border: none;
-  border: 3px solid ${({ theme }) => theme.colors.black};
+  border: 4px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.left};
   font-size: ${({ theme }) => theme.fontSize.m};
   font-family: 'Bangers', cursive;
@@ -121,7 +122,7 @@ export const Textarea = styled(motion.textarea)`
   min-height: 200px;
   background: none;
   padding: 10px;
-  border: 3px solid ${({ theme }) => theme.colors.black};
+  border: 4px solid ${({ theme }) => theme.colors.black};
   font-weight: 100;
   resize: none;
   transition: 0.5s ease;
@@ -182,8 +183,11 @@ export const ButtonAndPersonalInfoWrapper = styled.div`
   }
   @media screen and (max-width: 520px) {
     max-width: unset;
-    min-width: unset;
     width: 85%;
+    margin: 0;
+  }
+  @media screen and (min-width: 200px) and (max-width: 920px) and (orientation: landscape) {
+    max-width: 300px;
     margin: 0;
   }
 `;
@@ -212,9 +216,9 @@ export const InfoWrapper = styled(motion.div)`
   justify-content: space-evenly;
   transition: 0.5s ease;
   box-shadow: ${({ theme }) => theme.boxShadow.right};
-  border: 3px solid ${({ theme }) => theme.colors.black};
-  background-color: ${({ theme }) => theme.comicLayer.redColor};
-  background-image: ${({ theme }) => theme.comicLayer.redBackground};
+  border: 4px solid ${({ theme }) => theme.colors.black};
+  background-color: ${({ theme }) => theme.comicLayer.lightBlueColor};
+  background-image: ${({ theme }) => theme.comicLayer.lightBlueBackground};
   animation: ${rotate} 4s infinite ease;
 `;
 
@@ -237,17 +241,37 @@ export const Icon = styled.img`
   }
 `;
 
-export const FeedbackImage = styled.img`
+const feedbackAnim = keyframes`
+25%{
+  transform: rotate(-5deg) scale(0.6);
+}
+75%{
+  transform: rotate(5deg) scale(0.8);
+}
+`;
+
+export const WaitingWrapper = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  opacity: 0;
   transition: 0.2s ease;
-  transform: scale(1.3);
   pointer-events: none;
+  opacity: 0;
+  img {
+    z-index: 10;
+    width: 100%;
+    opacity: 1;
+    height: 100%;
+    animation: ${feedbackAnim} 2s infinite;
+  }
+  &.SHOW {
+    pointer-events: all;
+    background: rgba(0, 0, 0, 0.2);
+    opacity: 1;
+  }
   &.ERROR {
     opacity: 1;
-    transform: scale(1);
     transition: 0.2s ease;
+    background: rgba(0, 0, 0, 0.2);
   }
 `;

@@ -9,7 +9,7 @@ export const ProjectWrapper = styled.div`
   justify-content: center;
   left: 0;
   top: 0;
-  border: 3px solid ${({ theme }) => theme.colors.black};
+  border: 4px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.left};
   transform: scale(0);
   &.show,
@@ -25,12 +25,7 @@ export const ProjectWrapper = styled.div`
     opacity: 1;
     left: 0;
     z-index: 20;
-    @media screen and (min-width: 760px) {
-      &:hover {
-        transform: scale(1.025);
-        transition: 0.5s ease;
-      }
-    }
+
     @media screen and (max-width: 520px) {
       transform: scale(0.8);
     }
@@ -92,11 +87,10 @@ export const ProjectImage = styled.img`
   height: 100%;
   transition: 0.5s ease;
   object-fit: cover;
-  border: 3px solid ${({ theme }) => theme.colors.black};
-  box-shadow: ${({ theme }) => theme.boxShadow.left};
+  border: 4px solid ${({ theme }) => theme.colors.black};
   @media screen and (min-width: 760px) {
     &:hover {
-      transform: scale(1.05);
+      transform: scale(1.025);
     }
   }
 `;
@@ -116,7 +110,7 @@ export const ProjectLinksWrapper = styled.div`
   flex-direction: column;
   z-index: -1;
   &.show {
-    right: -65px;
+    right: -64px;
     transition: 0.5s 0.5s ease;
     opacity: 1;
     @media screen and (max-width: 760px) {
@@ -146,7 +140,7 @@ export const Links = styled.a`
   justify-content: center;
   pointer-events: all;
   z-index: 9999 !important;
-  border: 3px solid ${({ theme }) => theme.colors.black};
+  border: 4px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.right};
   border-radius: 50%;
   transition: 0.5s ease;

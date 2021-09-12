@@ -11,7 +11,6 @@ const Project = ({ current, index, next, prev, project, toggleProjectModalHandle
       <ProjectImage
         id='active'
         src={project.image}
-        className={current === index && viewProject && 'previewProject'}
         onClick={() => {
           if (index === current) {
             toggleProjectModalHandler(project);

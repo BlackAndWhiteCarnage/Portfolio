@@ -60,6 +60,10 @@ export const MySkillsWrapper = styled.div`
     min-width: unset;
     width: 85%;
   }
+  @media screen and (min-width: 200px) and (max-width: 920px) and (orientation: landscape) {
+    height: auto;
+    margin-top: 130px;
+  }
 `;
 
 const rotate = keyframes`
@@ -72,19 +76,34 @@ const rotate = keyframes`
 }
 `;
 
-export const MySkills = styled.div`
+export const MySkills = styled.ul`
   width: 100%;
+  max-width: 400px;
   height: 90%;
-  border: 3px solid ${({ theme }) => theme.colors.black};
+  border: 4px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.right};
   transition: 0.5s ease;
   animation: ${rotate} 3s infinite ease;
-  background-color: ${({ theme }) => theme.comicLayer.yellowColor};
-  background-image: ${({ theme }) => theme.comicLayer.yellowBackground};
+  background-color: ${({ theme }) => theme.comicLayer.purpleColor};
+  background-image: ${({ theme }) => theme.comicLayer.purpleBackground};
   transition: 0.5s ease;
-  img {
-    width: 100%;
-    height: 100%;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  @media screen and (min-width: 200px) and (max-width: 920px) and (orientation: landscape) {
+  }
+`;
+
+export const Skill = styled.li`
+  width: auto;
+  padding: 20px;
+  text-align: center;
+  font-size: ${({ theme }) => theme.fontSize.xl};
+  @media screen and (max-width: 1366px) {
+    padding: 10px;
+    font-size: ${({ theme }) => theme.fontSize.l};
   }
 `;
 

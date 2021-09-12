@@ -12,13 +12,13 @@ const Wrapper = styled.section`
   justify-content: space-around;
   overflow: hidden;
   @media screen and (min-width: 200px) and (max-width: 920px) and (orientation: landscape) {
-    min-height: 800px;
-    padding: 0;
+    min-height: 900px;
+    padding-bottom: 250px;
   }
 `;
 
-const SectionsWrapper = ({ children }) => {
-  return <Wrapper>{children}</Wrapper>;
+const SectionsWrapper = ({ children, id }) => {
+  return <Wrapper id={id}>{children}</Wrapper>;
 };
 
 export default SectionsWrapper;

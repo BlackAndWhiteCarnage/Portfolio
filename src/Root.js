@@ -13,13 +13,24 @@ import Navigation from 'components/Navigation/Navigation';
 import Cursor from 'components/Cursor/Cursor';
 // HELPERS
 import styled from 'styled-components';
+import hero from 'assets/images/heroImage.svg';
 
 const HeroImage = styled.img`
   position: fixed;
   width: 100%;
   height: 100%;
-  background-color: #f6f6f6;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%23D6D6D6' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  object-fit: cover;
+  opacity: 0.3;
+  z-index: -1;
+`;
+
+const ComicLayer = styled.img`
+  position: fixed;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  background-color: ${({ theme }) => theme.comicLayer.whiteColor};
+  background-image: ${({ theme }) => theme.comicLayer.whiteBackground};
 `;
 
 function Root() {
@@ -36,6 +47,8 @@ function Root() {
         <GlobalStyle />
         <Cursor />
         <Navigation toggleReadMore={toggleReadMore} setToggleReadMore={setToggleReadMore} viewProject={viewProject} setViewProject={setViewProject} />
+        <HeroImage src={hero} />
+        <ComicLayer />
         <HeroImage />
         <Home />
         <AboutMe toggleReadMore={toggleReadMore} setToggleReadMore={setToggleReadMore} />

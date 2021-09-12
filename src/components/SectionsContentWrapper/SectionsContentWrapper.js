@@ -26,6 +26,11 @@ const Wrapper = styled.div`
     min-height: 1000px;
     height: 100%;
   }
+  @media screen and (min-width: 200px) and (max-width: 920px) and (orientation: landscape) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 `;
 
 const SectionsContentWrapper = ({ children }) => {

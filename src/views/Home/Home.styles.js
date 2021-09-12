@@ -1,17 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 
-export const Wrapper = styled(motion.section)`
-  position: relative;
-  width: 100%;
-  min-height: 110vh;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  overflow: hidden;
-`;
-
 const rotate2 = keyframes`
 55%{
   transform: perspective(800px) rotateY(25deg) rotateX(5deg) scale(1.1) translateY(5px);
@@ -24,10 +13,11 @@ export const PosterImageWrapper = styled.div`
   height: 100%;
   position: relative;
   transform: perspective(800px) rotateY(10deg) scale(1.1);
-  border: 3px solid ${({ theme }) => theme.colors.black};
+  border: 5px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.left};
   animation: ${rotate2} 6s infinite ease;
   margin: 0 35px;
+  display: flex;
   @media screen and (max-width: 760px) {
     margin: 0;
     height: 400px;
@@ -36,7 +26,12 @@ export const PosterImageWrapper = styled.div`
     min-width: unset;
     width: 85%;
     height: auto;
-    margin-bottom: 120px;
+    margin: 30px 0 120px 0;
+  }
+  @media screen and (min-width: 200px) and (max-width: 920px) and (orientation: landscape) {
+    min-width: unset;
+    max-width: 300px;
+    margin: 0;
   }
 `;
 
@@ -100,10 +95,10 @@ export const Navigation = styled.ul`
   justify-content: space-evenly;
   transform: perspective(800px) rotateY(-10deg) scale(1.1);
   box-shadow: ${({ theme }) => theme.boxShadow.right};
-  border: 3px solid ${({ theme }) => theme.colors.black};
+  border: 5px solid ${({ theme }) => theme.colors.black};
   margin: 0 35px;
-  background-color: ${({ theme }) => theme.comicLayer.blueColor};
-  background-image: ${({ theme }) => theme.comicLayer.blueBackground};
+  background-color: ${({ theme }) => theme.comicLayer.redColor};
+  background-image: ${({ theme }) => theme.comicLayer.redBackground};
   @media screen and (max-width: 1366px) {
     min-width: 300px;
   }
@@ -115,36 +110,6 @@ export const Navigation = styled.ul`
     min-width: unset;
     width: 85%;
     margin-top: 50px;
-  }
-`;
-
-export const NavItem = styled(motion.li)`
-  padding: 15px;
-  position: relative;
-  width: 200px;
-  height: 60px;
-  font-size: ${({ theme }) => theme.fontSize.xl};
-  border: 3px solid ${({ theme }) => theme.colors.black};
-  box-shadow: ${({ theme }) => theme.boxShadow.right};
-  background-color: ${({ theme }) => theme.comicLayer.yellowColor};
-  background-image: ${({ theme }) => theme.comicLayer.yellowBackground};
-  transition: 0.5s ease;
-  @media screen and (min-width: 1200px) {
-    &:hover {
-      transform: perspective(800px) rotateY(-20deg) scale(1.2) rotate(5deg);
-      background-color: ${({ theme }) => theme.comicLayer.greenColor};
-      background-image: ${({ theme }) => theme.comicLayer.greenBackground};
-      transition: 0.5s ease;
-      &::after {
-        transition: 0.5s ease;
-        height: 100%;
-        opacity: 1;
-      }
-      &::before {
-        transition: 0.5s ease;
-        opacity: 1;
-      }
-    }
   }
 `;
 

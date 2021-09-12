@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
+import { Link } from 'react-scroll';
 
 const sendEmail = keyframes`
 0%{
@@ -33,10 +34,9 @@ const sendEmail = keyframes`
 
 export const ButtonWrapper = styled(motion.button)`
   position: relative;
-  min-width: 120px;
   max-width: 220px;
-  padding: 10px 20px;
-  border: 3px solid ${({ theme }) => theme.colors.black};
+  margin: 5px 0;
+  border: 4px solid ${({ theme }) => theme.colors.black};
   color: ${({ theme }) => theme.colors.black};
   background: none;
   display: flex;
@@ -46,6 +46,8 @@ export const ButtonWrapper = styled(motion.button)`
   box-shadow: ${({ theme }) => theme.boxShadow.left};
   font-family: 'Bangers', cursive;
   transition: 0.5s ease;
+  background: ${({ theme }) => theme.comicLayer.yellowColor};
+  background-image: ${({ theme }) => theme.comicLayer.yellowBackground};
   @media screen and (min-width: 1200px) {
     cursor: none;
   }
@@ -53,16 +55,13 @@ export const ButtonWrapper = styled(motion.button)`
     pointer-events: none;
   }
   @media screen and (max-width: 1366px) {
-    max-width: 180px;
     padding: 5px 10px;
   }
   @media screen and (min-width: 1000px) {
-    &:hover,
-    &:focus {
+    /* &:focus { */
+    &:hover {
       outline: none;
       transform: perspective(800px) rotateY(-20deg) scale(1.1) rotate(5deg) !important;
-      /* background-color: #a3ed0a !important; */
-      /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%2343B104' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") !important; */
       background: ${({ theme }) => theme.comicLayer.greenColor};
       background-image: ${({ theme }) => theme.comicLayer.greenBackground};
       img {
@@ -79,14 +78,17 @@ export const ButtonWrapper = styled(motion.button)`
   }
   a {
     width: 100%;
+    height: 100%;
     display: flex;
+    padding: 10px 30px;
+    align-items: center;
     text-decoration: none;
     color: ${({ theme }) => theme.colors.black};
     font-size: ${({ theme }) => theme.fontSize.l};
   }
   img {
     max-height: 35px;
-    margin-left: 15px;
+    margin: 0 10px 0 5px;
     transition: 0.5s ease;
     pointer-events: none;
     &.fly {
@@ -97,5 +99,15 @@ export const ButtonWrapper = styled(motion.button)`
     @media screen and (max-width: 680px) {
       max-height: 30px;
     }
+  }
+`;
+
+export const StyledLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 30px;
+  @media screen and (min-width: 1200px) {
+    cursor: none;
   }
 `;

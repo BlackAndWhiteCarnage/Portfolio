@@ -37,37 +37,28 @@ export const LinksWrapper = styled.ul`
 
 export const Link = styled.li`
   position: relative;
-  padding: 10px;
-  width: 200px;
-  height: 60px;
-  font-size: ${({ theme }) => theme.fontSize.xl};
-  border: 3px solid ${({ theme }) => theme.colors.black};
-  box-shadow: ${({ theme }) => theme.boxShadow.left};
+  width: auto;
+  height: auto;
   transition: 0.5s ease;
-  background-color: ${({ theme }) => theme.comicLayer.yellowColor};
-  background-image: ${({ theme }) => theme.comicLayer.yellowBackground};
   @media screen and (min-width: 1200px) {
     cursor: none;
     &::before {
       position: absolute;
       content: '${(props) => props.text}';
-      top: -150%;
-      left: -100%;
-      transform: translate(-50%);
+      top: -50%;
+      left: -50%;
+      transform: translate(-50%, -50%);
       font-size: 180px;
       white-space: nowrap;
       opacity: 0;
       transition: 0.5s ease;
-      color: ${({ theme }) => theme.colors.white};
+      color: ${({ theme }) => theme.colors.black};
       pointer-events: none;
       z-index: -1;
     }
     transition: 0.5s ease;
     &:hover {
       transition: 0.5s ease;
-      outline: none;
-      background-color: ${({ theme }) => theme.comicLayer.greenColor};
-      background-image: ${({ theme }) => theme.comicLayer.greenBackground};
       &::before {
         transition: 0.2s ease;
         opacity: 1;

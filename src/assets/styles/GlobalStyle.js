@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Bangers', cursive;
         overflow-x: hidden;
         color: ${({ theme }) => theme.colors.black};
-        background: ${({ theme }) => theme.colors.white};
+        /* background: ${({ theme }) => theme.colors.white}; */
         @media screen and (min-width: 1200px){
             cursor: none;
         }
@@ -34,13 +34,13 @@ export const GlobalStyle = createGlobalStyle`
     }
     ::-webkit-scrollbar {
         width: 10px;
-        background: #FFB806;
+        background: ${({ theme }) => theme.colors.black};
     }
     ::-webkit-scrollbar-track {
-        background: #FFB806;
+        background: ${({ theme }) => theme.colors.black};
         width: 10px;
     }
     ::-webkit-scrollbar-thumb {
-        background: #106FCA;
+        background: ${({ theme }) => theme.comicLayer.yellowColor};
     }
 `;

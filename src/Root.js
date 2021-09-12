@@ -12,23 +12,32 @@ import Contact from 'views/Contact/Contact';
 import Navigation from 'components/Navigation/Navigation';
 import Cursor from 'components/Cursor/Cursor';
 // HELPERS
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import hero from 'assets/images/heroImage.svg';
+import heroHorizontal from 'assets/images/heroImageHorizontal.svg';
+import { matchMedia } from 'helpers/matchMedia';
+
+const rotate = keyframes`
+50%{
+  transform: scale(1.1);
+}
+`;
 
 const HeroImage = styled.img`
   position: fixed;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   object-fit: cover;
   opacity: 0.3;
   z-index: -1;
+  animation: ${rotate} 10s infinite alternate;
 `;
 
 const ComicLayer = styled.img`
   position: fixed;
   z-index: -2;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: ${({ theme }) => theme.comicLayer.whiteColor};
   background-image: ${({ theme }) => theme.comicLayer.whiteBackground};
 `;
@@ -47,7 +56,7 @@ function Root() {
         <GlobalStyle />
         <Cursor />
         <Navigation toggleReadMore={toggleReadMore} setToggleReadMore={setToggleReadMore} viewProject={viewProject} setViewProject={setViewProject} />
-        <HeroImage src={hero} />
+        <HeroImage src={matchMedia ? hero : heroHorizontal} />
         <ComicLayer />
         <HeroImage />
         <Home />

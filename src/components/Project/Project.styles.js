@@ -12,20 +12,18 @@ export const ProjectWrapper = styled.div`
   border: 4px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.left};
   transform: scale(0);
+  background-color: ${({ theme }) => theme.comicLayer.yellowColor};
+  background-image: ${({ theme }) => theme.comicLayer.yellowBackground};
   &.show,
   &.next,
   &.prev {
     transition: 0.3s ease;
-    @media screen and (max-width: 520px) {
-      transition: 0.6s ease;
-    }
   }
   &.show {
     transform: scale(1);
     opacity: 1;
     left: 0;
     z-index: 20;
-
     @media screen and (max-width: 520px) {
       transform: scale(0.8);
     }
@@ -149,7 +147,7 @@ export const Links = styled.a`
   @media screen and (min-width: 760px) {
     &:hover {
       transition: 0.5s ease;
-      transform: scale(1.2);
+      transform: perspective(800px) rotateY(-20deg) scale(1.1) rotate(5deg) scale(1.05) !important;
       background-color: ${({ theme }) => theme.comicLayer.greenColor};
       background-image: ${({ theme }) => theme.comicLayer.greenBackground};
     }

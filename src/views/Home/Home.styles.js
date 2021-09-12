@@ -3,16 +3,16 @@ import { motion } from 'framer-motion';
 
 const rotate2 = keyframes`
 55%{
-  transform: perspective(800px) rotateY(25deg) rotateX(5deg) scale(1.1) translateY(5px);
+  transform: perspective(800px) rotateY(25deg) rotateX(5deg) translateY(5px);
 }
 }
 `;
 
-export const PosterImageWrapper = styled.div`
+export const PosterImageWrapper = styled(motion.div)`
   min-width: fit-content;
   height: 100%;
   position: relative;
-  transform: perspective(800px) rotateY(10deg) scale(1.1);
+  /* transform: perspective(800px) rotateY(10deg) scale(1.1); */
   border: 5px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.left};
   animation: ${rotate2} 6s infinite ease;
@@ -76,26 +76,26 @@ export const Scroll = styled.img`
 
 const rotate = keyframes`
 25%{
-  transform: rotateY(5deg) scale(1.1) rotateX(-5deg);
+  transform: rotateY(5deg) rotateX(-5deg);
 }
 }
 75%{
-  transform: rotateY(5deg) scale(1) rotate(5deg);
+  transform: rotateY(5deg) rotate(5deg);
 }
 `;
 
-export const Navigation = styled.ul`
+export const Navigation = styled(motion.ul)`
   min-width: 400px;
   height: 100%;
   list-style: none;
-  animation: ${rotate} 4s infinite ease;
+  animation: ${rotate} 3s infinite alternate;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   transform: perspective(800px) rotateY(-10deg) scale(1.1);
   box-shadow: ${({ theme }) => theme.boxShadow.right};
-  border: 5px solid ${({ theme }) => theme.colors.black};
+  border: 4px solid ${({ theme }) => theme.colors.black};
   margin: 0 35px;
   background-color: ${({ theme }) => theme.comicLayer.redColor};
   background-image: ${({ theme }) => theme.comicLayer.redBackground};

@@ -1,7 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
+// HELPERS
+import { useScroll } from 'helpers/useScroll';
+// ANIMATIONS
+import { fade, slide, slideFromLeft } from 'assets/animations/animation';
 
-const Wrapper = styled.section`
+const Wrapper = styled(motion.section)`
   position: relative;
   width: 100%;
   min-height: 110vh;
@@ -18,7 +23,13 @@ const Wrapper = styled.section`
 `;
 
 const SectionsWrapper = ({ children, id }) => {
-  return <Wrapper id={id}>{children}</Wrapper>;
+  const [element, controls] = useScroll();
+
+  return (
+    <Wrapper id={id} variants={slide} animate={controls} initial='hidden' ref={element}>
+      {children}
+    </Wrapper>
+  );
 };
 
 export default SectionsWrapper;

@@ -50,7 +50,7 @@ export const HamburgerWrapper = styled.div`
   @media screen and (min-width: 1000px) {
     &:hover {
       transition: 0.5s ease;
-      transform: scale(1.2);
+      transform: perspective(800px) rotateY(20deg) scale(1.1) rotate(-5deg) scale(1.05) !important;
       background-color: ${({ theme }) => theme.comicLayer.greenColor};
       background-image: ${({ theme }) => theme.comicLayer.greenBackground};
     }
@@ -119,7 +119,7 @@ export const IconWrapper = styled.nav`
   @media screen and (min-width: 1000px) {
     &:hover {
       transition: 0.5s ease;
-      transform: scale(1.2);
+      transform: perspective(800px) rotateY(-20deg) scale(1.1) rotate(5deg) scale(1.05) !important;
       background-color: ${({ theme }) => theme.comicLayer.greenColor};
       background-image: ${({ theme }) => theme.comicLayer.greenBackground};
     }

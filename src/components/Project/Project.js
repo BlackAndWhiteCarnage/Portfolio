@@ -1,22 +1,39 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 // ICONS
 import link from 'assets/icons/link-icon.svg';
 import github from 'assets/icons/github-icon.svg';
 // STYLES
 import { ProjectWrapper, ProjectImage, ProjectLinksWrapper, Links } from './Project.styles';
 
-const Project = ({ current, index, next, prev, project, toggleProjectModalHandler, projectHandler, viewProject }) => {
+const Project = ({
+  current,
+  index,
+  next,
+  prev,
+  project,
+  toggleProjectModalHandler,
+  projectHandler,
+  viewProject,
+  blockClickingHanlder,
+  blockClick,
+}) => {
   return (
-    <ProjectWrapper className={`${current === index && 'show'} ${next === index && 'next'} ${prev === index && 'prev'}`} id='active'>
+    <ProjectWrapper
+      className={`${current === index && 'show'} ${next === index && 'next'} ${prev === index && 'prev'}`}
+      id='active'
+      onClick={() => {
+        blockClickingHanlder();
+        projectHandler(index);
+      }}
+    >
       <ProjectImage
         id='active'
         src={project.image}
         onClick={() => {
-          if (index === current) {
+          if (index === current && !blockClick) {
             toggleProjectModalHandler(project);
-            projectHandler(index);
           } else {
-            projectHandler(index);
+            console.log('ADDASDAS');
           }
         }}
       />

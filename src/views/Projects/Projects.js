@@ -9,58 +9,29 @@ import PreviewProject from 'components/PreviewProject/PreviewProject';
 // HELPERS
 import { useScroll } from 'helpers/useScroll';
 // ANIMATIONS
-import { fade, slide } from 'assets/animations/animation';
+import { slide } from 'assets/animations/animation';
 // STYLES
 import { Wrapper, ProjectsSliderWrapper } from './Projects.styles';
 
 const Projects = ({ viewProject, setViewProject }) => {
   const [element, controls] = useScroll();
+  const [blockClick, setBlockClick] = useState(false);
 
-  const [clock, setClock] = useState(0);
-  const [isLocked, setIsLocked] = useState(false);
   let [current, setCurrent] = useState(0);
   let [next, setNext] = useState(projects.length - 1);
   let [prev, setPrev] = useState(current + 1);
 
-  let toggleInterval = false;
-
-  const slider = () => {
-    setCurrent(current === projects.length - 1 ? 0 : current + 1);
-    setNext(next === projects.length - 1 ? 0 : next + 1);
-    setPrev(prev === projects.length - 1 ? 0 : prev + 1);
-  };
-
   const projectHandler = (index) => {
-    setIsLocked(true);
-
     if (next === index) {
-      setIsLocked(true);
       setCurrent(current === 0 ? (current = projects.length - 1) : current - 1);
       setNext(next === 0 ? (next = projects.length - 1) : next - 1);
       setPrev(prev === 0 ? (prev = projects.length - 1) : prev - 1);
     } else if (prev === index) {
-      setIsLocked(true);
       setCurrent(current === projects.length - 1 ? 0 : current + 1);
       setNext(next === projects.length - 1 ? 0 : next + 1);
       setPrev(prev === projects.length - 1 ? 0 : prev + 1);
     }
   };
-
-  const fireSlider = () => {
-    if (isLocked) {
-      return;
-    }
-    toggleInterval = setInterval(() => {
-      setClock(clock + 1);
-      console.log(clock);
-    }, 3000);
-    slider();
-  };
-
-  useEffect(() => {
-    fireSlider();
-    return () => clearTimeout(toggleInterval);
-  }, [clock]);
 
   let startX, moveX;
 
@@ -74,12 +45,10 @@ const Projects = ({ viewProject, setViewProject }) => {
 
   const touchEndHandler = () => {
     if (startX + 80 < moveX) {
-      setIsLocked(true);
       setCurrent(current === projects.length - 1 ? 0 : current + 1);
       setNext(next === projects.length - 1 ? 0 : next + 1);
       setPrev(prev === projects.length - 1 ? 0 : prev + 1);
     } else if (startX - 80 > moveX) {
-      setIsLocked(true);
       setCurrent(current === 0 ? (current = projects.length - 1) : current - 1);
       setNext(next === 0 ? (next = projects.length - 1) : next - 1);
       setPrev(prev === 0 ? (prev = projects.length - 1) : prev - 1);
@@ -94,9 +63,19 @@ const Projects = ({ viewProject, setViewProject }) => {
     }
   };
 
+  const blockClickingHanlder = () => {
+    setBlockClick(true);
+    if (blockClick) {
+      setTimeout(() => {
+        console.log('3');
+        setBlockClick(false);
+      }, 500);
+    }
+  };
+
   return (
     <Wrapper
-      variants={fade}
+      variants={slide}
       animate={controls}
       initial='hidden'
       ref={element}
@@ -116,6 +95,8 @@ const Projects = ({ viewProject, setViewProject }) => {
             toggleProjectModalHandler={toggleProjectModalHandler}
             projectHandler={projectHandler}
             viewProject={viewProject}
+            blockClickingHanlder={blockClickingHanlder}
+            blockClick={blockClick}
           />
         ))}
         {/* <SliderInfo slide={slide} isLocked={isLocked} /> */}

@@ -8,8 +8,8 @@ export const StyledDotTop = styled.div`
   height: 0%;
   border: 3px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.left};
-  background-color: ${({ theme }) => theme.comicLayer.purpleColor};
-  background-image: ${({ theme }) => theme.comicLayer.purpleBackground};
+  background-color: ${({ theme }) => theme.comicLayer.redColor};
+  background-image: ${({ theme }) => theme.comicLayer.redBackground};
   transition: 1s 0.5s;
   border-radius: 50%;
   z-index: 110;
@@ -28,8 +28,8 @@ export const StyledDotBottom = styled.div`
   height: 0%;
   border: 3px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.right};
-  background-color: ${({ theme }) => theme.comicLayer.lightBlueColor};
-  background-image: ${({ theme }) => theme.comicLayer.lightBlueBackground};
+  background-color: ${({ theme }) => theme.comicLayer.blueColor};
+  background-image: ${({ theme }) => theme.comicLayer.blueBackground};
   transition: 1s;
   border-radius: 50%;
   z-index: 120;

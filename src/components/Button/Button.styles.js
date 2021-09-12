@@ -48,6 +48,9 @@ export const ButtonWrapper = styled(motion.button)`
   transition: 0.5s ease;
   background: ${({ theme }) => theme.comicLayer.yellowColor};
   background-image: ${({ theme }) => theme.comicLayer.yellowBackground};
+  &.right {
+    box-shadow: ${({ theme }) => theme.boxShadow.right};
+  }
   @media screen and (min-width: 1200px) {
     cursor: none;
   }
@@ -61,7 +64,7 @@ export const ButtonWrapper = styled(motion.button)`
     /* &:focus { */
     &:hover {
       outline: none;
-      transform: perspective(800px) rotateY(-20deg) scale(1.1) rotate(5deg) !important;
+      transform: perspective(800px) rotateY(-20deg) scale(1.1) rotate(5deg) scale(1.05) !important;
       background: ${({ theme }) => theme.comicLayer.greenColor};
       background-image: ${({ theme }) => theme.comicLayer.greenBackground};
       img {
@@ -69,6 +72,12 @@ export const ButtonWrapper = styled(motion.button)`
         transition: 0.5s ease;
       }
       transition: 0.5s ease;
+      &.right {
+        transform: perspective(800px) rotateY(20deg) scale(1.1) rotate(-5deg) scale(1.05) !important;
+        img {
+          transform: translateX(-20px) scale(2) !important;
+        }
+      }
     }
   }
   &.emailSend {

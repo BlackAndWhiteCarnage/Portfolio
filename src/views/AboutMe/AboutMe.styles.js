@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 
-export const AboutMeWrapperPartOne = styled.div`
+export const AboutMeWrapperPartOne = styled(motion.div)`
   min-width: 350px;
   max-width: 450px;
   height: 100%;
@@ -9,7 +9,6 @@ export const AboutMeWrapperPartOne = styled.div`
   flex-direction: column;
   justify-content: space-between;
   transform: perspective(800px) rotateY(10deg) scale(1.1);
-  transition: 0.5s ease;
   z-index: 1;
   margin: 0 35px;
   @media screen and (max-width: 1366px) {
@@ -38,14 +37,13 @@ export const Header = styled.h4`
   }
 `;
 
-export const MySkillsWrapper = styled.div`
+export const MySkillsWrapper = styled(motion.div)`
   min-width: 350px;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transform: perspective(800px) rotateY(-10deg) scale(1.1);
-  transition: 0.5s ease;
   z-index: 1;
   margin-right: 35px;
   @media screen and (max-width: 1366px) {

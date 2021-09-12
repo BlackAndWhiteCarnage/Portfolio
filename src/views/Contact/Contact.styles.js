@@ -1,18 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 
-export const Wrapper = styled(motion.section)`
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  overflow: hidden;
-`;
-
 export const FormWrapper = styled(motion.form)`
   position: relative;
   min-width: 550px;
@@ -166,7 +154,7 @@ export const Textarea = styled(motion.textarea)`
   }
 `;
 
-export const ButtonAndPersonalInfoWrapper = styled.div`
+export const ButtonAndPersonalInfoWrapper = styled(motion.div)`
   height: 100%;
   width: 500px;
   display: flex;

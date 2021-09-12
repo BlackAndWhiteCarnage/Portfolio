@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const ModalWrapper = styled.nav`
   position: fixed;
@@ -66,4 +66,20 @@ export const Link = styled.li`
       }
     }
   }
+`;
+
+const rotate = keyframes`
+50%{
+  transform: scale(1.1);
+}
+`;
+
+export const HeroImage = styled.img`
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  opacity: 0.3;
+  z-index: -1;
+  animation: ${rotate} 10s infinite alternate;
 `;

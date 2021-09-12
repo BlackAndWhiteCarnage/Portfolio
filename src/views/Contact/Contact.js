@@ -8,8 +8,6 @@ import waitingIcon from 'assets/icons/waiting-icon.svg';
 import Button from 'components/Button/Button';
 // HELPERS
 import { useScroll } from 'helpers/useScroll';
-// ANIMATIONS
-import { fade, slide } from 'assets/animations/animation';
 // ICONS
 import wrongEmail from 'assets/icons/wrongEmail-icon.svg';
 import wrongMessage from 'assets/icons/wrongMessage-icon.svg';
@@ -17,7 +15,6 @@ import emptyForm from 'assets/icons/emptyForm-icon.svg';
 import emailSendIcon from 'assets/icons/emailSend-icon.svg';
 // STYLES
 import {
-  Wrapper,
   Form,
   Label,
   Input,
@@ -27,7 +24,6 @@ import {
   InfoWrapper,
   Info,
   Icon,
-  FeedbackImage,
   FormWrapper,
   WaitingWrapper,
 } from 'views/Contact/Contact.styles';
@@ -114,25 +110,20 @@ const Contact = () => {
     }
   }
 
-  console.log(emailSend);
-  console.log(feedback);
-
   return (
     <SectionsWrapper id='CONTACT'>
       <SectionsContentWrapper>
         <FormWrapper>
-          <Form variants={slide} className={emailSend && 'emailSend'}>
-            <Label variants={slide}>EMAIL</Label>
+          <Form className={emailSend && 'emailSend'}>
+            <Label>EMAIL</Label>
             <Input
-              variants={fade}
               onChange={emailHandler}
               name='email'
               className={`${feedback === 2 && !validEmail && 'ERROR'} ${feedback === 3 && !validEmail && 'ERROR'} ${validEmail && 'VALID'}`}
               value={emailValue}
             />
-            <Label variants={slide}>MESSAGE</Label>
+            <Label>MESSAGE</Label>
             <Textarea
-              variants={fade}
               onChange={messageHandler}
               name='message'
               className={`${feedback === 2 && !validMessage && 'ERROR'} ${feedback === 4 && !validMessage && 'ERROR'} ${validMessage && 'VALID'}`}
@@ -159,18 +150,18 @@ const Contact = () => {
             )}
           </WaitingWrapper>
         </FormWrapper>
-        <ButtonAndPersonalInfoWrapper variants={slide} animate={controls} initial='hidden' ref={element}>
-          <Header variants={fade}>PERSONAL INFO</Header>
-          <InfoWrapper variants={slide}>
-            <Info variants={slide}>
+        <ButtonAndPersonalInfoWrapper>
+          <Header>PERSONAL INFO</Header>
+          <InfoWrapper>
+            <Info>
               <p>KRZYSZTOF REPSCH</p>
               <Icon src={user} />
             </Info>
-            <Info variants={slide}>
+            <Info>
               <p>KRZYS.REPSCH@GMAIL.COM</p>
               <Icon src={email} />
             </Info>
-            <Info variants={slide}>
+            <Info>
               <p>603 312 504</p>
               <Icon src={phone} />
             </Info>

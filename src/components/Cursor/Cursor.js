@@ -1,17 +1,26 @@
 import React, { useRef, useEffect, useState } from 'react';
 // STYLES
-import { CursorWrapper, Ouch, Bang } from './Cursor.styles';
+import { CursorWrapper, Ouch, Bang, CursorImage } from './Cursor.styles';
 // ICONS
 import cursorIcon from 'assets/icons/cursor-icon.svg';
+import cursorIconClick from 'assets/icons/cursorClick-icon.svg';
 import ouchIcon from 'assets/icons/ouch-icon.svg';
 import bangIcon from 'assets/icons/bang-icon.svg';
-// HELPERS
-import { matchMedia } from 'helpers/matchMedia';
 
 const Cursor = () => {
   const ref = useRef(null);
   const [ouch, setOuch] = useState(false);
   const [bang, setBang] = useState(false);
+  const [cursor, setCursor] = useState(false);
+  const [isTouchscreen, setIsTouchscreen] = useState(false);
+
+  useEffect(() => {
+    if (window.matchMedia('(pointer: coarse)').matches) {
+      setIsTouchscreen(true);
+    } else {
+      setIsTouchscreen(false);
+    }
+  }, []);
 
   const mouseMoveHandler = (e) => {
     ref.current.style.top = e.clientY + 'px';
@@ -56,7 +65,9 @@ const Cursor = () => {
       item.tagName === 'A'
     ) {
       ref.current.classList.add('active');
+      setCursor(true);
     } else {
+      setCursor(false);
       ref.current.classList.remove('active');
     }
   };
@@ -71,9 +82,13 @@ const Cursor = () => {
 
   return (
     <CursorWrapper ref={ref}>
-      {matchMedia && <img src={cursorIcon} />}
       <Ouch src={ouchIcon} className={ouch && 'ouch'} />
       <Bang src={bangIcon} className={bang && 'bang'} />
+      {!isTouchscreen && (
+        <>
+          <CursorImage src={cursorIconClick} className={cursor && 'show'} /> <CursorImage src={cursorIcon} className={!cursor && 'show'} />
+        </>
+      )}
     </CursorWrapper>
   );
 };

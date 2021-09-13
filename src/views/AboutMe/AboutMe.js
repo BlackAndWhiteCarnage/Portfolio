@@ -36,18 +36,8 @@ const AboutMe = ({ toggleReadMore, setToggleReadMore }) => {
             </ButtonsWrapper>
           </AboutMeWrapperPartOne>
           <MySkillsWrapper>
-            <Header>My Current Skills</Header>
-            <MySkills className={toggleReadMore && 'hide'}>
-              <Skill>HTML</Skill>
-              <Skill>CSS</Skill>
-              <Skill>Java Script</Skill>
-              <Skill>SCSS</Skill>
-              <Skill>REACT</Skill>
-              <Skill>STYLED COMPONENTS</Skill>
-              <Skill>FRAMER MOTION</Skill>
-              <Skill>GITHUB</Skill>
-              <Skill>FIGMA</Skill>
-            </MySkills>
+            <Header>Skills</Header>
+            <MySkills className={toggleReadMore && 'hide'}></MySkills>
           </MySkillsWrapper>
         </SectionsContentWrapper>
       </SectionsWrapper>

@@ -99,7 +99,7 @@ export const BackIcon = styled.img`
   }
 `;
 
-export const IconWrapper = styled.nav`
+export const IconWrapper = styled.a`
   min-width: 50px;
   min-height: 50px;
   display: flex;

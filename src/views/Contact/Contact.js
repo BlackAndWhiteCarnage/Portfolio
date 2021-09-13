@@ -4,6 +4,7 @@ import email from 'assets/icons/email-icon.svg';
 import phone from 'assets/icons/phone-icon.svg';
 import send from 'assets/icons/send-icon.svg';
 import waitingIcon from 'assets/icons/waiting-icon.svg';
+import hrefArrow from 'assets/icons/hrefArrow-icon.svg';
 // COMPONENTS
 import Button from 'components/Button/Button';
 // HELPERS
@@ -157,13 +158,13 @@ const Contact = () => {
               <p>KRZYSZTOF REPSCH</p>
               <Icon src={user} />
             </Info>
-            <Info>
+            <Info href='mailto:krzys.repsch@gmail.com' target='_blank'>
               <p>KRZYS.REPSCH@GMAIL.COM</p>
-              <Icon src={email} />
+              <Icon src={hrefArrow} />
             </Info>
-            <Info>
+            <Info href='tel:603-312-504' target='_blank'>
               <p>603 312 504</p>
-              <Icon src={phone} />
+              <Icon src={hrefArrow} />
             </Info>
           </InfoWrapper>
         </ButtonAndPersonalInfoWrapper>

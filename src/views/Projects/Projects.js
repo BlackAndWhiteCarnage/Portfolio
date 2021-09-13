@@ -64,13 +64,13 @@ const Projects = ({ viewProject, setViewProject }) => {
   };
 
   const blockClickingHanlder = () => {
-    setBlockClick(true);
     if (blockClick) {
-      setTimeout(() => {
-        console.log('3');
-        setBlockClick(false);
-      }, 500);
+      return;
     }
+    setBlockClick(true);
+    setTimeout(() => {
+      setBlockClick(false);
+    }, 250);
   };
 
   return (

@@ -1,5 +1,28 @@
 import styled, { keyframes } from 'styled-components';
 
+const rotate = keyframes`
+50%{
+  transform: scale(1.1);
+}
+`;
+
+export const HeroImage = styled.img`
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  opacity: 0;
+  animation: ${rotate} 10s infinite alternate;
+  z-index: 200;
+  top: 0;
+  pointer-events: none;
+  transition: 0.5s ease;
+  &.show {
+    opacity: 0.2;
+    transition: 1s 1s ease;
+  }
+`;
+
 export const PreviewProjectWrapper = styled.div`
   position: fixed;
   top: 0;
@@ -18,6 +41,8 @@ export const PreviewProjectWrapper = styled.div`
   overflow-y: scroll;
   overflow-x: hidden;
   padding: 250px 0;
+  background-color: ${({ theme }) => theme.comicLayer.whiteColor};
+  background-image: ${({ theme }) => theme.comicLayer.whiteBackground};
   @media screen and (max-width: 1000px) {
     padding: 150px 0;
   }

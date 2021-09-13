@@ -7,6 +7,7 @@ export const Ouch = styled.img`
   opacity: 0;
   min-width: 150px;
   transition: 0.2s ease;
+  z-index: 9999999;
   @media screen and (max-width: 520px) {
     min-width: 120px;
   }
@@ -24,6 +25,7 @@ export const Bang = styled.img`
   opacity: 0;
   min-width: 200px;
   transition: 0.2s ease;
+  z-index: 9999999;
   @media screen and (max-width: 520px) {
     min-width: 120px;
   }
@@ -48,10 +50,21 @@ export const CursorWrapper = styled.div`
   transition-property: transform;
   transform-origin: 100% -20%;
   border-radius: 50%;
-  img {
-    width: 60px;
-  }
   &.active {
     transform: scale(1.2) rotate(25deg);
+  }
+`;
+
+export const CursorImage = styled.img`
+  position: absolute;
+  width: 80px;
+  z-index: 9999;
+  transform: scale(0);
+  transition: 0.3s ease;
+  opacity: 0;
+  &.show {
+    transform: scale(1);
+    opacity: 1;
+    transition: 0.3s ease;
   }
 `;

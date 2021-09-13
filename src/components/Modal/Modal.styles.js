@@ -79,7 +79,7 @@ export const HeroImage = styled.img`
   width: 100%;
   height: 100vh;
   object-fit: cover;
-  opacity: 0.3;
+  opacity: 0.5;
   z-index: -1;
   animation: ${rotate} 10s infinite alternate;
 `;

@@ -14,8 +14,9 @@ import Cursor from 'components/Cursor/Cursor';
 // HELPERS
 import styled, { keyframes } from 'styled-components';
 import hero from 'assets/images/heroImage.svg';
+import heroMedium from 'assets/images/heroImageMedium.svg';
 import heroHorizontal from 'assets/images/heroImageHorizontal.svg';
-import { matchMedia } from 'helpers/matchMedia';
+import { matchMedia, matchMediaMedium, matchMediaHorizontal } from 'helpers/matchMedia';
 
 const rotate = keyframes`
 50%{
@@ -28,7 +29,7 @@ const HeroImage = styled.img`
   width: 100%;
   height: 100vh;
   object-fit: cover;
-  opacity: 0.3;
+  opacity: 0.5;
   z-index: -1;
   animation: ${rotate} 10s infinite alternate;
 `;
@@ -50,13 +51,17 @@ function Root() {
     document.body.style.overflowY = `${toggleReadMore || viewProject.isToggled ? 'hidden' : 'scroll'}`;
   }, [toggleReadMore, viewProject]);
 
+  console.log(matchMediaHorizontal);
+  console.log(matchMediaMedium);
+  console.log(matchMedia);
+
   return (
     <>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Cursor />
         <Navigation toggleReadMore={toggleReadMore} setToggleReadMore={setToggleReadMore} viewProject={viewProject} setViewProject={setViewProject} />
-        <HeroImage src={matchMedia ? hero : heroHorizontal} />
+        <HeroImage src={matchMediaHorizontal ? heroHorizontal : matchMediaMedium ? heroMedium : matchMedia && hero} />
         <ComicLayer />
         <HeroImage />
         <Home />

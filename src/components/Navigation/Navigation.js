@@ -52,10 +52,10 @@ const Navigation = ({ toggleReadMore, setToggleReadMore, setViewProject, viewPro
           </HamburgerWrapper>
         </HamburgerMenu>
         <SocialMedia>
-          <IconWrapper id='active'>
+          <IconWrapper id='active' href='https://www.facebook.com/krzysio.repsch/' target='_blank'>
             <Icon src={facebook} />
           </IconWrapper>
-          <IconWrapper id='active'>
+          <IconWrapper id='active' href='https://github.com/BlackAndWhiteCarnage' target='_blank'>
             <Icon src={github} />
           </IconWrapper>
         </SocialMedia>

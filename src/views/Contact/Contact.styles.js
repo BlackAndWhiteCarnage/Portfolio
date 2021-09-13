@@ -9,8 +9,8 @@ export const FormWrapper = styled(motion.form)`
   transition: 0.5s ease;
   z-index: 1;
   margin: 0 35px;
-  background-color: ${({ theme }) => theme.comicLayer.orangeColor};
-  background-image: ${({ theme }) => theme.comicLayer.orangeBackground};
+  background-color: ${({ theme }) => theme.comicLayer.purpleColor};
+  background-image: ${({ theme }) => theme.comicLayer.purpleBackground};
   box-shadow: ${({ theme }) => theme.boxShadow.left};
   border: 4px solid ${({ theme }) => theme.colors.black};
   @media screen and (max-width: 1366px) {
@@ -205,16 +205,18 @@ export const InfoWrapper = styled(motion.div)`
   transition: 0.5s ease;
   box-shadow: ${({ theme }) => theme.boxShadow.right};
   border: 4px solid ${({ theme }) => theme.colors.black};
-  background-color: ${({ theme }) => theme.comicLayer.lightBlueColor};
-  background-image: ${({ theme }) => theme.comicLayer.lightBlueBackground};
+  background-color: ${({ theme }) => theme.comicLayer.greenColor};
+  background-image: ${({ theme }) => theme.comicLayer.greenBackground};
   animation: ${rotate} 4s infinite ease;
 `;
 
-export const Info = styled(motion.div)`
+export const Info = styled(motion.a)`
   width: 100%;
   height: auto;
   display: flex;
   justify-content: flex-end;
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.black};
   p {
     font-size: ${({ theme }) => theme.fontSize.l};
   }

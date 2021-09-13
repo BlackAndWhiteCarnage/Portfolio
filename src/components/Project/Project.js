@@ -22,7 +22,9 @@ const Project = ({
       className={`${current === index && 'show'} ${next === index && 'next'} ${prev === index && 'prev'}`}
       id='active'
       onClick={() => {
-        blockClickingHanlder();
+        if (index !== current) {
+          blockClickingHanlder();
+        }
         projectHandler(index);
       }}
     >
@@ -32,8 +34,6 @@ const Project = ({
         onClick={() => {
           if (index === current && !blockClick) {
             toggleProjectModalHandler(project);
-          } else {
-            console.log('ADDASDAS');
           }
         }}
       />

@@ -17,13 +17,13 @@ export const ProjectWrapper = styled.div`
   &.show,
   &.next,
   &.prev {
-    transition: 0.3s ease;
+    transition: 0.5s ease;
   }
   &.show {
+    z-index: 20;
     transform: scale(1);
     opacity: 1;
     left: 0;
-    z-index: 20;
     @media screen and (max-width: 520px) {
       transform: scale(0.8);
     }

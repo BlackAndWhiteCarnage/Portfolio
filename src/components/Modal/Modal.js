@@ -4,15 +4,16 @@ import Button from 'components/Button/Button';
 // STYLES
 import { ModalWrapper, LinksWrapper, Link, HeroImage } from './Modal.styles';
 // HELPERS
-import { matchMedia } from 'helpers/matchMedia';
+import { matchMedia, matchMediaMedium, matchMediaHorizontal } from 'helpers/matchMedia';
 // ICONS
 import hero from 'assets/images/heroImageModal.svg';
 import heroHorizontal from 'assets/images/heroImageModalHorizontal.svg';
+import heroMedium from 'assets/images/heroImageModalMedium.svg';
 
 const Modal = ({ toggleModal, toggleModalHandler }) => {
   return (
     <ModalWrapper className={toggleModal && 'toggle'} onClick={() => toggleModalHandler()}>
-      <HeroImage src={matchMedia ? hero : heroHorizontal} />
+      <HeroImage src={matchMediaHorizontal ? heroHorizontal : matchMediaMedium ? heroMedium : matchMedia && hero} />{' '}
       <LinksWrapper>
         <Link text='ABOUT ME'>
           <Button text='ABOUT ME' to='ABOUT ME' toggleModalHandler={toggleModalHandler} />

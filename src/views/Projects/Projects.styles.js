@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 export const Wrapper = styled(motion.section)`
   position: relative;
   width: 100%;
-  height: 120vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,7 +25,7 @@ export const ProjectsSliderWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transition: 1s 0.5s ease;
+  transition: 0.5s 1s ease;
   @media screen and (max-width: 1366px) {
     width: 350px;
   }

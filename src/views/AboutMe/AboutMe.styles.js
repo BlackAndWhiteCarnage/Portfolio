@@ -78,12 +78,12 @@ export const MySkills = styled.ul`
   width: 100%;
   max-width: 400px;
   height: 90%;
+  transition: 0.5s ease;
   border: 4px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.right};
-  transition: 0.5s ease;
   animation: ${rotate} 3s infinite ease;
-  background-color: ${({ theme }) => theme.comicLayer.purpleColor};
-  background-image: ${({ theme }) => theme.comicLayer.purpleBackground};
+  background-color: ${({ theme }) => theme.comicLayer.orangeColor};
+  background-image: ${({ theme }) => theme.comicLayer.orangeBackground};
   transition: 0.5s ease;
   list-style: none;
   display: flex;

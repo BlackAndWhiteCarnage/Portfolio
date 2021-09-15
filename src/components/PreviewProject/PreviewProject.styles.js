@@ -12,13 +12,13 @@ export const HeroImage = styled.img`
   height: 100vh;
   object-fit: cover;
   opacity: 0;
-  animation: ${rotate} 10s infinite alternate;
   z-index: 200;
   top: 0;
   pointer-events: none;
   transition: 0.5s ease;
+  animation: ${rotate} 10s infinite alternate;
   &.show {
-    opacity: 0.2;
+    opacity: 0.15;
     transition: 1s 1s ease;
   }
 `;

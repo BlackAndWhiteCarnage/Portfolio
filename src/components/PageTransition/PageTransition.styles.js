@@ -1,39 +1,39 @@
 import styled from 'styled-components';
 
 export const StyledDotTop = styled.div`
-  position: fixed;
-  left: -50%;
-  top: -50%;
-  width: 0%;
-  height: 0%;
-  border: 15px solid ${({ theme }) => theme.colors.black};
+  /* position: fixed;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: 100%;
   background-color: ${({ theme }) => theme.comicLayer.redColor};
   background-image: ${({ theme }) => theme.comicLayer.redBackground};
-  transition: 1s 0.5s;
-  border-radius: 50%;
+  transition: 0.5s 0.5s;
   z-index: 110;
+  pointer-events: none;
   &.toggle {
-    width: 300%;
-    height: 200%;
-    transition: 1s ease;
-  }
+    transition: 0.25s ease;
+    top: 0;
+    pointer-events: all;
+    transform: scale(1);
+  } */
 `;
 
 export const StyledDotBottom = styled.div`
   position: fixed;
-  right: -50%;
-  bottom: -50%;
+  right: 0;
+  top: -100%;
   width: 100%;
-  height: 0%;
-  border: 15px solid ${({ theme }) => theme.colors.black};
+  height: 100%;
   background-color: ${({ theme }) => theme.comicLayer.blueColor};
   background-image: ${({ theme }) => theme.comicLayer.blueBackground};
-  transition: 1s;
-  border-radius: 50%;
+  transition: 0.25s 0.5s;
   z-index: 120;
+  pointer-events: none;
   &.toggle {
-    width: 300%;
-    height: 200%;
-    transition: 1s 0.5s ease;
+    top: 0;
+    pointer-events: all;
+    transform: scale(1);
+    transition: 0.25s 0.2s ease;
   }
 `;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 // ICONS
 import arrowRight from 'assets/icons/arrowRight-icon.svg';
 import filePreview from 'assets/icons/filePreview-icon.svg';
@@ -21,7 +21,7 @@ const AboutMe = ({ toggleReadMore, setToggleReadMore }) => {
   return (
     <>
       <SectionsWrapper id='ABOUT ME'>
-        <SectionsContentWrapper>
+        <SectionsContentWrapper toggle={toggleReadMore}>
           <AboutMeWrapperPartOne>
             <Header className='left'>About Me</Header>
             <Article>
@@ -42,7 +42,7 @@ const AboutMe = ({ toggleReadMore, setToggleReadMore }) => {
         </SectionsContentWrapper>
       </SectionsWrapper>
       <MoreAboutMe toggleReadMore={toggleReadMore} toggleReadMoreHandler={toggleReadMoreHandler} />
-      <PageTransition toggle={toggleReadMore} />
+      {/* <PageTransition toggle={toggleReadMore} /> */}
     </>
   );
 };

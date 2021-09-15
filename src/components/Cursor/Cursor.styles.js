@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const Ouch = styled.img`
   position: absolute;
@@ -8,13 +8,13 @@ export const Ouch = styled.img`
   min-width: 150px;
   transition: 0.2s ease;
   z-index: 9999999;
-  @media screen and (max-width: 520px) {
-    min-width: 120px;
-  }
   &.ouch {
     transform: scale(1.3);
     transition: 0.2s ease;
     opacity: 1;
+    @media screen and (max-width: 520px) {
+      transform: scale(0.8) rotate(-25deg);
+    }
   }
 `;
 
@@ -27,12 +27,16 @@ export const Bang = styled.img`
   transition: 0.2s ease;
   z-index: 9999999;
   @media screen and (max-width: 520px) {
-    min-width: 120px;
+    top: -80px;
+    left: -80px;
   }
   &.bang {
     transform: scale(1.3) rotate(-25deg);
     transition: 0.2s ease;
     opacity: 1;
+    @media screen and (max-width: 520px) {
+      transform: scale(0.8) rotate(-25deg);
+    }
   }
 `;
 
@@ -41,8 +45,8 @@ export const CursorWrapper = styled.div`
   width: 10px;
   height: 10px;
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 80%;
   z-index: 999999;
   transform: translate(-50%, -50%);
   pointer-events: none;
@@ -55,10 +59,22 @@ export const CursorWrapper = styled.div`
   }
 `;
 
+const waveAnim = keyframes`
+50%{
+  transform:  scale(1.1) rotate(-45deg);
+}
+`;
+
+const emailSendAnim = keyframes`
+50%{
+  transform:  scale(1.1) rotate(-5deg);
+}
+`;
+
 export const CursorImage = styled.img`
   position: absolute;
   width: 80px;
-  z-index: 9999;
+  z-index: 999999;
   transform: scale(0);
   transition: 0.3s ease;
   opacity: 0;
@@ -66,5 +82,38 @@ export const CursorImage = styled.img`
     transform: scale(1);
     opacity: 1;
     transition: 0.3s ease;
+  }
+  &.emailSend {
+    transform: scale(1.3);
+    opacity: 1;
+    transition: 0.3s ease;
+    animation: ${emailSendAnim} 2s ease infinite;
+  }
+  &.showText {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: all;
+    transition: 0.3s ease;
+  }
+  &.wave {
+    animation: ${waveAnim} 0.5s ease infinite;
+    width: 120px;
+    transform: scale(1);
+    opacity: 1;
+    transition: 0.3s ease;
+  }
+`;
+
+export const CursorText = styled.p`
+  position: absolute;
+  z-index: 9999;
+  white-space: nowrap;
+  transition: 0.3s ease;
+  opacity: 0;
+  right: -300px;
+  top: 20px;
+  &.showText {
+    transition: 0.3s ease;
+    opacity: 1;
   }
 `;

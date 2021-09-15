@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import user from 'assets/icons/user-icon.svg';
 import email from 'assets/icons/email-icon.svg';
 import phone from 'assets/icons/phone-icon.svg';
@@ -31,9 +31,7 @@ import {
 import SectionsWrapper from 'components/SectionsWrapper/SectionsWrapper';
 import SectionsContentWrapper from 'components/SectionsContentWrapper/SectionsContentWrapper';
 
-const Contact = () => {
-  const [element, controls] = useScroll();
-  const [emailSend, setEmailSend] = useState(false);
+const Contact = ({ emailSend, setEmailSend }) => {
   const [validEmail, setValidEmail] = useState(false);
   const [validMessage, setValidMessage] = useState(false);
   const [feedback, setFeedback] = useState(0);
@@ -99,6 +97,9 @@ const Contact = () => {
         setValidMessage(false);
         setWaiting(false);
       }, 1500);
+      setTimeout(() => {
+        setEmailSend(false);
+      }, 3000);
       // emailjs.sendForm('service_pkn9ez9', 'template_btr6t4a', e.target, 'user_wfAnEXgFR6wa0u7anAPJf').then(
       //   (result) => {
       //     console.log(result.text);
@@ -116,17 +117,19 @@ const Contact = () => {
       <SectionsContentWrapper>
         <FormWrapper>
           <Form className={emailSend && 'emailSend'}>
-            <Label>EMAIL</Label>
+            <Label htmlFor='email'>EMAIL</Label>
             <Input
               onChange={emailHandler}
               name='email'
+              id='email'
               className={`${feedback === 2 && !validEmail && 'ERROR'} ${feedback === 3 && !validEmail && 'ERROR'} ${validEmail && 'VALID'}`}
               value={emailValue}
             />
-            <Label>MESSAGE</Label>
+            <Label htmlFor='message'>MESSAGE</Label>
             <Textarea
               onChange={messageHandler}
               name='message'
+              id='message'
               className={`${feedback === 2 && !validMessage && 'ERROR'} ${feedback === 4 && !validMessage && 'ERROR'} ${validMessage && 'VALID'}`}
               value={messageValue}
             />

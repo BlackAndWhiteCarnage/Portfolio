@@ -2,11 +2,11 @@ import React from 'react';
 // STYLES
 import { StyledDotTop, StyledDotBottom } from './PageTransition.styles';
 
-const PageTransition = ({ toggle }) => {
+const PageTransition = ({ toggleModal, toggleReadMore, viewProject }) => {
   return (
     <>
-      <StyledDotTop className={toggle && 'toggle'} />
-      <StyledDotBottom className={toggle && 'toggle'} />
+      <StyledDotTop className={`${toggleModal && 'toggle'} ${toggleReadMore && 'toggle'}  ${viewProject && 'toggle'}`} />
+      <StyledDotBottom className={`${toggleModal && 'toggle'} ${toggleReadMore && 'toggle'}  ${viewProject && 'toggle'}`} />
     </>
   );
 };

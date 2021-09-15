@@ -25,7 +25,7 @@ export const ProjectsSliderWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transition: 0.5s 1s ease;
+  transition: 0.5s 0.5s ease;
   @media screen and (max-width: 1366px) {
     width: 350px;
   }

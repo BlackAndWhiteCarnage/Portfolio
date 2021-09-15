@@ -74,16 +74,7 @@ const Projects = ({ viewProject, setViewProject }) => {
   };
 
   return (
-    <Wrapper
-      variants={slide}
-      animate={controls}
-      initial='hidden'
-      ref={element}
-      onTouchStart={touchStartHandler}
-      onTouchMove={touchMoveHandler}
-      onTouchEnd={touchEndHandler}
-      id='PROJECTS'
-    >
+    <Wrapper onTouchStart={touchStartHandler} onTouchMove={touchMoveHandler} onTouchEnd={touchEndHandler} id='PROJECTS'>
       <ProjectsSliderWrapper className={viewProject.isToggled && 'previewProject'}>
         {projects.map((project, index) => (
           <Project
@@ -102,7 +93,7 @@ const Projects = ({ viewProject, setViewProject }) => {
         {/* <SliderInfo slide={slide} isLocked={isLocked} /> */}
       </ProjectsSliderWrapper>
       <PreviewProject viewProject={viewProject} />
-      <PageTransition toggle={viewProject.isToggled} />
+      {/* <PageTransition toggle={viewProject.isToggled} /> */}
     </Wrapper>
   );
 };

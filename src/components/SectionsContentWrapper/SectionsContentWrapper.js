@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -7,6 +7,12 @@ const Wrapper = styled.div`
   justify-content: space-between;
   width: 1300px;
   height: 600px;
+  transition: 0.5s 0.5s ease;
+  &.scaleDown {
+    transition: 0.5s ease;
+    opacity: 0;
+    transform: scale(0);
+  }
   @media screen and (max-width: 1920px) {
     width: 1000px;
     height: 450px;
@@ -33,8 +39,8 @@ const Wrapper = styled.div`
   }
 `;
 
-const SectionsContentWrapper = ({ children }) => {
-  return <Wrapper>{children}</Wrapper>;
+const SectionsContentWrapper = ({ children, toggle }) => {
+  return <Wrapper className={toggle && 'scaleDown'}>{children}</Wrapper>;
 };
 
 export default SectionsContentWrapper;

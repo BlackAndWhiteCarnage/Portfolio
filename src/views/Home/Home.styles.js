@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const rotate2 = keyframes`
 55%{
-  transform: perspective(800px) rotateY(25deg) rotateX(5deg) translateY(5px);
+  transform: perspective(800px) rotateY(25deg) rotateX(5deg) translateY(5px) scale(1.1);
 }
 }
 `;
@@ -12,7 +12,6 @@ export const PosterImageWrapper = styled(motion.div)`
   min-width: fit-content;
   height: 100%;
   position: relative;
-  /* transform: perspective(800px) rotateY(10deg) scale(1.1); */
   border: 5px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.left};
   animation: ${rotate2} 6s infinite ease;
@@ -97,8 +96,8 @@ export const Navigation = styled(motion.ul)`
   box-shadow: ${({ theme }) => theme.boxShadow.right};
   border: 4px solid ${({ theme }) => theme.colors.black};
   margin: 0 35px;
-  background-color: ${({ theme }) => theme.comicLayer.blueColor};
-  background-image: ${({ theme }) => theme.comicLayer.blueBackground};
+  background-color: ${({ theme }) => theme.comicLayer.redColor};
+  background-image: ${({ theme }) => theme.comicLayer.redBackground};
   @media screen and (max-width: 1366px) {
     min-width: 300px;
   }

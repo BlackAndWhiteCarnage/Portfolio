@@ -9,8 +9,8 @@ export const FormWrapper = styled(motion.form)`
   transition: 0.5s ease;
   z-index: 1;
   margin: 0 35px;
-  background-color: ${({ theme }) => theme.comicLayer.purpleColor};
-  background-image: ${({ theme }) => theme.comicLayer.purpleBackground};
+  background-color: ${({ theme }) => theme.comicLayer.blueColor};
+  background-image: ${({ theme }) => theme.comicLayer.blueBackground};
   box-shadow: ${({ theme }) => theme.boxShadow.left};
   border: 4px solid ${({ theme }) => theme.colors.black};
   @media screen and (max-width: 1366px) {
@@ -205,8 +205,8 @@ export const InfoWrapper = styled(motion.div)`
   transition: 0.5s ease;
   box-shadow: ${({ theme }) => theme.boxShadow.right};
   border: 4px solid ${({ theme }) => theme.colors.black};
-  background-color: ${({ theme }) => theme.comicLayer.greenColor};
-  background-image: ${({ theme }) => theme.comicLayer.greenBackground};
+  background-color: ${({ theme }) => theme.comicLayer.redColor};
+  background-image: ${({ theme }) => theme.comicLayer.redBackground};
   animation: ${rotate} 4s infinite ease;
 `;
 

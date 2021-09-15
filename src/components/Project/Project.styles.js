@@ -10,7 +10,6 @@ export const ProjectWrapper = styled.div`
   left: 0;
   top: 0;
   border: 4px solid ${({ theme }) => theme.colors.black};
-  box-shadow: ${({ theme }) => theme.boxShadow.left};
   transform: scale(0);
   background-color: ${({ theme }) => theme.comicLayer.yellowColor};
   background-image: ${({ theme }) => theme.comicLayer.yellowBackground};

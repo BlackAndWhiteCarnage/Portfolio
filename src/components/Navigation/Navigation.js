@@ -10,22 +10,7 @@ import hamburger from 'assets/icons/hamburger-icon.svg';
 // STYLES
 import { Wrapper, HamburgerMenu, SocialMedia, Icon, HamburgerWrapper, BackIcon, AccualHamburger, IconWrapper } from './Navigation.styles';
 
-const Navigation = ({ toggleReadMore, setToggleReadMore, setViewProject, viewProject }) => {
-  const [toggleModal, setToggleModal] = useState(false);
-
-  const toggleModalHandler = () => {
-    setToggleModal(!toggleModal);
-    if (toggleModal) {
-      closeOtherModalsHandler();
-    }
-  };
-
-  const closeOtherModalsHandler = () => {
-    setToggleReadMore(false);
-    setViewProject({ ...viewProject, isToggled: false });
-    setToggleModal(false);
-  };
-
+const Navigation = ({ toggleReadMore, toggleModal, toggleModalHandler, viewProject, closeOtherModalsHandler }) => {
   return (
     <>
       <Wrapper>
@@ -60,8 +45,7 @@ const Navigation = ({ toggleReadMore, setToggleReadMore, setViewProject, viewPro
           </IconWrapper>
         </SocialMedia>
       </Wrapper>
-      <Modal toggleModal={toggleModal} toggleModalHandler={toggleModalHandler} />
-      <PageTransition toggle={toggleModal} />
+      {/* <PageTransition toggle={toggleModal} /> */}
     </>
   );
 };

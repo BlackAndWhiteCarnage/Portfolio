@@ -8,9 +8,9 @@ import { PosterImageWrapper, PosterImage, Navigation, ScrollWrapper, Scroll } fr
 import SectionsWrapper from 'components/SectionsWrapper/SectionsWrapper';
 import SectionsContentWrapper from 'components/SectionsContentWrapper/SectionsContentWrapper';
 
-const Home = () => {
+const Home = ({ welcomeScreen }) => {
   return (
-    <SectionsWrapper>
+    <SectionsWrapper welcomeScreen={welcomeScreen}>
       <SectionsContentWrapper>
         <PosterImageWrapper>
           <PosterImage src={me} />

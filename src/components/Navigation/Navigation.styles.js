@@ -68,11 +68,11 @@ export const AccualHamburger = styled.img`
   transform: translate(-50%, -50%);
   width: 80%;
   height: 80%;
-  transition: 0.5s 1s ease;
+  transition: 0.5s 0.2s ease;
   pointer-events: all;
   &.hide {
     pointer-events: none;
-    transition: 0.5s 1s ease;
+    transition: 0.5s 0.2s ease;
     left: -100%;
     opacity: 0;
   }
@@ -85,12 +85,12 @@ export const BackIcon = styled.img`
   left: 100%;
   top: 50%;
   opacity: 0;
-  transition: 0.5s 1s ease;
+  transition: 0.5s 0.2s ease;
   pointer-events: none;
   transform: translate(-50%, -50%);
   &.show {
     pointer-events: all;
-    transition: 0.5s 1s ease;
+    transition: 0.5s 0.2s ease;
     opacity: 1;
     left: 50%;
   }

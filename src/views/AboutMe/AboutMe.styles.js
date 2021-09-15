@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 
-export const AboutMeWrapperPartOne = styled(motion.div)`
+export const AboutMeWrapperPartOne = styled.div`
   min-width: 350px;
   max-width: 450px;
   height: 100%;
@@ -82,8 +82,8 @@ export const MySkills = styled.ul`
   border: 4px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.right};
   animation: ${rotate} 3s infinite ease;
-  background-color: ${({ theme }) => theme.comicLayer.orangeColor};
-  background-image: ${({ theme }) => theme.comicLayer.orangeBackground};
+  background-color: ${({ theme }) => theme.comicLayer.redColor};
+  background-image: ${({ theme }) => theme.comicLayer.redBackground};
   transition: 0.5s ease;
   list-style: none;
   display: flex;

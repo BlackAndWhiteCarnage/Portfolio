@@ -16,17 +16,22 @@ const Wrapper = styled(motion.section)`
   align-items: center;
   justify-content: space-around;
   overflow: hidden;
+  transform: scale(0);
+  &.sizeUp {
+    transform: scale(1);
+  }
   @media screen and (min-width: 200px) and (max-width: 920px) and (orientation: landscape) {
     min-height: 900px;
     padding-bottom: 250px;
   }
 `;
 
-const SectionsWrapper = ({ children, id }) => {
+const SectionsWrapper = ({ children, id, welcomeScreen }) => {
   const [element, controls] = useScroll();
 
   return (
-    <Wrapper id={id} variants={slide} animate={controls} initial='hidden' ref={element}>
+    <Wrapper id={id} variants={slide} animate={controls} initial='hidden' ref={element} className={!welcomeScreen && 'sizeUp'}>
+      {/* <Wrapper id={id} className={!welcomeScreen && 'sizeUp'}> */}
       {children}
     </Wrapper>
   );

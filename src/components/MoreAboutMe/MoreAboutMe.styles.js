@@ -18,7 +18,7 @@ export const HeroImage = styled.img`
   pointer-events: none;
   transition: 0.5s ease;
   &.show {
-    opacity: 0.5;
+    opacity: 0.15;
     transition: 1s 1s ease;
   }
 `;
@@ -41,8 +41,6 @@ export const ReadMoreWrapper = styled.div`
   overflow-y: scroll;
   overflow-x: hidden;
   padding: 250px 0;
-  border: 4px solid ${({ theme }) => theme.colors.black};
-  box-shadow: ${({ theme }) => theme.boxShadow.right};
   background-color: ${({ theme }) => theme.comicLayer.whiteColor};
   background-image: ${({ theme }) => theme.comicLayer.whiteBackground};
   @media screen and (max-width: 1000px) {

@@ -1,52 +1,54 @@
-import React, { useState, useEffect } from 'react';
-// ICONS
-import link from 'assets/icons/link-icon.svg';
-import github from 'assets/icons/github-icon.svg';
+import React from 'react';
+import PropTypes from 'prop-types';
+// COMPONENTS
+import ProjectLinks from 'components/ProjectLinks/ProjectLinks';
 // STYLES
-import { ProjectWrapper, ProjectImage, ProjectLinksWrapper, Links } from './Project.styles';
+import { ProjectWrapper, ProjectImage } from './Project.styles';
 
-const Project = ({
-  current,
-  index,
-  next,
-  prev,
-  project,
-  toggleProjectModalHandler,
-  projectHandler,
-  viewProject,
-  blockClickingHanlder,
-  blockClick,
-}) => {
+const Project = ({ current, index, next, prev, project, toggleProjectModalHandler, projectSliderHandler, blockClickingHanlder, blockClick }) => {
+  const isClickBlockedHandler = (key) => {
+    if (key) {
+      if (index !== current) {
+        blockClickingHanlder();
+      }
+      projectSliderHandler(index);
+    } else {
+      if (index === current && !blockClick) {
+        toggleProjectModalHandler(project);
+      }
+    }
+  };
+
   return (
     <ProjectWrapper
       className={`${current === index && 'show'} ${next === index && 'next'} ${prev === index && 'prev'}`}
       id='active'
       onClick={() => {
-        if (index !== current) {
-          blockClickingHanlder();
-        }
-        projectHandler(index);
+        isClickBlockedHandler(true);
       }}
     >
       <ProjectImage
         id='active'
         src={project.image}
         onClick={() => {
-          if (index === current && !blockClick) {
-            toggleProjectModalHandler(project);
-          }
+          isClickBlockedHandler(false);
         }}
       />
-      <ProjectLinksWrapper className={index === current && 'show'}>
-        <Links id='active' target='_blank' href={project.live}>
-          <img src={link} id='active' />
-        </Links>
-        <Links id='active' target='_blank' href={project.repo}>
-          <img src={github} id='active' />
-        </Links>
-      </ProjectLinksWrapper>
+      <ProjectLinks index={index} current={current} project={project} />
     </ProjectWrapper>
   );
+};
+
+Project.propTypes = {
+  current: PropTypes.number.isRequired,
+  index: PropTypes.number.isRequired,
+  next: PropTypes.number.isRequired,
+  prev: PropTypes.number.isRequired,
+  project: PropTypes.object.isRequired,
+  toggleProjectModalHandler: PropTypes.func.isRequired,
+  projectSliderHandler: PropTypes.func.isRequired,
+  blockClickingHanlder: PropTypes.func.isRequired,
+  blockClick: PropTypes.bool.isRequired,
 };
 
 export default Project;

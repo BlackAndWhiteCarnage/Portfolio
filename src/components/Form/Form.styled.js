@@ -1,7 +1,6 @@
-import styled, { keyframes } from 'styled-components';
-import { motion } from 'framer-motion';
+import styled from 'styled-components';
 
-export const FormWrapper = styled(motion.form)`
+export const Wrapper = styled.form`
   position: relative;
   min-width: 550px;
   min-height: 550px;
@@ -29,7 +28,7 @@ export const FormWrapper = styled(motion.form)`
   }
 `;
 
-export const Form = styled.form`
+export const FormWrapper = styled.form`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -41,24 +40,13 @@ export const Form = styled.form`
   justify-content: space-between;
 `;
 
-const wait = keyframes`
-0%{
-}
-50%{
-  transform: rotate(360deg);
-  opacity: 1;
-}
-100%{
-}
-`;
-
-export const Label = styled(motion.label)`
+export const Label = styled.label`
   width: 100%;
   margin: 10px 0;
   font-size: ${({ theme }) => theme.fontSize.l};
 `;
 
-export const Input = styled(motion.input)`
+export const Input = styled.input`
   position: relative;
   width: 100%;
   min-height: 35px;
@@ -104,7 +92,7 @@ export const Input = styled(motion.input)`
   }
 `;
 
-export const Textarea = styled(motion.textarea)`
+export const Textarea = styled.textarea`
   position: relative;
   width: 100%;
   min-height: 200px;
@@ -151,117 +139,5 @@ export const Textarea = styled(motion.textarea)`
     background-image: ${({ theme }) => theme.comicLayer.redBackground};
     transition: 0.5s ease;
     pointer-events: none;
-  }
-`;
-
-export const ButtonAndPersonalInfoWrapper = styled(motion.div)`
-  height: 100%;
-  width: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  transform: perspective(800px) rotateY(-10deg) scale(1.1);
-  margin-right: 35px;
-  @media screen and (max-width: 760px) {
-    height: auto;
-    width: 350px;
-    justify-content: center;
-    margin: 0;
-  }
-  @media screen and (max-width: 520px) {
-    max-width: unset;
-    width: 85%;
-    margin: 0;
-  }
-  @media screen and (min-width: 200px) and (max-width: 920px) and (orientation: landscape) {
-    max-width: 300px;
-    margin: 0;
-  }
-`;
-
-export const Header = styled(motion.h4)`
-  white-space: nowrap;
-  text-align: right;
-  width: 100%;
-  margin-bottom: 50px;
-`;
-
-const rotate = keyframes`
-25%{
-  transform: rotate(-5deg);
-}
-75%{
-  transform: rotate(5deg);
-}
-`;
-
-export const InfoWrapper = styled(motion.div)`
-  width: 100%;
-  height: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  transition: 0.5s ease;
-  box-shadow: ${({ theme }) => theme.boxShadow.right};
-  border: 4px solid ${({ theme }) => theme.colors.black};
-  background-color: ${({ theme }) => theme.comicLayer.redColor};
-  background-image: ${({ theme }) => theme.comicLayer.redBackground};
-  animation: ${rotate} 4s infinite ease;
-`;
-
-export const Info = styled(motion.a)`
-  width: 100%;
-  height: auto;
-  display: flex;
-  justify-content: flex-end;
-  text-decoration: none;
-  color: ${({ theme }) => theme.colors.black};
-  p {
-    font-size: ${({ theme }) => theme.fontSize.l};
-  }
-`;
-
-export const Icon = styled.img`
-  min-width: 20px;
-  max-width: 20px;
-  margin: 0 15px;
-  @media screen and (max-width: 680px) {
-    margin: 0 10px;
-  }
-`;
-
-const feedbackAnim = keyframes`
-25%{
-  transform: rotate(-5deg) scale(0.6);
-}
-75%{
-  transform: rotate(5deg) scale(0.8);
-}
-`;
-
-export const WaitingWrapper = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transition: 0.2s ease;
-  pointer-events: none;
-  opacity: 0;
-  img {
-    z-index: 10;
-    width: 100%;
-    opacity: 1;
-    height: 100%;
-    animation: ${feedbackAnim} 2s infinite;
-  }
-  &.SHOW {
-    pointer-events: all;
-    background: rgba(0, 0, 0, 0.2);
-    opacity: 1;
-  }
-  &.ERROR {
-    opacity: 1;
-    transition: 0.2s ease;
-    background: rgba(0, 0, 0, 0.2);
   }
 `;

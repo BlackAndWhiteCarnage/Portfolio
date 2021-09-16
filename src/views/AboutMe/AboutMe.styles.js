@@ -1,7 +1,6 @@
 import styled, { keyframes } from 'styled-components';
-import { motion } from 'framer-motion';
 
-export const AboutMeWrapperPartOne = styled.div`
+export const AboutMeContentWrapper = styled.div`
   min-width: 350px;
   max-width: 450px;
   height: 100%;
@@ -37,7 +36,7 @@ export const Header = styled.h4`
   }
 `;
 
-export const MySkillsWrapper = styled(motion.div)`
+export const MySkillsWrapper = styled.div`
   min-width: 350px;
   height: 100%;
   display: flex;
@@ -64,7 +63,7 @@ export const MySkillsWrapper = styled(motion.div)`
   }
 `;
 
-const rotate = keyframes`
+const rotateAnim = keyframes`
 25%{
   transform: rotateY(5deg) scale(0.95) rotateX(-15deg);
 }
@@ -78,10 +77,9 @@ export const MySkills = styled.ul`
   width: 100%;
   max-width: 400px;
   height: 90%;
-  transition: 0.5s ease;
   border: 4px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.right};
-  animation: ${rotate} 3s infinite ease;
+  animation: ${rotateAnim} 3s infinite ease;
   background-color: ${({ theme }) => theme.comicLayer.redColor};
   background-image: ${({ theme }) => theme.comicLayer.redBackground};
   transition: 0.5s ease;
@@ -94,18 +92,7 @@ export const MySkills = styled.ul`
   }
 `;
 
-export const Skill = styled.li`
-  width: auto;
-  padding: 20px;
-  text-align: center;
-  font-size: ${({ theme }) => theme.fontSize.xl};
-  @media screen and (max-width: 1366px) {
-    padding: 10px;
-    font-size: ${({ theme }) => theme.fontSize.l};
-  }
-`;
-
-export const Article = styled(motion.article)`
+export const Article = styled.article`
   margin-bottom: 30px;
 `;
 

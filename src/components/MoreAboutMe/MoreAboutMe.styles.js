@@ -13,12 +13,12 @@ export const HeroImage = styled.img`
   object-fit: cover;
   opacity: 0;
   animation: ${rotate} 10s infinite alternate;
-  z-index: 200;
+  z-index: 150;
   top: 0;
   pointer-events: none;
   transition: 0.5s ease;
   &.show {
-    opacity: 0.15;
+    opacity: 0.3;
     transition: 1s 1s ease;
   }
 `;
@@ -35,30 +35,44 @@ export const ReadMoreWrapper = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   z-index: 150;
-  transition: 0.5s ease;
   opacity: 0;
   transform: scale(2);
   overflow-y: scroll;
   overflow-x: hidden;
   padding: 250px 0;
-  background-color: ${({ theme }) => theme.comicLayer.whiteColor};
-  background-image: ${({ theme }) => theme.comicLayer.whiteBackground};
   @media screen and (max-width: 1000px) {
-    padding: 150px 0;
+    padding: 200px 0;
   }
+  transition: 0.5s ease;
   &.show {
     transform: scale(1);
-    transition: 1s 1s ease;
+    transition: 0.5s 0.5s ease;
     opacity: 1;
     pointer-events: all;
   }
+`;
+
+const rotate2 = keyframes`
+25%{
+  transform: scale(0.98);
+}
+}
+75%{
+  transform: scale(1);
+}
 `;
 
 export const ReadMore = styled.div`
   width: 60%;
   min-height: 600px;
   max-width: 1200px;
+  padding: 60px;
   height: auto;
+  border: 4px solid ${({ theme }) => theme.colors.black};
+  box-shadow: ${({ theme }) => theme.boxShadow.left};
+  background-color: ${({ theme }) => theme.comicLayer.whiteColor};
+  background-image: ${({ theme }) => theme.comicLayer.whiteBackground};
+  animation: ${rotate2} 8s infinite ease;
   @media screen and (max-width: 1000px) {
     width: 90%;
   }

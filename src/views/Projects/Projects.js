@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 // PROJECTS DATA
 import { projects } from 'data/projectsData';
 // COMPONENTS
-import PageTransition from 'components/PageTransition/PageTransition';
 import Project from 'components/Project/Project';
 import SliderInfo from 'components/SliderInfo/SliderInfo';
 import PreviewProject from 'components/PreviewProject/PreviewProject';
@@ -21,18 +21,6 @@ const Projects = ({ viewProject, setViewProject }) => {
   let [next, setNext] = useState(projects.length - 1);
   let [prev, setPrev] = useState(current + 1);
 
-  const projectHandler = (index) => {
-    if (next === index) {
-      setCurrent(current === 0 ? (current = projects.length - 1) : current - 1);
-      setNext(next === 0 ? (next = projects.length - 1) : next - 1);
-      setPrev(prev === 0 ? (prev = projects.length - 1) : prev - 1);
-    } else if (prev === index) {
-      setCurrent(current === projects.length - 1 ? 0 : current + 1);
-      setNext(next === projects.length - 1 ? 0 : next + 1);
-      setPrev(prev === projects.length - 1 ? 0 : prev + 1);
-    }
-  };
-
   let startX, moveX;
 
   const touchStartHandler = (e) => {
@@ -43,15 +31,15 @@ const Projects = ({ viewProject, setViewProject }) => {
     moveX = e.touches[0].clientX;
   };
 
-  const touchEndHandler = () => {
-    if (startX + 80 < moveX) {
-      setCurrent(current === projects.length - 1 ? 0 : current + 1);
-      setNext(next === projects.length - 1 ? 0 : next + 1);
-      setPrev(prev === projects.length - 1 ? 0 : prev + 1);
-    } else if (startX - 80 > moveX) {
+  const projectSliderHandler = (index) => {
+    if (next === index || startX - 80 > moveX) {
       setCurrent(current === 0 ? (current = projects.length - 1) : current - 1);
       setNext(next === 0 ? (next = projects.length - 1) : next - 1);
       setPrev(prev === 0 ? (prev = projects.length - 1) : prev - 1);
+    } else if (prev === index || startX + 80 < moveX) {
+      setCurrent(current === projects.length - 1 ? 0 : current + 1);
+      setNext(next === projects.length - 1 ? 0 : next + 1);
+      setPrev(prev === projects.length - 1 ? 0 : prev + 1);
     }
   };
 
@@ -74,8 +62,17 @@ const Projects = ({ viewProject, setViewProject }) => {
   };
 
   return (
-    <Wrapper onTouchStart={touchStartHandler} onTouchMove={touchMoveHandler} onTouchEnd={touchEndHandler} id='PROJECTS'>
-      <ProjectsSliderWrapper className={viewProject.isToggled && 'previewProject'}>
+    <Wrapper
+      variants={slide}
+      animate={controls}
+      initial='hidden'
+      ref={element}
+      onTouchStart={touchStartHandler}
+      onTouchMove={touchMoveHandler}
+      onTouchEnd={projectSliderHandler}
+      id='PROJECTS'
+    >
+      <ProjectsSliderWrapper className={viewProject.isToggled && 'hide'}>
         {projects.map((project, index) => (
           <Project
             current={current}
@@ -84,8 +81,7 @@ const Projects = ({ viewProject, setViewProject }) => {
             prev={prev}
             project={project}
             toggleProjectModalHandler={toggleProjectModalHandler}
-            projectHandler={projectHandler}
-            viewProject={viewProject}
+            projectSliderHandler={projectSliderHandler}
             blockClickingHanlder={blockClickingHanlder}
             blockClick={blockClick}
           />
@@ -93,9 +89,13 @@ const Projects = ({ viewProject, setViewProject }) => {
         {/* <SliderInfo slide={slide} isLocked={isLocked} /> */}
       </ProjectsSliderWrapper>
       <PreviewProject viewProject={viewProject} />
-      {/* <PageTransition toggle={viewProject.isToggled} /> */}
     </Wrapper>
   );
+};
+
+Projects.propTypes = {
+  viewProject: PropTypes.object.isRequired,
+  setViewProject: PropTypes.func.isRequired,
 };
 
 export default Projects;

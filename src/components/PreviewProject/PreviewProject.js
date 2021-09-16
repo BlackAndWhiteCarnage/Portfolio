@@ -50,8 +50,8 @@ const PreviewProject = ({ viewProject }) => {
           <Header>Features Im proud of</Header>
           <FeaturesWrapper>{viewProject.data !== false && viewProject.data.features.map((feature) => <Feature>{feature}</Feature>)}</FeaturesWrapper>
           <ButtonsWrapper>
-            <Button href={viewProject.data.live} text='Live' margin='5px' icon={link} />
-            <Button href={viewProject.data.repo} text='Reposytory' margin='5px' icon={github} />
+            <Button href={viewProject.data.live} text='Live' icon={link} />
+            <Button href={viewProject.data.repo} text='Reposytory' icon={github} />
           </ButtonsWrapper>
         </Wrapper>
       </PreviewProjectWrapper>

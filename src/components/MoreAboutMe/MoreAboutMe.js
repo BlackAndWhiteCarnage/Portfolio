@@ -2,9 +2,9 @@ import React, { useRef, useEffect } from 'react';
 // STYLES
 import { ReadMoreWrapper, ReadMore, Header, Answer, HeroImage } from './MoreAboutMe.styles';
 // IMAGES
-import hero from 'assets/images/heroImageAboutMe.svg';
-import heroHorizontal from 'assets/images/heroImageAboutMeHorizontal.svg';
-import heroMedium from 'assets/images/heroImageAboutMeMedium.svg';
+import hero from 'assets/images/heroImageProject.svg';
+import heroHorizontal from 'assets/images/heroImageProjectHorizontal.svg';
+import heroMedium from 'assets/images/heroImageProjectMedium.svg';
 // HELPERS
 import { matchMedia, matchMediaMedium, matchMediaHorizontal } from 'helpers/matchMedia';
 

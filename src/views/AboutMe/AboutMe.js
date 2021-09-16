@@ -1,28 +1,28 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 // ICONS
-import arrowRight from 'assets/icons/arrowRight-icon.svg';
-import filePreview from 'assets/icons/filePreview-icon.svg';
+import arrowRightIcon from 'assets/icons/arrowRight-icon.svg';
+import filePreviewIcon from 'assets/icons/filePreview-icon.svg';
 // COMPONENTS
-import PageTransition from 'components/PageTransition/PageTransition';
-import Button from 'components/Button/Button';
-// ANIMATIONS
-import { AboutMeWrapperPartOne, MySkillsWrapper, Header, Article, ButtonsWrapper, MySkills, Skill } from './AboutMe.styles';
-// RESUME
-import cv from 'documents/cv.pdf';
-import MoreAboutMe from 'components/MoreAboutMe/MoreAboutMe';
 import SectionsWrapper from 'components/SectionsWrapper/SectionsWrapper';
 import SectionsContentWrapper from 'components/SectionsContentWrapper/SectionsContentWrapper';
+import MoreAboutMe from 'components/MoreAboutMe/MoreAboutMe';
+import Button from 'components/Button/Button';
+// ANIMATIONS
+import { AboutMeContentWrapper, MySkillsWrapper, Header, Article, ButtonsWrapper, MySkills } from './AboutMe.styles';
+// DOCUMENTS
+import myResume from 'documents/cv.pdf';
 
 const AboutMe = ({ toggleReadMore, setToggleReadMore }) => {
   const toggleReadMoreHandler = () => {
-    setToggleReadMore(!toggleReadMore);
+    setToggleReadMore(true);
   };
 
   return (
     <>
       <SectionsWrapper id='ABOUT ME'>
         <SectionsContentWrapper toggle={toggleReadMore}>
-          <AboutMeWrapperPartOne>
+          <AboutMeContentWrapper>
             <Header className='left'>About Me</Header>
             <Article>
               Oh shit it works! When i’ve started to learn JavaScript, it was hard. I mean, my bad that i’ve rushed a little bit rusted eduweb course
@@ -31,10 +31,10 @@ const AboutMe = ({ toggleReadMore, setToggleReadMore }) => {
               say “Look, finnaly I’ve found a bug!”
             </Article>
             <ButtonsWrapper>
-              <Button onClick={toggleReadMoreHandler} text='READ MORE' icon={arrowRight} />
-              <Button href={cv} text='MY RESUME' icon={filePreview} />
+              <Button onClick={toggleReadMoreHandler} text='READ MORE' icon={arrowRightIcon} />
+              <Button href={myResume} text='MY RESUME' icon={filePreviewIcon} />
             </ButtonsWrapper>
-          </AboutMeWrapperPartOne>
+          </AboutMeContentWrapper>
           <MySkillsWrapper>
             <Header>Skills</Header>
             <MySkills className={toggleReadMore && 'hide'}></MySkills>
@@ -42,9 +42,13 @@ const AboutMe = ({ toggleReadMore, setToggleReadMore }) => {
         </SectionsContentWrapper>
       </SectionsWrapper>
       <MoreAboutMe toggleReadMore={toggleReadMore} toggleReadMoreHandler={toggleReadMoreHandler} />
-      {/* <PageTransition toggle={toggleReadMore} /> */}
     </>
   );
+};
+
+AboutMe.propTypes = {
+  toggleReadMore: PropTypes.func,
+  setToggleReadMore: PropTypes.func,
 };
 
 export default AboutMe;

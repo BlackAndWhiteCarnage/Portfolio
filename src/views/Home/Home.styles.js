@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 
-const rotate2 = keyframes`
+const rotate2Anim = keyframes`
 55%{
   transform: perspective(800px) rotateY(25deg) rotateX(5deg) translateY(5px) scale(1.1);
 }
@@ -14,7 +14,7 @@ export const PosterImageWrapper = styled(motion.div)`
   position: relative;
   border: 5px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.left};
-  animation: ${rotate2} 6s infinite ease;
+  animation: ${rotate2Anim} 6s infinite ease;
   margin: 0 35px;
   display: flex;
   @media screen and (max-width: 760px) {
@@ -73,7 +73,7 @@ export const Scroll = styled.img`
   z-index: -1;
 `;
 
-const rotate = keyframes`
+const rotateAnim = keyframes`
 25%{
   transform: rotateY(5deg) rotateX(-5deg);
 }
@@ -87,7 +87,7 @@ export const Navigation = styled(motion.ul)`
   min-width: 400px;
   height: 100%;
   list-style: none;
-  animation: ${rotate} 3s infinite alternate;
+  animation: ${rotateAnim} 3s infinite alternate;
   display: flex;
   flex-direction: column;
   align-items: center;

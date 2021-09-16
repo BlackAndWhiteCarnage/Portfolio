@@ -1,6 +1,8 @@
-import lamiapassionemalteseDesktop from 'assets/images/lamiapassionemaltese-desktop.jpeg';
-import euphoriaDesktop from 'assets/images/euphoria-desktop.jpeg';
-import nicetomeetyouDesktop from 'assets/images/nicetomeetyou-desktop.jpeg';
+// RWD IMAGES
+import lamiapassionemalteseDesktop from 'assets/projectsRwdImages/LaMiaPassioneMaltese.png';
+import euphoriaDesktop from 'assets/projectsRwdImages/Euphoria.png';
+import nicetomeetyouDesktop from 'assets/projectsRwdImages/NiceToMeetYou.png';
+// POSTERS
 import euphoria from 'assets/images/EuphoriaPoster.png';
 import laMiaPassioneMaltese from 'assets/images/LaMiaPassioneMaltesePoster.png';
 import niceToMeetYou from 'assets/images/NiceToMeetYouPoster.png';
@@ -39,6 +41,7 @@ export const projects = [
       'Im glad that Ive solved the problem with adding new products by adding strapi cms connected with AWS for images storage.',
     ],
     img: euphoria,
+    imgDesktop: euphoriaDesktop,
     usedTools: ['React', 'Styled Components', 'Framer Motion', 'Strapi.js', 'React Router Dom'],
   },
   {
@@ -55,7 +58,7 @@ export const projects = [
       'Definitely my interactive walkout, I know its not a rocket science but you shoud try it!',
       'Im proud of myself that Ive made scrolling sections by sections without using any npm packages',
     ],
-    img: niceToMeetYou,
+    img: nicetomeetyouDesktop,
     usedTools: ['Vanilla Js', 'SCSS'],
   },
 ];

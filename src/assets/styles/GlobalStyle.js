@@ -22,7 +22,7 @@ export const GlobalStyle = createGlobalStyle`
             font-size: ${({ theme }) => theme.fontSize.l};
         }
     }
-    article, p, a, input, textarea, label{
+    article, p, a, input, textarea, label, ol{
         font-size: ${({ theme }) => theme.fontSize.l};
         @media screen and (min-width: 1200px){
             cursor: none;

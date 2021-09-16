@@ -32,7 +32,7 @@ export const ProjectsSliderWrapper = styled.div`
   @media screen and (max-width: 520px) {
     width: 100%;
   }
-  &.previewProject {
+  &.hide {
     transition: 0.5s ease;
     opacity: 0;
     transform: scale(0);

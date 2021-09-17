@@ -9,14 +9,14 @@ export const Wrapper = styled.div`
   pointer-events: none;
   text-transform: uppercase;
   opacity: 0;
-  transition: 0.5s ease;
+  transition: 0.25s ease;
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
   z-index: -1;
   &.show {
     right: -64px;
-    transition: 0.5s 0.5s ease;
+    transition: 0.25s 0.25s ease;
     opacity: 1;
     @media screen and (max-width: 760px) {
       bottom: -70px;
@@ -47,7 +47,6 @@ export const Link = styled.a`
   z-index: 9999 !important;
   border: 4px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.right};
-  border-radius: 50%;
   transition: 0.5s ease;
   background-color: ${({ theme }) => theme.comicLayer.yellowColor};
   background-image: ${({ theme }) => theme.comicLayer.yellowBackground};

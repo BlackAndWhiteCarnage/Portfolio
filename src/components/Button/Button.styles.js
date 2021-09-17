@@ -15,7 +15,7 @@ export const ButtonWrapper = styled(motion.button)`
   white-space: nowrap;
   box-shadow: ${({ theme }) => theme.boxShadow.left};
   font-family: 'Bangers', cursive;
-  transition: 0.3s ease;
+  transition: 0.25s ease;
   background: ${({ theme }) => theme.comicLayer.yellowColor};
   background-image: ${({ theme }) => theme.comicLayer.yellowBackground};
   &.right {
@@ -36,7 +36,7 @@ export const ButtonWrapper = styled(motion.button)`
       background-image: ${({ theme }) => theme.comicLayer.greenBackground};
       img {
         transform: translateX(15px) scale(1.8);
-        transition: 0.3s ease;
+        transition: 0.25s ease;
       }
       &.right {
         transform: perspective(800px) rotateY(20deg) scale(1.1) rotate(-5deg) scale(1.05);

@@ -43,6 +43,9 @@ export const ReadMoreWrapper = styled.div`
   @media screen and (max-width: 1000px) {
     padding: 200px 0;
   }
+  @media screen and (max-width: 520px) {
+    padding: 150px 0;
+  }
   transition: 0.5s ease;
   &.show {
     transform: scale(1);
@@ -73,8 +76,12 @@ export const ReadMore = styled.div`
   background-color: ${({ theme }) => theme.comicLayer.whiteColor};
   background-image: ${({ theme }) => theme.comicLayer.whiteBackground};
   animation: ${rotate2} 8s infinite ease;
-  @media screen and (max-width: 1000px) {
-    width: 90%;
+  @media screen and (max-width: 760px) {
+    width: 95%;
+    padding: 50px 30px;
+  }
+  @media screen and (max-width: 520px) {
+    padding: 50px 15px;
   }
 `;
 

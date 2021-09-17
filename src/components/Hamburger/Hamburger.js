@@ -11,17 +11,13 @@ const Hamburger = ({ toggleReadMore, toggleModal, toggleModalHandler, viewProjec
     <Wrapper id='active'>
       <HamburgerWrapper
         id='active'
-        className={`${viewProject.isToggled && 'toggle'} ${toggleModal && 'toggle'} ${toggleReadMore && 'toggle'}`}
+        className={`${viewProject && 'toggle'} ${toggleModal && 'toggle'} ${toggleReadMore && 'toggle'}`}
         onClick={() => {
           toggleModalHandler();
         }}
       >
-        <HamburgerIcon
-          src={hamburgerIcon}
-          id='active'
-          className={`${viewProject.isToggled && 'hide'} ${toggleModal && 'hide'} ${toggleReadMore && 'hide'}`}
-        />
-        <BackIcon src={backIcon} id='active' className={`${viewProject.isToggled && 'show'} ${toggleModal && 'show'} ${toggleReadMore && 'show'}`} />
+        <HamburgerIcon src={hamburgerIcon} id='active' className={`${viewProject && 'hide'} ${toggleModal && 'hide'} ${toggleReadMore && 'hide'}`} />
+        <BackIcon src={backIcon} id='active' className={`${viewProject && 'show'} ${toggleModal && 'show'} ${toggleReadMore && 'show'}`} />
       </HamburgerWrapper>
     </Wrapper>
   );

@@ -18,41 +18,29 @@ import { theme } from 'assets/styles/theme';
 
 function Root() {
   const [toggleReadMore, setToggleReadMore] = useState(false);
-  const [viewProject, setViewProject] = useState({ isToggled: false, data: false });
+  const [viewProject, setViewProject] = useState(false);
   const [emailSend, setEmailSend] = useState(false);
   const [toggleModal, setToggleModal] = useState(false);
-  const [welcomeScreen, setWelcomeScreen] = useState({ wrapper: true, image: false });
 
   const toggleModalHandler = () => {
     setToggleModal(!toggleModal);
-    if (toggleModal || viewProject.isToggled || toggleReadMore) {
+    if (toggleModal || viewProject || toggleReadMore) {
       closeOtherModalsHandler();
     }
   };
 
-  useEffect(() => {
-    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-    setWelcomeScreen({ wrapper: true, image: true });
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      setTimeout(() => {
-        setWelcomeScreen({ wrapper: false, image: true });
-      }, 1000);
-    }, 1000);
-  }, []);
-
   const closeOtherModalsHandler = () => {
     setToggleReadMore(false);
-    setViewProject({ ...viewProject, isToggled: false });
+    setViewProject(false);
     setToggleModal(false);
   };
 
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <WelcomeScreen welcomeScreen={welcomeScreen} />
+      <WelcomeScreen />
       <HeroImage />
-      <PageTransition toggleReadMore={toggleReadMore} viewProject={viewProject.isToggled} toggleModal={toggleModal} />
+      <PageTransition toggleReadMore={toggleReadMore} viewProject={viewProject} toggleModal={toggleModal} />
       <Cursor emailSend={emailSend} />
       <Navigation
         toggleModal={toggleModal}

@@ -1,16 +1,24 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Wrapper, Image } from './WelcomeScreen.styles';
+import React, { useState, useEffect } from 'react';
+// ICONS
 import welcomeIcon from 'assets/icons/welcomeScreen-icon.svg';
+// STYLES
+import { Wrapper, Image } from './WelcomeScreen.styles';
 
-const WelcomeScreen = ({ welcomeScreen }) => {
+const WelcomeScreen = () => {
+  const [welcomeScreen, setWelcomeScreen] = useState({ wrapper: true, image: false });
+
+  useEffect(() => {
+    setWelcomeScreen({ wrapper: true, image: true });
+    setTimeout(() => {
+      setWelcomeScreen({ wrapper: false, image: true });
+    }, 2000);
+  }, []);
+
   return (
     <Wrapper className={!welcomeScreen.wrapper && 'hide'}>
       <Image src={welcomeIcon} className={welcomeScreen.image && 'show'} />
     </Wrapper>
   );
 };
-
-WelcomeScreen.propTypes = {};
 
 export default WelcomeScreen;

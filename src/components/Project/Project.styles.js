@@ -11,12 +11,10 @@ export const ProjectWrapper = styled.div`
   top: 0;
   border: 4px solid ${({ theme }) => theme.colors.black};
   transform: scale(0);
-  background-color: ${({ theme }) => theme.comicLayer.yellowColor};
-  background-image: ${({ theme }) => theme.comicLayer.yellowBackground};
   &.show,
   &.next,
   &.prev {
-    transition: 0.5s ease;
+    transition: 0.25s ease;
   }
   &.show {
     z-index: 20;
@@ -30,6 +28,8 @@ export const ProjectWrapper = styled.div`
   &.next,
   &.prev {
     opacity: 0.3;
+    background-color: ${({ theme }) => theme.comicLayer.yellowColor};
+    background-image: ${({ theme }) => theme.comicLayer.yellowBackground};
   }
   &.next {
     left: 100%;
@@ -37,8 +37,9 @@ export const ProjectWrapper = styled.div`
     @media screen and (min-width: 760px) {
       &:hover {
         opacity: 0.8;
-        transition: 0.5s ease;
+        transition: 0.25s ease;
         img {
+          transition: 0.25s ease;
           transform: rotate(-30deg);
         }
       }
@@ -60,8 +61,9 @@ export const ProjectWrapper = styled.div`
     @media screen and (min-width: 760px) {
       &:hover {
         opacity: 0.8;
-        transition: 0.5s ease;
+        transition: 0.25s ease;
         img {
+          transition: 0.25s ease;
           transform: rotate(30deg);
         }
       }

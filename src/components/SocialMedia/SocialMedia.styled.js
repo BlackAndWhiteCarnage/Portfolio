@@ -20,7 +20,7 @@ export const IconWrapper = styled.a`
   z-index: 9999;
   border: 4px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.right};
-  transition: 0.5s ease;
+  transition: 0.25s ease;
   background-color: ${({ theme }) => theme.comicLayer.yellowColor};
   background-image: ${({ theme }) => theme.comicLayer.yellowBackground};
   @media screen and (max-width: 1200px) {
@@ -29,7 +29,7 @@ export const IconWrapper = styled.a`
   }
   @media screen and (min-width: 1000px) {
     &:hover {
-      transition: 0.3s ease;
+      transition: 0.25s ease;
       transform: perspective(800px) rotateY(-20deg) scale(1.1) rotate(5deg) scale(1.05) !important;
       background-color: ${({ theme }) => theme.comicLayer.greenColor};
       background-image: ${({ theme }) => theme.comicLayer.greenBackground};

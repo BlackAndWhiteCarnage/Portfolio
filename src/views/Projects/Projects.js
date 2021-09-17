@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { projects } from 'data/projectsData';
 // COMPONENTS
 import Project from 'components/Project/Project';
-import SliderInfo from 'components/SliderInfo/SliderInfo';
 import PreviewProject from 'components/PreviewProject/PreviewProject';
 // HELPERS
 import { useScroll } from 'helpers/useScroll';
@@ -43,12 +42,8 @@ const Projects = ({ viewProject, setViewProject }) => {
     }
   };
 
-  const toggleProjectModalHandler = (project) => {
-    if (project !== false) {
-      setViewProject({ isToggled: true, data: project });
-    } else {
-      setViewProject({ ...viewProject, isToggled: false });
-    }
+  const toggleProjectModalHandler = () => {
+    setViewProject(!viewProject);
   };
 
   const blockClickingHanlder = () => {
@@ -72,7 +67,7 @@ const Projects = ({ viewProject, setViewProject }) => {
       onTouchEnd={projectSliderHandler}
       id='PROJECTS'
     >
-      <ProjectsSliderWrapper className={viewProject.isToggled && 'hide'}>
+      <ProjectsSliderWrapper>
         {projects.map((project, index) => (
           <Project
             current={current}
@@ -87,14 +82,21 @@ const Projects = ({ viewProject, setViewProject }) => {
           />
         ))}
         {/* <SliderInfo slide={slide} isLocked={isLocked} /> */}
+        <PreviewProject
+          viewProject={viewProject}
+          projects={projects}
+          current={current}
+          next={next}
+          prev={prev}
+          projectSliderHandler={projectSliderHandler}
+        />
       </ProjectsSliderWrapper>
-      <PreviewProject viewProject={viewProject} />
     </Wrapper>
   );
 };
 
 Projects.propTypes = {
-  viewProject: PropTypes.object.isRequired,
+  viewProject: PropTypes.bool.isRequired,
   setViewProject: PropTypes.func.isRequired,
 };
 

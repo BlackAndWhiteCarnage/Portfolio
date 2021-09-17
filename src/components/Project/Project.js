@@ -14,7 +14,7 @@ const Project = ({ current, index, next, prev, project, toggleProjectModalHandle
       projectSliderHandler(index);
     } else {
       if (index === current && !blockClick) {
-        toggleProjectModalHandler(project);
+        toggleProjectModalHandler();
       }
     }
   };
@@ -29,7 +29,7 @@ const Project = ({ current, index, next, prev, project, toggleProjectModalHandle
     >
       <ProjectImage
         id='active'
-        src={project.image}
+        src={project.projectPoster}
         onClick={() => {
           isClickBlockedHandler(false);
         }}

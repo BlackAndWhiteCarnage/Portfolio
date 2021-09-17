@@ -14,7 +14,7 @@ const Button = ({ onClick, text, icon, href, className, to, toggleModalHandler }
           <img src={icon} id='active' />
         </>
       ) : (
-        <StyledLink to={to} onClick={toggleModalHandler} smooth={true} duration={500} id='active'>
+        <StyledLink to={to} onClick={toggleModalHandler} smooth={true} duration={500} ignoreCancelEvents={true} id='active'>
           {text}
         </StyledLink>
       )}

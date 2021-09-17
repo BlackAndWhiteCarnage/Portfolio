@@ -17,7 +17,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     h1,h2,h3,h4{
         font-size: ${({ theme }) => theme.fontSize.xl};
-        letter-spacing: 5px;
+        letter-spacing: 2px;
         @media screen and (max-width: 1366px) {
             font-size: ${({ theme }) => theme.fontSize.l};
         }

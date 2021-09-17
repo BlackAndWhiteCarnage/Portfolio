@@ -5,9 +5,11 @@ import SocialMedia from 'components/SocialMedia/SocialMedia';
 // STYLES
 import { Wrapper } from './Navigation.styles';
 
+// prop types
+
 const Navigation = ({ toggleReadMore, toggleModal, toggleModalHandler, viewProject }) => {
   useEffect(() => {
-    document.body.style.overflowY = `${toggleReadMore || viewProject.isToggled || toggleModal ? 'hidden' : 'scroll'}`;
+    document.body.style.overflowY = `${toggleReadMore || viewProject || toggleModal ? 'hidden' : 'scroll'}`;
   }, [toggleReadMore, viewProject, toggleModal]);
 
   return (

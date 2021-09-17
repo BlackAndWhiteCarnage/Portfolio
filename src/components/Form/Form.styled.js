@@ -59,14 +59,14 @@ export const Input = styled.input`
   font-family: 'Bangers', cursive;
   color: ${({ theme }) => theme.colors.black};
   font-weight: 100;
-  transition: 0.5s ease;
+  transition: 0.25s ease;
   @media screen and (max-width: 1366px) {
     font-size: ${({ theme }) => theme.fontSize.m};
   }
   &:focus {
     outline: none;
     transform: perspective(800px) rotateX(-5deg) rotateY(-10deg) scale(1.1);
-    transition: 0.5s ease;
+    transition: 0.25s ease;
     background-color: ${({ theme }) => theme.comicLayer.whiteColor};
     background-image: ${({ theme }) => theme.comicLayer.whiteBackground};
   }
@@ -74,7 +74,7 @@ export const Input = styled.input`
     &:hover {
       outline: none;
       transform: perspective(800px) rotateX(-5deg) rotateY(-10deg) scale(1.1);
-      transition: 0.5s ease;
+      transition: 0.25s ease;
       background-color: ${({ theme }) => theme.comicLayer.whiteColor};
       background-image: ${({ theme }) => theme.comicLayer.whiteBackground};
     }
@@ -82,12 +82,12 @@ export const Input = styled.input`
   &.VALID {
     background-color: ${({ theme }) => theme.comicLayer.greenColor};
     background-image: ${({ theme }) => theme.comicLayer.greenBackground};
-    transition: 0.5s ease;
+    transition: 0.25s ease;
   }
   &.ERROR {
     background-color: ${({ theme }) => theme.comicLayer.redColor};
     background-image: ${({ theme }) => theme.comicLayer.redBackground};
-    transition: 0.5s ease;
+    transition: 0.25s ease;
     pointer-events: none;
   }
 `;
@@ -101,7 +101,7 @@ export const Textarea = styled.textarea`
   border: 4px solid ${({ theme }) => theme.colors.black};
   font-weight: 100;
   resize: none;
-  transition: 0.5s ease;
+  transition: 0.25s ease;
   box-shadow: ${({ theme }) => theme.boxShadow.left};
   font-size: ${({ theme }) => theme.fontSize.m};
   font-family: 'Bangers', cursive;
@@ -116,7 +116,7 @@ export const Textarea = styled.textarea`
   &:focus {
     outline: none;
     transform: perspective(800px) rotateX(-5deg) rotateY(-10deg) scale(1.1);
-    transition: 0.5s ease;
+    transition: 0.25s ease;
     background-color: ${({ theme }) => theme.comicLayer.whiteColor};
     background-image: ${({ theme }) => theme.comicLayer.whiteBackground};
   }
@@ -124,7 +124,7 @@ export const Textarea = styled.textarea`
     &:hover {
       outline: none;
       transform: perspective(800px) rotateX(-5deg) rotateY(-10deg) scale(1.1);
-      transition: 0.5s ease;
+      transition: 0.25s ease;
       background-color: ${({ theme }) => theme.comicLayer.whiteColor};
       background-image: ${({ theme }) => theme.comicLayer.whiteBackground};
     }
@@ -132,12 +132,12 @@ export const Textarea = styled.textarea`
   &.VALID {
     background-color: ${({ theme }) => theme.comicLayer.greenColor};
     background-image: ${({ theme }) => theme.comicLayer.greenBackground};
-    transition: 0.5s ease;
+    transition: 0.25s ease;
   }
   &.ERROR {
     background-color: ${({ theme }) => theme.comicLayer.redColor};
     background-image: ${({ theme }) => theme.comicLayer.redBackground};
-    transition: 0.5s ease;
+    transition: 0.25s ease;
     pointer-events: none;
   }
 `;

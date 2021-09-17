@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const Wrapper = styled.div`
   position: fixed;
@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   left: 0;
   top: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: ${({ theme }) => theme.comicLayer.redColor};
   background-image: ${({ theme }) => theme.comicLayer.redBackground};
   display: flex;
@@ -18,14 +18,44 @@ export const Wrapper = styled.div`
   }
 `;
 
+const imageAnim = keyframes`
+0%{
+  transform: scale(0.9);
+}
+10%{
+  transform: scale(1);
+}
+20%{
+  transform: scale(0.9);
+}
+30%{
+  transform: scale(1);
+}
+50%{
+  transform: scale(0.9);
+}
+60%{
+  transform: scale(1);
+}
+70%{
+  transform: scale(0.9);
+}
+80%{
+  transform: scale(1);
+}
+90%{
+  transform: scale(0.9);
+}
+100%{
+  transform: scale(1);
+}
+`;
+
 export const Image = styled.img`
-  width: 80%;
-  height: 80%;
-  transform: scale(0) rotate(360deg);
-  opacity: 0;
+  width: 95%;
+  height: 95%;
   &.show {
-    transition: 0.5s ease-out;
-    opacity: 1;
-    transform: scale(1);
+    transition: 2s ease-in;
+    animation: ${imageAnim} 2s ease;
   }
 `;

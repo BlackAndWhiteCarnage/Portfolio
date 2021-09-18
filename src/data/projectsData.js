@@ -3,20 +3,19 @@ import lamiapassionemalteseRwdImage from 'assets/images/projectsRwd/LaMiaPassion
 import euphoriaRwdImage from 'assets/images/projectsRwd/Euphoria.png';
 import nicetomeetyouRwdImage from 'assets/images/projectsRwd/NiceToMeetYou.png';
 // POSTERS
-import euphoriaPosterImage from 'assets/images/projectsPosters/Euphoria.png';
-import laMiaPassioneMaltesePosterImage from 'assets/images/projectsPosters/LaMiaPassioneMaltese.png';
-import niceToMeetYouPosterImage from 'assets/images/projectsPosters/NiceToMeetYou.png';
+import euphoriaPosterImage from 'assets/images/projectsPosters/Euphoria.jpg';
+import laMiaPassioneMaltesePosterImage from 'assets/images/projectsPosters/LaMiaPassioneMaltese.jpg';
+import niceToMeetYouPosterImage from 'assets/images/projectsPosters/NiceToMeetYou.jpg';
 // JUST A SCREENSHOTS
-import euphoriaScreenshot from 'assets/images/projectsScreenshots/Euphoria.png';
-import laMiaPassioneMalteseScreenshot from 'assets/images/projectsScreenshots/LaMiaPassioneMaltese.png';
-import niceToMeetYouScreenshot from 'assets/images/projectsScreenshots/NiceToMeetYou.png';
+import euphoriaScreenshot from 'assets/images/projectsScreenshots/Euphoria.jpg';
+import laMiaPassioneMalteseScreenshot from 'assets/images/projectsScreenshots/LaMiaPassioneMaltese.jpg';
+import niceToMeetYouScreenshot from 'assets/images/projectsScreenshots/NiceToMeetYou.jpg';
 
 export const projects = [
   {
     title: 'La Mia Passione Maltese',
     live: 'https://lamiapassionemaltese.pl/',
     repo: 'https://github.com/BlackAndWhiteCarnage/La-Mia-Passione-Maltese',
-    screenshoot: '',
     aboutProject:
       'La Mia Passione Maltese is a name of my parents breeding, its mostly my Mother but they needed a website! So I made it for them, it was my first project in React that Im not proud of, I shoud target for pure js cause its not so complex like my other projects. Afterall I learned couple things... and made a lots of non good practice lines of code.',
     projectProblems:
@@ -32,9 +31,8 @@ export const projects = [
   },
   {
     title: 'Euphoria',
-    live: 'https://lamiapassionemaltese.pl/',
-    repo: 'https://github.com/BlackAndWhiteCarnage/La-Mia-Passione-Maltese',
-    screenshoot: '',
+    live: 'https://euphorianoszonabielizna.pl/',
+    repo: 'https://github.com/BlackAndWhiteCarnage/EUPHORI',
     aboutProject:
       'Euphoria is a e-commerce shop for my Wife. Ive made it after two attempts, first one was me really jumping on a deep water. Something tempted me that adding products by updating the array of objects in js file (Also naming images with a special pattern I made), then rebuilding whole app and deploying it on hosting website is going to be great idea! Ill give you a couple of seconds to laugh at me now... So after a while I mobilized myself to make it work well by adding strapi and connect it to AWS. Im pretty proud of this project, there is one thing that I didnt made until now and its payments with deleting products after someone purchase.',
     projectProblems:
@@ -50,9 +48,8 @@ export const projects = [
   },
   {
     title: 'Nice To Meet You',
-    live: 'https://lamiapassionemaltese.pl/',
-    repo: 'https://github.com/BlackAndWhiteCarnage/La-Mia-Passione-Maltese',
-    screenshoot: '',
+    live: 'https://hungry-davinci-f14f97.netlify.app/',
+    repo: 'https://github.com/BlackAndWhiteCarnage/NiceToMeetYou',
     aboutProject:
       'Nice To Meet You is a imaginary website for buisness meetings. There is an interactive walkout with you can play, images sliders and price calculator for guests. Also Ive added scrolling on desktop section by section with pure js. Whole project purpose for me was to remind myself principles of vanilla javascript.',
     projectProblems:

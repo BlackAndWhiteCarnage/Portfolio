@@ -42,6 +42,7 @@ const PreviewProject = ({ viewProject, projects, current, projectSliderHandler, 
         <CurrentProjectWrapper>
           {projects.map((project, index) => (
             <Wrapper
+              key={index}
               className={`${viewProject && current === index && 'show'} ${viewProject && next === index && 'next'} ${
                 viewProject && prev === index && 'prev'
               }`}
@@ -56,29 +57,29 @@ const PreviewProject = ({ viewProject, projects, current, projectSliderHandler, 
                 <Button href={project.repo} text='Reposytory' icon={githubIcon} />
               </ButtonsWrapper>
               <Header>Used tools:</Header>
-              <UsedTools>{viewProject.data !== false && project.usedTools.map((usedTool) => <Tool>{usedTool}</Tool>)}</UsedTools>
+              <UsedTools>{viewProject.data !== false && project.usedTools.map((usedTool, i) => <Tool key={i}>{usedTool}</Tool>)}</UsedTools>
               <Header>About Project:</Header>
               <Description>{project.aboutProject}</Description>
               <Header>Problems I faced with and how do I solved them:</Header>
               <Description>{project.projectProblems}</Description>
               <Header>Features that I'm proud of:</Header>
-              <FeaturesWrapper>{project !== false && project.features.map((feature) => <Feature>{feature}</Feature>)}</FeaturesWrapper>
+              <FeaturesWrapper>{project !== false && project.features.map((feature, i) => <Feature key={i}>{feature}</Feature>)}</FeaturesWrapper>
               <Header>Other Projects:</Header>
               <OtherProjectsWrapper>
-                <PreviewProjectRwd
-                  className='nextProject'
-                  id='active'
-                  src={projects[next].projectPoster}
-                  onClick={() => {
-                    projectSliderHandler(next);
-                  }}
-                />
                 <PreviewProjectRwd
                   className='prevProject'
                   id='active'
                   src={projects[prev].projectPoster}
                   onClick={() => {
                     projectSliderHandler(prev);
+                  }}
+                />
+                <PreviewProjectRwd
+                  className='nextProject'
+                  id='active'
+                  src={projects[next].projectPoster}
+                  onClick={() => {
+                    projectSliderHandler(next);
                   }}
                 />
               </OtherProjectsWrapper>

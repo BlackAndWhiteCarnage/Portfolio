@@ -13,15 +13,15 @@ const FormFeedback = ({ feedback, emailSend, waiting }) => {
   return (
     <Wrapper className={feedback !== 0 && 'SHOW'}>
       {feedback === 2 ? (
-        <img src={emptyForm} />
+        <img src={emptyForm} alt='Form is empty icon' />
       ) : feedback === 4 ? (
-        <img src={wrongMessage} />
+        <img src={wrongMessage} alt='Wrong message icon' />
       ) : feedback === 3 ? (
-        <img src={wrongEmail} />
+        <img src={wrongEmail} alt='Wrong email icon' />
       ) : emailSend ? (
-        <img src={emailSendIcon} />
+        <img src={emailSendIcon} alt='Email is send icon' />
       ) : (
-        waiting && <img src={waitingIcon} />
+        waiting && <img src={waitingIcon} alt='Sending email icon' />
       )}
     </Wrapper>
   );

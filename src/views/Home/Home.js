@@ -6,7 +6,7 @@ import Button from 'components/Button/Button';
 // ICONS
 import arrowIcon from 'assets/icons/arrowDown-icon.svg';
 // IMAGES
-import myPhoto from 'assets/images/myPhoto.png';
+import myPhoto from 'assets/images/myPhoto.jpg';
 // STYLES
 import { PosterImageWrapper, PosterImage, Navigation, ScrollWrapper, Scroll } from './Home.styles';
 

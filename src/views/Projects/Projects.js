@@ -70,6 +70,7 @@ const Projects = ({ viewProject, setViewProject }) => {
       <ProjectsSliderWrapper>
         {projects.map((project, index) => (
           <Project
+            key={index}
             current={current}
             index={index}
             next={next}

@@ -8,7 +8,7 @@ const SectionsContentWrapper = ({ children, toggle }) => {
 };
 
 SectionsContentWrapper.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
   toggle: PropTypes.bool,
 };
 

@@ -24,8 +24,8 @@ const Hamburger = ({ toggleReadMore, toggleModal, toggleModalHandler, viewProjec
 };
 
 Hamburger.propTypes = {
-  toggleReadMore: PropTypes.func,
-  toggleModal: PropTypes.func.isRequired,
+  toggleReadMore: PropTypes.bool,
+  toggleModal: PropTypes.bool.isRequired,
   toggleModalHandler: PropTypes.func,
   viewProject: PropTypes.bool,
 };

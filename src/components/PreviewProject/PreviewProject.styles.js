@@ -108,9 +108,17 @@ export const PreviewProjectRwd = styled.img`
     border: 4px solid ${({ theme }) => theme.colors.black};
     transition: 0.3s ease;
     width: 45%;
+  }
+  &.nextProject {
     &:hover {
       transition: 0.3s ease;
-      transform: scale(1.025);
+      transform: perspective(1000px) rotateX(-5deg) rotateY(-10deg);
+    }
+  }
+  &.prevProject {
+    &:hover {
+      transition: 0.3s ease;
+      transform: perspective(1000px) rotateX(-5deg) rotateY(10deg);
     }
   }
 `;

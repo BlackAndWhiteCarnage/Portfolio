@@ -18,8 +18,8 @@ const SectionsWrapper = ({ children, id }) => {
 };
 
 SectionsWrapper.propTypes = {
-  children: PropTypes.element.isRequired,
-  id: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+  id: PropTypes.string,
 };
 
 export default SectionsWrapper;

@@ -45,7 +45,7 @@ const rotate = keyframes`
 
 export const InfoWrapper = styled(motion.div)`
   width: 100%;
-  height: 200px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -63,16 +63,31 @@ export const Info = styled(motion.a)`
   display: flex;
   justify-content: flex-end;
   text-decoration: none;
+  align-items: center;
   color: ${({ theme }) => theme.colors.black};
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  padding: 5px;
+  &.addHover {
+    transition: 0.25s ease;
+    &:hover {
+      transition: 0.25s ease;
+      background-color: ${({ theme }) => theme.comicLayer.greenColor};
+      background-image: ${({ theme }) => theme.comicLayer.greenBackground};
+      border-top: 4px solid ${({ theme }) => theme.colors.black};
+      border-bottom: 4px solid ${({ theme }) => theme.colors.black};
+    }
+  }
   p {
     font-size: ${({ theme }) => theme.fontSize.l};
   }
 `;
 
 export const Icon = styled.img`
-  min-width: 20px;
-  max-width: 20px;
+  min-width: 35px;
+  max-width: 35px;
   margin: 0 15px;
+  transition: 0.25s ease;
   @media screen and (max-width: 680px) {
     margin: 0 10px;
   }

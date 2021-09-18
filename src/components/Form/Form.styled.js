@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.form`
+export const Wrapper = styled.div`
   position: relative;
   min-width: 550px;
   min-height: 550px;

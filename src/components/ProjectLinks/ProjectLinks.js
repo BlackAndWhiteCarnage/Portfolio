@@ -10,10 +10,10 @@ const ProjectLinks = ({ index, current, project }) => {
   return (
     <Wrapper className={index === current && 'show'}>
       <Link id='active' target='_blank' href={project.live}>
-        <img src={linkIcon} id='active' />
+        <img src={linkIcon} id='active' alt='Project live link icon' />
       </Link>
       <Link id='active' target='_blank' href={project.repo}>
-        <img src={githubIcon} id='active' />
+        <img src={githubIcon} id='active' alt='Project github link icon' />
       </Link>
     </Wrapper>
   );

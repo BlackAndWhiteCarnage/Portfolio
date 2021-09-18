@@ -8,10 +8,10 @@ const Button = ({ onClick, text, icon, href, className, to, toggleModalHandler }
     <ButtonWrapper onClick={onClick} className={className} id='active'>
       {!to ? (
         <>
-          <a href={href} target='_blank' id='active'>
+          <a href={href} target='_blank' id='active' rel='noreferrer'>
             {text}
           </a>
-          <img src={icon} id='active' />
+          <img src={icon} id='active' alt='' />
         </>
       ) : (
         <StyledLink to={to} onClick={toggleModalHandler} smooth={true} duration={500} ignoreCancelEvents={true} id='active'>
@@ -23,7 +23,7 @@ const Button = ({ onClick, text, icon, href, className, to, toggleModalHandler }
 };
 
 Button.propTypes = {
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   text: PropTypes.string.isRequired,
   icon: PropTypes.string,
   href: PropTypes.string,

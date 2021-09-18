@@ -9,9 +9,10 @@ import SectionsContentWrapper from 'components/SectionsContentWrapper/SectionsCo
 import MoreAboutMe from 'components/MoreAboutMe/MoreAboutMe';
 import Button from 'components/Button/Button';
 // ANIMATIONS
-import { AboutMeContentWrapper, MySkillsWrapper, Header, Article, ButtonsWrapper, MySkills } from './AboutMe.styles';
+import { AboutMeContentWrapper, Header, Article, ButtonsWrapper } from './AboutMe.styles';
 // DOCUMENTS
 import myResume from 'documents/cv.pdf';
+import SkillsSlider from 'components/SkillsSlider/SkillsSlider';
 
 const AboutMe = ({ toggleReadMore, setToggleReadMore }) => {
   const toggleReadMoreHandler = () => {
@@ -35,10 +36,7 @@ const AboutMe = ({ toggleReadMore, setToggleReadMore }) => {
               <Button href={myResume} text='MY RESUME' icon={filePreviewIcon} />
             </ButtonsWrapper>
           </AboutMeContentWrapper>
-          <MySkillsWrapper>
-            <Header>Skills</Header>
-            <MySkills className={toggleReadMore && 'hide'}></MySkills>
-          </MySkillsWrapper>
+          <SkillsSlider />
         </SectionsContentWrapper>
       </SectionsWrapper>
       <MoreAboutMe toggleReadMore={toggleReadMore} toggleReadMoreHandler={toggleReadMoreHandler} />
@@ -47,7 +45,7 @@ const AboutMe = ({ toggleReadMore, setToggleReadMore }) => {
 };
 
 AboutMe.propTypes = {
-  toggleReadMore: PropTypes.func,
+  toggleReadMore: PropTypes.bool,
   setToggleReadMore: PropTypes.func,
 };
 

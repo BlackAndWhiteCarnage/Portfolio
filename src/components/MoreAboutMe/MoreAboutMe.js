@@ -25,55 +25,43 @@ const MoreAboutMe = ({ toggleReadMore, toggleReadMoreHandler }) => {
         <ReadMore>
           <Header>Who am I exacly?</Header>
           <Answer>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam laborum sequi atque mollitia, iusto blanditiis quibusdam ab explicabo
-            rem ducimus quia sapiente, eaque perferendis consequatur eligendi voluptate dolor minima magnam? Earum quos fuga explicabo quaerat quod
-            accusantium maiores aliquam impedit sit velit numquam id mollitia adipisci officia, eveniet hic quo est reprehenderit vel ullam.
-            Perspiciatis nostrum error numquam esse hic. Eveniet quod excepturi earum est dolores natus quaerat harum vero asperiores, labore eaque
-            quisquam quibusdam quam doloribus aperiam numquam magni possimus. Nisi veniam dolorum, magnam quasi natus cupiditate accusamus
-            perferendis. Nesciunt ullam cum porro velit in quia aliquam laborum fugit molestias minus excepturi eos eveniet non iure soluta hic
-            ducimus consequuntur et, rem quaerat eaque magni id libero? Incidunt, esse. Enim, officia corrupti? Labore doloribus similique iure
-            dolorum, illo eligendi repellendus quos reiciendis molestiae eveniet accusamus error aliquid sapiente laudantium natus nulla hic alias,
-            culpa quod impedit ducimus dolor? Eaque? Neque deserunt, veritatis quaerat suscipit hic facere rem fugit est atque necessitatibus maiores
-            corporis. Totam quidem temporibus doloribus ea. Cumque exercitationem laudantium itaque fuga magni fugit delectus dolores consequatur
-            saepe! Provident cumque magnam placeat iusto quam?
+            For be honest I hate questions like - 'Tell us something about yourself', Cmone! What the fuck I suppose to tell about myself? Have you so
+            interesting life that you could answer that question anyhing more than couple boring words? "Im X years old, my interested in this and
+            that ", you expect me to tell story of my life? I'dont know you! If you really wanna know who am I we shoud hang out for a beer! All of
+            necessary informations are in my resume.
           </Answer>
           <Header>How I learned those things?</Header>
           <Answer>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate provident fuga exercitationem, a dolor quod cumque doloribus dolore
-            voluptates aliquam? Quod non adipisci quaerat animi, ratione sit velit at reprehenderit? Suscipit quos maiores possimus earum odit veniam
-            sequi vitae nam, adipisci praesentium. Laborum iure alias exercitationem ad possimus, hic illo voluptate quod sit sint, rem at delectus
-            labore explicabo tempora. Assumenda ad et perferendis maiores, eligendi minima, explicabo modi, eos illo atque reprehenderit soluta
-            molestiae iste! Voluptatem rerum pariatur non id ipsa. Unde incidunt voluptatem neque a, alias nulla maxime. Esse sed perspiciatis dicta
-            animi reprehenderit enim id quo ipsum quod quidem dolorem totam sequi quas perferendis molestias debitis hic soluta explicabo, repellat
-            fugit impedit. Nesciunt dolor similique incidunt eveniet. Incidunt sed maiores explicabo nisi placeat repellat deleniti totam rem aut
-            voluptatem omnis libero suscipit laborum, facere ratione, illum consequuntur? Cupiditate nulla in minima impedit accusantium quo quibusdam
-            id dolor? Expedita iure sint sunt consectetur. Molestiae magnam modi nam voluptas dolorum cumque, illum tenetur exercitationem ut omnis
-            temporibus, inventore, quidem ea qui? Inventore minima praesentium voluptatem vitae earum at quasi! Eum obcaecati excepturi ex nobis nemo
-            explicabo libero dolorem, natus corporis ipsa, vero fugiat. Error eos recusandae, voluptatum delectus, maxime minus impedit amet doloribus
-            quod iure labore rerum hic corporis!
+            Thats a better question! Mostly I've learned things from tutorials and courses, documentation is also a good lecture. I will not lie to
+            you! I'm not 24/7 learner and I've got lazy days but when I have a problem, I will sit on my ass until I will solve it! Determination is
+            my second name.
+            <br />
+            <br />
+            Just joking...
+            <br />
+            <br />
+            it's Paweł
           </Answer>
           <Header>Am I ambitios?</Header>
           <Answer>
-            Aliquam laborum sequi atque mollitia, iusto blanditiis quibusdam ab explicabo rem ducimus quia sapiente, eaque perferendis consequatur
-            eligendi voluptate dolor minima magnam? Earum quos fuga explicabo quaerat quod accusantium maiores aliquam impedit sit velit numquam id
-            mollitia adipisci officia, eveniet hic quo est reprehenderit vel ullam. Perspiciatis nostrum error numquam esse hic. Eveniet quod
-            excepturi earum est dolores natus quaerat harum vero asperiores, labore eaque quisquam quibusdam quam doloribus aperiam numquam magni
-            possimus.
-          </Answer>
-          <Header>Expirience?</Header>
-          <Answer>
-            Earum quos fuga explicabo quaerat quod accusantium maiores aliquam impedit sit velit numquam id mollitia adipisci officia, eveniet hic quo
-            est reprehenderit vel ullam. Perspiciatis nostrum error numquam esse hic. Eveniet quod excepturi earum est dolores natus quaerat harum
-            vero asperiores, labore eaque quisquam quibusdam quam doloribus aperiam numquam magni possimus.
+            Youp! Pretty mutch I am!
+            <br />
+            <br />
+            I've always wanna be someone, but for a long time I didnt knew what i wanna do for the rest of my life. One day, two years ago I was
+            watching youtube and I found a guy who was recording vlogs about programming. Then something touched me that I can be programmer, it's
+            hard they said... But you dont need math they said.
+            <br />
+            <br />
+            So!
+            <br />
+            <br />
+            I'm in!
           </Answer>
           <Header>Why shoud you hire me?</Header>
           <Answer>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati magni doloremque exercitationem natus porro blanditiis itaque impedit
-            maxime facere ducimus veniam fuga quia debitis voluptatibus ullam dignissimos, delectus vero earum. Voluptatem, doloribus molestias hic
-            laborum ullam perferendis, recusandae porro pariatur ad ab repellendus accusamus placeat eligendi illo sint eos quia voluptatum minus quas
-            incidunt cupiditate autem. Ipsum atque perferendis corporis? Illo tempore dolorum dignissimos quisquam molestias. Dolores expedita
-            accusantium corrupti odio, hic voluptatum velit quia commodi consectetur illum tenetur autem eaque maiores architecto incidunt delectus a
-            fugit? Eum, quisquam? Id?
+            That's your decision but I can guarantee you that I wanna change my life and nothing cant stop me. If you'll not hire me thats not a big
+            deal cause I will search for a job as long as I will get one. I'm really enjoing programming and I'm hungry for a learning new things. I
+            wanna sink in that programming swamp!
           </Answer>
         </ReadMore>
       </ReadMoreWrapper>

@@ -18,7 +18,7 @@ const SkillsSlider = () => {
   const fireSlider = () => {
     toggleInterval = setInterval(() => {
       setSlide(slide + 1);
-    }, 1000);
+    }, 1500);
     skillsSliderHandler();
   };
 

@@ -18,13 +18,15 @@ export const ProjectWrapper = styled.div`
   &.show,
   &.next,
   &.prev {
-    transition: 0.25s ease;
+    transition: 0.5s ease;
   }
   &.show {
     z-index: 20;
     transform: scale(1);
     opacity: 1;
     left: 0;
+    background-color: ${({ theme }) => theme.comicLayer.greenColor};
+    background-image: ${({ theme }) => theme.comicLayer.greenBackground};
     @media screen and (max-width: 520px) {
       transform: scale(0.8);
     }
@@ -36,12 +38,14 @@ export const ProjectWrapper = styled.div`
   &.next {
     left: 100%;
     transform: perspective(400px) rotateY(-25deg) scale(0.7) rotate(25deg);
-    @media screen and (min-width: 760px) {
+    @media screen and (min-width: 1000px) {
       &:hover {
         opacity: 0.8;
-        transition: 0.25s ease;
+        transition: 0.5s ease;
+        background-color: ${({ theme }) => theme.comicLayer.greenColor};
+        background-image: ${({ theme }) => theme.comicLayer.greenBackground};
         img {
-          transition: 0.25s ease;
+          transition: 0.5s ease;
           transform: rotate(-20deg);
         }
       }
@@ -72,12 +76,14 @@ export const ProjectWrapper = styled.div`
         font-size: ${({ theme }) => theme.fontSize.l};
       }
     }
-    @media screen and (min-width: 760px) {
+    @media screen and (min-width: 1000px) {
       &:hover {
         opacity: 0.8;
-        transition: 0.25s ease;
+        transition: 0.5s ease;
+        background-color: ${({ theme }) => theme.comicLayer.greenColor};
+        background-image: ${({ theme }) => theme.comicLayer.greenBackground};
         img {
-          transition: 0.25s ease;
+          transition: 0.5s ease;
           transform: rotate(20deg);
         }
       }
@@ -102,7 +108,7 @@ export const ProjectImage = styled.img`
   object-fit: cover;
   border: 4px solid ${({ theme }) => theme.colors.black};
   transform: scale(1.01);
-  @media screen and (min-width: 760px) {
+  @media screen and (min-width: 1000px) {
     &:hover {
       transform: perspective(800px) rotateY(10deg) rotate(-2deg);
     }

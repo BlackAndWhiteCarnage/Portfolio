@@ -67,6 +67,18 @@ const emailSendAnim = keyframes`
 }
 `;
 
+const notActiveHandAnim = keyframes`
+50%{
+  transform:  scale(1.7) rotate(-15deg);
+}
+`;
+
+const notActiveIconAnim = keyframes`
+50%{
+  transform:  rotate(-15deg) translate(0, -15px);
+}
+`;
+
 export const CursorImage = styled.img`
   position: absolute;
   width: 80px;
@@ -78,6 +90,12 @@ export const CursorImage = styled.img`
     transform: scale(1);
     opacity: 1;
     transition: 0.3s ease;
+  }
+  &.isntActive {
+    transform: scale(1.6);
+    opacity: 1;
+    transition: 0.3s ease;
+    animation: ${notActiveHandAnim} 2s ease infinite;
   }
   &.emailSend {
     transform: scale(1.3);
@@ -91,5 +109,21 @@ export const CursorImage = styled.img`
     transform: scale(1);
     opacity: 1;
     transition: 0.3s ease;
+  }
+`;
+
+export const IsntActiveIcon = styled.img`
+  position: absolute;
+  top: -60px;
+  right: -80px;
+  width: 80px;
+  z-index: 999999;
+  transition: 0.3s ease;
+  opacity: 0;
+  z-index: 9999999;
+  &.isntActive {
+    opacity: 1;
+    transition: 0.3s ease;
+    animation: ${notActiveIconAnim} 2s ease-in-out infinite;
   }
 `;

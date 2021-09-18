@@ -26,8 +26,6 @@ export const HamburgerWrapper = styled.div`
   background-image: ${({ theme }) => theme.comicLayer.yellowBackground};
   &.toggle {
     transition: 0.25s ease;
-    background-color: ${({ theme }) => theme.comicLayer.redColor};
-    background-image: ${({ theme }) => theme.comicLayer.redBackground};
   }
   @media screen and (min-width: 1000px) {
     &:hover {

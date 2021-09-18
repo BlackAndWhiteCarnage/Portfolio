@@ -35,10 +35,10 @@ export const MySkillsWrapper = styled.div`
   z-index: 1;
   animation: ${rotateAnim} 3s infinite;
   opacity: 0;
-  transition: 0.25s ease;
+  transition: 0.5s ease;
   &.show {
     opacity: 1;
-    transition: 0.25s 0.25s ease;
+    transition: 0.5s 0.5s ease;
   }
 `;
 
@@ -51,7 +51,7 @@ export const MySkillsBoringListWrapper = styled.div`
   transform: translate(0, -50%);
   z-index: 1;
   opacity: 0;
-  transition: 0.25s ease;
+  transition: 0.5s ease;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
@@ -79,7 +79,7 @@ export const MySkillsBoringListWrapper = styled.div`
   }
   &.show {
     opacity: 1;
-    transition: 0.25s 0.5s ease;
+    transition: 0.5s 0.5s ease;
   }
 
   @media screen and (max-width: 1366px) {
@@ -101,7 +101,8 @@ export const Skill = styled.ul`
   right: 0;
   pointer-events: none;
   opacity: 0;
-  background: white;
+  background-color: ${({ theme }) => theme.comicLayer.blueColor};
+  background-image: ${({ theme }) => theme.comicLayer.blueBackground};
   img {
     width: 100%;
     height: 100%;
@@ -113,12 +114,12 @@ export const Skill = styled.ul`
     top: 50%;
     transform: translate(0, -50%);
     pointer-events: all;
-    transition: 0.25s ease;
+    transition: 0.5s ease;
   }
   &.prev,
   &.next {
     z-index: -1;
-    transition: 0.25s ease;
+    transition: 0.5s ease;
     pointer-events: all;
     opacity: 0.3;
   }
@@ -132,7 +133,7 @@ export const Skill = styled.ul`
   }
   border: 4px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.right};
-  transition: 0.25s ease;
+  transition: 0.5s ease;
   @media screen and (max-width: 1366px) {
     width: auto;
   }

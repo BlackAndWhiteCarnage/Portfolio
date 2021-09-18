@@ -10,7 +10,8 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Bangers', cursive;
         overflow-x: hidden;
         color: ${({ theme }) => theme.colors.black};
-        /* background: ${({ theme }) => theme.colors.white}; */
+        background-color: ${({ theme }) => theme.comicLayer.blueColor};
+        background-image: ${({ theme }) => theme.comicLayer.blueBackground};
         @media screen and (min-width: 1200px){
             cursor: none;
         }
@@ -34,11 +35,14 @@ export const GlobalStyle = createGlobalStyle`
     }
     ::-webkit-scrollbar {
         width: 10px;
-        background: ${({ theme }) => theme.colors.black};
+        background: #E0D5C7;
+        border-left: 3px dashed ${({ theme }) => theme.colors.black};
     }
     ::-webkit-scrollbar-track {
-        background: ${({ theme }) => theme.colors.black};
+        background: #E0D5C7;
         width: 10px;
+        border-left: 3px dashed ${({ theme }) => theme.colors.black};
+
     }
     ::-webkit-scrollbar-thumb {
         background: ${({ theme }) => theme.comicLayer.yellowColor};

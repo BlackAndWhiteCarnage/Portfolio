@@ -1,11 +1,13 @@
 import React, { useRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 // STYLES
-import { CursorWrapper, Ouch, Bang, CursorImage } from './Cursor.styles';
+import { CursorWrapper, Ouch, Bang, CursorImage, IsntActiveIcon } from './Cursor.styles';
 // ICONS
 import cursorIcon from 'assets/icons/cursor-icon.svg';
 import cursorClickIcon from 'assets/icons/cursorClick-icon.svg';
 import cursorOkIcon from 'assets/icons/emailSendCursor-icon.svg';
+import cursorNotActive from 'assets/icons/cursorNotActive-icon.svg';
+import javaScriptIcon from 'assets/icons/javaScript-icon.svg';
 import ouchIcon from 'assets/icons/ouch-icon.svg';
 import bangIcon from 'assets/icons/bang-icon.svg';
 import waveIcon from 'assets/icons/waveCursor-icon.svg';
@@ -18,6 +20,8 @@ const Cursor = ({ emailSend }) => {
   const [bang, setBang] = useState(false);
   const [cursorPointer, setCursorPointer] = useState(false);
   const [isTouchscreen, setIsTouchscreen] = useState(false);
+  const [isActive, setIsActive] = useState(false);
+  const [cursorPosition, setCursorPosition] = useState();
 
   useEffect(() => {
     if (window.matchMedia('(pointer: coarse)').matches) {
@@ -30,6 +34,8 @@ const Cursor = ({ emailSend }) => {
     }, 2000);
   }, []);
 
+  let toggleInterval = false;
+
   const mouseMoveHandler = (e) => {
     ref.current.style.top = e.clientY + 'px';
     ref.current.style.left = e.clientX + 'px';
@@ -37,8 +43,23 @@ const Cursor = ({ emailSend }) => {
     return;
   };
 
+  const makeCursorNotActiveHandler = () => {
+    toggleInterval = setTimeout(() => {
+      setIsActive(false);
+    }, 3000);
+  };
+
+  useEffect(() => {
+    makeCursorNotActiveHandler();
+    return () => clearTimeout(toggleInterval);
+  }, [cursorPosition]);
+
   const checkCursorActionHandler = (e, key) => {
     const item = e.target;
+
+    setCursorPosition(e.screenY);
+
+    setIsActive(true);
 
     if (
       item.id === 'active' ||
@@ -89,8 +110,10 @@ const Cursor = ({ emailSend }) => {
       )}
       {!isTouchscreen && (
         <>
-          <CursorImage src={cursorClickIcon} className={!emailSend && !wavingHand && cursorPointer && 'show'} />{' '}
-          <CursorImage src={cursorIcon} className={!emailSend && !wavingHand && !cursorPointer && 'show'} />
+          <CursorImage src={cursorClickIcon} className={isActive && !emailSend && !wavingHand && cursorPointer && 'show'} />{' '}
+          <CursorImage src={cursorIcon} className={isActive && !emailSend && !wavingHand && !cursorPointer && 'show'} />
+          <IsntActiveIcon src={javaScriptIcon} className={!emailSend && !wavingHand && !isActive && 'isntActive'} />
+          <CursorImage src={cursorNotActive} className={!emailSend && !wavingHand && !isActive && 'isntActive'} />
           <CursorImage src={waveIcon} className={wavingHand && 'wave'} />
           <CursorImage src={cursorOkIcon} className={emailSend && 'emailSend'} />
         </>

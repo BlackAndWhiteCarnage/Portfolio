@@ -20,6 +20,7 @@ export const ButtonAndPersonalInfoWrapper = styled(motion.div)`
     max-width: unset;
     width: 85%;
     margin: 0;
+    margin-top: 100px;
   }
   @media screen and (min-width: 200px) and (max-width: 920px) and (orientation: landscape) {
     max-width: 300px;
@@ -52,8 +53,8 @@ export const InfoWrapper = styled(motion.div)`
   transition: 0.5s ease;
   box-shadow: ${({ theme }) => theme.boxShadow.right};
   border: 4px solid ${({ theme }) => theme.colors.black};
-  background-color: ${({ theme }) => theme.comicLayer.redColor};
-  background-image: ${({ theme }) => theme.comicLayer.redBackground};
+  background-color: ${({ theme }) => theme.comicLayer.blueColor};
+  background-image: ${({ theme }) => theme.comicLayer.blueBackground};
   animation: ${rotate} 4s infinite ease;
 `;
 
@@ -70,12 +71,14 @@ export const Info = styled(motion.a)`
   padding: 5px;
   &.addHover {
     transition: 0.25s ease;
-    &:hover {
-      transition: 0.25s ease;
-      background-color: ${({ theme }) => theme.comicLayer.greenColor};
-      background-image: ${({ theme }) => theme.comicLayer.greenBackground};
-      border-top: 4px solid ${({ theme }) => theme.colors.black};
-      border-bottom: 4px solid ${({ theme }) => theme.colors.black};
+    @media screen and (min-width: 1000px) {
+      &:hover {
+        transition: 0.25s ease;
+        background-color: ${({ theme }) => theme.comicLayer.greenColor};
+        background-image: ${({ theme }) => theme.comicLayer.greenBackground};
+        border-top: 4px solid ${({ theme }) => theme.colors.black};
+        border-bottom: 4px solid ${({ theme }) => theme.colors.black};
+      }
     }
   }
   p {

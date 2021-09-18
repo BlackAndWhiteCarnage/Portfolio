@@ -23,9 +23,15 @@ export const Image = styled.img`
   width: 100%;
   height: 100vh;
   object-fit: cover;
-  opacity: 0.15;
+  opacity: 0.25;
   z-index: -1;
   animation: ${rotateBackgroundAnim} 15s infinite alternate;
+  &.paperLayer {
+    animation: none;
+    opacity: 0.2;
+    z-index: 9999999;
+    pointer-events: none;
+  }
 `;
 
 export const ComicLayer = styled.img`

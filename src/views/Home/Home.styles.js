@@ -96,8 +96,8 @@ export const Navigation = styled(motion.ul)`
   box-shadow: ${({ theme }) => theme.boxShadow.right};
   border: 4px solid ${({ theme }) => theme.colors.black};
   margin: 0 35px;
-  background-color: ${({ theme }) => theme.comicLayer.redColor};
-  background-image: ${({ theme }) => theme.comicLayer.redBackground};
+  background-color: ${({ theme }) => theme.comicLayer.blueColor};
+  background-image: ${({ theme }) => theme.comicLayer.blueBackground};
   @media screen and (max-width: 1366px) {
     min-width: 300px;
   }

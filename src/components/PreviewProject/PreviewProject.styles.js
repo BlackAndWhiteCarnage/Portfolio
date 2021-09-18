@@ -109,16 +109,18 @@ export const PreviewProjectRwd = styled.img`
     transition: 0.3s ease;
     width: 45%;
   }
-  &.nextProject {
-    &:hover {
-      transition: 0.3s ease;
-      transform: perspective(1000px) rotateX(-5deg) rotateY(-10deg);
+  @media screen and (min-width: 1000px) {
+    &.nextProject {
+      &:hover {
+        transition: 0.3s ease;
+        transform: perspective(1000px) rotateX(-5deg) rotateY(-10deg);
+      }
     }
-  }
-  &.prevProject {
-    &:hover {
-      transition: 0.3s ease;
-      transform: perspective(1000px) rotateX(-5deg) rotateY(10deg);
+    &.prevProject {
+      &:hover {
+        transition: 0.3s ease;
+        transform: perspective(1000px) rotateX(-5deg) rotateY(10deg);
+      }
     }
   }
 `;

@@ -67,16 +67,16 @@ export const Input = styled.input`
     outline: none;
     transform: perspective(800px) rotateX(-5deg) rotateY(-10deg) scale(1.1);
     transition: 0.25s ease;
-    background-color: ${({ theme }) => theme.comicLayer.whiteColor} !important;
-    background-image: ${({ theme }) => theme.comicLayer.whiteBackground} !important;
+    background-color: ${({ theme }) => theme.comicLayer.whiteColor};
+    background-image: ${({ theme }) => theme.comicLayer.whiteBackground};
   }
   @media screen and (min-width: 1000px) {
     &:hover {
       outline: none;
       transform: perspective(800px) rotateX(-5deg) rotateY(-10deg) scale(1.1);
       transition: 0.25s ease;
-      background-color: ${({ theme }) => theme.comicLayer.greenColor};
-      background-image: ${({ theme }) => theme.comicLayer.greenBackground};
+      background-color: ${({ theme }) => theme.comicLayer.whiteColor};
+      background-image: ${({ theme }) => theme.comicLayer.whiteBackground};
     }
   }
   &.VALID {
@@ -117,16 +117,16 @@ export const Textarea = styled.textarea`
     outline: none;
     transform: perspective(800px) rotateX(-5deg) rotateY(-10deg) scale(1.1);
     transition: 0.25s ease;
-    background-color: ${({ theme }) => theme.comicLayer.whiteColor} !important;
-    background-image: ${({ theme }) => theme.comicLayer.whiteBackground} !important;
+    background-color: ${({ theme }) => theme.comicLayer.whiteColor};
+    background-image: ${({ theme }) => theme.comicLayer.whiteBackground};
   }
   @media screen and (min-width: 1000px) {
     &:hover {
       outline: none;
       transform: perspective(800px) rotateX(-5deg) rotateY(-10deg) scale(1.1);
       transition: 0.25s ease;
-      background-color: ${({ theme }) => theme.comicLayer.greenColor};
-      background-image: ${({ theme }) => theme.comicLayer.greenBackground};
+      background-color: ${({ theme }) => theme.comicLayer.whiteColor};
+      background-image: ${({ theme }) => theme.comicLayer.whiteBackground};
     }
   }
   &.VALID {

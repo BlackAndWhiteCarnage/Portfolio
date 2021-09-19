@@ -28,7 +28,7 @@ export const Image = styled.img`
   animation: ${rotateBackgroundAnim} 15s infinite alternate;
   &.paperLayer {
     animation: none;
-    opacity: 0.2;
+    opacity: 0.25;
     z-index: 9999999;
     pointer-events: none;
   }

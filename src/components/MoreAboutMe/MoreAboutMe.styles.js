@@ -18,7 +18,7 @@ export const HeroImage = styled.img`
   pointer-events: none;
   transition: 0.5s ease;
   &.show {
-    opacity: 0.3;
+    opacity: 0.25;
     transition: 1s 1s ease;
   }
 `;

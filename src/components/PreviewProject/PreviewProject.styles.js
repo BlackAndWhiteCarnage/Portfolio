@@ -19,7 +19,7 @@ export const HeroImage = styled.img`
   transition: 0.5s ease;
   animation: ${heroImageAnim} 10s infinite alternate;
   &.show {
-    opacity: 0.3;
+    opacity: 0.25;
     transition: 1s 1s ease;
   }
 `;

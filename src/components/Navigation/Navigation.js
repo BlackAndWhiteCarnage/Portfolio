@@ -7,7 +7,7 @@ import { Wrapper } from './Navigation.styles';
 
 // prop types
 
-const Navigation = ({ toggleReadMore, toggleModal, toggleModalHandler, viewProject }) => {
+const Navigation = ({ toggleReadMore, toggleModal, toggleModalHandler, viewProject, setIsEnglish, isEnglish }) => {
   useEffect(() => {
     document.body.style.overflowY = `${toggleReadMore || viewProject || toggleModal ? 'hidden' : 'scroll'}`;
   }, [toggleReadMore, viewProject, toggleModal]);
@@ -15,7 +15,7 @@ const Navigation = ({ toggleReadMore, toggleModal, toggleModalHandler, viewProje
   return (
     <Wrapper>
       <Hamburger toggleReadMore={toggleReadMore} toggleModal={toggleModal} toggleModalHandler={toggleModalHandler} viewProject={viewProject} />
-      <SocialMedia />
+      <SocialMedia setIsEnglish={setIsEnglish} isEnglish={isEnglish} />
     </Wrapper>
   );
 };

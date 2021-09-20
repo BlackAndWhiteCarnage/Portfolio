@@ -60,7 +60,7 @@ export const Link = styled.li`
     &:hover {
       transition: 0.3s ease;
       &::before {
-        transition: 0.2s ease;
+        transition: 0.25s 0.25s ease;
         opacity: 1;
         left: 50%;
       }
@@ -79,7 +79,7 @@ export const HeroImage = styled.img`
   width: 100%;
   height: 100vh;
   object-fit: cover;
-  opacity: 0.5;
+  opacity: 0.25;
   z-index: -1;
   animation: ${heroAnim} 10s infinite alternate;
 `;

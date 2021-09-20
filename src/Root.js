@@ -21,6 +21,7 @@ function Root() {
   const [viewProject, setViewProject] = useState(false);
   const [emailSend, setEmailSend] = useState(false);
   const [toggleModal, setToggleModal] = useState(false);
+  const [isEnglish, setIsEnglish] = useState(false);
 
   const toggleModalHandler = () => {
     setToggleModal(!toggleModal);
@@ -49,13 +50,15 @@ function Root() {
         setToggleReadMore={setToggleReadMore}
         viewProject={viewProject}
         setViewProject={setViewProject}
+        setIsEnglish={setIsEnglish}
+        isEnglish={isEnglish}
       />
-      <Modal toggleModal={toggleModal} toggleModalHandler={toggleModalHandler} />
+      <Modal toggleModal={toggleModal} toggleModalHandler={toggleModalHandler} isEnglish={isEnglish} />
       {/* VIEWS */}
-      <Home />
-      <AboutMe toggleReadMore={toggleReadMore} setToggleReadMore={setToggleReadMore} />
-      <Projects viewProject={viewProject} setViewProject={setViewProject} />
-      <Contact emailSend={emailSend} setEmailSend={setEmailSend} />
+      <Home isEnglish={isEnglish} />
+      <AboutMe toggleReadMore={toggleReadMore} setToggleReadMore={setToggleReadMore} isEnglish={isEnglish} />
+      <Projects viewProject={viewProject} setViewProject={setViewProject} isEnglish={isEnglish} />
+      <Contact emailSend={emailSend} setEmailSend={setEmailSend} isEnglish={isEnglish} />
     </ThemeProvider>
   );
 }

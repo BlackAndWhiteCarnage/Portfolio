@@ -6,7 +6,7 @@ import { skills } from 'data/skillsData';
 // STYLES
 import { Wrapper, MySkillsWrapper, MySkillsBoringListWrapper, Skill, Header } from './SkillsSlider.styles';
 
-const SkillsSlider = () => {
+const SkillsSlider = ({ isEnglish }) => {
   const [slide, setSlide] = useState(0);
   let [current, setCurrent] = useState(slide);
   let [next, setNext] = useState(skills.length - 1);
@@ -39,7 +39,7 @@ const SkillsSlider = () => {
 
   return (
     <Wrapper>
-      <Header>My skills</Header>
+      <Header>{!isEnglish ? 'My Skills' : 'Umiejętności'}</Header>
       <MySkillsWrapper className={!fullList && 'show'}>
         {skills.map((skill, index) => (
           <Skill key={index} className={`${current === index && 'show'} ${next === index && 'next'} ${prev === index && 'prev'}`}>
@@ -52,7 +52,12 @@ const SkillsSlider = () => {
           <p key={index}>{skill.text}</p>
         ))}
       </MySkillsBoringListWrapper>
-      <Button text={fullList ? 'Show Slider List' : 'Show Full List'} className='right' onClick={toggleBoringListHandler} />
+      <Button
+        text={fullList ? `${!isEnglish ? 'Show Slider' : 'Pokaż Slider'}` : `${!isEnglish ? 'Show Full List' : 'Pokaż Pełną Listę'}`}
+        className='right'
+        onClick={toggleBoringListHandler}
+      />
+      {/* <Button text={fullList ? 'Show Slider List' : 'Show Full List'} className='right' onClick={toggleBoringListHandler} /> */}
     </Wrapper>
   );
 };

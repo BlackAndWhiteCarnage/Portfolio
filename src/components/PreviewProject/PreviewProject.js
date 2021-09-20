@@ -29,7 +29,7 @@ import {
 
 // prop types
 
-const PreviewProject = ({ viewProject, projects, current, projectSliderHandler, next, prev }) => {
+const PreviewProject = ({ viewProject, projects, current, projectSliderHandler, next, prev, isEnglish }) => {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -53,18 +53,18 @@ const PreviewProject = ({ viewProject, projects, current, projectSliderHandler, 
                 className={matchMediaHorizontal && 'addShadow'}
               />
               <ButtonsWrapper>
-                <Button href={project.live} text='Live' icon={linkIcon} />
-                <Button href={project.repo} text='Reposytory' icon={githubIcon} />
+                <Button href={project.live} text={!isEnglish ? 'Live' : 'Podgląd'} icon={linkIcon} />
+                <Button href={project.repo} text={!isEnglish ? 'Reposytory' : 'Repozytorium'} icon={githubIcon} />
               </ButtonsWrapper>
-              <Header>Used tools:</Header>
+              <Header>{!isEnglish ? 'Used tools:' : 'Użyte narzędzia:'}</Header>
               <UsedTools>{viewProject.data !== false && project.usedTools.map((usedTool, i) => <Tool key={i}>{usedTool}</Tool>)}</UsedTools>
-              <Header>About Project:</Header>
+              <Header>{!isEnglish ? 'About project:' : 'O Projekcie:'}</Header>
               <Description>{project.aboutProject}</Description>
-              <Header>Problems I faced with and how do I solved them:</Header>
+              <Header>{!isEnglish ? 'Problems I faced and how do I soled them:' : 'Problemy które napotkałem i jak sobie z nimi poradziłem:'}</Header>
               <Description>{project.projectProblems}</Description>
-              <Header>Features that I'm proud of:</Header>
+              <Header>{!isEnglish ? 'Features that Im proud of:' : 'Funkcje z których jestem zadowolony:'}</Header>
               <FeaturesWrapper>{project !== false && project.features.map((feature, i) => <Feature key={i}>{feature}</Feature>)}</FeaturesWrapper>
-              <Header>Other Projects:</Header>
+              <Header>{!isEnglish ? 'Other projects:' : 'Inne projekty:'}</Header>
               <OtherProjectsWrapper>
                 <PreviewProjectRwd
                   className='prevProject'

@@ -12,7 +12,7 @@ import { slide } from 'assets/animations/animation';
 // STYLES
 import { Wrapper, ProjectsSliderWrapper } from './Projects.styles';
 
-const Projects = ({ viewProject, setViewProject }) => {
+const Projects = ({ viewProject, setViewProject, isEnglish }) => {
   const [element, controls] = useScroll();
   const [blockClick, setBlockClick] = useState(false);
 
@@ -80,6 +80,7 @@ const Projects = ({ viewProject, setViewProject }) => {
             projectSliderHandler={projectSliderHandler}
             blockClickingHanlder={blockClickingHanlder}
             blockClick={blockClick}
+            isEnglish={isEnglish}
           />
         ))}
         {/* <SliderInfo slide={slide} isLocked={isLocked} /> */}
@@ -90,6 +91,7 @@ const Projects = ({ viewProject, setViewProject }) => {
           next={next}
           prev={prev}
           projectSliderHandler={projectSliderHandler}
+          isEnglish={isEnglish}
         />
       </ProjectsSliderWrapper>
     </Wrapper>

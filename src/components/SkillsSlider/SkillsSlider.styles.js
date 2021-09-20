@@ -65,6 +65,8 @@ export const MySkillsBoringListWrapper = styled.div`
     text-align: center;
     border: 4px solid ${({ theme }) => theme.colors.black};
     box-shadow: ${({ theme }) => theme.boxShadow.right};
+    background-color: ${({ theme }) => theme.comicLayer.blueColor};
+    background-image: ${({ theme }) => theme.comicLayer.blueBackground};
     @media screen and (max-width: 1920px) {
       width: auto;
     }

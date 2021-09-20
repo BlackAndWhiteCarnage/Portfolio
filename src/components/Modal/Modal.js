@@ -11,19 +11,19 @@ import heroImage from 'assets/images/heroImageModal.svg';
 import heroImageHorizontal from 'assets/images/heroImageModalHorizontal.svg';
 import heroImageMedium from 'assets/images/heroImageModalMedium.svg';
 
-const Modal = ({ toggleModal, toggleModalHandler }) => {
+const Modal = ({ toggleModal, toggleModalHandler, isEnglish }) => {
   return (
     <ModalWrapper className={toggleModal && 'toggle'} onClick={() => toggleModalHandler()}>
       <HeroImage src={matchMediaHorizontal ? heroImageHorizontal : matchMediaMedium ? heroImageMedium : matchMedia && heroImage} />
       <LinksWrapper>
         <Link text='ABOUT ME'>
-          <Button text='ABOUT ME' to='ABOUT ME' toggleModalHandler={toggleModalHandler} />
+          <Button text={!isEnglish ? 'ABOUT ME' : 'O MNIE'} to='ABOUT ME' toggleModalHandler={toggleModalHandler} />
         </Link>
         <Link text='PROJECTS'>
-          <Button text='PROJECTS' to='PROJECTS' toggleModalHandler={toggleModalHandler} />
+          <Button text={!isEnglish ? 'PROJECTS' : 'PROJEKTY'} to='PROJECTS' toggleModalHandler={toggleModalHandler} />
         </Link>
         <Link text='CONTACT'>
-          <Button text='CONTACT' to='CONTACT' toggleModalHandler={toggleModalHandler} />
+          <Button text={!isEnglish ? 'CONTACT' : 'KONTAKT'} to='CONTACT' toggleModalHandler={toggleModalHandler} />
         </Link>
       </LinksWrapper>
     </ModalWrapper>

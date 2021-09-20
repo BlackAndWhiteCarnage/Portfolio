@@ -1,19 +1,30 @@
 import React from 'react';
 // ICONS
-import facebook from 'assets/icons/facebook-icon.svg';
-import github from 'assets/icons/github-icon.svg';
+import facebookIcon from 'assets/icons/facebook-icon.svg';
+import githubIcon from 'assets/icons/github-icon.svg';
+import polishFlagIcon from 'assets/icons/polishFlag-icon.svg';
+import englishFlagIcon from 'assets/icons/englishFlag-icon.svg';
 // STYLES
 import { Wrapper, IconWrapper, Icon } from './SocialMedia.styled';
 
-const SocialMedia = () => (
-  <Wrapper>
-    <IconWrapper id='active' href='https://www.facebook.com/krzysio.repsch/' target='_blank'>
-      <Icon src={facebook} />
-    </IconWrapper>
-    <IconWrapper id='active' href='https://github.com/BlackAndWhiteCarnage' target='_blank'>
-      <Icon src={github} />
-    </IconWrapper>
-  </Wrapper>
-);
+const SocialMedia = ({ setIsEnglish, isEnglish }) => {
+  const changeLanguageHandler = () => {
+    setIsEnglish(!isEnglish);
+  };
+
+  return (
+    <Wrapper>
+      <IconWrapper id='active' href='https://www.facebook.com/krzysio.repsch/' target='_blank'>
+        <Icon src={facebookIcon} />
+      </IconWrapper>
+      <IconWrapper id='active' href='https://github.com/BlackAndWhiteCarnage' target='_blank'>
+        <Icon src={githubIcon} />
+      </IconWrapper>
+      <IconWrapper id='active' onClick={changeLanguageHandler}>
+        <Icon src={isEnglish ? englishFlagIcon : polishFlagIcon} className='flag' />
+      </IconWrapper>
+    </Wrapper>
+  );
+};
 
 export default SocialMedia;

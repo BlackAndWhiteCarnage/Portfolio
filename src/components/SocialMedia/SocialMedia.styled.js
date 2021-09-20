@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.nav`
-  width: 140px;
+  width: 200px;
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -41,4 +41,8 @@ export const Icon = styled.img`
   width: 24px;
   height: 24px;
   pointer-events: none;
+  &.flag {
+    width: 100%;
+    height: 100%;
+  }
 `;

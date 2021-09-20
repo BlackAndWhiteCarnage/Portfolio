@@ -10,7 +10,7 @@ import myPhoto from 'assets/images/myPhoto.jpg';
 // STYLES
 import { PosterImageWrapper, PosterImage, Navigation, ScrollWrapper, Scroll } from './Home.styles';
 
-const Home = () => (
+const Home = ({ isEnglish }) => (
   <SectionsWrapper>
     <SectionsContentWrapper>
       <PosterImageWrapper>
@@ -20,9 +20,9 @@ const Home = () => (
         </ScrollWrapper>
       </PosterImageWrapper>
       <Navigation>
-        <Button text='ABOUT ME' to='ABOUT ME' className='right' />
-        <Button text='PROJECTS' to='PROJECTS' className='right' />
-        <Button text='CONTACT' to='CONTACT' className='right' />
+        <Button text={!isEnglish ? 'ABOUT ME' : 'O MNIE'} to='ABOUT ME' className='right' />
+        <Button text={!isEnglish ? 'PROJECTS' : 'PROJEKTY'} to='PROJECTS' className='right' />
+        <Button text={!isEnglish ? 'CONTACT' : 'KONTAKT'} to='CONTACT' className='right' />
       </Navigation>
     </SectionsContentWrapper>
   </SectionsWrapper>

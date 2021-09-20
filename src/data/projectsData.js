@@ -6,6 +6,10 @@ import nicetomeetyouRwdImage from 'assets/images/projectsRwd/NiceToMeetYou.png';
 import euphoriaPosterImage from 'assets/images/projectsPosters/Euphoria.jpg';
 import laMiaPassioneMaltesePosterImage from 'assets/images/projectsPosters/LaMiaPassioneMaltese.jpg';
 import niceToMeetYouPosterImage from 'assets/images/projectsPosters/NiceToMeetYou.jpg';
+// POSTERS PL
+import euphoriaPosterImagePL from 'assets/images/projectsPosters/EuphoriaPL.jpg';
+import laMiaPassioneMaltesePosterImagePL from 'assets/images/projectsPosters/LaMiaPassioneMaltesePL.jpg';
+import niceToMeetYouPosterImagePL from 'assets/images/projectsPosters/NiceToMeetYouPL.jpg';
 // JUST A SCREENSHOTS
 import euphoriaScreenshot from 'assets/images/projectsScreenshots/Euphoria.jpg';
 import laMiaPassioneMalteseScreenshot from 'assets/images/projectsScreenshots/LaMiaPassioneMaltese.jpg';
@@ -25,8 +29,11 @@ export const projects = [
       'Im pretty sure that I mess two really important things. First one is that I didnt add on ANY section hard coded height, I beleve all of them are set to auto. Second one is form validation, its fine for a begginer but after this time Ive learned how can I make this better. Btw Its not mobile responsive after 1920px...',
     ],
     projectPoster: laMiaPassioneMaltesePosterImage,
+    projectPosterPL: laMiaPassioneMaltesePosterImagePL,
     projectRwdImage: lamiapassionemalteseRwdImage,
     projectScreenshot: laMiaPassioneMalteseScreenshot,
+    layer: laMiaPassioneMalteseScreenshot,
+    layerPL: laMiaPassioneMalteseScreenshot,
     usedTools: ['React', 'Styled Components', 'Framer Motion', 'React Scroll'],
   },
   {
@@ -42,6 +49,7 @@ export const projects = [
       'Im glad that Ive solved the problem with adding new products by adding strapi cms connected with AWS for images storage.',
     ],
     projectPoster: euphoriaPosterImage,
+    projectPosterPL: euphoriaPosterImagePL,
     projectRwdImage: euphoriaRwdImage,
     projectScreenshot: euphoriaScreenshot,
     usedTools: ['React', 'Styled Components', 'Framer Motion', 'Strapi.js', 'React Router Dom'],
@@ -59,6 +67,7 @@ export const projects = [
       'Im proud of myself that Ive made scrolling sections by sections without using any npm packages',
     ],
     projectPoster: niceToMeetYouPosterImage,
+    projectPosterPL: niceToMeetYouPosterImagePL,
     projectRwdImage: nicetomeetyouRwdImage,
     projectScreenshot: niceToMeetYouScreenshot,
     usedTools: ['Vanilla Js', 'SCSS'],

@@ -36,9 +36,22 @@ const Cursor = ({ emailSend }) => {
 
   let toggleInterval = false;
 
+  let updatePosition = false;
+
   const mouseMoveHandler = (e) => {
     ref.current.style.top = e.clientY + 'px';
     ref.current.style.left = e.clientX + 'px';
+
+    if (!updatePosition) {
+      updatePosition = true;
+
+      setTimeout(() => {
+        updatePosition = false;
+        setCursorPosition(e.clientY);
+      }, 1000);
+    }
+
+    setIsActive(true);
 
     return;
   };
@@ -46,7 +59,7 @@ const Cursor = ({ emailSend }) => {
   const makeCursorNotActiveHandler = () => {
     toggleInterval = setTimeout(() => {
       setIsActive(false);
-    }, 3000);
+    }, 2000);
   };
 
   useEffect(() => {
@@ -56,8 +69,6 @@ const Cursor = ({ emailSend }) => {
 
   const checkCursorActionHandler = (e, key) => {
     const item = e.target;
-
-    setCursorPosition(e.screenY);
 
     setIsActive(true);
 

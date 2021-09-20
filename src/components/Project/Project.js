@@ -5,7 +5,18 @@ import ProjectLinks from 'components/ProjectLinks/ProjectLinks';
 // STYLES
 import { ProjectWrapper, ProjectImage } from './Project.styles';
 
-const Project = ({ current, index, next, prev, project, toggleProjectModalHandler, projectSliderHandler, blockClickingHanlder, blockClick }) => {
+const Project = ({
+  current,
+  index,
+  next,
+  prev,
+  project,
+  toggleProjectModalHandler,
+  projectSliderHandler,
+  blockClickingHanlder,
+  blockClick,
+  isEnglish,
+}) => {
   const isClickBlockedHandler = (key) => {
     if (key) {
       if (index !== current) {
@@ -29,7 +40,7 @@ const Project = ({ current, index, next, prev, project, toggleProjectModalHandle
     >
       <ProjectImage
         id='active'
-        src={project.projectPoster}
+        src={!isEnglish ? project.projectPoster : project.projectPosterPL}
         onClick={() => {
           isClickBlockedHandler(false);
         }}

@@ -6,12 +6,12 @@ import SectionsContentWrapper from 'components/SectionsContentWrapper/SectionsCo
 import Form from 'components/Form/Form';
 import PersonalInfo from 'components/PersonalInfo/PersonalInfo';
 
-const Contact = ({ emailSend, setEmailSend }) => {
+const Contact = ({ emailSend, setEmailSend, isEnglish }) => {
   return (
     <SectionsWrapper id='CONTACT'>
       <SectionsContentWrapper>
-        <Form emailSend={emailSend} setEmailSend={setEmailSend} />
-        <PersonalInfo />
+        <Form emailSend={emailSend} setEmailSend={setEmailSend} isEnglish={isEnglish} />
+        <PersonalInfo isEnglish={isEnglish} />
       </SectionsContentWrapper>
     </SectionsWrapper>
   );

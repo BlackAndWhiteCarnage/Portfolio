@@ -6,10 +6,10 @@ import shoe from 'assets/icons/shoeSize-icon.svg';
 // STYLES
 import { ButtonAndPersonalInfoWrapper, Header, InfoWrapper, Info, Icon } from './PersonalInfo.styles';
 
-const PersonalInfo = () => {
+const PersonalInfo = ({ isEnglish }) => {
   return (
     <ButtonAndPersonalInfoWrapper>
-      <Header>PERSONAL INFO</Header>
+      <Header>{!isEnglish ? 'Personal Info' : 'Dane osobiste'}</Header>
       <InfoWrapper>
         <Info>
           <p>KRZYSZTOF REPSCH</p>
@@ -24,7 +24,7 @@ const PersonalInfo = () => {
           <Icon src={hrefArrow} id='active' />
         </Info>
         <Info>
-          <p>Shoe Size 45/46</p>
+          <p>{!isEnglish ? 'Shoe size 45/46' : 'Rozmiar buta 45/46'}</p>
           <Icon src={shoe} />
         </Info>
       </InfoWrapper>

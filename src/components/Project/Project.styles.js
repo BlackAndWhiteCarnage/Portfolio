@@ -64,18 +64,6 @@ export const ProjectWrapper = styled.div`
   &.prev {
     left: -100%;
     transform: perspective(400px) rotateY(25deg) scale(0.7) rotate(-25deg);
-    &::before {
-      content: 'whats up?';
-      position: absolute;
-      font-size: ${({ theme }) => theme.fontSize.xl};
-      writing-mode: vertical-rl;
-      padding: 5px;
-      top: 0;
-      left: 0;
-      @media screen and (max-width: 1366px) {
-        font-size: ${({ theme }) => theme.fontSize.l};
-      }
-    }
     @media screen and (min-width: 1000px) {
       &:hover {
         opacity: 0.8;

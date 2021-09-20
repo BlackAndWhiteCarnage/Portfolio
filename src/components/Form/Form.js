@@ -8,7 +8,7 @@ import send from 'assets/icons/send-icon.svg';
 // STYLES
 import { Wrapper, FormWrapper, Label, Input, Textarea } from './Form.styled';
 
-const Form = ({ emailSend, setEmailSend }) => {
+const Form = ({ emailSend, setEmailSend, isEnglish }) => {
   const [validEmail, setValidEmail] = useState(false);
   const [validMessage, setValidMessage] = useState(false);
   const [feedback, setFeedback] = useState(0);
@@ -75,7 +75,7 @@ const Form = ({ emailSend, setEmailSend }) => {
       }, 1500);
       setTimeout(() => {
         setEmailSend(false);
-      }, 3000);
+      }, 4000);
       // emailjs.sendForm('service_pkn9ez9', 'template_btr6t4a', e.target, 'user_wfAnEXgFR6wa0u7anAPJf').then(
       //   (result) => {
       //     console.log(result.text);
@@ -99,7 +99,7 @@ const Form = ({ emailSend, setEmailSend }) => {
           className={`${feedback === 2 && !validEmail && 'ERROR'} ${feedback === 3 && !validEmail && 'ERROR'} ${validEmail && 'VALID'}`}
           value={emailValue}
         />
-        <Label htmlFor='message'>MESSAGE</Label>
+        <Label htmlFor='message'>{!isEnglish ? 'Message' : 'Wiadomość'}</Label>
         <Textarea
           onChange={messageHandler}
           name='message'
@@ -107,10 +107,10 @@ const Form = ({ emailSend, setEmailSend }) => {
           className={`${feedback === 2 && !validMessage && 'ERROR'} ${feedback === 4 && !validMessage && 'ERROR'} ${validMessage && 'VALID'}`}
           value={messageValue}
         />
-        <Button text='SEND' icon={send} onClick={checkValid} />
+        <Button text={!isEnglish ? 'Send' : 'Wyślij'} icon={send} onClick={checkValid} />
       </FormWrapper>
       {/* --- FORM FEEDBACK POPOUTS --- */}
-      <FormFeedback feedback={feedback} emailSend={emailSend} waiting={waiting} />
+      <FormFeedback feedback={feedback} emailSend={emailSend} waiting={waiting} isEnglish={isEnglish} />
     </Wrapper>
   );
 };

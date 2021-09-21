@@ -3,8 +3,9 @@ import React from 'react';
 import user from 'assets/icons/user-icon.svg';
 import hrefArrow from 'assets/icons/hrefArrow-icon.svg';
 import shoe from 'assets/icons/shoeSize-icon.svg';
+import portfolioQRCodeIcon from 'assets/icons/portfolioQRCode-icon.svg';
 // STYLES
-import { ButtonAndPersonalInfoWrapper, Header, InfoWrapper, Info, Icon } from './PersonalInfo.styles';
+import { ButtonAndPersonalInfoWrapper, Header, InfoWrapper, Info, Icon, PortfolioQRCode, QRCode } from './PersonalInfo.styles';
 
 const PersonalInfo = ({ isEnglish }) => {
   return (
@@ -28,6 +29,9 @@ const PersonalInfo = ({ isEnglish }) => {
           <Icon src={shoe} />
         </Info>
       </InfoWrapper>
+      <PortfolioQRCode>
+        <QRCode src={portfolioQRCodeIcon} />
+      </PortfolioQRCode>
     </ButtonAndPersonalInfoWrapper>
   );
 };

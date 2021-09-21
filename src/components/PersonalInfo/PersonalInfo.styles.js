@@ -32,12 +32,12 @@ export const Header = styled(motion.h4)`
   white-space: nowrap;
   text-align: right;
   width: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 `;
 
 const rotate = keyframes`
 25%{
-  transform: rotate(-5deg);
+  transform: rotate(-3deg);
 }
 75%{
   transform: rotate(5deg);
@@ -56,6 +56,26 @@ export const InfoWrapper = styled(motion.div)`
   background-color: ${({ theme }) => theme.comicLayer.blueColor};
   background-image: ${({ theme }) => theme.comicLayer.blueBackground};
   animation: ${rotate} 4s infinite ease;
+`;
+
+export const PortfolioQRCode = styled(motion.div)`
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  transition: 0.5s ease;
+  margin-top: 30px;
+  padding-bottom: 20px;
+  &::before {
+    position: absolute;
+    content: "don't . . .";
+    left: 0;
+    bottom: 0;
+    font-size: ${({ theme }) => theme.fontSize.l};
+  }
+  @media screen and (max-width: 1366px) {
+    margin-top: 20px;
+  }
 `;
 
 export const Info = styled(motion.a)`
@@ -93,5 +113,17 @@ export const Icon = styled.img`
   transition: 0.25s ease;
   @media screen and (max-width: 680px) {
     margin: 0 10px;
+  }
+`;
+
+export const QRCode = styled.img`
+  width: 180px;
+  height: 180px;
+  margin-bottom: 20px;
+  border: 4px solid ${({ theme }) => theme.colors.black};
+  box-shadow: ${({ theme }) => theme.boxShadow.right};
+  @media screen and (max-width: 1366px) {
+    width: 120px;
+    height: 120px;
   }
 `;

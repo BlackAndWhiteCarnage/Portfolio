@@ -6,8 +6,11 @@ export const Wrapper = styled.nav`
   display: flex;
   justify-content: space-between;
   z-index: 9999;
-  @media screen and (max-width: 1200px) {
-    width: 100px;
+  @media screen and (max-width: 1366px) {
+    width: 180px;
+  }
+  @media screen and (max-width: 520px) {
+    width: 160px;
   }
 `;
 

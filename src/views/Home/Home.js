@@ -7,6 +7,7 @@ import Button from 'components/Button/Button';
 import arrowIcon from 'assets/icons/arrowDown-icon.svg';
 // IMAGES
 import myPhoto from 'assets/images/myPhoto.jpg';
+import myPhotoPL from 'assets/images/myPhotoPL.jpg';
 // STYLES
 import { PosterImageWrapper, PosterImage, Navigation, ScrollWrapper, Scroll } from './Home.styles';
 
@@ -14,7 +15,7 @@ const Home = ({ isEnglish }) => (
   <SectionsWrapper>
     <SectionsContentWrapper>
       <PosterImageWrapper>
-        <PosterImage src={myPhoto} />
+        <PosterImage src={!isEnglish ? myPhoto : myPhotoPL} />
         <ScrollWrapper>
           <Scroll src={arrowIcon} />
         </ScrollWrapper>

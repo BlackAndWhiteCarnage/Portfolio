@@ -52,10 +52,15 @@ const imageAnim = keyframes`
 `;
 
 export const Image = styled.img`
-  width: 95%;
+  width: auto;
   height: 95%;
+  object-fit: cover;
   &.show {
     transition: 2s ease-in;
     animation: ${imageAnim} 2s ease;
+  }
+  @media screen and (max-width: 520px) {
+    width: 95%;
+    height: auto;
   }
 `;

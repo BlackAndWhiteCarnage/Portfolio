@@ -68,7 +68,8 @@ export const PortfolioQRCode = styled(motion.div)`
   padding-bottom: 20px;
   &::before {
     position: absolute;
-    content: "don't . . .";
+    content: "don't scan this!";
+    width: 200px;
     left: 0;
     bottom: 0;
     font-size: ${({ theme }) => theme.fontSize.l};
@@ -92,8 +93,10 @@ export const Info = styled(motion.a)`
   &.addHover {
     transition: 0.25s ease;
     @media screen and (min-width: 1000px) {
-      &:hover {
+      &:hover,
+      &:focus {
         transition: 0.25s ease;
+        outline: none;
         background-color: ${({ theme }) => theme.comicLayer.greenColor};
         background-image: ${({ theme }) => theme.comicLayer.greenBackground};
         border-top: 4px solid ${({ theme }) => theme.colors.black};

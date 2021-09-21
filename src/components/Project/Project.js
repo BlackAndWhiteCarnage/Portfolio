@@ -31,22 +31,21 @@ const Project = ({
   };
 
   return (
-    <ProjectWrapper
-      className={`${current === index && 'show'} ${next === index && 'next'} ${prev === index && 'prev'}`}
-      id='active'
-      onClick={() => {
-        isClickBlockedHandler(true);
-      }}
-    >
-      <ProjectImage
+    <>
+      <ProjectWrapper
+        className={`${current === index && 'show'} ${next === index && 'next'} ${prev === index && 'prev'}`}
         id='active'
-        src={!isEnglish ? project.projectPoster : project.projectPosterPL}
         onClick={() => {
-          isClickBlockedHandler(false);
+          isClickBlockedHandler(true);
+          if (current === index) {
+            isClickBlockedHandler(false);
+          }
         }}
-      />
+      >
+        <ProjectImage id='active' src={!isEnglish ? project.projectPoster : project.projectPosterPL} onClick={() => {}} />
+      </ProjectWrapper>
       <ProjectLinks index={index} current={current} project={project} />
-    </ProjectWrapper>
+    </>
   );
 };
 

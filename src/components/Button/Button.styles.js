@@ -28,7 +28,7 @@ export const ButtonWrapper = styled(motion.button)`
     padding: 5px 10px;
   }
   @media screen and (min-width: 1000px) {
-    /* &:focus { */
+    &:focus,
     &:hover {
       outline: none;
       transform: perspective(800px) rotateY(-20deg) scale(1.1) rotate(5deg) scale(1.05);
@@ -52,6 +52,10 @@ export const ButtonWrapper = styled(motion.button)`
     text-decoration: none;
     color: ${({ theme }) => theme.colors.black};
     font-size: ${({ theme }) => theme.fontSize.l};
+    &:focus {
+      background: ${({ theme }) => theme.comicLayer.greenColor};
+      background-image: ${({ theme }) => theme.comicLayer.greenBackground};
+    }
   }
   img {
     max-height: 35px;

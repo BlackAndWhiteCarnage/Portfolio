@@ -17,6 +17,8 @@ export const Wrapper = styled.nav`
 export const IconWrapper = styled.a`
   min-width: 50px;
   min-height: 50px;
+  max-width: 50px;
+  max-height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,6 +31,8 @@ export const IconWrapper = styled.a`
   @media screen and (max-width: 1200px) {
     min-width: 40px;
     min-height: 40px;
+    max-width: 40px;
+    max-height: 40px;
   }
   @media screen and (min-width: 1000px) {
     &:hover {

@@ -15,6 +15,6 @@ export const StyledDotBottom = styled.div`
     top: 0;
     pointer-events: all;
     transform: scale(1);
-    transition: 0.5s;
+    transition: 0.5s 0.25s;
   }
 `;

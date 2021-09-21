@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ProjectWrapper = styled.div`
+export const ProjectWrapper = styled.button`
   position: absolute;
   width: 100%;
   height: auto;
@@ -15,6 +15,10 @@ export const ProjectWrapper = styled.div`
   box-shadow: ${({ theme }) => theme.boxShadow.left};
   background-color: ${({ theme }) => theme.comicLayer.yellowColor};
   background-image: ${({ theme }) => theme.comicLayer.yellowBackground};
+  cursor: none;
+  &:focus {
+    outline: none;
+  }
   &.show,
   &.next,
   &.prev {
@@ -27,6 +31,13 @@ export const ProjectWrapper = styled.div`
     left: 0;
     background-color: ${({ theme }) => theme.comicLayer.greenColor};
     background-image: ${({ theme }) => theme.comicLayer.greenBackground};
+    @media screen and (min-width: 1000px) {
+      &:focus {
+        img {
+          transform: perspective(800px) rotateY(10deg) rotate(-2deg);
+        }
+      }
+    }
     @media screen and (max-width: 520px) {
       transform: scale(0.8);
     }
@@ -39,7 +50,8 @@ export const ProjectWrapper = styled.div`
     left: 100%;
     transform: perspective(400px) rotateY(-25deg) scale(0.7) rotate(25deg);
     @media screen and (min-width: 1000px) {
-      &:hover {
+      &:hover,
+      &:focus {
         opacity: 0.8;
         transition: 0.5s ease;
         background-color: ${({ theme }) => theme.comicLayer.greenColor};
@@ -65,7 +77,8 @@ export const ProjectWrapper = styled.div`
     left: -100%;
     transform: perspective(400px) rotateY(25deg) scale(0.7) rotate(-25deg);
     @media screen and (min-width: 1000px) {
-      &:hover {
+      &:hover,
+      &:focus {
         opacity: 0.8;
         transition: 0.5s ease;
         background-color: ${({ theme }) => theme.comicLayer.greenColor};

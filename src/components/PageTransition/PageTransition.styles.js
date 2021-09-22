@@ -6,8 +6,8 @@ export const StyledDotBottom = styled.div`
   top: -100%;
   width: 100%;
   height: 100%;
-  background-color: ${({ theme }) => theme.comicLayer.blueColor};
-  background-image: ${({ theme }) => theme.comicLayer.blueBackground};
+  background-color: ${({ theme }) => theme.comicLayer.beigeColor};
+  background-image: ${({ theme }) => theme.comicLayer.beigeBackground};
   transition: 0.5s 0.5s;
   z-index: 120;
   pointer-events: none;

@@ -7,8 +7,8 @@ export const Wrapper = styled.div`
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: ${({ theme }) => theme.comicLayer.blueColor};
-  background-image: ${({ theme }) => theme.comicLayer.blueBackground};
+  background-color: ${({ theme }) => theme.comicLayer.beigeColor};
+  background-image: ${({ theme }) => theme.comicLayer.beigeBackground};
   display: flex;
   align-items: center;
   justify-content: center;

@@ -53,8 +53,8 @@ export const InfoWrapper = styled(motion.div)`
   transition: 0.5s ease;
   box-shadow: ${({ theme }) => theme.boxShadow.right};
   border: 4px solid ${({ theme }) => theme.colors.black};
-  background-color: ${({ theme }) => theme.comicLayer.blueColor};
-  background-image: ${({ theme }) => theme.comicLayer.blueBackground};
+  background-color: ${({ theme }) => theme.comicLayer.beigeColor};
+  background-image: ${({ theme }) => theme.comicLayer.beigeBackground};
   animation: ${rotate} 4s infinite ease;
 `;
 

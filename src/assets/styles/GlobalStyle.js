@@ -10,8 +10,8 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Bangers', cursive;
         overflow-x: hidden;
         color: ${({ theme }) => theme.colors.black};
-        background-color: ${({ theme }) => theme.comicLayer.blueColor};
-        background-image: ${({ theme }) => theme.comicLayer.blueBackground};
+        background-color: ${({ theme }) => theme.comicLayer.beigeColor};
+        background-image: ${({ theme }) => theme.comicLayer.beigeBackground};
         @media screen and (min-width: 1200px){
             cursor: none;
         }

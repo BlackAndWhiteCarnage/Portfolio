@@ -65,8 +65,8 @@ export const MySkillsBoringListWrapper = styled.div`
     text-align: center;
     border: 4px solid ${({ theme }) => theme.colors.black};
     box-shadow: ${({ theme }) => theme.boxShadow.right};
-    background-color: ${({ theme }) => theme.comicLayer.blueColor};
-    background-image: ${({ theme }) => theme.comicLayer.blueBackground};
+    background-color: ${({ theme }) => theme.comicLayer.beigeColor};
+    background-image: ${({ theme }) => theme.comicLayer.beigeBackground};
     @media screen and (max-width: 1920px) {
       width: auto;
     }
@@ -103,8 +103,8 @@ export const Skill = styled.ul`
   right: 0;
   pointer-events: none;
   opacity: 0;
-  background-color: ${({ theme }) => theme.comicLayer.blueColor};
-  background-image: ${({ theme }) => theme.comicLayer.blueBackground};
+  background-color: ${({ theme }) => theme.comicLayer.beigeColor};
+  background-image: ${({ theme }) => theme.comicLayer.beigeBackground};
   img {
     width: 100%;
     height: 100%;

@@ -8,8 +8,8 @@ export const Wrapper = styled.div`
   transition: 0.5s ease;
   z-index: 1;
   margin: 0 35px;
-  background-color: ${({ theme }) => theme.comicLayer.blueColor};
-  background-image: ${({ theme }) => theme.comicLayer.blueBackground};
+  background-color: ${({ theme }) => theme.comicLayer.beigeColor};
+  background-image: ${({ theme }) => theme.comicLayer.beigeBackground};
   box-shadow: ${({ theme }) => theme.boxShadow.left};
   border: 4px solid ${({ theme }) => theme.colors.black};
   @media screen and (max-width: 1366px) {

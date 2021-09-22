@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 // COMPONENTS
 import ProjectLinks from 'components/ProjectLinks/ProjectLinks';
 // STYLES
-import { ProjectWrapper, ProjectImage } from './Project.styles';
+import { ProjectWrapper, ProjectImage, ImageAndLinksWrapper } from './Project.styles';
 
 const Project = ({
   current,
@@ -42,9 +42,11 @@ const Project = ({
           }
         }}
       >
-        <ProjectImage id='active' src={!isEnglish ? project.projectPoster : project.projectPosterPL} onClick={() => {}} />
+        <ImageAndLinksWrapper>
+          <ProjectImage id='active' src={!isEnglish ? project.projectPoster : project.projectPosterPL} />
+          <ProjectLinks index={index} current={current} project={project} />
+        </ImageAndLinksWrapper>
       </ProjectWrapper>
-      <ProjectLinks index={index} current={current} project={project} />
     </>
   );
 };

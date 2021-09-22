@@ -115,3 +115,9 @@ export const ProjectImage = styled.img`
     }
   }
 `;
+
+export const ImageAndLinksWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+`;

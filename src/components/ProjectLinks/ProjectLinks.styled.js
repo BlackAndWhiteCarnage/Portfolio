@@ -15,12 +15,12 @@ export const Wrapper = styled.div`
   flex-direction: column;
   z-index: -1;
   &.show {
-    right: -64px;
+    right: -65px;
     transition: 0.25s 0.5s ease;
     opacity: 1;
     z-index: 9;
     @media screen and (max-width: 760px) {
-      bottom: -80px;
+      bottom: -70px;
       right: 0;
     }
     @media screen and (max-width: 320px) {
@@ -30,7 +30,7 @@ export const Wrapper = styled.div`
   }
   @media screen and (max-width: 760px) {
     height: auto;
-    width: 80%;
+    width: 100%;
     bottom: 0;
     left: 50%;
     transform: translate(-50%);
@@ -54,6 +54,9 @@ export const Link = styled.a`
   transition: 0.5s ease;
   background-color: ${({ theme }) => theme.comicLayer.yellowColor};
   background-image: ${({ theme }) => theme.comicLayer.yellowBackground};
+  @media screen and (max-width: 760px) {
+    margin: 0;
+  }
   @media screen and (min-width: 760px) {
     &:hover,
     &:focus {

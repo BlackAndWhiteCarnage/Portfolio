@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import PropTypes from 'prop-types';
 // ICONS
 import linkIcon from 'assets/icons/link-icon.svg';
 import githubIcon from 'assets/icons/github-icon.svg';
@@ -26,8 +27,6 @@ import {
   CurrentProjectWrapper,
   OtherProjectsWrapper,
 } from './PreviewProject.styles';
-
-// prop types
 
 const PreviewProject = ({ viewProject, projects, current, projectSliderHandler, next, prev, isEnglish }) => {
   const ref = useRef(null);
@@ -90,6 +89,18 @@ const PreviewProject = ({ viewProject, projects, current, projectSliderHandler, 
       <HeroImage src={matchMediaHorizontal ? heroHorizontal : matchMediaMedium ? heroMedium : matchMedia && hero} className={viewProject && 'show'} />
     </>
   );
+};
+
+PreviewProject.propTypes = {
+  projects: PropTypes.array,
+  toggleReadMore: PropTypes.bool,
+  toggleModal: PropTypes.bool,
+  viewProject: PropTypes.bool.isRequired,
+  current: PropTypes.number.isRequired,
+  next: PropTypes.number.isRequired,
+  prev: PropTypes.number.isRequired,
+  projectSliderHandler: PropTypes.func.isRequired,
+  isEnglish: PropTypes.bool.isRequired,
 };
 
 export default PreviewProject;

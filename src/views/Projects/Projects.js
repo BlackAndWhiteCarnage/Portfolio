@@ -83,7 +83,6 @@ const Projects = ({ viewProject, setViewProject, isEnglish }) => {
             isEnglish={isEnglish}
           />
         ))}
-        {/* <SliderInfo slide={slide} isLocked={isLocked} /> */}
         <PreviewProject
           viewProject={viewProject}
           projects={projects}
@@ -101,6 +100,7 @@ const Projects = ({ viewProject, setViewProject, isEnglish }) => {
 Projects.propTypes = {
   viewProject: PropTypes.bool.isRequired,
   setViewProject: PropTypes.func.isRequired,
+  isEnglish: PropTypes.bool.isRequired,
 };
 
 export default Projects;

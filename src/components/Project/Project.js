@@ -61,6 +61,7 @@ Project.propTypes = {
   projectSliderHandler: PropTypes.func.isRequired,
   blockClickingHanlder: PropTypes.func.isRequired,
   blockClick: PropTypes.bool.isRequired,
+  isEnglish: PropTypes.bool.isRequired,
 };
 
 export default Project;

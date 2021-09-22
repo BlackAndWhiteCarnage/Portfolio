@@ -6,6 +6,10 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
     }
+    *::selection{
+        background: ${({ theme }) => theme.colors.black};
+        color: ${({ theme }) => theme.colors.white}
+    }
     body{
         font-family: 'Bangers', cursive;
         overflow-x: hidden;

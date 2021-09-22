@@ -28,7 +28,7 @@ const AboutMe = ({ toggleReadMore, setToggleReadMore, isEnglish }) => {
             <Article>
               {!isEnglish
                 ? 'Oh shit it works! When i’ve started to learn JavaScript, it was hard. I mean, my bad that i’ve rushed a little bit rusted eduweb course and I didnt take more from the lessons that my notes. After a while I have started to understand all the principles in that programming language. From day to day it was more fun to learn it! My wife started to hate me after thousend of messages showing her the code and say “Look, finnaly I’ve found a bug!”'
-                : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lacus purus, rhoncus semper mollis non, rutrum sed metus. Nam euismod scelerisque odio, vitae molestie mauris consequat elementum. Pellentesque pulvinar a nisl at suscipit. Quisque eget semper felis. Ut id condimentum dui. Aenean nec risus et urna consectetur feugiat at pretium augue.'}
+                : 'O cholera to działa! Kiedy zaczynałem uczyć się JavaScript było ciężko i mam tu na myśli to że za bardzo pośpieszyłem się z trochę przestażałym kursem na eduweb więc z lekcji nie wynosiłem nic więcej niż moje notatki. Po jakimś czasie zacząłem rozumieć wszystkie zasady programowania i z dnia na dzień było co raz przyjemniej się go uczyć! Żona z resztą zaczęła mnie nienawidzić po tysiąchach wiadomości gdzie pokazwyałem jej kawałek kodu i pisałem "Patrz, znalazłem w końcu buga!'}
             </Article>
             <ButtonsWrapper>
               <Button onClick={toggleReadMoreHandler} text={!isEnglish ? 'READ MORE' : 'WIĘCEJ'} icon={arrowRightIcon} />
@@ -46,6 +46,7 @@ const AboutMe = ({ toggleReadMore, setToggleReadMore, isEnglish }) => {
 AboutMe.propTypes = {
   toggleReadMore: PropTypes.bool,
   setToggleReadMore: PropTypes.func,
+  isEnglish: PropTypes.bool.isRequired,
 };
 
 export default AboutMe;

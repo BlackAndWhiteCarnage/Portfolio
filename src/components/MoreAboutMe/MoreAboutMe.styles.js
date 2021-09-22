@@ -1,18 +1,11 @@
 import styled, { keyframes } from 'styled-components';
 
-const rotate = keyframes`
-50%{
-  transform: scale(1.1);
-}
-`;
-
 export const HeroImage = styled.img`
   position: fixed;
   width: 100%;
   height: 100vh;
   object-fit: cover;
   opacity: 0;
-  animation: ${rotate} 10s infinite alternate;
   z-index: 150;
   top: 0;
   pointer-events: none;
@@ -55,16 +48,6 @@ export const ReadMoreWrapper = styled.div`
   }
 `;
 
-const rotate2 = keyframes`
-25%{
-  transform: scale(0.98);
-}
-}
-75%{
-  transform: scale(1);
-}
-`;
-
 export const ReadMore = styled.div`
   width: 60%;
   min-height: 600px;
@@ -75,7 +58,6 @@ export const ReadMore = styled.div`
   box-shadow: ${({ theme }) => theme.boxShadow.left};
   background-color: ${({ theme }) => theme.comicLayer.whiteColor};
   background-image: ${({ theme }) => theme.comicLayer.whiteBackground};
-  animation: ${rotate2} 8s infinite ease;
   @media screen and (max-width: 760px) {
     width: 95%;
     padding: 50px 30px;

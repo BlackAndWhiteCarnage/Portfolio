@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 // COMPONENTS
 import SectionsWrapper from 'components/SectionsWrapper/SectionsWrapper';
 import SectionsContentWrapper from 'components/SectionsContentWrapper/SectionsContentWrapper';
@@ -28,5 +29,9 @@ const Home = ({ isEnglish }) => (
     </SectionsContentWrapper>
   </SectionsWrapper>
 );
+
+Home.propTypes = {
+  isEnglish: PropTypes.bool.isRequired,
+};
 
 export default Home;

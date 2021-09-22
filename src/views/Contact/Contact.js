@@ -20,6 +20,7 @@ const Contact = ({ emailSend, setEmailSend, isEnglish }) => {
 Contact.propTypes = {
   emailSend: PropTypes.bool.isRequired,
   setEmailSend: PropTypes.func.isRequired,
+  isEnglish: PropTypes.bool.isRequired,
 };
 
 export default Contact;

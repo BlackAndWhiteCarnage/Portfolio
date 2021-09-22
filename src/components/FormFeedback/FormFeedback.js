@@ -29,6 +29,7 @@ FormFeedback.propTypes = {
   feedback: PropTypes.number,
   emailSend: PropTypes.bool.isRequired,
   waiting: PropTypes.bool.isRequired,
+  isEnglish: PropTypes.bool.isRequired,
 };
 
 export default FormFeedback;

@@ -6,7 +6,7 @@ import Button from 'components/Button/Button';
 import { ModalWrapper, LinksWrapper, Link, HeroImage } from './Modal.styles';
 // HELPERS
 import { matchMedia, matchMediaMedium, matchMediaHorizontal } from 'helpers/matchMedia';
-// ICONS
+// IMAGES
 import heroImage from 'assets/images/heroImageModal.svg';
 import heroImageHorizontal from 'assets/images/heroImageModalHorizontal.svg';
 import heroImageMedium from 'assets/images/heroImageModalMedium.svg';
@@ -33,6 +33,7 @@ const Modal = ({ toggleModal, toggleModalHandler, isEnglish }) => {
 Modal.propTypes = {
   toggleModal: PropTypes.bool.isRequired,
   toggleModalHandler: PropTypes.func.isRequired,
+  isEnglish: PropTypes.bool.isRequired,
 };
 
 export default Modal;

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 // COMPONENTS
 import Button from 'components/Button/Button';
 // DATA
@@ -57,9 +58,12 @@ const SkillsSlider = ({ isEnglish }) => {
         className='right'
         onClick={toggleBoringListHandler}
       />
-      {/* <Button text={fullList ? 'Show Slider List' : 'Show Full List'} className='right' onClick={toggleBoringListHandler} /> */}
     </Wrapper>
   );
+};
+
+SkillsSlider.propTypes = {
+  isEnglish: PropTypes.bool.isRequired,
 };
 
 export default SkillsSlider;

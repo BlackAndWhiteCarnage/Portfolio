@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Button from 'components/Button/Button';
 import FormFeedback from 'components/FormFeedback/FormFeedback';
 // ICONS
-import send from 'assets/icons/send-icon.svg';
+import sendIcon from 'assets/icons/send-icon.svg';
 // STYLES
 import { Wrapper, FormWrapper, Label, Input, Textarea } from './Form.styled';
 
@@ -108,7 +108,7 @@ const Form = ({ emailSend, setEmailSend, isEnglish }) => {
           className={`${feedback === 2 && !validMessage && 'ERROR'} ${feedback === 4 && !validMessage && 'ERROR'} ${validMessage && 'VALID'}`}
           value={messageValue}
         />
-        <Button text={!isEnglish ? 'Send' : 'Wyślij'} icon={send} onClick={checkValid} />
+        <Button text={!isEnglish ? 'Send' : 'Wyślij'} icon={sendIcon} onClick={checkValid} />
       </FormWrapper>
       {/* --- FORM FEEDBACK POPOUTS --- */}
       <FormFeedback feedback={feedback} emailSend={emailSend} waiting={waiting} isEnglish={isEnglish} />
@@ -119,6 +119,7 @@ const Form = ({ emailSend, setEmailSend, isEnglish }) => {
 Form.propTypes = {
   emailSend: PropTypes.bool.isRequired,
   setEmailSend: PropTypes.func.isRequired,
+  isEnglish: PropTypes.bool.isRequired,
 };
 
 export default Form;

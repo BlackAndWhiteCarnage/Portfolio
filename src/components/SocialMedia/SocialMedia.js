@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 // ICONS
 import facebookIcon from 'assets/icons/facebook-icon.svg';
 import githubIcon from 'assets/icons/github-icon.svg';
@@ -25,6 +26,11 @@ const SocialMedia = ({ setIsEnglish, isEnglish }) => {
       </IconWrapper>
     </Wrapper>
   );
+};
+
+SocialMedia.propTypes = {
+  setIsEnglish: PropTypes.func.isRequired,
+  isEnglish: PropTypes.bool.isRequired,
 };
 
 export default SocialMedia;

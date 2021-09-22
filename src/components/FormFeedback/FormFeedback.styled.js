@@ -1,13 +1,4 @@
-import styled, { keyframes } from 'styled-components';
-
-const feedbackAnim = keyframes`
-25%{
-  transform: rotate(-5deg) scale(0.6);
-}
-75%{
-  transform: rotate(5deg) scale(0.8);
-}
-`;
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   position: absolute;
@@ -16,21 +7,29 @@ export const Wrapper = styled.div`
   transition: 0.2s ease;
   pointer-events: none;
   opacity: 0;
-  img {
-    z-index: 10;
-    width: 100%;
-    opacity: 1;
-    height: 100%;
-    animation: ${feedbackAnim} 2s infinite;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
   &.SHOW {
     pointer-events: all;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.3);
     opacity: 1;
   }
-  &.ERROR {
-    opacity: 1;
-    transition: 0.2s ease;
-    background: rgba(0, 0, 0, 0.2);
+`;
+
+export const FeedbackMessage = styled.p`
+  position: absolute;
+  top: 0;
+  left: -100%;
+  color: #fbda00;
+  width: 100%;
+  font-size: ${({ theme }) => theme.fontSize.xl};
+  background: ${({ theme }) => theme.colors.black};
+  padding: 20px;
+  line-height: normal;
+  &.SHOW {
+    left: 0;
+    transition: 0.5s 0.25s ease;
   }
 `;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 // ICONS
-import welcomeIcon from 'assets/icons/welcomeScreen-icon.png';
+import welcomeIcon from 'assets/icons/welcomeScreen-icon.svg';
 // STYLES
 import { Wrapper, Image } from './WelcomeScreen.styles';
 

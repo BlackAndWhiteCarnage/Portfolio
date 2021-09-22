@@ -74,6 +74,11 @@ export const PortfolioQRCode = styled(motion.div)`
     bottom: 0;
     font-size: ${({ theme }) => theme.fontSize.l};
   }
+  &.eng {
+    &::before {
+      content: 'nie radzę!';
+    }
+  }
   @media screen and (max-width: 1366px) {
     margin-top: 20px;
   }

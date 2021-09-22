@@ -1,33 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// ICONS
-import wrongEmail from 'assets/icons/wrongEmail-icon.svg';
-import wrongEmailPL from 'assets/icons/wrongEmailPL-icon.svg';
-import wrongMessage from 'assets/icons/wrongMessage-icon.svg';
-import wrongMessagePL from 'assets/icons/wrongMessagePL-icon.svg';
-import emptyForm from 'assets/icons/emptyForm-icon.svg';
-import emptyFormPL from 'assets/icons/emptyFormPL-icon.svg';
-import emailSendIcon from 'assets/icons/emailSend-icon.svg';
-import emailSendIconPL from 'assets/icons/emailSendPL-icon.svg';
-import waitingIcon from 'assets/icons/waiting-icon.svg';
-import waitingIconPL from 'assets/icons/waitingPL-icon.svg';
 // STYLES
-import { Wrapper } from './FormFeedback.styled';
+import { Wrapper, FeedbackMessage } from './FormFeedback.styled';
 
 const FormFeedback = ({ feedback, emailSend, waiting, isEnglish }) => {
+  const displayFeedbackMessageHandler = () => {
+    if (feedback === 2) {
+      return !isEnglish ? 'Cmone, fields are empty!' : 'Serio? Nic nie wypełniłeś i chcesz wysłać formularz?';
+    } else if (feedback === 4) {
+      return !isEnglish ? "Don't be shy, write something!" : 'Nie wstydź się, napisz coś!';
+    } else if (feedback === 3) {
+      return !isEnglish ? 'Your email is incorrect!' : 'Email jest niepoprawny!';
+    } else if (emailSend) {
+      return !isEnglish ? 'Email send, ill respond as soon as i can!' : 'Email wysłany, odpowiem jak tylko go zobaczę!';
+    } else if (waiting) {
+      return !isEnglish ? 'Wait a sec...' : 'Chwileczkę...';
+    }
+  };
+
   return (
     <Wrapper className={feedback !== 0 && 'SHOW'}>
-      {feedback === 2 ? (
-        <img src={!isEnglish ? emptyForm : emptyFormPL} alt='Form is empty icon' />
-      ) : feedback === 4 ? (
-        <img src={!isEnglish ? wrongMessage : wrongMessagePL} alt='Wrong message icon' />
-      ) : feedback === 3 ? (
-        <img src={!isEnglish ? wrongEmail : wrongEmailPL} alt='Wrong email icon' />
-      ) : emailSend ? (
-        <img src={!isEnglish ? emailSendIcon : emailSendIconPL} alt='Email is send icon' />
-      ) : (
-        waiting && <img src={!isEnglish ? waitingIcon : waitingIconPL} alt='Sending email icon' />
-      )}
+      <FeedbackMessage className={feedback !== 0 && 'SHOW'}>{displayFeedbackMessageHandler()}</FeedbackMessage>
     </Wrapper>
   );
 };

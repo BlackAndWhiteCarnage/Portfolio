@@ -56,7 +56,7 @@ const Form = ({ emailSend, setEmailSend, isEnglish }) => {
 
     setTimeout(() => {
       setFeedback(0);
-    }, 2000);
+    }, 3000);
   };
 
   function sendEmail(e) {
@@ -75,6 +75,7 @@ const Form = ({ emailSend, setEmailSend, isEnglish }) => {
       }, 1500);
       setTimeout(() => {
         setEmailSend(false);
+        setFeedback(0);
       }, 4000);
       // emailjs.sendForm('service_pkn9ez9', 'template_btr6t4a', e.target, 'user_wfAnEXgFR6wa0u7anAPJf').then(
       //   (result) => {

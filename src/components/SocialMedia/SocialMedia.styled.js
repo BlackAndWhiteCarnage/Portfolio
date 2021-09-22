@@ -35,7 +35,8 @@ export const IconWrapper = styled.a`
     max-height: 40px;
   }
   @media screen and (min-width: 1000px) {
-    &:hover {
+    &:hover,
+    &:focus {
       transition: 0.25s ease;
       transform: perspective(800px) rotateY(-20deg) scale(1.1) rotate(5deg) scale(1.05) !important;
       background-color: ${({ theme }) => theme.comicLayer.greenColor};

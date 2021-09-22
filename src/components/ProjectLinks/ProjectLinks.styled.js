@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
     right: -64px;
     transition: 0.25s 0.5s ease;
     opacity: 1;
-    z-index: 9999;
+    z-index: 9;
     @media screen and (max-width: 760px) {
       bottom: -80px;
       right: 0;
@@ -49,7 +49,6 @@ export const Link = styled.a`
   align-items: center;
   justify-content: center;
   pointer-events: all;
-  z-index: 9999 !important;
   border: 4px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.boxShadow.right};
   transition: 0.5s ease;

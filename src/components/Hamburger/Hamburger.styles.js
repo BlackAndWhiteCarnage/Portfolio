@@ -9,7 +9,7 @@ export const Wrapper = styled.nav`
   }
 `;
 
-export const HamburgerWrapper = styled.div`
+export const HamburgerWrapper = styled.button`
   position: absolute;
   width: 70px;
   height: 70px;
@@ -28,7 +28,10 @@ export const HamburgerWrapper = styled.div`
     transition: 0.25s ease;
   }
   @media screen and (min-width: 1000px) {
-    &:hover {
+    &:hover,
+    &:focus {
+      outline: none;
+      cursor: none;
       transition: 0.25s ease;
       transform: perspective(800px) rotateY(20deg) scale(1.1) rotate(-5deg) scale(1.05) !important;
       background-color: ${({ theme }) => theme.comicLayer.greenColor};
